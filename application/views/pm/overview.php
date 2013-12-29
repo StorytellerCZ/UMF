@@ -12,20 +12,31 @@
         else
         {
             //print_r($threads);
-            foreach($threads as $thread){
-                if($thread['messages'][0]['sender_id'] == $account->id)
+            //print_r($participants);
+            foreach($threads as $thread)
+            {
+                //figure out who is involved in the thread
+                $from ="";
+                if(count($participants[$thread['thread_id']]) < 1)
                 {
-                    $from = lang('pm_from_you');
+                    foreach($participants[$thread['thread_id']] as $participant)
+                    {
+                        $from .= $participant['username'] . ", ";
+                    }
                 }
                 else
                 {
-                    $from = $thread['messages'][0]['username'];
+                    $from .= $participants[$thread['thread_id']][0]['username'];
                 }
+                
+                //put the array index to the last message
+                $messages = $thread['messages'];
+                $last_message = end($messages);
             ?>
             <div class="list-group">
                 <a href="pm/message/<?php echo $thread['thread_id']; ?>" class="list-group-item">
-                    <h4 class="list-group-item-heading"><?php echo lang('pm_from') . $from . " - " . $thread['messages'][0]['subject']; ?></h4>
-                    <p class="list-group-item-text"><?php echo $thread['messages'][0]['body']; ?></p>
+                    <h4 class="list-group-item-heading"><?php echo $from . " - " . $last_message['subject']; ?></h4>
+                    <p class="list-group-item-text"><?php echo $last_message['body']; ?></p>
                 </a>
             </div><?php }
         }
