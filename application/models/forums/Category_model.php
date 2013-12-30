@@ -98,14 +98,22 @@ class Category_model extends CI_Model {
 		}
 	}
     
-    public function get_all_parent($id, $counter)
+    public function get_all_parent($id, $counter = 0)
     {
+	$this->data = NULL;
         $row = $this->db->get_where('forums_categories', array('id' => $id))->row_array();
-        $this->data[$counter] = $row;
-        if ($row['parent_id'] != 0) {
+	$this->data[$counter] = $row;
+        if ($row['parent_id'] != 0)
+	{
             $counter++;
             $this->get_all_parent($row['parent_id'], $counter);
         }
         return array_reverse($this->data);
+    }
+    
+    public function delete($category_id)
+    {
+	//@todo figure out what to do with threads in this situation
+	$this->db->delete('forums_categories', array('id' => $category_id));
     }
 }

@@ -14,6 +14,11 @@ class Manage_forums extends CI_Controller {
         
     }
     
+    public function index()
+    {
+	$this->category_view();
+    }
+    
     // start category function
     public function category_create()
     {
@@ -22,7 +27,7 @@ class Manage_forums extends CI_Controller {
 	// Redirect unauthenticated users to signin page
         if ( ! $this->authentication->is_signed_in())
         {
-            redirect('account/sign_in/?continue='.urlencode(base_url().'admin/forums/category_create'));
+            redirect('account/sign_in/?continue='.urlencode(base_url().'admin/manage_forums/category_create'));
         }
 	
 	// Redirect unauthorized users to account profile page
@@ -63,7 +68,7 @@ class Manage_forums extends CI_Controller {
 	// Redirect unauthenticated users to signin page
         if ( ! $this->authentication->is_signed_in())
         {
-            redirect('account/sign_in/?continue='.urlencode(base_url().'admin/forums/category_view'));
+            redirect('account/sign_in/?continue='.urlencode(base_url().'admin/manage_forums/category_view'));
         }
 	
 	// Redirect unauthorized users to account profile page
@@ -87,7 +92,7 @@ class Manage_forums extends CI_Controller {
 	// Redirect unauthenticated users to signin page
         if ( ! $this->authentication->is_signed_in())
         {
-            redirect('account/sign_in/?continue='.urlencode(base_url().'admin/forums/category_edit/'.$category_id));
+            redirect('account/sign_in/?continue='.urlencode(base_url().'admin/manage_forums/category_edit/'.$category_id));
         }
 	
 	// Redirect unauthorized users to account profile page
@@ -112,7 +117,7 @@ class Manage_forums extends CI_Controller {
 	    
 	    //@todo check that the input was correct
 	    $this->category_model->edit($category_id, $name, $slug, $parent);
-	    redirect('admin/forums');
+	    redirect('admin/manage_forums');
 	}
 	
         $data['category'] =  $this->category_model->get($category_id);
@@ -130,7 +135,7 @@ class Manage_forums extends CI_Controller {
 	// Redirect unauthenticated users to signin page
         if ( ! $this->authentication->is_signed_in())
         {
-            redirect('account/sign_in/?continue='.urlencode(base_url().'admin/forums/category_delete'));
+            redirect('account/sign_in/?continue='.urlencode(base_url().'admin/manage_forums/category_delete'));
         }
 	
 	// Redirect unauthorized users to account profile page
@@ -141,9 +146,9 @@ class Manage_forums extends CI_Controller {
         
         $data['account'] = $this->Account_model->get_by_id($this->session->userdata('account_id'));
 	
-        $this->db->delete(TBL_CATEGORIES, array('id' => $category_id));
+        $this->category_model->delete($category_id);
         $this->session->set_userdata('tmp_success_del', 1);
-        redirect('admin/category_view');
+        redirect('admin/manage_forums');
     }
     // end category function
     
@@ -155,7 +160,7 @@ class Manage_forums extends CI_Controller {
 	// Redirect unauthenticated users to signin page
         if ( ! $this->authentication->is_signed_in())
         {
-            redirect('account/sign_in/?continue='.urlencode(base_url('admin/forums/thread_view')));
+            redirect('account/sign_in/?continue='.urlencode(base_url('admin/manage_forums/thread_view')));
         }
 	
 	// Redirect unauthorized users to account profile page
@@ -194,7 +199,7 @@ class Manage_forums extends CI_Controller {
 	// Redirect unauthenticated users to signin page
         if ( ! $this->authentication->is_signed_in())
         {
-            redirect('account/sign_in/?continue='.urlencode(base_url().'admin/forums/thread_edit'));
+            redirect('account/sign_in/?continue='.urlencode(base_url().'admin/manage_forums/thread_edit'));
         }
 	
 	// Redirect unauthorized users to account profile page
@@ -206,7 +211,21 @@ class Manage_forums extends CI_Controller {
         $data['account'] = $this->Account_model->get_by_id($this->session->userdata('account_id'));
 	
 	//validate data
+        $this->form_validation->set_rules('thread-title', 'lang:forums_name', 'required|trim|xss_clean|is_unique[forums_categories.name]');
+	$this->form_validation->set_rules('thread-slug', 'lang:forums_slug', 'required|trim|xss_clean|alpha_numeric|is_unique[forums_categories.slug]');
+	$this->form_validation->set_rules('thread-category', 'lang:forums_parent', 'required|trim|xss_clean|integer');
 	
+	if($this->form_validation->run())
+	{
+	    //get the data and insert them into DB
+	    $name = $this->input->post('thread-title', TRUE);
+	    $slug = $this->input->post('thread-slug', TRUE);
+	    $parent = $this->input->post('thread-category', TRUE);
+	    
+	    //@todo check that the input was correct
+	    $this->thread_model->edit($thread_id, $name, $slug, $parent);
+	    redirect('admin/manage_forums/thread_view/'.$parent);
+	}
         
         $data['thread']  = $this->thread_model->get($thread_id);
         $data['categories'] = $this->category_model->get_all();
@@ -222,7 +241,7 @@ class Manage_forums extends CI_Controller {
 	// Redirect unauthenticated users to signin page
         if ( ! $this->authentication->is_signed_in())
         {
-            redirect('account/sign_in/?continue='.urlencode(base_url().'admin/forums/thread_delete'));
+            redirect('account/sign_in/?continue='.urlencode(base_url().'admin/manage_forums/thread_delete'));
         }
 	
 	// Redirect unauthorized users to account profile page
@@ -233,9 +252,9 @@ class Manage_forums extends CI_Controller {
         
         $data['account'] = $this->Account_model->get_by_id($this->session->userdata('account_id'));
 	
-	$this->Thread_model->delete($thread_id);
+	$this->thread_model->delete($thread_id);
 	
-        $this->thread_view();
+        redirect('admin/manage_forums');
     }
     // end thread function
 }

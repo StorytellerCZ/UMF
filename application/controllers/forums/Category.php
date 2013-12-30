@@ -7,7 +7,7 @@ class Category extends CI_Controller {
         parent::__construct();
         $this->load->config('umf/forums');
         $this->load->model(array('forums/thread_model', 'forums/category_model'));
-        $this->load->library('pagination');
+        $this->load->library(array('pagination', 'forums/cibb'));
         $this->load->helper('pagination');
         $this->load->language('forums/forums');
     }

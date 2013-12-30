@@ -35,7 +35,7 @@
             ?>
             <div class="list-group">
                 <a href="pm/message/<?php echo $thread['thread_id']; ?>" class="list-group-item">
-                    <h4 class="list-group-item-heading"><?php echo $from . " - " . $last_message['subject']; ?></h4>
+                    <h4 class="list-group-item-heading"><?php echo $from . " - " . $last_message['subject']; ?> <span class="pull-right glyphicon glyphicon-comment"></span></h4>
                     <p class="list-group-item-text"><?php echo $last_message['body']; ?></p>
                 </a>
             </div><?php }

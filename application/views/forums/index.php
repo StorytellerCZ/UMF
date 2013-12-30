@@ -1,20 +1,20 @@
 <div class="col-md-12">
     <ul class="breadcrumb">
     <?php if ($type == 'category'): ?>
-    <li>
-        <a href="<?php echo site_url('forums'); ?>"><?php echo lang('website_forums'); ?></a>
-    </li>
-    <?php $cat_total = count($cat); foreach ($cat as $key => $c): ?>
-    <li>        
-        <a href="<?php echo site_url('forums/category/'.$c['slug']); ?>"><?php echo $c['name']; ?></a> 
-        <?php if ($key+1 != $cat_total): ?>
-        <?php endif; ?>
-    </li>
-    <?php endforeach; ?>
-    <?php else: ?>
-    <li>
-        <a href="<?php echo site_url('forums'); ?>"><?php echo lang('website_forums'); ?></a>
-    </li>
+        <li>
+            <a href="<?php echo site_url('forums'); ?>"><?php echo lang('website_forums'); ?></a>
+        </li>
+        <?php $cat_total = count($cat); foreach ($cat as $key => $c): ?>
+        <li>        
+            <a href="<?php echo site_url('forums/category/'.$c['slug']); ?>"><?php echo $c['name']; ?></a> 
+            <?php if ($key+1 != $cat_total): ?>
+            <?php endif; ?>
+        </li>
+        <?php endforeach; ?>
+        <?php else: ?>
+        <li>
+            <a href="<?php echo site_url('forums'); ?>"><?php echo lang('website_forums'); ?></a>
+        </li>
     <?php endif; ?>
     </ul>
     <?php

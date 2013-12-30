@@ -1,7 +1,7 @@
 <div class="col-md-12">
     <ul class="breadcrumb">
     <li>
-        <a href="<?php echo site_url('forums'); ?>">Home</a>
+        <a href="<?php echo site_url('forums'); ?>"><?php echo lang('website_forums'); ?></a>
     </li>
     <?php $cat_total = count($cat); foreach ($cat as $key => $c): ?>
     <li>
@@ -10,6 +10,9 @@
         <?php endif; ?>
     </li>
     <?php endforeach; ?>
+    <li>
+        <?php echo anchor('#', $thread->title); ?>
+    </li>
     </ul>
 </div>
 

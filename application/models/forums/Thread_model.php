@@ -125,11 +125,11 @@ class Thread_model extends CI_Model {
         $this->db->insert('forums_posts', $post);
     }
     
-    public function edit($thread_id, $title, $slug)
+    public function edit($thread_id, $title, $slug, $category_id)
     {
         // update thread
         $this->db->where('id', $thread_id);
-        $this->db->update('forums_threads', array('title' => $title, 'slug' => $slug));
+        $this->db->update('forums_threads', array('title' => $title, 'slug' => $slug, 'category_id' => $category_id));
     }
     
     public function delete($id)

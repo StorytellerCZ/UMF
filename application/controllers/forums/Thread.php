@@ -11,7 +11,7 @@ class Thread extends CI_Controller {
         $this->load->model(array('forums/thread_model', 'forums/category_model', 'forums/posts_model'));
         $this->load->helper('pagination');
         $this->load->language('forums/forums');
-        $this->load->library('form_validation');
+        $this->load->library(array('form_validation', 'forums/cibb'));
     }
     
     /*
