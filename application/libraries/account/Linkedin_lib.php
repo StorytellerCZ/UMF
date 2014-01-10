@@ -13,7 +13,7 @@ class Linkedin_lib
         //Obtain CI refference
         $this->CI =& get_instance();
         
-        $this->CI->load->config('account/linkedin');
+        $this->CI->load->config('umf/linkedin');
         $this->CI->load->helper('account/linkedin');
         
         //Require APP keys to be configured

@@ -12,7 +12,6 @@ class Connect_linkedin extends CI_Controller {
         parent::__construct();
 
         // Load the necessary stuff...
-        $this->load->config('account/account');
         $this->load->helper(array('language', 'account/ssl', 'url'));
         $this->load->library(array('account/authentication', 'account/authorization', 'account/linkedin_lib'));
         $this->load->model(array('account/Account_model', 'account/Account_linkedin_model', 'account/Account_details_model'));
