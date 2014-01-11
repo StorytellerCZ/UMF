@@ -34,7 +34,8 @@ class Overview extends CI_Controller {
             redirect('');
         }
         
-        $data['threads'] = $this->mahana_messaging->get_all_threads_grouped($this->session->userdata('account_id'))['retval'];
+        $data['threads'] = $this->mahana_messaging->get_all_threads_grouped($this->session->userdata('account_id'));
+        $data['threads'] = $data['threads']['retval'];
         
         $data['participants'] = array();
         
