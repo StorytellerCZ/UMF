@@ -34,15 +34,16 @@ class Overview extends CI_Controller {
             redirect('');
         }
         
-        $data['threads'] = $this->mahana_messaging->get_all_threads_grouped($this->session->userdata('account_id'));
-        $data['threads'] = $data['threads']['retval'];
+        $threads_grouped = $this->mahana_messaging->get_all_threads_grouped($this->session->userdata('account_id'));
+        $data['threads'] = $threads_grouped['retval'];
         
         $data['participants'] = array();
         
         //get participants for each thread
         foreach($data['threads'] as $thread)
         {
-            $data['participants'][$thread['thread_id']] = $this->mahana_messaging->get_participant_list($thread['thread_id'], $this->session->userdata('account_id'))['retval'];
+            $list = $this->mahana_messaging->get_participant_list($thread['thread_id'], $this->session->userdata('account_id'))['retval'];
+            $data['participants'][$thread['thread_id']] = $list['retval'];
         }
         
         //listen if new message is being created

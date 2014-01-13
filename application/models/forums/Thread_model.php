@@ -69,8 +69,9 @@ class Thread_model extends CI_Model {
         
         
         //@todo
-        $where = '`forums_posts`.`date_add` = (SELECT MAX(`date_add`) FROM `forums_posts` WHERE `thread_id` = `forums_threads`.`id` LIMIT 1)';
+        $where = 'forums_posts.date_add = (SELECT MAX(date_add) FROM forums_posts WHERE thread_id = forums_threads.id LIMIT 1)';
         $this->db->where($where);
+        //$this->db->where('forums_posts.id', $this->db->group_start()->select_max('forums_posts.date_add')->from('forum_posts')->where('forums_posts.thread_id', 'forums_thread.id')->limit(1)->group_end());
         
         $this->db->order_by('forums_posts.date_add', 'DESC');
         $this->db->limit($limit, $start);

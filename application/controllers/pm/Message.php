@@ -76,8 +76,11 @@ class Message extends CI_Controller {
         }
         
         //load the thread
-        $data['thread'] = $this->mahana_messaging->get_full_thread($id, $this->session->userdata('account_id'))['retval'];
-        $data['participants'] = $this->mahana_messaging->get_participant_list($id)['retval'];
+        $full_thread = $this->mahana_messaging->get_full_thread($id, $this->session->userdata('account_id'));
+        $data['thread'] = $full_thread['retval'];
+        
+        $participants_list = $this->mahana_messaging->get_participant_list($id);
+        $data['participants'] = $participants_list['retval'];
         
         $data['content'] = $this->load->view('pm/message', isset($data) ? $data : NULL, TRUE);
         $this->load->view('template', $data);

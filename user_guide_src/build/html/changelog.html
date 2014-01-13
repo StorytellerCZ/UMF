@@ -28,7 +28,7 @@
 	<body>
 		<div id="table-contents">
 			<div class="toctree-wrapper compound">
-			<function <lambda> at 0x58be140>
+			<function <lambda> at 0x54f9140>
 			</div>
 		</div>
 
@@ -397,6 +397,7 @@ Only entries in <tt class="docutils literal"><span class="pre">$autoload['librar
 <li><a class="reference internal" href="libraries/email.html"><em>Email Library</em></a> changes include:<ul>
 <li>Added a custom filename parameter to <tt class="docutils literal"><span class="pre">attach()</span></tt> as <tt class="docutils literal"><span class="pre">$this-&gt;email-&gt;attach($filename,</span> <span class="pre">$disposition,</span> <span class="pre">$newname)</span></tt>.</li>
 <li>Added possibility to send attachment as buffer string in <tt class="docutils literal"><span class="pre">attach()</span></tt> as <tt class="docutils literal"><span class="pre">$this-&gt;email-&gt;attach($buffer,</span> <span class="pre">$disposition,</span> <span class="pre">$newname,</span> <span class="pre">$mime)</span></tt>.</li>
+<li>Added possibility to attach remote files by passing a URL.</li>
 <li>Added method <tt class="docutils literal"><span class="pre">attachment_cid()</span></tt> to enable embedding inline attachments into HTML.</li>
 <li>Added dsn (delivery status notification) option.</li>
 <li>Renamed method <tt class="docutils literal"><span class="pre">_set_header()</span></tt> to <tt class="docutils literal"><span class="pre">set_header()</span></tt> and made it public to enable adding custom headers.</li>
