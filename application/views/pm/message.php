@@ -10,13 +10,11 @@
         ?>
         <div class="panel panel-default">
             <div class="panel-heading">
-                <h3 class="panel-title"><?php echo $message['username'] . " - " . $message['subject']; ?></h3>
+                <h3 class="panel-title"><?php echo $message['username'] . " - " . $message['subject']; ?>
+                <span class="pull-right"><?php echo $message['cdate']; ?></span></h3>
             </div>
             <div class="panel-body">
                 <?php echo $message['body']; ?>
-            </div>
-            <div class="panel-footer">
-                <?php echo $message['cdate']; ?>
             </div>
         </div>
         <?php

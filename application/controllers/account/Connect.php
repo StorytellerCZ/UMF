@@ -12,7 +12,6 @@ class Connect extends CI_Controller
         parent::__construct();
         
         // Load the necessary stuff...
-        $this->load->config('account/account');
         $this->load->helper(array('language', 'account/ssl', 'url'));
         $this->load->library(array('account/Authentication', 'account/Authorization', 'account/Hybrid_auth_lib'));
         $this->load->model(array('account/Account_model', 'account/Account_details_model', 'account/Account_providers_model'));

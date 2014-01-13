@@ -88,6 +88,8 @@ $route['forums/category/(:any)'] = "forums/category/index/$1";
 $route['forums/thread/(:any)'] = "forums/thread/index/$1";
 $route['pm'] = "pm/overview";
 $route['pm/message/(:num)'] = "pm/message/index/$1";
+$route['account/connect/(.+)'] = "account/connect/index/$1";
+$route['account/connect_end(:any)'] = "account/connect/index$1";
 
 /* End of file routes.php */
 /* Location: ./application/config/routes.php */

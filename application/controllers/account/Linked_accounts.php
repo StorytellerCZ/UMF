@@ -12,10 +12,9 @@ class Linked_accounts extends CI_Controller {
 		parent::__construct();
 
 		// Load the necessary stuff...
-		$this->load->config('account/account');
 		$this->load->helper(array('language', 'account/ssl', 'url'));
 		$this->load->library(array('account/authentication', 'account/authorization', 'form_validation'));
-		$this->load->model(array('account/Account_model', 'account/Account_providers_model', 'account/Account_facebook_model', 'account/Account_twitter_model', 'account/Account_openid_model', 'account/Account_linkedin_model'));
+		$this->load->model(array('account/Account_model', 'account/Account_providers_model'));
 		$this->load->language(array('general', 'account/account_linked', 'account/connect_third_party'));
 	}
 
