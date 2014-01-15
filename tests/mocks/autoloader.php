@@ -89,7 +89,21 @@ function autoload($class)
 
 	if ( ! file_exists($file))
 	{
-    return FALSE;
+		$trace = debug_backtrace();
+
+		if ($trace[2]['function'] === 'class_exists' OR $trace[2]['function'] === 'file_exists')
+		{
+			// If the autoload call came from `class_exists` or `file_exists`,
+			// we skipped and return FALSE
+			return FALSE;
+		}
+		elseif (($autoloader = spl_autoload_functions()) && end($autoloader) !== __FUNCTION__)
+		{
+			// If there was other custom autoloader, passed away
+			return FALSE;
+		}
+
+		throw new InvalidArgumentException("Unable to load {$class}.");
 	}
 
 	include_once($file);

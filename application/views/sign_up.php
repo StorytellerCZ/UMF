@@ -110,10 +110,11 @@
 	</div>
 
 	<div class="col-lg-6">
-		<?php if ($third_party_auth = $this->config->item('third_party_auth')) : ?>
+		<?php if ($this->config->item('third_party_auth')) : ?>
 			<h3><?php echo sprintf(lang('sign_up_third_party_heading')); ?></h3>
 			<ul>
-				<?php foreach ($third_party_auth['providers'] as $provider_name => $provider_values) : ?>
+				<?php $third_party_auth = $this->config->item('third_party_auth');
+				foreach ($third_party_auth['providers'] as $provider_name => $provider_values) : ?>
 					<?php if($provider_values['enabled']) : ?>
 					<li class="third_party <?php echo $provider_name; ?>"><?php echo anchor('account/connect/'.$provider_name, ' ', array('title' => sprintf(lang('sign_up_with'), lang('connect_'.$provider_name)))); ?></li>
 					<?php endif; ?>
