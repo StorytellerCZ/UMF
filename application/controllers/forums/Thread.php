@@ -77,7 +77,7 @@ class Thread extends CI_Controller {
         
         //validate data
         $this->form_validation->set_rules('thread-title', 'lang:forums_name', 'required|trim|xss_clean');
-	$this->form_validation->set_rules('thread-slug', 'lang:forums_slug', 'required|trim|xss_clean|alpha_numeric|is_unique[forums_threads.slug]');
+	$this->form_validation->set_rules('thread-slug', 'lang:forums_slug', 'required|trim|xss_clean|is_unique[forums_threads.slug]');
         $this->form_validation->set_rules('thread-post', 'lang:forums_initial_post', 'required|trim|xss_clean');
         
         if($this->form_validation->run())
