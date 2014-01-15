@@ -42,7 +42,7 @@ class Overview extends CI_Controller {
         //get participants for each thread
         foreach($data['threads'] as $thread)
         {
-            $list = $this->mahana_messaging->get_participant_list($thread['thread_id'], $this->session->userdata('account_id'));
+            $list = $this->mahana_messaging->get_participant_list($thread['thread_id'], $this->session->userdata('account_id'))['retval'];
             $data['participants'][$thread['thread_id']] = $list['retval'];
         }
         
