@@ -109,16 +109,11 @@ class Mahana_model extends CI_Model
      */
     function get_message($msg_id, $user_id)
     {
-        $sql = 'SELECT m.*, s.status, t.subject, a3m_account.username' .
-        ' FROM ' . $this->db->dbprefix . 'msg_messages m ' .
-        ' JOIN ' . $this->db->dbprefix . 'msg_threads t ON (m.thread_id = t.id) ' .
-        ' JOIN ' . $this->db->dbprefix . 'a3m_account a ON (a3m_account.id = m.sender_id) '.
-        ' JOIN ' . $this->db->dbprefix . 'msg_status s ON (s.message_id = m.id AND s.user_id = ? ) ' .
-        ' WHERE m.id = ? ' ;
-
-        $query = $this->db->query($sql, array($user_id, $msg_id));
-
-        return $query->result_array();
+        $this->db->select('msg_messages.*, msg_status.status, msg_threads.subject, a3m_account.username');
+        $this->db->join('msg_threads', 'msg_messages.thread_id = msg_threads.id');
+        $this->db->join('a3m_account', 'a3m_account.id = msg_messages.sender_id');
+        $this->db->join('msg_status', 'msg_status.message_id = msg_messages.id');
+        return $this->db->get_where('msg_messages', array('msg_messages.id' => $msg_id, 'msg_status.user_id' => $user_id))->result_array();
     }
 
     // ------------------------------------------------------------------------

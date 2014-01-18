@@ -24,30 +24,21 @@ class Thread_model extends CI_Model {
     
     public function get_all($start, $limit)
     {
-        $sql = "SELECT a.*, b.name as category_name, b.slug as category_slug, c.date_add 
-                FROM forums_threads a, forums_categories b,forums_posts c 
-                WHERE a.category_id = b.id AND a.id = c.thread_id 
-                AND c.date_add = (SELECT MAX(date_add) FROM ".'forums_posts'." WHERE thread_id = a.id LIMIT 1) 
-                ORDER BY c.date_add DESC LIMIT ".$start.", ".$limit;
-        return $this->db->query($sql)->result();
+        $this->db->select('forums_threads.*, forums_categories.name AS category_name, forums_categories.slug AS category_slug, forums_posts.date_add');
+        $this->db->select_max('forums_posts.date_add');
+        $this->db->join('forums_categories', 'forums_threads.category_id = forums_categories.id');
+        $this->db->join('forums_posts', 'forums_threads.id = forums_posts.thread_id');
+        $this->db->order_by('forums_posts.date_add', 'DESC');
+        $this->db->limit($limit, $start);
+        return $this->db->get('forums_threads')->result();
     }
     
     public function get_by_category($start, $limit, $cat_id)
     {
-        
-        $sql = "SELECT a.*, b.name as category_name, b.slug as category_slug, c.date_add 
-                FROM forums_threads a, forums_categories b,forums_posts c 
-                WHERE a.category_id = b.id AND a.id = c.thread_id AND  a.category_id = ".$cat_id." 
-                AND c.date_add = (SELECT MAX(date_add) FROM forums_posts WHERE thread_id = a.id LIMIT 1) 
-                ORDER BY c.date_add DESC LIMIT ".$start.", ".$limit;
-        return $this->db->query($sql)->result();
-        /* @todo fix bellow so it works, so that we don't need the sql above
         $this->db->select('forums_threads.*, forums_categories.name AS category_name, forums_categories.slug AS category_slug, forums_posts.date_add');
-        $this->db->from('forums_threads');
-        $this->db->from('forums_categories');
-        $this->db->from('forums_posts');
-        $this->db->where('forums_threads.category_id', 'forums_categories.id');
-        $this->db->where('forums_threads.id', 'forums_posts.thread_id');
+        $this->db->select_max('forums_posts.date_add');
+        $this->db->join('forums_categories', 'forums_threads.category_id = forums_categories.id');
+        $this->db->join('forums_posts', 'forums_threads.id = forums_posts.thread_id');
         if(is_array($cat_id))
         {
             foreach($cat_id as $key => $value)
@@ -67,15 +58,9 @@ class Thread_model extends CI_Model {
             $this->db->where('forums_threads.category_id', $cat_id);
         }
         
-        
-        //@todo
-        $where = 'forums_posts.date_add = (SELECT MAX(date_add) FROM forums_posts WHERE thread_id = forums_threads.id LIMIT 1)';
-        $this->db->where($where);
-        //$this->db->where('forums_posts.id', $this->db->group_start()->select_max('forums_posts.date_add')->from('forum_posts')->where('forums_posts.thread_id', 'forums_thread.id')->limit(1)->group_end());
-        
         $this->db->order_by('forums_posts.date_add', 'DESC');
         $this->db->limit($limit, $start);
-        return $this->db->get()->result();*/
+        return $this->db->get('forums_threads')->result();
     }
     
     public function get_latest_post_in_thread($thread_id)

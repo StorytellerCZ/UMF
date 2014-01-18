@@ -40,7 +40,7 @@ class Manage_forums extends CI_Controller {
 	
 	//validate data
         $this->form_validation->set_rules('category_name', 'lang:forums_name', 'required|trim|xss_clean|is_unique[forums_categories.name]');
-	$this->form_validation->set_rules('category_slug', 'lang:forums_slug', 'required|trim|xss_clean|alpha_numeric|is_unique[forums_categories.slug]');
+	$this->form_validation->set_rules('category_slug', 'lang:forums_slug', 'required|trim|xss_clean|alpha_dash|is_unique[forums_categories.slug]');
 	$this->form_validation->set_rules('category_parent', 'lang:forums_parent', 'required|trim|xss_clean|integer');
 	
 	if($this->form_validation->run())
@@ -105,7 +105,7 @@ class Manage_forums extends CI_Controller {
 	
         //validate data
         $this->form_validation->set_rules('category_name', 'lang:forums_name', 'required|trim|xss_clean|is_unique[forums_categories.name]');
-	$this->form_validation->set_rules('category_slug', 'lang:forums_slug', 'required|trim|xss_clean|alpha_numeric|is_unique[forums_categories.slug]');
+	$this->form_validation->set_rules('category_slug', 'lang:forums_slug', 'required|trim|xss_clean|alpha_dash|is_unique[forums_categories.slug]');
 	$this->form_validation->set_rules('category_parent', 'lang:forums_parent', 'required|trim|xss_clean|integer');
 	
 	if($this->form_validation->run())
@@ -212,7 +212,7 @@ class Manage_forums extends CI_Controller {
 	
 	//validate data
         $this->form_validation->set_rules('thread-title', 'lang:forums_name', 'required|trim|xss_clean|is_unique[forums_categories.name]');
-	$this->form_validation->set_rules('thread-slug', 'lang:forums_slug', 'required|trim|xss_clean|alpha_numeric|is_unique[forums_categories.slug]');
+	$this->form_validation->set_rules('thread-slug', 'lang:forums_slug', 'required|trim|xss_clean|alpha_dash|is_unique[forums_categories.slug]');
 	$this->form_validation->set_rules('thread-category', 'lang:forums_parent', 'required|trim|xss_clean|integer');
 	
 	if($this->form_validation->run())

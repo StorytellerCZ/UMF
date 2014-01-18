@@ -10,10 +10,11 @@ class Posts_model extends CI_Model {
     
     public function get($thread_id, $start, $limit)
     {
-        $sql = "SELECT a.*, b.username, b.id as user_id FROM ".'forums_posts'." a, a3m_account b 
-                WHERE a.thread_id = ".$thread_id." AND a.author_id = b.id 
-                ORDER BY a.date_add ASC LIMIT ".$start.", ".$limit;
-        return $this->db->query($sql)->result();
+        $this->db->select('forums_posts.*, a3m_account.username');
+        $this->db->join('a3m_account', 'forums_posts.author_id = a3m_account.id');
+        $this->db->order_by('forums_posts.date_add', 'ASC');
+        $this->db->limit($limit, $start);
+        return $this->db->get_where('forums_posts', array('forums_posts.thread_id' => $thread_id))->result();
     }
     
     public function reply($thread_id, $author, $post)
@@ -35,9 +36,8 @@ class Posts_model extends CI_Model {
     
     public function get_latest_in_thread($thread_id)
     {
-        $where = 'date_add = (SELECT MAX(date_add) FROM forums_posts WHERE thread_id = ' . $this->db->escape($thread_id) . ')';
-        //$this->db->where('thread_id', $thread_id);
-        $this->db->where($where);
+        $this->db->select_max('date_add');
+        $this->db->where('thread_id', $where);
         $this->db->limit(1);
         return $this->db->get('forums_posts')->row();
     }
