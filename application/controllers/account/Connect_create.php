@@ -18,9 +18,7 @@ class Connect_create extends CI_Controller {
 		$this->load->language(array('general', 'account/connect_third_party'));
 	}
 
-	/**
-	 * Complete facebook's authentication process
-	 *
+	/*
 	 * @access public
 	 * @return void
 	 */
