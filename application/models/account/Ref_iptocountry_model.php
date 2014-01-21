@@ -14,7 +14,7 @@ class Ref_iptocountry_model extends CI_Model {
 		// Unsigned long representation of ip address
 		$ulip = sprintf("%u", ip2long($ip));
 
-		$query = $this->db->get_where('ref_iptocountry', array('ip_from <' => $ulip, 'ip_to >' => $ulip));
+		$query = $this->db->get_where($this->db->dbprefix . 'ref_iptocountry', array('ip_from <' => $ulip, 'ip_to >' => $ulip));
 
 		if ($row = $query->row())
 		{

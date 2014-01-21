@@ -10,7 +10,7 @@ class Account_providers_model extends CI_Model {
     public function get_by_user_id($user_id)
     {
         $this->db->order_by('provider', 'ACS');
-        return $this->db->get_where('a3m_providers', array('user_id' => $user_id))->result();
+        return $this->db->get_where($this->db->dbprefix . 'a3m_providers', array('user_id' => $user_id))->result();
     }
     
     // --------------------------------------------------------------------
@@ -23,7 +23,7 @@ class Account_providers_model extends CI_Model {
      */
     public function get_by_provider_uid($provider, $id)
     {
-        return $this->db->get_where('a3m_providers', array('provider' => $provider, 'provider_uid' => $id))->row();
+        return $this->db->get_where($this->db->dbprefix . 'a3m_providers', array('provider' => $provider, 'provider_uid' => $id))->row();
     }
     
     // --------------------------------------------------------------------
@@ -34,7 +34,7 @@ class Account_providers_model extends CI_Model {
     public function insert($user_id, $provider, $provider_uid, $email, $display_name, $first_name, $last_name, $profile_url, $website_url, $photo_url)
     {
         $this->load->helper('date');
-        $this->db->insert('a3m_providers', array('user_id' => $user_id, 'provider' => $provider, 'provider_uid' => $provider_uid, 'email' => $email, 'display_name' => $display_name, 'first_name' => $first_name, 'last_name' => $last_name, 'profile_url' => $profile_url, 'website_url' => $website_url, 'photo_url' => $photo_url, 'created_at' => mdate('%Y-%m-%d %H:%i:%s', now()) ));
+        $this->db->insert($this->db->dbprefix . 'a3m_providers', array('user_id' => $user_id, 'provider' => $provider, 'provider_uid' => $provider_uid, 'email' => $email, 'display_name' => $display_name, 'first_name' => $first_name, 'last_name' => $last_name, 'profile_url' => $profile_url, 'website_url' => $website_url, 'photo_url' => $photo_url, 'created_at' => mdate('%Y-%m-%d %H:%i:%s', now()) ));
     }
     
     // --------------------------------------------------------------------
@@ -48,7 +48,7 @@ class Account_providers_model extends CI_Model {
     public function delete($user_id, $provider, $uid)
     {
         $this->db->where(array('user_id' => $user_id, 'provider' => $provider, 'provider_uid' => $uid));
-        $this->db->delete('a3m_providers');
+        $this->db->delete($this->db->dbprefix . 'a3m_providers');
     }
 }
 /* End of file Account_providers_model.php */

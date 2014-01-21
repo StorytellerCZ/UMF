@@ -10,7 +10,7 @@ class Acl_permission_model extends CI_Model {
    */
   function get()
   {
-    return $this->db->get('a3m_acl_permission')->result();
+    return $this->db->get($this->db->dbprefix . 'a3m_acl_permission')->result();
   }
 
   // --------------------------------------------------------------------
@@ -23,7 +23,7 @@ class Acl_permission_model extends CI_Model {
    */
   function get_by_id($id)
   {
-    return $this->db->get_where('a3m_acl_permission', array('id' => $id))->row();
+    return $this->db->get_where($this->db->dbprefix . 'a3m_acl_permission', array('id' => $id))->row();
   }
 
   // --------------------------------------------------------------------
@@ -37,11 +37,11 @@ class Acl_permission_model extends CI_Model {
    */
   function get_by_account_id($account_id)
   {
-    $this->db->select('a3m_acl_permission.*');
-    $this->db->from('a3m_acl_permission');
-    $this->db->join('a3m_rel_role_permission', 'a3m_acl_permission.id = a3m_rel_role_permission.permission_id');
-    $this->db->join('a3m_rel_account_role', 'a3m_rel_role_permission.role_id = a3m_rel_account_role.role_id');
-    $this->db->where("a3m_rel_account_role.account_id = $account_id AND a3m_acl_permission.suspendedon IS NULL");
+    $this->db->select($this->db->dbprefix . 'a3m_acl_permission.*');
+    $this->db->from($this->db->dbprefix . 'a3m_acl_permission');
+    $this->db->join($this->db->dbprefix . 'a3m_rel_role_permission', $this->db->dbprefix . 'a3m_acl_permission.id = '.$this->db->dbprefix . 'a3m_rel_role_permission.permission_id');
+    $this->db->join($this->db->dbprefix . 'a3m_rel_account_role', $this->db->dbprefix . 'a3m_rel_role_permission.role_id = '.$this->db->dbprefix . 'a3m_rel_account_role.role_id');
+    $this->db->where($this->db->dbprefix . "a3m_rel_account_role.account_id = $account_id AND ". $this->db->dbprefix . "a3m_acl_permission.suspendedon IS NULL");
     
     return $this->db->get()->result();
   }
@@ -57,7 +57,7 @@ class Acl_permission_model extends CI_Model {
    */
   function get_by_name($permission_name)
   {
-    return $this->db->get_where('a3m_acl_permission', array('key' => $permission_name))->row();
+    return $this->db->get_where($this->db->dbprefix . 'a3m_acl_permission', array('key' => $permission_name))->row();
   }
 
   // --------------------------------------------------------------------
@@ -72,11 +72,11 @@ class Acl_permission_model extends CI_Model {
    */
   function has_permission($permission_key, $account_id)
   {
-    $this->db->select('a3m_acl_permission.*');
-    $this->db->from('a3m_acl_permission');
-    $this->db->join('a3m_rel_role_permission', 'a3m_acl_permission.id = a3m_rel_role_permission.permission_id');
-    $this->db->join('a3m_rel_account_role', 'a3m_rel_role_permission.role_id = a3m_rel_account_role.role_id');
-    $this->db->where("a3m_rel_account_role.account_id = $account_id AND a3m_acl_permission.suspendedon IS NULL AND a3m_acl_permission.key = $permission_key");
+    $this->db->select($this->db->dbprefix . 'a3m_acl_permission.*');
+    $this->db->from($this->db->dbprefix . 'a3m_acl_permission');
+    $this->db->join($this->db->dbprefix . 'a3m_rel_role_permission', $this->db->dbprefix . 'a3m_acl_permission.id = '.$this->db->dbprefix . 'a3m_rel_role_permission.permission_id');
+    $this->db->join($this->db->dbprefix . 'a3m_rel_account_role', $this->db->dbprefix . 'a3m_rel_role_permission.role_id = '.$this->db->dbprefix . 'a3m_rel_account_role.role_id');
+    $this->db->where($this->db->dbprefix . "a3m_rel_account_role.account_id = $account_id AND a3m_acl_permission.suspendedon IS NULL AND a3m_acl_permission.key = $permission_key");
 
     return ($this->db->count_all_results() > 0);
   }
@@ -97,12 +97,12 @@ class Acl_permission_model extends CI_Model {
     if ($this->get_by_id($permission_id))
     {
       $this->db->where('id', $permission_id);
-      $this->db->update('a3m_acl_permission', $attributes);
+      $this->db->update($this->db->dbprefix . 'a3m_acl_permission', $attributes);
     }
     // Insert
     else
     {
-      $this->db->insert('a3m_acl_permission', $attributes);
+      $this->db->insert($this->db->dbprefix . 'a3m_acl_permission', $attributes);
       $permission_id = $this->db->insert_id();
     }
 
@@ -122,7 +122,7 @@ class Acl_permission_model extends CI_Model {
   {
     $this->load->helper('date');
 
-    $this->db->update('a3m_acl_permission', array('suspendedon' => mdate('%Y-%m-%d %H:%i:%s', now())), array('id' => $permission_id));
+    $this->db->update($this->db->dbprefix . 'a3m_acl_permission', array('suspendedon' => mdate('%Y-%m-%d %H:%i:%s', now())), array('id' => $permission_id));
   }
 
   // --------------------------------------------------------------------
@@ -136,7 +136,7 @@ class Acl_permission_model extends CI_Model {
    */
   function remove_suspended_datetime($permission_id)
   {
-    $this->db->update('a3m_acl_permission', array('suspendedon' => NULL), array('id' => $permission_id));
+    $this->db->update($this->db->dbprefix . 'a3m_acl_permission', array('suspendedon' => NULL), array('id' => $permission_id));
   }
 
   // --------------------------------------------------------------------
@@ -150,7 +150,7 @@ class Acl_permission_model extends CI_Model {
    */
   function delete($permission_id)
   {
-    $this->db->delete('a3m_acl_permission', array('id' => $permission_id));
+    $this->db->delete($this->db->dbprefix . 'a3m_acl_permission', array('id' => $permission_id));
   }
 }
 

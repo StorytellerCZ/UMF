@@ -14,7 +14,7 @@ class Ref_language_model extends CI_Model {
 		$this->db->where('one', $country);
 		$this->db->or_where('two', $country);
 		$this->db->or_where('language', $country);
-		$query = $this->db->get('ref_language');
+		$query = $this->db->get($this->db->dbprefix . 'ref_language');
 		if ($query->num_rows()) return $query->row();
 	}
 
@@ -29,7 +29,7 @@ class Ref_language_model extends CI_Model {
 	function get_all()
 	{
 		$this->db->order_by('language', 'asc');
-		return $this->db->get('ref_language')->result();
+		return $this->db->get($this->db->dbprefix . 'ref_language')->result();
 	}
 
 }
