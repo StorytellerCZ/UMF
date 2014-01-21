@@ -23,6 +23,7 @@ $lang['forums_parent_none'] = "-- none --";
 $lang['forums_thread_start'] = "Start a new thread";
 $lang['forums_thread_new'] = "Create a new Thread";
 $lang['forums_thread_create'] = "Create Thread";
+$lang['forums_thread_created'] = "New thread created!";
 $lang['forums_thread_edit'] = "Edit Thread";
 $lang['forums_threads'] = "Threads";
 $lang['forums_threads_all'] = "All Threads";
@@ -35,6 +36,7 @@ $lang['forums_threads_deleted'] = "Thread deleted!";
 $lang['forums_last_update'] = "Last update";
 $lang['forums_initial_post'] = "First post";
 $lang['forums_reply'] = "Reply";
+$lang['forums_reply_posted'] = "Reply posted!";
 
 //for librari's time_ago function
 $lang['forums_time_second'] = "second";

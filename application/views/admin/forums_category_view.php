@@ -34,8 +34,8 @@
                     <p class="text-center"><?php echo lang('forums_category_delete_confirm') ?></p>
                 </div>
                 <div class="modal-footer" class="text-center">
-                    <a href="#" class="btn btn-default" data-dismiss="modal">Cancel</a>
-                    <a href="#" class="btn btn-primary" id="btn-delete">Delete</a>
+                    <a href="#" class="btn btn-default" data-dismiss="modal"><?php echo lang('website_cancel'); ?></a>
+                    <a href="#" class="btn btn-primary" id="btn-delete"><?php echo lang('website_delete'); ?></a>
                 </div>
             </div>
         </div>

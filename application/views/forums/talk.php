@@ -20,13 +20,13 @@
     <?php if (isset($tmp_success)): ?>
     <div class="alert alert-success">
         <a class="close" data-dismiss="alert" href="#">&times;</a>
-        <h4 class="alert-heading">Reply posted!</h4>
+        <h4 class="alert-heading"><?php echo lang('forums_reply_posted'); ?></h4>
     </div>
     <?php endif; ?>
     <?php if (isset($tmp_success_new)): ?>
     <div class="alert alert-success">
         <a class="close" data-dismiss="alert" href="#">&times;</a>
-        <h4 class="alert-heading">New thread created!</h4>
+        <h4 class="alert-heading"><?php echo lang('forums_thread_created'); ?></h4>
     </div>
     <?php endif; ?>
 

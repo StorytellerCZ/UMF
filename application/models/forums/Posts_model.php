@@ -10,11 +10,11 @@ class Posts_model extends CI_Model {
     
     public function get($thread_id, $start, $limit)
     {
-        $this->db->select('forums_posts.*, a3m_account.username');
-        $this->db->join('a3m_account', 'forums_posts.author_id = a3m_account.id');
-        $this->db->order_by('forums_posts.date_add', 'ASC');
+        $this->db->select($this->db->dbprefix . 'forums_posts.*, '.$this->db->dbprefix . 'a3m_account.username');
+        $this->db->join($this->db->dbprefix . 'a3m_account', $this->db->dbprefix . 'forums_posts.author_id = '.$this->db->dbprefix . 'a3m_account.id');
+        $this->db->order_by($this->db->dbprefix . $this->db->dbprefix . 'forums_posts.date_add', 'ASC');
         $this->db->limit($limit, $start);
-        return $this->db->get_where('forums_posts', array('forums_posts.thread_id' => $thread_id))->result();
+        return $this->db->get_where($this->db->dbprefix . 'forums_posts', array($this->db->dbprefix . 'forums_posts.thread_id' => $thread_id))->result();
     }
     
     public function reply($thread_id, $author, $post)
@@ -25,12 +25,12 @@ class Posts_model extends CI_Model {
         $reply['author_id'] = $author;
         $reply['post'] = $post;
         $reply['date_add'] = mdate('%Y-%m-%d %H:%i:%s', now());
-        $this->db->insert('forums_posts', $reply);
+        $this->db->insert($this->db->dbprefix . 'forums_posts', $reply);
     }
     
     public function get_post_num_in_thread($thread_id)
     {
-        return $this->db->get_where('forums_posts', array('thread_id' => $thread_id))->num_rows();
+        return $this->db->get_where($this->db->dbprefix . 'forums_posts', array('thread_id' => $thread_id))->num_rows();
     }
     
     
@@ -39,6 +39,6 @@ class Posts_model extends CI_Model {
         $this->db->select_max('date_add');
         $this->db->where('thread_id', $where);
         $this->db->limit(1);
-        return $this->db->get('forums_posts')->row();
+        return $this->db->get($this->db->dbprefix . 'forums_posts')->row();
     }
 }

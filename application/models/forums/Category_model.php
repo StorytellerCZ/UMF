@@ -18,12 +18,12 @@ class Category_model extends CI_Model {
      */
     public function get($category_id)
     {
-	return $this->db->get_where('forums_categories', array('id' => $category_id))->row();
+	return $this->db->get_where($this->db->dbprefix . 'forums_categories', array('id' => $category_id))->row();
     }
     
     public function get_by_slug($slug)
     {
-	return $this->db->get_where('forums_categories', array('slug' => $slug))->row();
+	return $this->db->get_where($this->db->dbprefix . 'forums_categories', array('slug' => $slug))->row();
     }
     
     /*
@@ -34,7 +34,7 @@ class Category_model extends CI_Model {
      */
     public function create($name, $slug, $parent)
     {
-        $this->db->insert('forums_categories', array('parent_id' => $parent, 'name' => $name, 'slug' => $slug, 'date_added' => mdate('%Y-%m-%d %H:%i:%s', now()), 'publish' => 1));
+        $this->db->insert($this->db->dbprefix . 'forums_categories', array('parent_id' => $parent, 'name' => $name, 'slug' => $slug, 'date_added' => mdate('%Y-%m-%d %H:%i:%s', now()), 'publish' => 1));
     }
     
     /*
@@ -47,14 +47,14 @@ class Category_model extends CI_Model {
     public function edit($id, $name, $slug, $parent)
     {
 	$this->db->where('id', $id);
-	$this->db->update('forums_categories', array('parent_id' => $parent, 'name' => $name, 'slug' => $slug, 'date_edit' => mdate('%Y-%m-%d %H:%i:%s', now())));
+	$this->db->update($this->db->dbprefix . 'forums_categories', array('parent_id' => $parent, 'name' => $name, 'slug' => $slug, 'date_edit' => mdate('%Y-%m-%d %H:%i:%s', now())));
     }
     
     public function get_all($cat_id = 0)
     {   
         $this->data = array();
         $this->db->order_by('name', 'asc');
-        $query = $this->db->get_where('forums_categories', array('parent_id' => $cat_id));
+        $query = $this->db->get_where($this->db->dbprefix . 'forums_categories', array('parent_id' => $cat_id));
         $counter = 0;
         foreach ($query->result() as $row) {
             $this->data[$counter]['id'] = $row->id;
@@ -72,7 +72,7 @@ class Category_model extends CI_Model {
     public function get_children($id, $separator, $counter)
 	{
         $this->db->order_by('name', 'asc');
-		$query = $this->db->get_where('forums_categories', array('parent_id' => $id));
+		$query = $this->db->get_where($this->db->dbprefix . 'forums_categories', array('parent_id' => $id));
 		if ($query->num_rows() == 0)
 		{
 			return FALSE;
@@ -101,7 +101,7 @@ class Category_model extends CI_Model {
     public function get_all_parent($id, $counter = 0)
     {
 	$this->data = NULL;
-        $row = $this->db->get_where('forums_categories', array('id' => $id))->row_array();
+        $row = $this->db->get_where($this->db->dbprefix . 'forums_categories', array('id' => $id))->row_array();
 	$this->data[$counter] = $row;
         if ($row['parent_id'] != 0)
 	{
@@ -114,6 +114,6 @@ class Category_model extends CI_Model {
     public function delete($category_id)
     {
 	//@todo figure out what to do with threads in this situation
-	$this->db->delete('forums_categories', array('id' => $category_id));
+	$this->db->delete($this->db->dbprefix . 'forums_categories', array('id' => $category_id));
     }
 }
