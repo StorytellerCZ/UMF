@@ -1,13 +1,13 @@
 <div class="col-lg-12">
     <div class="page-header">
         <h1><?php echo lang('pm_welcome'); ?>
-        <?php echo anchor('#msg_new', lang('pm_new'), array('class' => 'btn btn-success pull-right', 'data-toggle' => 'modal', 'data-target' => '#new-msg')) ?></h1>
+        <?php echo anchor('#msg_new', '<span class="glyphicon glyphicon-plus"></span> ' . lang('pm_new'), array('class' => 'btn btn-success pull-right', 'data-toggle' => 'modal', 'data-target' => '#new-msg')) ?></h1>
     </div>
     <?php
         if(isset($response)) print_r($response);
         if(empty($threads))
         {
-            echo lang('pm_no_msg');
+            echo '<div class="alert alert-warning text-center">' . lang('pm_no_msg') . '</div>';
         }
         else
         {

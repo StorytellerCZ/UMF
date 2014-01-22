@@ -109,11 +109,11 @@ class Mahana_model extends CI_Model
      */
     function get_message($msg_id, $user_id)
     {
-        $this->db->select($this->db->dbprefix . 'msg_messages.*, msg_status.status, msg_threads.subject, a3m_account.username');
-        $this->db->join($this->db->dbprefix . 'msg_threads', 'msg_messages.thread_id = msg_threads.id');
-        $this->db->join($this->db->dbprefix . 'a3m_account', 'a3m_account.id = msg_messages.sender_id');
-        $this->db->join($this->db->dbprefix . 'msg_status', 'msg_status.message_id = msg_messages.id');
-        return $this->db->get_where('msg_messages', array('msg_messages.id' => $msg_id, 'msg_status.user_id' => $user_id))->result_array();
+        $this->db->select($this->db->dbprefix . 'msg_messages.*, '.$this->db->dbprefix . 'msg_status.status, '.$this->db->dbprefix . 'msg_threads.subject, '.$this->db->dbprefix . 'a3m_account.username');
+        $this->db->join($this->db->dbprefix . 'msg_threads', $this->db->dbprefix . 'msg_messages.thread_id = '.$this->db->dbprefix . 'msg_threads.id');
+        $this->db->join($this->db->dbprefix . 'a3m_account', $this->db->dbprefix . 'a3m_account.id = '.$this->db->dbprefix . 'msg_messages.sender_id');
+        $this->db->join($this->db->dbprefix . 'msg_status', $this->db->dbprefix . 'msg_status.message_id = '.$this->db->dbprefix . 'msg_messages.id');
+        return $this->db->get_where($this->db->dbprefix . 'msg_messages', array('msg_messages.id' => $msg_id, 'msg_status.user_id' => $user_id))->result_array();
     }
 
     // ------------------------------------------------------------------------
@@ -127,9 +127,9 @@ class Mahana_model extends CI_Model
      * @param   string   $order_by
      * @return  array
      */
-    function get_full_thread($thread_id, $user_id, $full_thread = FALSE, $order_by = 'asc')
+    function get_full_thread($thread_id, $user_id, $full_thread = FALSE, $order_by = 'ASC')
     {
-        $sql = 'SELECT m.*, s.status, t.subject, a3m_account.username' .
+        /*$sql = 'SELECT m.*, s.status, t.subject, a3m_account.username' .
         ' FROM ' . $this->db->dbprefix . 'msg_participants p ' .
         ' JOIN ' . $this->db->dbprefix . 'msg_threads t ON (t.id = p.thread_id) ' .
         ' JOIN ' . $this->db->dbprefix . 'msg_messages m ON (m.thread_id = t.id) ' .
@@ -137,15 +137,39 @@ class Mahana_model extends CI_Model
         ' JOIN ' . $this->db->dbprefix . 'msg_status s ON (s.message_id = m.id AND s.user_id = ? ) ' .
         ' WHERE p.user_id = ? ' .
         ' AND p.thread_id = ? ';
+        */
+        $this->db->select($this->db->dbprefix . 'msg_messages.*, ' .
+                          $this->db->dbprefix . 'msg_status.status, ' .
+                          $this->db->dbprefix . 'msg_threads.subject, ' .
+                          $this->db->dbprefix . 'a3m_account.username');
+        
+        $this->db->join($this->db->dbprefix . 'msg_threads',
+                        $this->db->dbprefix . 'msg_threads.id = ' . $this->db->dbprefix . 'msg_participants.thread_id');
+        
+        $this->db->join($this->db->dbprefix . 'msg_messages',
+                        $this->db->dbprefix . 'msg_messages.thread_id = ' . $this->db->dbprefix . 'msg_threads.id');
+        
+        $this->db->join($this->db->dbprefix . 'a3m_account',
+                        $this->db->dbprefix . 'a3m_account.id = ' . $this->db->dbprefix . 'msg_messages.sender_id');
+        
+        $this->db->join($this->db->dbprefix . 'msg_status',
+                        $this->db->dbprefix . 'msg_status.message_id = ' . $this->db->dbprefix . 'msg_messages.id AND ' .
+                        $this->db->dbprefix.'msg_status.user_id = '. $user_id);
+        
+        $this->db->where($this->db->dbprefix . 'msg_participants.user_id', $user_id);
+        $this->db->where($this->db->dbprefix . 'msg_participants.thread_id', $thread_id);
 
         if ( ! $full_thread)
         {
-            $sql .= ' AND m.cdate >= p.cdate';
+            //$sql .= ' AND m.cdate >= p.cdate';
+            $this->db->where($this->db->dbprefix . 'msg_messages.cdate >=', $this->db->dbprefix . 'msg_participants.cdate', FALSE);
         }
 
-        $sql .= ' ORDER BY m.cdate ' . $order_by;
+        //$sql .= ' ORDER BY m.cdate ' . $order_by;
+        $this->db->order_by($this->db->dbprefix . 'msg_messages.cdate', $order_by);
 
-        $query = $this->db->query($sql, array($user_id, $user_id, $thread_id));
+        //$query = $this->db->query($sql, array($user_id, $user_id, $thread_id));
+        $query = $this->db->get($this->db->dbprefix . 'msg_participants');
 
         return $query->result_array();
     }
@@ -160,24 +184,49 @@ class Mahana_model extends CI_Model
      * @param   string   $order_by
      * @return  array
      */
-    function get_all_threads($user_id, $full_thread = FALSE, $order_by = 'asc')
+    function get_all_threads($user_id, $full_thread = FALSE, $order_by = 'ASC')
     {
-        $sql = 'SELECT m.*, s.status, t.subject, a.username' .
+        /*$sql = 'SELECT m.*, s.status, t.subject, a.username' .
         ' FROM ' . $this->db->dbprefix . 'msg_participants p ' .
         ' JOIN ' . $this->db->dbprefix . 'msg_threads t ON (t.id = p.thread_id) ' .
         ' JOIN ' . $this->db->dbprefix . 'msg_messages m ON (m.thread_id = t.id) ' .
         ' JOIN ' . $this->db->dbprefix . 'a3m_account a ON (a.id = m.sender_id) '.
         ' JOIN ' . $this->db->dbprefix . 'msg_status s ON (s.message_id = m.id AND s.user_id = ? ) ' .
         ' WHERE p.user_id = ? ' ;
+        */
+        $this->db->select($this->db->dbprefix . 'msg_messages.*, ' .
+                          $this->db->dbprefix . 'msg_status.status, ' .
+                          $this->db->dbprefix . 'msg_threads.subject, ' .
+                          $this->db->dbprefix . 'a3m_account.username', FALSE);
+        
+        $this->db->join($this->db->dbprefix . 'msg_threads',
+                        $this->db->dbprefix . 'msg_threads.id = ' . $this->db->dbprefix . 'msg_participants.thread_id');
+        
+        $this->db->join($this->db->dbprefix . 'msg_messages',
+                        $this->db->dbprefix . 'msg_messages.thread_id = ' . $this->db->dbprefix . 'msg_threads.id');
+        
+        $this->db->join($this->db->dbprefix . 'a3m_account', 
+                        $this->db->dbprefix . 'a3m_account.id = ' . $this->db->dbprefix . 'msg_messages.sender_id');
+        
+        $this->db->join($this->db->dbprefix . 'msg_status',
+                        $this->db->dbprefix . 'msg_status.message_id = ' .
+                        $this->db->dbprefix . 'msg_messages.id AND ' .
+                        $this->db->dbprefix.'msg_status.user_id = '. $user_id);
+        
+        $this->db->where($this->db->dbprefix . 'msg_participants.user_id', $user_id);
 
         if (!$full_thread)
         {
-            $sql .= ' AND m.cdate >= p.cdate';
+            //$sql .= ' AND m.cdate >= p.cdate';
+            $this->db->where($this->db->dbprefix . 'msg_messages.cdate >=', $this->db->dbprefix . 'msg_participants.cdate', FALSE);
         }
 
-        $sql .= ' ORDER BY t.id ' . $order_by. ', m.cdate '. $order_by;
+        //$sql .= ' ORDER BY t.id ' . $order_by. ', m.cdate '. $order_by;
+        $this->db->order_by($this->db->dbprefix . 'msg_threads.id', $order_by);
+        $this->db->order_by($this->db->dbprefix . 'msg_messages.cdate', $order_by);
 
-        $query = $this->db->query($sql, array($user_id, $user_id));
+        //$query = $this->db->query($sql, array($user_id, $user_id));
+        $query = $this->db->get($this->db->dbprefix . 'msg_participants');
 
         return $query->result_array();
     }
@@ -195,7 +244,7 @@ class Mahana_model extends CI_Model
     function update_message_status($msg_id, $user_id, $status_id)
     {
         $this->db->where(array('message_id' => $msg_id, 'user_id' => $user_id ));
-        $this->db->update('msg_status', array('status' => $status_id ));
+        $this->db->update($this->db->dbprefix . 'msg_status', array('status' => $status_id ));
 
         return $this->db->affected_rows();
     }
@@ -277,14 +326,11 @@ class Mahana_model extends CI_Model
      */
     function valid_new_participant($thread_id, $user_id)
     {
-        $sql = 'SELECT COUNT(*) AS count ' .
-        ' FROM ' . $this->db->dbprefix . 'msg_participants p ' .
-        ' WHERE p.thread_id = ? ' .
-        ' AND p.user_id = ? ';
+        $this->db->from($this->db->dbprefix . 'msg_participants');
+        $this->db->where('thread_id', $thread_id);
+        $this->db->where('user_id', $user_id);
 
-        $query = $this->db->query($sql, array($thread_id, $user_id));
-
-        if ($query->row()->count)
+        if($this->db->count_all_results())
         {
             return FALSE;
         }
@@ -302,13 +348,10 @@ class Mahana_model extends CI_Model
      */
     function application_user($user_id)
     {
-        $sql = 'SELECT COUNT(*) AS count ' .
-        ' FROM ' . $this->db->dbprefix . 'a3m_account a' .
-        ' WHERE a.id = ?' ;
+        $this->db->from($this->db->dbprefix . 'a3m_account');
+        $this->db->where('id', $user_id);
 
-        $query = $this->db->query($sql, array($user_id));
-
-        if ($query->row()->count)
+        if($this->db->count_all_results())
         {
             return TRUE;
         }
@@ -345,7 +388,7 @@ class Mahana_model extends CI_Model
      */
     function get_msg_count($user_id, $status_id = MSG_STATUS_UNREAD)
     {
-        $query = $this->db->select('COUNT(*) AS msg_count')->where(array('user_id' => $user_id, 'status' => $status_id ))->get('msg_status');
+        $query = $this->db->select('COUNT(*) AS msg_count')->where(array('user_id' => $user_id, 'status' => $status_id ))->get($this->db->dbprefix . 'msg_status');
 
         return $query->row()->msg_count;
     }
@@ -362,7 +405,7 @@ class Mahana_model extends CI_Model
      */
     private function _insert_thread($subject)
     {
-        $insert_id = $this->db->insert('msg_threads', array('subject' => $subject));
+        $insert_id = $this->db->insert($this->db->dbprefix . 'msg_threads', array('subject' => $subject));
 
         return $this->db->insert_id();
     }
@@ -383,7 +426,7 @@ class Mahana_model extends CI_Model
         $insert['body']      = $body;
         $insert['priority']  = $priority;
 
-        $insert_id = $this->db->insert('msg_messages', $insert);
+        $insert_id = $this->db->insert($this->db->dbprefix . 'msg_messages', $insert);
 
         return $this->db->insert_id();
     }
@@ -396,7 +439,7 @@ class Mahana_model extends CI_Model
      */
     private function _insert_participants($participants)
     {
-        return $this->db->insert_batch('msg_participants', $participants);
+        return $this->db->insert_batch($this->db->dbprefix . 'msg_participants', $participants);
     }
 
     /**
@@ -407,7 +450,7 @@ class Mahana_model extends CI_Model
      */
     private function _insert_statuses($statuses)
     {
-        return $this->db->insert_batch('msg_status', $statuses);
+        return $this->db->insert_batch($this->db->dbprefix . 'msg_status', $statuses);
     }
 
     /**
@@ -418,7 +461,7 @@ class Mahana_model extends CI_Model
      */
     private function _get_thread_id_from_message($msg_id)
     {
-        $query = $this->db->select('thread_id')->get_where('msg_messages', array('id' => $msg_id));
+        $query = $this->db->select('thread_id')->get_where($this->db->dbprefix . 'msg_messages', array('id' => $msg_id));
 
         if ($query->num_rows())
         {
@@ -435,7 +478,7 @@ class Mahana_model extends CI_Model
      */
     private function _get_messages_by_thread_id($thread_id)
     {
-        $query = $this->db->get_where('msg_messages', array('thread_id' => $thread_id));
+        $query = $this->db->get_where($this->db->dbprefix . 'msg_messages', array('thread_id' => $thread_id));
 
         return $query->result_array();
     }
@@ -457,10 +500,12 @@ class Mahana_model extends CI_Model
             $array['msg_participants.user_id != '] = $sender_id;
         }
 
-        $this->db->select('msg_participants.user_id, a3m_account.username', FALSE);
-        $this->db->join('a3m_account', 'msg_participants.user_id = a3m_account.id');
+        $this->db->select($this->db->dbprefix . 'msg_participants.user_id, ' .
+                          $this->db->dbprefix . 'a3m_account.username', FALSE);
+        $this->db->join($this->db->dbprefix . 'a3m_account',
+                        $this->db->dbprefix . 'msg_participants.user_id = '.$this->db->dbprefix . 'a3m_account.id');
 
-        $query = $this->db->get_where('msg_participants', $array);
+        $query = $this->db->get_where($this->db->dbprefix . 'msg_participants', $array);
 
         return $query->result_array();
     }
@@ -474,7 +519,7 @@ class Mahana_model extends CI_Model
      */
     private function _delete_participant($thread_id, $user_id)
     {
-        $this->db->delete('msg_participants', array('thread_id' => $thread_id, 'user_id' => $user_id));
+        $this->db->delete($this->db->dbprefix . 'msg_participants', array('thread_id' => $thread_id, 'user_id' => $user_id));
 
         if ($this->db->affected_rows() > 0)
         {
@@ -492,12 +537,9 @@ class Mahana_model extends CI_Model
      */
     private function _delete_statuses($thread_id, $user_id)
     {
-        $sql = 'DELETE s FROM msg_status s ' .
-        ' JOIN ' . $this->db->dbprefix . 'msg_messages m ON (m.id = s.message_id) ' .
-        ' WHERE m.thread_id = ? ' .
-        ' AND s.user_id = ? ';
-
-        $query = $this->db->query($sql, array($thread_id, $user_id));
+        $this->db->join($this->db->dbprefix . 'msg_messages',
+                        $this->db->dbprefix . 'msg_messages.id = '.$this->db->dbprefix . 'msg_status.message_id');
+        $this->db->delete($this->db->dbprefix . 'msg_status', array($this->db->dbprefix .'msg_messages.thread_id' => $thread_id, $this->db->dbprefix . 'msg_status.user_id' => $user_id));
 
         return TRUE;
     }
