@@ -186,6 +186,7 @@ INSERT INTO `a3m_acl_permission` (`key`, `description`, `is_system`) VALUES
 ('update_users', 'Update existing users', 1),
 ('delete_users', 'Delete existing users', 1),
 ('ban_users', 'Ban and Unban existing users', 1),
+('password_reset_users', 'Force user to reset password upon next login', 1),
 ('msg_use', 'Allows user to use messages', 1),
 ('forums_view', 'Allows user to view the forums', 1),
 ('forums_categories_create', 'Allows admin to create forum categories', 1),
