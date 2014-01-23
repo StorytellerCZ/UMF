@@ -124,20 +124,21 @@ class Manage_permissions extends CI_Controller {
       $data['role_permissions'] = $this->Rel_role_permission_model->get_by_permission_id($id);
       $data['action'] = 'update';
       $data['is_system'] = ($data['permission']->is_system == 1);
+      $data['is_disabled'] = isset( $data['permission']->suspendedon );
     }
 
     // Setup form validation
-    $this->form_validation->set_error_delimiters('<div class="field_error">', '</div>');
+    $this->form_validation->set_error_delimiters('<div class="alert alert-danger">', '</div>');
     $this->form_validation->set_rules(
       array(
         array(
           'field' => 'permission_key',
           'label' => 'lang:permissions_key',
-          'rules' => 'trim|required|max_length[80]'),
+          'rules' => 'trim|required|alpha_dash|max_length[80]|xss_clean'),
         array(
           'field' => 'permission_description',
           'label' => 'lang:permissions_description',
-          'rules' => 'trim|optional|max_length[160]')
+          'rules' => 'trim|max_length[160]|xss_clean')
       ));
 
     // Run form validation

@@ -76,6 +76,7 @@ class Thread extends CI_Controller {
         $data['account'] = $this->Account_model->get_by_id($this->session->userdata('account_id'));
         
         //validate data
+        $this->form_validation->set_error_delimiters('<div class="alert alert-danger">', '</div>');
         $this->form_validation->set_rules('thread-title', 'lang:forums_name', 'required|trim|xss_clean');
 	$this->form_validation->set_rules('thread-slug', 'lang:forums_slug', 'required|trim|xss_clean|alpha_dash|is_unique[forums_threads.slug]');
         $this->form_validation->set_rules('thread-post', 'lang:forums_initial_post', 'required|trim|xss_clean');

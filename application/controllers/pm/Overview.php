@@ -50,6 +50,7 @@ class Overview extends CI_Controller {
         if($this->input->post('msg-new', TRUE))
         {
             //create a new message and redirect to it
+            $this->form_validation->set_error_delimiters('<div class="alert alert-danger">', '</div>');
             $this->form_validation->set_rules('msg-recipients', 'lang:pm_recipients', 'required|trim|xss_clean');
             $this->form_validation->set_rules('msg-subject', 'lang:pm_subject', 'required|trim|min_length[2]|xss_clean');
             $this->form_validation->set_rules('msg-text', 'lang:pm_text', 'required|trim|min_length[2]|xss_clean');

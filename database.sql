@@ -97,6 +97,7 @@ CREATE TABLE IF NOT EXISTS `a3m_account` (
   `resetsenton` datetime DEFAULT NULL,
   `deletedon` datetime DEFAULT NULL,
   `suspendedon` datetime DEFAULT NULL,
+  `forceresetpass` tinyint(2) DEFAULT '0',
   PRIMARY KEY (`id`),
   UNIQUE KEY `username` (`username`),
   UNIQUE KEY `email` (`email`)

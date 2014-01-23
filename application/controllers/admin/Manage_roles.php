@@ -29,7 +29,7 @@ class Manage_roles extends CI_Controller {
     // Redirect unauthenticated users to signin page
     if ( ! $this->authentication->is_signed_in())
     {
-      redirect('account/sign_in/?continue='.urlencode(base_url('admin/manage_roles')));
+      redirect('account/sign_in/?continue='.urlencode(base_url().'admin/manage_roles'));
     }
 
     // Redirect unauthorized users to account profile page
@@ -41,7 +41,7 @@ class Manage_roles extends CI_Controller {
     // Retrieve sign in user
     $data['account'] = $this->Account_model->get_by_id($this->session->userdata('account_id'));
 
-    // Get all permissions, roles, and role_permissions
+    // Get all permossions, roles, and role_permissions
     $roles = $this->Acl_role_model->get();
     $permissions = $this->Acl_permission_model->get();
     $role_permissions = $this->Rel_role_permission_model->get();
@@ -130,7 +130,7 @@ class Manage_roles extends CI_Controller {
     $data['account'] = $this->Account_model->get_by_id($this->session->userdata('account_id'));
 
     // Setup form validation
-    $this->form_validation->set_error_delimiters('<div class="field_error">', '</div>');
+    $this->form_validation->set_error_delimiters('<div class="alert alert-danger">', '</div>');
     $this->form_validation->set_rules(
       array(
         array(

@@ -44,6 +44,7 @@ class Message extends CI_Controller {
         if($this->input->post('msg-reply', TRUE))
         {
             //set rules
+            $this->form_validation->set_error_delimiters('<div class="alert alert-danger">', '</div>');
             $this->form_validation->set_rules('msg-reply-id', 'lang:pm_reply', 'required|trim|xss_clean|numeric');
             $this->form_validation->set_rules('msg-subject', 'lang:pm_subject', 'required|trim|min_length[2]|xss_clean');
             $this->form_validation->set_rules('msg-text', 'lang:pm_text', 'required|trim|min_length[2]|xss_clean');

@@ -238,6 +238,8 @@ class Account_model extends CI_Model {
 
 		$this->db->update($this->db->dbprefix . 'a3m_account', array('suspendedon' => mdate('%Y-%m-%d %H:%i:%s', now())), array('id' => $account_id));
 	}
+	
+	// --------------------------------------------------------------------
 
 	/**
 	 * Remove account suspended datetime
@@ -250,6 +252,8 @@ class Account_model extends CI_Model {
 	{
 		$this->db->update($this->db->dbprefix . 'a3m_account', array('suspendedon' => NULL), array('id' => $account_id));
 	}
+	
+	// --------------------------------------------------------------------
 	
 	/**
 	 * Verify user
@@ -264,7 +268,34 @@ class Account_model extends CI_Model {
 	{
 		$this->load->helper('date');
 		
-		$this->db->update($this->db->dbprefix . 'a3m_account', array('verifiedon' => mdate('%Y-%m-%d %H:%i:%s', now())), array('id' => $account_id));
+		$this->db->update('a3m_account', array('verifiedon' => mdate('%Y-%m-%d %H:%i:%s', now())), array('id' => $account_id));
+		
+		if($this->db->affected_rows() === 1)
+		{
+			return TRUE;
+		}
+		
+		return FALSE;
+	}
+	
+	// --------------------------------------------------------------------
+	
+	/**
+	 * Changes the force reset parameter in the DB
+	 * @param int $account_id
+	 * @param boolean $action Set TRUE to force user to reset password on next login or FALSE when the reset has been performed
+	 * @return boolean
+	 */
+	public function force_reset_password($account_id, $action)
+	{
+		$this->db->update($this->db->dbprefix . 'a3m_account', array('forceresetpass' => $action), array('id' => $account_id));
+		
+		if($this->db->affected_rows() === 1)
+		{
+			return TRUE;
+		}
+		
+		return FALSE;
 	}
 }
 
