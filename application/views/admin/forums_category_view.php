@@ -56,8 +56,8 @@
         </tr>
     </thead>
     <tbody>
-        <?php if(count($categories) == 0){
-        echo '<tr><td colspan="4" class="text-center">'. lang('forums_category_none') . anchor('admin/manage_forums/category_create', lang('forums_category_create'), array('class' => 'btn btn-success')) .'</td></tr>';
+        <?php if(count($categories) === 0){
+        echo '<tr><td colspan="4" class="text-center">'. lang('forums_category_none'). " "  . anchor('admin/manage_forums/category_create', lang('forums_category_create') . ' <span class="glyphicon glyphicon-plus"></span>', array('class' => 'btn btn-success')) .'</td></tr>';
         }else{
         foreach ($categories as $cat){ ?>
         <tr>
