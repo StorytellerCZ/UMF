@@ -88,7 +88,7 @@ class Connect_create extends CI_Controller {
 	 */
 	function username_check($username)
 	{
-		return $this->account_model->get_by_username($username) ? TRUE : FALSE;
+		return $this->Account_model->get_by_username($username) ? TRUE : FALSE;
 	}
 
 	/**
@@ -100,7 +100,7 @@ class Connect_create extends CI_Controller {
 	 */
 	function email_check($email)
 	{
-		return $this->account_model->get_by_email($email) ? TRUE : FALSE;
+		return $this->Account_model->get_by_email($email) ? TRUE : FALSE;
 	}
 
 }
