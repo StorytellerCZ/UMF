@@ -27,7 +27,7 @@ class Message extends CI_Controller {
         //check that they are authorized to use private messaging
         if(! $this->authorization->is_permitted('msg_use'))
         {
-            redirect('');
+            redirect(base_url());
         }
         
         //if no message is defined, then redirect back to overview
