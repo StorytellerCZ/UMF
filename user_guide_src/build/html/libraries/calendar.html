@@ -31,7 +31,7 @@
 	<body>
 		<div id="table-contents">
 			<div class="toctree-wrapper compound">
-			<function <lambda> at 0x40e46e0>
+			<function <lambda> at 0x4805140>
 			</div>
 		</div>
 
@@ -130,11 +130,11 @@ parameter of the calendar generating function. Consider this example:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">library</span><span class="p">(</span><span class="s1">&#39;calendar&#39;</span><span class="p">);</span>
 
 <span class="nv">$data</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
-               <span class="mi">3</span>  <span class="o">=&gt;</span> <span class="s1">&#39;http://example.com/news/article/2006/03/&#39;</span><span class="p">,</span>
-               <span class="mi">7</span>  <span class="o">=&gt;</span> <span class="s1">&#39;http://example.com/news/article/2006/07/&#39;</span><span class="p">,</span>
-               <span class="mi">13</span> <span class="o">=&gt;</span> <span class="s1">&#39;http://example.com/news/article/2006/13/&#39;</span><span class="p">,</span>
-               <span class="mi">26</span> <span class="o">=&gt;</span> <span class="s1">&#39;http://example.com/news/article/2006/26/&#39;</span>
-             <span class="p">);</span>
+        <span class="mi">3</span>  <span class="o">=&gt;</span> <span class="s1">&#39;http://example.com/news/article/2006/03/&#39;</span><span class="p">,</span>
+        <span class="mi">7</span>  <span class="o">=&gt;</span> <span class="s1">&#39;http://example.com/news/article/2006/07/&#39;</span><span class="p">,</span>
+        <span class="mi">13</span> <span class="o">=&gt;</span> <span class="s1">&#39;http://example.com/news/article/2006/13/&#39;</span><span class="p">,</span>
+        <span class="mi">26</span> <span class="o">=&gt;</span> <span class="s1">&#39;http://example.com/news/article/2006/26/&#39;</span>
+<span class="p">);</span>
 
 <span class="k">echo</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">calendar</span><span class="o">-&gt;</span><span class="na">generate</span><span class="p">(</span><span class="mi">2006</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="nv">$data</span><span class="p">);</span>
 </pre></div>
@@ -154,11 +154,11 @@ pass different types of information.</p>
 <p>There are seven preferences you can set to control various aspects of
 the calendar. Preferences are set by passing an array of preferences in
 the second parameter of the loading function. Here is an example:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span class="nv">$prefs</span> <span class="o">=</span> <span class="k">array</span> <span class="p">(</span>
-               <span class="s1">&#39;start_day&#39;</span>    <span class="o">=&gt;</span> <span class="s1">&#39;saturday&#39;</span><span class="p">,</span>
-               <span class="s1">&#39;month_type&#39;</span>   <span class="o">=&gt;</span> <span class="s1">&#39;long&#39;</span><span class="p">,</span>
-               <span class="s1">&#39;day_type&#39;</span>     <span class="o">=&gt;</span> <span class="s1">&#39;short&#39;</span>
-             <span class="p">);</span>
+<div class="highlight-ci"><div class="highlight"><pre><span class="nv">$prefs</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+        <span class="s1">&#39;start_day&#39;</span>    <span class="o">=&gt;</span> <span class="s1">&#39;saturday&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;month_type&#39;</span>   <span class="o">=&gt;</span> <span class="s1">&#39;long&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;day_type&#39;</span>     <span class="o">=&gt;</span> <span class="s1">&#39;short&#39;</span>
+<span class="p">);</span>
 
 <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">library</span><span class="p">(</span><span class="s1">&#39;calendar&#39;</span><span class="p">,</span> <span class="nv">$prefs</span><span class="p">);</span>
 
@@ -187,7 +187,7 @@ preferences below.</p>
 <td>None</td>
 <td>None</td>
 <td><dl class="first last docutils">
-<dt>A string containing your calendar template.</dt>
+<dt>A string or array containing your calendar template.</dt>
 <dd>See the template section below.</dd>
 </dl>
 </td>
@@ -251,10 +251,10 @@ preferences below.</p>
 <p>To allow your calendar to dynamically increment/decrement via the
 next/previous links requires that you set up your calendar code similar
 to this example:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span class="nv">$prefs</span> <span class="o">=</span> <span class="k">array</span> <span class="p">(</span>
-               <span class="s1">&#39;show_next_prev&#39;</span>  <span class="o">=&gt;</span> <span class="k">TRUE</span><span class="p">,</span>
-               <span class="s1">&#39;next_prev_url&#39;</span>   <span class="o">=&gt;</span> <span class="s1">&#39;http://example.com/index.php/calendar/show/&#39;</span>
-             <span class="p">);</span>
+<div class="highlight-ci"><div class="highlight"><pre><span class="nv">$prefs</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+        <span class="s1">&#39;show_next_prev&#39;</span>  <span class="o">=&gt;</span> <span class="k">TRUE</span><span class="p">,</span>
+        <span class="s1">&#39;next_prev_url&#39;</span>   <span class="o">=&gt;</span> <span class="s1">&#39;http://example.com/index.php/calendar/show/&#39;</span>
+<span class="p">);</span>
 
 <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">library</span><span class="p">(</span><span class="s1">&#39;calendar&#39;</span><span class="p">,</span> <span class="nv">$prefs</span><span class="p">);</span>
 
@@ -276,46 +276,61 @@ provide.).</li>
 <div class="section" id="creating-a-calendar-template">
 <h3><a class="toc-backref" href="#id7">Creating a Calendar Template</a><a class="headerlink" href="#creating-a-calendar-template" title="Permalink to this headline">¶</a></h3>
 <p>By creating a calendar template you have 100% control over the design of
-your calendar. Each component of your calendar will be placed within a
-pair of pseudo-variables as shown here:</p>
+your calendar. Using the string method, each component of your calendar
+will be placed within a pair of pseudo-variables as shown here:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="nv">$prefs</span><span class="p">[</span><span class="s1">&#39;template&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;</span>
 
-<span class="s1">   {table_open}&lt;table border=&quot;0&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot;&gt;{/table_open}</span>
+<span class="s1">        {table_open}&lt;table border=&quot;0&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot;&gt;{/table_open}</span>
 
-<span class="s1">   {heading_row_start}&lt;tr&gt;{/heading_row_start}</span>
+<span class="s1">        {heading_row_start}&lt;tr&gt;{/heading_row_start}</span>
 
-<span class="s1">   {heading_previous_cell}&lt;th&gt;&lt;a href=&quot;{previous_url}&quot;&gt;&amp;lt;&amp;lt;&lt;/a&gt;&lt;/th&gt;{/heading_previous_cell}</span>
-<span class="s1">   {heading_title_cell}&lt;th colspan=&quot;{colspan}&quot;&gt;{heading}&lt;/th&gt;{/heading_title_cell}</span>
-<span class="s1">   {heading_next_cell}&lt;th&gt;&lt;a href=&quot;{next_url}&quot;&gt;&amp;gt;&amp;gt;&lt;/a&gt;&lt;/th&gt;{/heading_next_cell}</span>
+<span class="s1">        {heading_previous_cell}&lt;th&gt;&lt;a href=&quot;{previous_url}&quot;&gt;&amp;lt;&amp;lt;&lt;/a&gt;&lt;/th&gt;{/heading_previous_cell}</span>
+<span class="s1">        {heading_title_cell}&lt;th colspan=&quot;{colspan}&quot;&gt;{heading}&lt;/th&gt;{/heading_title_cell}</span>
+<span class="s1">        {heading_next_cell}&lt;th&gt;&lt;a href=&quot;{next_url}&quot;&gt;&amp;gt;&amp;gt;&lt;/a&gt;&lt;/th&gt;{/heading_next_cell}</span>
 
-<span class="s1">   {heading_row_end}&lt;/tr&gt;{/heading_row_end}</span>
+<span class="s1">        {heading_row_end}&lt;/tr&gt;{/heading_row_end}</span>
 
-<span class="s1">   {week_row_start}&lt;tr&gt;{/week_row_start}</span>
-<span class="s1">   {week_day_cell}&lt;td&gt;{week_day}&lt;/td&gt;{/week_day_cell}</span>
-<span class="s1">   {week_row_end}&lt;/tr&gt;{/week_row_end}</span>
+<span class="s1">        {week_row_start}&lt;tr&gt;{/week_row_start}</span>
+<span class="s1">        {week_day_cell}&lt;td&gt;{week_day}&lt;/td&gt;{/week_day_cell}</span>
+<span class="s1">        {week_row_end}&lt;/tr&gt;{/week_row_end}</span>
 
-<span class="s1">   {cal_row_start}&lt;tr&gt;{/cal_row_start}</span>
-<span class="s1">   {cal_cell_start}&lt;td&gt;{/cal_cell_start}</span>
-<span class="s1">   {cal_cell_start_today}&lt;td&gt;{/cal_cell_start_today}</span>
-<span class="s1">   {cal_cell_start_other}&lt;td class=&quot;other-month&quot;&gt;{/cal_cell_start_other}</span>
+<span class="s1">        {cal_row_start}&lt;tr&gt;{/cal_row_start}</span>
+<span class="s1">        {cal_cell_start}&lt;td&gt;{/cal_cell_start}</span>
+<span class="s1">        {cal_cell_start_today}&lt;td&gt;{/cal_cell_start_today}</span>
+<span class="s1">        {cal_cell_start_other}&lt;td class=&quot;other-month&quot;&gt;{/cal_cell_start_other}</span>
 
-<span class="s1">   {cal_cell_content}&lt;a href=&quot;{content}&quot;&gt;{day}&lt;/a&gt;{/cal_cell_content}</span>
-<span class="s1">   {cal_cell_content_today}&lt;div class=&quot;highlight&quot;&gt;&lt;a href=&quot;{content}&quot;&gt;{day}&lt;/a&gt;&lt;/div&gt;{/cal_cell_content_today}</span>
+<span class="s1">        {cal_cell_content}&lt;a href=&quot;{content}&quot;&gt;{day}&lt;/a&gt;{/cal_cell_content}</span>
+<span class="s1">        {cal_cell_content_today}&lt;div class=&quot;highlight&quot;&gt;&lt;a href=&quot;{content}&quot;&gt;{day}&lt;/a&gt;&lt;/div&gt;{/cal_cell_content_today}</span>
 
-<span class="s1">   {cal_cell_no_content}{day}{/cal_cell_no_content}</span>
-<span class="s1">   {cal_cell_no_content_today}&lt;div class=&quot;highlight&quot;&gt;{day}&lt;/div&gt;{/cal_cell_no_content_today}</span>
+<span class="s1">        {cal_cell_no_content}{day}{/cal_cell_no_content}</span>
+<span class="s1">        {cal_cell_no_content_today}&lt;div class=&quot;highlight&quot;&gt;{day}&lt;/div&gt;{/cal_cell_no_content_today}</span>
 
-<span class="s1">   {cal_cell_blank}&amp;nbsp;{/cal_cell_blank}</span>
+<span class="s1">        {cal_cell_blank}&amp;nbsp;{/cal_cell_blank}</span>
 
-<span class="s1">   {cal_cell_other}{day}{cal_cel_other}</span>
+<span class="s1">        {cal_cell_other}{day}{cal_cel_other}</span>
 
-<span class="s1">   {cal_cell_end}&lt;/td&gt;{/cal_cell_end}</span>
-<span class="s1">   {cal_cell_end_today}&lt;/td&gt;{/cal_cell_end_today}</span>
-<span class="s1">   {cal_cell_end_other}&lt;/td&gt;{/cal_cell_end_other}</span>
-<span class="s1">   {cal_row_end}&lt;/tr&gt;{/cal_row_end}</span>
+<span class="s1">        {cal_cell_end}&lt;/td&gt;{/cal_cell_end}</span>
+<span class="s1">        {cal_cell_end_today}&lt;/td&gt;{/cal_cell_end_today}</span>
+<span class="s1">        {cal_cell_end_other}&lt;/td&gt;{/cal_cell_end_other}</span>
+<span class="s1">        {cal_row_end}&lt;/tr&gt;{/cal_row_end}</span>
 
-<span class="s1">   {table_close}&lt;/table&gt;{/table_close}</span>
+<span class="s1">        {table_close}&lt;/table&gt;{/table_close}</span>
 <span class="s1">&#39;</span><span class="p">;</span>
+
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">library</span><span class="p">(</span><span class="s1">&#39;calendar&#39;</span><span class="p">,</span> <span class="nv">$prefs</span><span class="p">);</span>
+
+<span class="k">echo</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">calendar</span><span class="o">-&gt;</span><span class="na">generate</span><span class="p">();</span>
+</pre></div>
+</div>
+<p>Using the array method, you will pass <cite>key =&gt; value</cite> pairs. You can pass as
+many or as few values as you&#8217;d like. Omitted keys will use the default values
+inherited in the calendar class.</p>
+<p>Example:</p>
+<div class="highlight-ci"><div class="highlight"><pre><span class="nv">$prefs</span><span class="p">[</span><span class="s1">&#39;template&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+        <span class="s1">&#39;table_open&#39;</span>           <span class="o">=&gt;</span> <span class="s1">&#39;&lt;table class=&quot;calendar&quot;&gt;&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;cal_cell_start&#39;</span>       <span class="o">=&gt;</span> <span class="s1">&#39;&lt;td class=&quot;day&quot;&gt;&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;cal_cell_start_today&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;&lt;td class=&quot;today&quot;&gt;&#39;</span>
+<span class="p">);</span>
 
 <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">library</span><span class="p">(</span><span class="s1">&#39;calendar&#39;</span><span class="p">,</span> <span class="nv">$prefs</span><span class="p">);</span>
 
@@ -435,14 +450,14 @@ style.</p>
 <p>This method makes sure that you have a valid month/year. For example, if
 you submit 13 as the month, the year will increment and the month will
 become January:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span class="nb">print_r</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">calendar</span><span class="o">-&gt;</span><span class="na">adjust_date</span><span class="p">(</span><span class="mi">13</span><span class="p">,</span> <span class="mi">2013</span><span class="p">));</span>
+<div class="highlight-ci"><div class="highlight"><pre><span class="nb">print_r</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">calendar</span><span class="o">-&gt;</span><span class="na">adjust_date</span><span class="p">(</span><span class="mi">13</span><span class="p">,</span> <span class="mi">2014</span><span class="p">));</span>
 </pre></div>
 </div>
 <p>outputs:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="k">Array</span>
 <span class="p">(</span>
         <span class="p">[</span><span class="nx">month</span><span class="p">]</span> <span class="o">=&gt;</span> <span class="s1">&#39;01&#39;</span>
-        <span class="p">[</span><span class="nx">year</span><span class="p">]</span> <span class="o">=&gt;</span> <span class="s1">&#39;2014&#39;</span>
+        <span class="p">[</span><span class="nx">year</span><span class="p">]</span> <span class="o">=&gt;</span> <span class="s1">&#39;2015&#39;</span>
 <span class="p">)</span>
 </pre></div>
 </div>
@@ -473,6 +488,10 @@ become January:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="k">echo</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">calendar</span><span class="o">-&gt;</span><span class="na">get_total_days</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2012</span><span class="p">);</span>
 <span class="c1">// 29</span>
 </pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">This method is an alias for <a class="reference internal" href="../helpers/date_helper.html"><em>Date Helper</em></a> function <a class="reference internal" href="../helpers/date_helper.html#days_in_month" title="days_in_month"><tt class="xref py py-func docutils literal"><span class="pre">days_in_month()</span></tt></a>.</p>
 </div>
 </dd></dl>
 
@@ -522,7 +541,7 @@ display the calendar.</p>
 		
 		<div id="footer">
 			<p class="top"><a href="#header" title="Return to top">Return to top</a></p>
-			<p><a href="http://codeigniter.com/">CodeIgniter</a> &ndash; Copyright &copy; 2013, EllisLab, Inc.</a></p>
+			<p><a href="http://codeigniter.com/">CodeIgniter</a> &ndash; Copyright &copy; 2014, EllisLab, Inc.</a></p>
 		</div><!-- /#footer -->
 	</body>
 </html>

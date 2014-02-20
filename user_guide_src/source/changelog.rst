@@ -65,11 +65,12 @@ Release Date: Not Released
 
    -  :doc:`Date Helper <helpers/date_helper>` changes include:
 
-      - :func:`now()` now works with all timezone strings supported by PHP.
       - Added an optional third parameter to :func:`timespan()` that constrains the number of time units displayed.
       - Added an optional parameter to :func:`timezone_menu()` that allows more attributes to be added to the generated select tag.
-      - Deprecated ``standard_date()``, which now just uses the native ``date()`` with `DateTime constants <http://www.php.net/manual/en/class.datetime.php#datetime.constants.types>`_.
       - Added function :func:`date_range()` that generates a list of dates between a specified period.
+      - Deprecated ``standard_date()``, which now just uses the native ``date()`` with `DateTime constants <http://www.php.net/manual/en/class.datetime.php#datetime.constants.types>`_.
+      - Changed :func:`now()` to work with all timezone strings supported by PHP.
+      - Changed :func:`days_in_month()` to use the native ``cal_days_in_month()`` PHP function, if available.
 
    -  :doc:`URL Helper <helpers/url_helper>` changes include:
 
@@ -90,7 +91,8 @@ Release Date: Not Released
    -  :doc:`Inflector Helper <helpers/inflector_helper>` changes include:
 
       - Changed :func:`humanize()` to allow passing an input separator as its second parameter.
-      - Refactored :func:`plural()` and :func:`singular()` to avoid double pluralization and support more words.
+      - Changed :func:`humanize()` and :func:`underscore()` to utilize `mbstring <http://php.net/mbstring>`_, if available.
+      - Changed :func:`plural()` and :func:`singular()` to avoid double pluralization and support more words.
 
    -  :doc:`Download Helper <helpers/download_helper>` changes include:
 
@@ -132,10 +134,14 @@ Release Date: Not Released
       - Added *colors* configuration to allow customization for the *background*, *border*, *text* and *grid* colors.
       - Added *filename* to the returned array elements.
 
+   -  :doc:`Text Helper <helpers/text_helper>` changes include:
+
+      - Changed the default tag for use in :func:`highlight_phrase()` to ``<mark>`` (formerly ``<strong>``).
+      - Changed :func:`character_limiter()`, :func:`word_wrap()` and :func:`ellipsize()` to utilize `mbstring <http://php.net/mbstring>`_ or `iconv <http://php.net/iconv>`_, if available.
+
    -  :doc:`Directory Helper <helpers/directory_helper>` :func:`directory_map()` will now append ``DIRECTORY_SEPARATOR`` to directory names in the returned array.
    -  :doc:`Array Helper <helpers/array_helper>` :func:`element()` and :func:`elements()` now return NULL instead of FALSE when the required elements don't exist.
    -  :doc:`Language Helper <helpers/language_helper>` :func:`lang()` now accepts an optional list of additional HTML attributes.
-   -  Changed the default tag for use in :doc:`Text Helper <helpers/text_helper>` :func:`highlight_phrase()` to ``<mark>`` (formerly ``<strong>``).
    -  Deprecated the :doc:`Email Helper <helpers/email_helper>` as its ``valid_email()``, ``send_email()`` functions are now only aliases for PHP native functions ``filter_var()`` and ``mail()`` respectively.
 
 -  Database
@@ -294,15 +300,18 @@ Release Date: Not Released
 
       -  Added method chaining support.
       -  Added configuration to generate days of other months instead of blank cells.
-      -  Auto set *next_prev_url* if it is empty and *show_prev_next* is set to TRUE.
+      -  Added auto-configuration for *next_prev_url* if it is empty and *show_prev_next* is set to TRUE.
+      -  Added support for templating via an array in addition to the encoded string.
+      -  Changed method ``get_total_days()`` to be an alias for :doc:`Date Helper <helpers/date_helper>` :func:`days_in_month()`.
 
    -  :doc:`Cart Library <libraries/cart>` changes include:
 
-      -  ``insert()`` now auto-increments quantity for an item when inserted twice instead of resetting it, this is the default behaviour of large e-commerce sites.
-      -  *Product Name* strictness can be disabled by switching the ``$product_name_safe`` property to FALSE.
       -  Added method ``remove()`` to remove a cart item, updating with quantity of 0 seemed like a hack but has remained to retain compatibility.
       -  Added method ``get_item()`` to enable retrieving data for a single cart item.
       -  Added unicode support for product names.
+      -  Added support for disabling product name strictness via the ``$product_name_safe`` property.
+      -  Changed ``insert()`` method to auto-increment quantity for an item when inserted twice instead of resetting it.
+      -	 Changed ``update()`` method to support updating all properties attached to an item.
 
    -  :doc:`Image Manipulation Library <libraries/image_lib>` changes include:
 
@@ -361,11 +370,12 @@ Release Date: Not Released
 
    -  :doc:`Pagination Library <libraries/pagination>` changes include:
 
+      -  Deprecated usage of the "anchor_class" setting (use the new "attributes" setting instead).
       -  Added method chaining support to ``initialize()`` method.
       -  Added support for the anchor "rel" attribute.
       -  Added support for setting custom attributes.
-      -  Deprecated usage of the "anchor_class" setting (use the new "attributes" setting instead).
-      -  Added $config['reuse_query_string'] to allow automatic repopulation of query string arguments, combined with normal URI segments.
+      -  Added support for language translations of the *first_link*, *next_link*, *prev_link* and *last_link* values.
+      -  Added ``$config['reuse_query_string']`` to allow automatic repopulation of query string arguments, combined with normal URI segments.
       -  Removed the default ``&nbsp;`` from a number of the configuration variables.
 
    -  :doc:`Profiler Library <general/profiling>` changes include:
@@ -396,6 +406,7 @@ Release Date: Not Released
       - Added support for setting table class defaults in a config file.
 
    -  :doc:`Zip Library <libraries/zip>` method ``read_file()`` can now also alter the original file path/name while adding files to an archive.
+   -  :doc:`Trackback Library <libraries/trackback>` method ``receive()`` will now utilize ``iconv()`` if it is available but ``mb_convert_encoding()`` is not.
 
 -  Core
 
@@ -489,8 +500,22 @@ Release Date: Not Released
       -  Language files are now loaded in a cascading style with the one in **system/** always loaded and overriden afterwards, if another one is found.
 
    -  :doc:`Hooks Library <general/hooks>` changes include:
+
       -  Renamed method ``_call_hook()`` to ``call_hook()``.
       -  Class instances are now stored in order to maintain their state.
+
+   -  UTF-8 Library changes include:
+
+      -  ``UTF8_ENABLED`` now requires only one of `Multibyte String <http://php.net/mbstring>`_ or `iconv <http://php.net/iconv>`_ to be available instead of both.
+      -  Changed method ``clean_string()`` to utilize ``mb_convert_encoding()`` if it is available but ``iconv()`` is not.
+      -  Renamed method ``_is_ascii()`` to ``is_ascii()`` and made it public.
+
+   -  Added `compatibility layers <general/compatibility_functions>` for:
+
+      - `Multibyte String <http://php.net/mbstring>`_ (limited support).
+      - `Hash <http://php.net/hash>`_ (just ``hash_pbkdf2()``).
+      - `Password Hashing <http://php.net/password>`_.
+      - `Array Functions <http://php.net/book.array>`_ (``array_column()``, ``array_replace()``, ``array_replace_recursive()``).
 
    -  Removed ``CI_CORE`` boolean constant from *CodeIgniter.php* (no longer Reactor and Core versions).
    -  Log Library will now try to create the **log_path** directory if it doesn't exist.
@@ -694,6 +719,8 @@ Bug fixes for 3.0
 -  Fixed a bug in the :doc:`Session Library <libraries/sessions>` 'cookie' driver where authentication was not performed for encrypted cookies.
 -  Fixed a bug (#2856) - ODBC method ``affected_rows()`` passed an incorrect value to ``odbc_num_rows()``.
 -  Fixed a bug (#43) :doc:`Image Manipulation Library <libraries/image_lib>` method ``text_watermark()`` didn't properly determine watermark placement.
+-  Fixed a bug where :doc:`HTML Table Library <libraries/table>` ignored its *auto_heading* setting if headings were not already set.
+-  Fixed a bug (#2364) - :doc:`Pagination Library <libraries/pagination>` appended the query string (if used) multiple times when there are successive calls to ``create_links()`` with no ``initialize()`` in between them.
 
 Version 2.1.4
 =============

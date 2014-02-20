@@ -31,7 +31,7 @@
 	<body>
 		<div id="table-contents">
 			<div class="toctree-wrapper compound">
-			<function <lambda> at 0x4b1fc08>
+			<function <lambda> at 0x323f578>
 			</div>
 		</div>
 
@@ -110,7 +110,8 @@ initialized.</p>
 <div class="section" id="the-class-file">
 <h2>The Class File<a class="headerlink" href="#the-class-file" title="Permalink to this headline">¶</a></h2>
 <p>Classes should have this basic prototype:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span class="o">&lt;?</span><span class="nx">php</span> <span class="k">if</span> <span class="p">(</span> <span class="o">!</span> <span class="nb">defined</span><span class="p">(</span><span class="s1">&#39;BASEPATH&#39;</span><span class="p">))</span> <span class="k">exit</span><span class="p">(</span><span class="s1">&#39;No direct script access allowed&#39;</span><span class="p">);</span>
+<div class="highlight-ci"><div class="highlight"><pre><span class="o">&lt;?</span><span class="nx">php</span>
+<span class="nb">defined</span><span class="p">(</span><span class="s1">&#39;BASEPATH&#39;</span><span class="p">)</span> <span class="k">OR</span> <span class="k">exit</span><span class="p">(</span><span class="s1">&#39;No direct script access allowed&#39;</span><span class="p">);</span>
 
 <span class="k">class</span> <span class="nc">Someclass</span> <span class="p">{</span>
 
@@ -337,7 +338,7 @@ so DO NOT use that as your prefix.</p>
 		
 		<div id="footer">
 			<p class="top"><a href="#header" title="Return to top">Return to top</a></p>
-			<p><a href="http://codeigniter.com/">CodeIgniter</a> &ndash; Copyright &copy; 2013, EllisLab, Inc.</a></p>
+			<p><a href="http://codeigniter.com/">CodeIgniter</a> &ndash; Copyright &copy; 2014, EllisLab, Inc.</a></p>
 		</div><!-- /#footer -->
 	</body>
 </html>

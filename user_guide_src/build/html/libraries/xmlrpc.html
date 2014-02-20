@@ -31,7 +31,7 @@
 	<body>
 		<div id="table-contents">
 			<div class="toctree-wrapper compound">
-			<function <lambda> at 0x2e7e230>
+			<function <lambda> at 0x254bb18>
 			</div>
 		</div>
 
@@ -200,12 +200,12 @@ to include the data type in the request array.</p>
 <p>If you use data types other than strings, or if you have several
 different data types, you will place each parameter into its own array,
 with the data type in the second position:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span class="nv">$request</span> <span class="o">=</span> <span class="k">array</span> <span class="p">(</span>
-                   <span class="k">array</span><span class="p">(</span><span class="s1">&#39;John&#39;</span><span class="p">,</span> <span class="s1">&#39;string&#39;</span><span class="p">),</span>
-                   <span class="k">array</span><span class="p">(</span><span class="s1">&#39;Doe&#39;</span><span class="p">,</span> <span class="s1">&#39;string&#39;</span><span class="p">),</span>
-                   <span class="k">array</span><span class="p">(</span><span class="k">FALSE</span><span class="p">,</span> <span class="s1">&#39;boolean&#39;</span><span class="p">),</span>
-                   <span class="k">array</span><span class="p">(</span><span class="mi">12345</span><span class="p">,</span> <span class="s1">&#39;int&#39;</span><span class="p">)</span>
-                 <span class="p">);</span>
+<div class="highlight-ci"><div class="highlight"><pre><span class="nv">$request</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+        <span class="k">array</span><span class="p">(</span><span class="s1">&#39;John&#39;</span><span class="p">,</span> <span class="s1">&#39;string&#39;</span><span class="p">),</span>
+        <span class="k">array</span><span class="p">(</span><span class="s1">&#39;Doe&#39;</span><span class="p">,</span> <span class="s1">&#39;string&#39;</span><span class="p">),</span>
+        <span class="k">array</span><span class="p">(</span><span class="k">FALSE</span><span class="p">,</span> <span class="s1">&#39;boolean&#39;</span><span class="p">),</span>
+        <span class="k">array</span><span class="p">(</span><span class="mi">12345</span><span class="p">,</span> <span class="s1">&#39;int&#39;</span><span class="p">)</span>
+<span class="p">);</span>
 <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">xmlrpc</span><span class="o">-&gt;</span><span class="na">request</span><span class="p">(</span><span class="nv">$request</span><span class="p">);</span>
 </pre></div>
 </div>
@@ -244,7 +244,7 @@ not part of the CodeIgniter super object.</p>
 <p>In other words, if an XML-RPC Client sends a request for the new_post
 method, your server will load the My_blog class and call the new_entry
 function. If the request is for the update_post method, your server
-will load the My_blog class and call the update_entry function.</p>
+will load the My_blog class and call the <tt class="docutils literal"><span class="pre">update_entry()</span></tt> method.</p>
 <p>The function names in the above example are arbitrary. You&#8217;ll decide
 what they should be called on your server, or if you are using
 standardized APIs, like the Blogger or MetaWeblog API, you&#8217;ll use their
@@ -252,7 +252,7 @@ function names.</p>
 <p>There are two additional configuration keys you may make use of when
 initializing the server class: debug can be set to TRUE in order to
 enable debugging, and xss_clean may be set to FALSE to prevent sending
-data through the Security library&#8217;s xss_clean function.</p>
+data through the Security library&#8217;s <tt class="docutils literal"><span class="pre">xss_clean()</span></tt> method.</p>
 </div>
 <div class="section" id="processing-server-requests">
 <h3><a class="toc-backref" href="#id10">Processing Server Requests</a><a class="headerlink" href="#processing-server-requests" title="Permalink to this headline">¶</a></h3>
@@ -275,47 +275,50 @@ contains the data sent by the XML-RPC Client. Using this object you will
 have access to the <em>request parameters</em> enabling you to process the
 request. When you are done you will send a Response back to the Client.</p>
 <p>Below is a real-world example, using the Blogger API. One of the methods
-in the Blogger API is getUserInfo(). Using this method, an XML-RPC
+in the Blogger API is <tt class="docutils literal"><span class="pre">getUserInfo()</span></tt>. Using this method, an XML-RPC
 Client can send the Server a username and password, in return the Server
 sends back information about that particular user (nickname, user ID,
 email address, etc.). Here is how the processing function might look:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="k">class</span> <span class="nc">My_blog</span> <span class="k">extends</span> <span class="nx">CI_Controller</span> <span class="p">{</span>
 
-    <span class="k">function</span> <span class="nf">getUserInfo</span><span class="p">(</span><span class="nv">$request</span><span class="p">)</span>
-    <span class="p">{</span>
-        <span class="nv">$username</span> <span class="o">=</span> <span class="s1">&#39;smitty&#39;</span><span class="p">;</span>
-        <span class="nv">$password</span> <span class="o">=</span> <span class="s1">&#39;secretsmittypass&#39;</span><span class="p">;</span>
-
-        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">library</span><span class="p">(</span><span class="s1">&#39;xmlrpc&#39;</span><span class="p">);</span>
-
-        <span class="nv">$parameters</span> <span class="o">=</span> <span class="nv">$request</span><span class="o">-&gt;</span><span class="na">output_parameters</span><span class="p">();</span>
-
-        <span class="k">if</span> <span class="p">(</span><span class="nv">$parameters</span><span class="p">[</span><span class="s1">&#39;1&#39;</span><span class="p">]</span> <span class="o">!=</span> <span class="nv">$username</span> <span class="k">AND</span> <span class="nv">$parameters</span><span class="p">[</span><span class="s1">&#39;2&#39;</span><span class="p">]</span> <span class="o">!=</span> <span class="nv">$password</span><span class="p">)</span>
+        <span class="k">public</span> <span class="k">function</span> <span class="nf">getUserInfo</span><span class="p">(</span><span class="nv">$request</span><span class="p">)</span>
         <span class="p">{</span>
-            <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">xmlrpc</span><span class="o">-&gt;</span><span class="na">send_error_message</span><span class="p">(</span><span class="s1">&#39;100&#39;</span><span class="p">,</span> <span class="s1">&#39;Invalid Access&#39;</span><span class="p">);</span>
+                <span class="nv">$username</span> <span class="o">=</span> <span class="s1">&#39;smitty&#39;</span><span class="p">;</span>
+                <span class="nv">$password</span> <span class="o">=</span> <span class="s1">&#39;secretsmittypass&#39;</span><span class="p">;</span>
+
+                <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">library</span><span class="p">(</span><span class="s1">&#39;xmlrpc&#39;</span><span class="p">);</span>
+
+                <span class="nv">$parameters</span> <span class="o">=</span> <span class="nv">$request</span><span class="o">-&gt;</span><span class="na">output_parameters</span><span class="p">();</span>
+
+                <span class="k">if</span> <span class="p">(</span><span class="nv">$parameters</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">!=</span> <span class="nv">$username</span> <span class="o">&amp;&amp;</span> <span class="nv">$parameters</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">!=</span> <span class="nv">$password</span><span class="p">)</span>
+                <span class="p">{</span>
+                        <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">xmlrpc</span><span class="o">-&gt;</span><span class="na">send_error_message</span><span class="p">(</span><span class="s1">&#39;100&#39;</span><span class="p">,</span> <span class="s1">&#39;Invalid Access&#39;</span><span class="p">);</span>
+                <span class="p">}</span>
+
+                <span class="nv">$response</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+                        <span class="k">array</span><span class="p">(</span>
+                                <span class="s1">&#39;nickname&#39;</span>  <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span><span class="s1">&#39;Smitty&#39;</span><span class="p">,</span> <span class="s1">&#39;string&#39;</span><span class="p">),</span>
+                                <span class="s1">&#39;userid&#39;</span>    <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span><span class="s1">&#39;99&#39;</span><span class="p">,</span> <span class="s1">&#39;string&#39;</span><span class="p">),</span>
+                                <span class="s1">&#39;url&#39;</span>       <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span><span class="s1">&#39;http://yoursite.com&#39;</span><span class="p">,</span> <span class="s1">&#39;string&#39;</span><span class="p">),</span>
+                                <span class="s1">&#39;email&#39;</span>     <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span><span class="s1">&#39;jsmith@yoursite.com&#39;</span><span class="p">,</span> <span class="s1">&#39;string&#39;</span><span class="p">),</span>
+                                <span class="s1">&#39;lastname&#39;</span>  <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span><span class="s1">&#39;Smith&#39;</span><span class="p">,</span> <span class="s1">&#39;string&#39;</span><span class="p">),</span>
+                                <span class="s1">&#39;firstname&#39;</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span><span class="s1">&#39;John&#39;</span><span class="p">,</span> <span class="s1">&#39;string&#39;</span><span class="p">)</span>
+                        <span class="p">),</span>
+                         <span class="s1">&#39;struct&#39;</span>
+                <span class="p">);</span>
+
+                <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">xmlrpc</span><span class="o">-&gt;</span><span class="na">send_response</span><span class="p">(</span><span class="nv">$response</span><span class="p">);</span>
         <span class="p">}</span>
-
-        <span class="nv">$response</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span><span class="k">array</span><span class="p">(</span><span class="s1">&#39;nickname&#39;</span>  <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span><span class="s1">&#39;Smitty&#39;</span><span class="p">,</span><span class="s1">&#39;string&#39;</span><span class="p">),</span>
-                                <span class="s1">&#39;userid&#39;</span>    <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span><span class="s1">&#39;99&#39;</span><span class="p">,</span><span class="s1">&#39;string&#39;</span><span class="p">),</span>
-                                <span class="s1">&#39;url&#39;</span>       <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span><span class="s1">&#39;http://yoursite.com&#39;</span><span class="p">,</span><span class="s1">&#39;string&#39;</span><span class="p">),</span>
-                                <span class="s1">&#39;email&#39;</span>     <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span><span class="s1">&#39;jsmith@yoursite.com&#39;</span><span class="p">,</span><span class="s1">&#39;string&#39;</span><span class="p">),</span>
-                                <span class="s1">&#39;lastname&#39;</span>  <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span><span class="s1">&#39;Smith&#39;</span><span class="p">,</span><span class="s1">&#39;string&#39;</span><span class="p">),</span>
-                                <span class="s1">&#39;firstname&#39;</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span><span class="s1">&#39;John&#39;</span><span class="p">,</span><span class="s1">&#39;string&#39;</span><span class="p">)</span>
-                                <span class="p">),</span>
-                         <span class="s1">&#39;struct&#39;</span><span class="p">);</span>
-
-        <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">xmlrpc</span><span class="o">-&gt;</span><span class="na">send_response</span><span class="p">(</span><span class="nv">$response</span><span class="p">);</span>
-    <span class="p">}</span>
 <span class="p">}</span>
 </pre></div>
 </div>
 <div class="section" id="notes">
 <h4><a class="toc-backref" href="#id11">Notes:</a><a class="headerlink" href="#notes" title="Permalink to this headline">¶</a></h4>
-<p>The output_parameters() function retrieves an indexed array
+<p>The <tt class="docutils literal"><span class="pre">output_parameters()</span></tt> method retrieves an indexed array
 corresponding to the request parameters sent by the client. In the above
 example, the output parameters will be the username and password.</p>
 <p>If the username and password sent by the client were not valid, and
-error message is returned using send_error_message().</p>
+error message is returned using <tt class="docutils literal"><span class="pre">send_error_message()</span></tt>.</p>
 <p>If the operation was successful, the client will be sent back a response
 array containing the user&#8217;s info.</p>
 </div>
@@ -327,22 +330,22 @@ However, unlike requests, a response is an array <strong>that contains a
 single item</strong>. This item can be an array with several additional arrays,
 but there can be only one primary array index. In other words, the basic
 prototype is this:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span class="nv">$response</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span><span class="s1">&#39;Response data&#39;</span><span class="p">,</span>  <span class="s1">&#39;array&#39;</span><span class="p">);</span>
+<div class="highlight-ci"><div class="highlight"><pre><span class="nv">$response</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span><span class="s1">&#39;Response data&#39;</span><span class="p">,</span> <span class="s1">&#39;array&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>Responses, however, usually contain multiple pieces of information. In
 order to accomplish this we must put the response into its own array so
 that the primary array continues to contain a single piece of data.
 Here&#8217;s an example showing how this might be accomplished:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span class="nv">$response</span> <span class="o">=</span> <span class="k">array</span> <span class="p">(</span>
-                   <span class="k">array</span><span class="p">(</span>
-                         <span class="s1">&#39;first_name&#39;</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span><span class="s1">&#39;John&#39;</span><span class="p">,</span> <span class="s1">&#39;string&#39;</span><span class="p">),</span>
-                         <span class="s1">&#39;last_name&#39;</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span><span class="s1">&#39;Doe&#39;</span><span class="p">,</span> <span class="s1">&#39;string&#39;</span><span class="p">),</span>
-                         <span class="s1">&#39;member_id&#39;</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span><span class="mi">123435</span><span class="p">,</span> <span class="s1">&#39;int&#39;</span><span class="p">),</span>
-                         <span class="s1">&#39;todo_list&#39;</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span><span class="k">array</span><span class="p">(</span><span class="s1">&#39;clean house&#39;</span><span class="p">,</span> <span class="s1">&#39;call mom&#39;</span><span class="p">,</span> <span class="s1">&#39;water plants&#39;</span><span class="p">),</span> <span class="s1">&#39;array&#39;</span><span class="p">),</span>
-                        <span class="p">),</span>
-                 <span class="s1">&#39;struct&#39;</span>
-                 <span class="p">);</span>
+<div class="highlight-ci"><div class="highlight"><pre><span class="nv">$response</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+        <span class="k">array</span><span class="p">(</span>
+                <span class="s1">&#39;first_name&#39;</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span><span class="s1">&#39;John&#39;</span><span class="p">,</span> <span class="s1">&#39;string&#39;</span><span class="p">),</span>
+                <span class="s1">&#39;last_name&#39;</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span><span class="s1">&#39;Doe&#39;</span><span class="p">,</span> <span class="s1">&#39;string&#39;</span><span class="p">),</span>
+                <span class="s1">&#39;member_id&#39;</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span><span class="mi">123435</span><span class="p">,</span> <span class="s1">&#39;int&#39;</span><span class="p">),</span>
+                <span class="s1">&#39;todo_list&#39;</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span><span class="k">array</span><span class="p">(</span><span class="s1">&#39;clean house&#39;</span><span class="p">,</span> <span class="s1">&#39;call mom&#39;</span><span class="p">,</span> <span class="s1">&#39;water plants&#39;</span><span class="p">),</span> <span class="s1">&#39;array&#39;</span><span class="p">),</span>
+        <span class="p">),</span>
+        <span class="s1">&#39;struct&#39;</span>
+<span class="p">);</span>
 </pre></div>
 </div>
 <p>Notice that the above array is formatted as a struct. This is the most
@@ -434,17 +437,16 @@ folder:</p>
                 <span class="nv">$parameters</span> <span class="o">=</span> <span class="nv">$request</span><span class="o">-&gt;</span><span class="na">output_parameters</span><span class="p">();</span>
 
                 <span class="nv">$response</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
-                                        <span class="k">array</span><span class="p">(</span>
-                                                <span class="s1">&#39;you_said&#39;</span>  <span class="o">=&gt;</span> <span class="nv">$parameters</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span>
-                                                <span class="s1">&#39;i_respond&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;Not bad at all.&#39;</span>
-                                        <span class="p">),</span>
-                                        <span class="s1">&#39;struct&#39;</span>
-                                <span class="p">);</span>
+                        <span class="k">array</span><span class="p">(</span>
+                                <span class="s1">&#39;you_said&#39;</span>  <span class="o">=&gt;</span> <span class="nv">$parameters</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span>
+                                <span class="s1">&#39;i_respond&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;Not bad at all.&#39;</span>
+                        <span class="p">),</span>
+                        <span class="s1">&#39;struct&#39;</span>
+                <span class="p">);</span>
 
                 <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">xmlrpc</span><span class="o">-&gt;</span><span class="na">send_response</span><span class="p">(</span><span class="nv">$response</span><span class="p">);</span>
         <span class="p">}</span>
 <span class="p">}</span>
-<span class="cp">?&gt;</span>
 </pre></div>
 </div>
 </div>
@@ -458,7 +460,7 @@ folder:</p>
 back to you.</p>
 <p>The client you created sends a message (&#8220;How&#8217;s is going?&#8221;) to the
 server, along with a request for the &#8220;Greetings&#8221; method. The Server
-receives the request and maps it to the &#8220;process&#8221; function, where a
+receives the request and maps it to the <tt class="docutils literal"><span class="pre">process()</span></tt> method, where a
 response is sent back.</p>
 </div>
 </div>
@@ -467,22 +469,21 @@ response is sent back.</p>
 <p>If you wish to use an associative array in your method parameters you
 will need to use a struct datatype:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="nv">$request</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
-                 <span class="k">array</span><span class="p">(</span>
-                       <span class="c1">// Param 0</span>
-                       <span class="k">array</span><span class="p">(</span>
-                             <span class="s1">&#39;name&#39;</span><span class="o">=&gt;</span><span class="s1">&#39;John&#39;</span>
-                                <span class="p">),</span>
-                             <span class="s1">&#39;struct&#39;</span>
-                       <span class="p">),</span>
-                       <span class="k">array</span><span class="p">(</span>
-                             <span class="c1">// Param 1</span>
-                             <span class="k">array</span><span class="p">(</span>
-                                        <span class="s1">&#39;size&#39;</span><span class="o">=&gt;</span><span class="s1">&#39;large&#39;</span><span class="p">,</span>
-                                   <span class="s1">&#39;shape&#39;</span><span class="o">=&gt;</span><span class="s1">&#39;round&#39;</span>
-                                        <span class="p">),</span>
-                             <span class="s1">&#39;struct&#39;</span>
-                       <span class="p">)</span>
-                 <span class="p">);</span>
+        <span class="k">array</span><span class="p">(</span>
+                <span class="c1">// Param 0</span>
+                <span class="k">array</span><span class="p">(</span><span class="s1">&#39;name&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;John&#39;</span><span class="p">),</span>
+                <span class="s1">&#39;struct&#39;</span>
+        <span class="p">),</span>
+        <span class="k">array</span><span class="p">(</span>
+                <span class="c1">// Param 1</span>
+                <span class="k">array</span><span class="p">(</span>
+                        <span class="s1">&#39;size&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;large&#39;</span><span class="p">,</span>
+                        <span class="s1">&#39;shape&#39;</span><span class="o">=&gt;</span><span class="s1">&#39;round&#39;</span>
+                <span class="p">),</span>
+                <span class="s1">&#39;struct&#39;</span>
+        <span class="p">)</span>
+<span class="p">);</span>
+
 <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">xmlrpc</span><span class="o">-&gt;</span><span class="na">request</span><span class="p">(</span><span class="nv">$request</span><span class="p">);</span>
 </pre></div>
 </div>
@@ -716,7 +717,7 @@ First parameter is the error number while the second parameter is the error mess
 		
 		<div id="footer">
 			<p class="top"><a href="#header" title="Return to top">Return to top</a></p>
-			<p><a href="http://codeigniter.com/">CodeIgniter</a> &ndash; Copyright &copy; 2013, EllisLab, Inc.</a></p>
+			<p><a href="http://codeigniter.com/">CodeIgniter</a> &ndash; Copyright &copy; 2014, EllisLab, Inc.</a></p>
 		</div><!-- /#footer -->
 	</body>
 </html>

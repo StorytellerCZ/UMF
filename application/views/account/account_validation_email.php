@@ -5,6 +5,6 @@
     <title></title>
 </head>
 <body>
-<p><?php echo sprintf(lang('sign_up_email_confirmation'), $username, $authentication_url); ?></p>
+<p><?php echo sprintf(lang('sign_up_email_confirmation'), $username, lang('website_title'), $authentication_url); ?></p>
 </body>
 </html>

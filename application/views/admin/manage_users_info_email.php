@@ -12,6 +12,6 @@
         <li><?php echo lang('users_password_temp') . ": " . $password; ?></li>
     </ul>
 </p>
-<p><?php echo lang('users_creation_email_end'); ?></p>
+<p><?php echo sprintf(lang('users_creation_email_end'), lang('website_title')); ?></p>
 </body>
 </html>

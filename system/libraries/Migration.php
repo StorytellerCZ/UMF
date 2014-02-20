@@ -18,7 +18,7 @@
  *
  * @package		CodeIgniter
  * @author		EllisLab Dev Team
- * @copyright	Copyright (c) 2006 - 2013, EllisLab, Inc. (http://ellislab.com/)
+ * @copyright	Copyright (c) 2006 - 2014, EllisLab, Inc. (http://ellislab.com/)
  * @license		http://opensource.org/licenses/OSL-3.0 Open Software License (OSL 3.0)
  * @link		http://codeigniter.com
  * @since		Version 3.0
@@ -272,7 +272,7 @@ class CI_Migration {
 	// --------------------------------------------------------------------
 
 	/**
-	 * Set's the schema to the latest migration
+	 * Sets the schema to the latest migration
 	 *
 	 * @return	mixed	TRUE if already latest, FALSE if failed, int if upgraded
 	 */
@@ -296,7 +296,7 @@ class CI_Migration {
 	// --------------------------------------------------------------------
 
 	/**
-	 * Set's the schema to the migration version set in config
+	 * Sets the schema to the migration version set in config
 	 *
 	 * @return	mixed	TRUE if already current, FALSE if failed, int if upgraded
 	 */

@@ -82,9 +82,9 @@ class Sign_up extends CI_Controller {
 					$this->email->initialize($config);
 					
 					// Send the authentication email
-					$this->email->from($this->config->item('account_email_confirm_sender'), lang('sign_up_email_sender'));
+					$this->email->from($this->config->item('account_email_confirm_sender'), lang('website_title'));
 					$this->email->to($account->email);
-					$this->email->subject(lang('sign_up_email_subject'));
+					$this->email->subject(sprintf(lang('sign_up_email_subject'), lang('website_title')));
 					$this->email->message($this->load->view('account/account_validation_email', array(
 						'username' => $account->username,
 						'authentication_url' => anchor($authentication_url, $authentication_url)

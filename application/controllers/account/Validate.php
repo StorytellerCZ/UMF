@@ -28,6 +28,11 @@ class Validate extends CI_Controller {
 	{
 	    if ($this->authentication->is_signed_in()) redirect('');
 	}
+	
+	if($this->authentication->is_signed_in())
+	{
+	    $data['account'] = $this->Account_model->get_by_id($this->session->userdata('account_id'));
+	}
         
         //redirect invalid entries to homepage
         if($this->input->get('user_id', TRUE) == NULL && $this->input->get('token', TRUE) == NULL) redirect('');
