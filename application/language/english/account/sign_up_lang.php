@@ -6,7 +6,7 @@
 |--------------------------------------------------------------------------
 */
 $lang['sign_up_page_name'] = 'Sign Up';
-$lang['sign_up_heading'] = 'Create your UMF Account';
+$lang['sign_up_heading'] = 'Create your %s Account';
 $lang['sign_up_third_party_heading'] = 'Sign up with your account from';
 $lang['sign_up_with'] = 'Sign Up with %s';
 
