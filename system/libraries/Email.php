@@ -376,7 +376,13 @@ class CI_Email {
 	 *
 	 * @var	string[]
 	 */
-	protected $_priorities		= array('1 (Highest)', '2 (High)', '3 (Normal)', '4 (Low)', '5 (Lowest)');
+	protected $_priorities = array(
+		1 => '1 (Highest)',
+		2 => '2 (High)',
+		3 => '3 (Normal)',
+		4 => '4 (Low)',
+		5 => '5 (Lowest)'
+	);
 
 	// --------------------------------------------------------------------
 
@@ -401,7 +407,7 @@ class CI_Email {
 			$this->_smtp_auth = ! ($this->smtp_user === '' && $this->smtp_pass === '');
 		}
 
-		$this->_safe_mode = ( ! is_php('5.4') && (bool) @ini_get('safe_mode'));
+		$this->_safe_mode = ( ! is_php('5.4') && ini_get('safe_mode'));
 		$this->charset = strtoupper($this->charset);
 
 		log_message('debug', 'Email Class Initialized');
@@ -1241,7 +1247,7 @@ class CI_Email {
 	{
 		$this->set_header('X-Sender', $this->clean_email($this->_headers['From']));
 		$this->set_header('X-Mailer', $this->useragent);
-		$this->set_header('X-Priority', $this->_priorities[$this->priority - 1]);
+		$this->set_header('X-Priority', $this->_priorities[$this->priority]);
 		$this->set_header('Message-ID', $this->_get_message_id());
 		$this->set_header('Mime-Version', '1.0');
 	}

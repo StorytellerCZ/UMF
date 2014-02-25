@@ -1,7 +1,8 @@
 <?php if (! ($this->config->item("sign_up_enabled"))): ?>
 	<div class="col-lg-12">
-		<h3><?php echo lang('sign_up_heading'); ?></h3>
-		
+		<div class="page-header">
+			<h1><?php echo sprintf(lang('sign_up_heading'), lang('website_title')); ?></h1>
+		</div>
 		<div class="alert">
 			<strong><?php echo lang('notice');?> </strong> <?php echo lang('registration_disabled'); ?>
 		</div>
@@ -13,7 +14,7 @@
 		
 		<?php echo form_open(uri_string(), 'class="form-horizontal"'); ?>
 		<?php echo form_fieldset(); ?>
-		<h3><?php echo sprintf(lang('sign_up_heading'), lang('website_title')); ?></h3>
+		<h1><?php echo sprintf(lang('sign_up_heading'), lang('website_title')); ?></h1>
 		
 		<div class="well">
 			

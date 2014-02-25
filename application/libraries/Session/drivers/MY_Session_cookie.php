@@ -60,7 +60,7 @@ class MY_Session_cookie extends CI_Session_cookie {
 
 		if ($this->sess_encrypt_cookie === TRUE)
 		{
-			$cookie_data = $this->CI->encrypt->encode($cookie_data);
+			$cookie_data = $this->CI->encryption->encrypt($cookie_data);
 		}
 
 		// Require message authentication

@@ -120,8 +120,8 @@ class CI_DB_mysql_driver extends CI_DB {
 		}
 
 		$this->conn_id = ($persistent === TRUE)
-			? @mysql_pconnect($this->hostname, $this->username, $this->password, $client_flags)
-			: @mysql_connect($this->hostname, $this->username, $this->password, TRUE, $client_flags);
+			? mysql_pconnect($this->hostname, $this->username, $this->password, $client_flags)
+			: mysql_connect($this->hostname, $this->username, $this->password, TRUE, $client_flags);
 
 		// ----------------------------------------------------------------
 
@@ -141,18 +141,6 @@ class CI_DB_mysql_driver extends CI_DB {
 		}
 
 		return $this->conn_id;
-	}
-
-	// --------------------------------------------------------------------
-
-	/**
-	 * Persistent database connection
-	 *
-	 * @return	resource
-	 */
-	public function db_pconnect()
-	{
-		return $this->db_connect(TRUE);
 	}
 
 	// --------------------------------------------------------------------

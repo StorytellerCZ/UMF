@@ -30,7 +30,7 @@
 	<body>
 		<div id="table-contents">
 			<div class="toctree-wrapper compound">
-			<function <lambda> at 0x4805b18>
+			<function <lambda> at 0x552dc80>
 			</div>
 		</div>
 
@@ -221,8 +221,9 @@ Only entries in <tt class="docutils literal"><span class="pre">$autoload['librar
 <li>Renamed internal method <tt class="docutils literal"><span class="pre">_escape_identifiers()</span></tt> to <tt class="docutils literal"><span class="pre">escape_identifiers()</span></tt>.</li>
 <li>Updated <tt class="docutils literal"><span class="pre">escape_identifiers()</span></tt> to accept an array of fields as well as strings.</li>
 <li>MySQL and MySQLi drivers now require at least MySQL version 5.1.</li>
+<li>Added a <tt class="docutils literal"><span class="pre">$persistent</span></tt> parameter to <tt class="docutils literal"><span class="pre">db_connect()</span></tt> and changed <tt class="docutils literal"><span class="pre">db_pconnect()</span></tt> to be an alias for <tt class="docutils literal"><span class="pre">db_connect(TRUE)</span></tt>.</li>
 <li><tt class="docutils literal"><span class="pre">db_set_charset()</span></tt> now only requires one parameter (collation was only needed due to legacy support for MySQL versions prior to 5.1).</li>
-<li><tt class="docutils literal"><span class="pre">db_select()</span></tt> will now always (if required by the driver) be called by <tt class="docutils literal"><span class="pre">db_connect()</span></tt> / <tt class="docutils literal"><span class="pre">db_pconnect()</span></tt> instead of only when initializing.</li>
+<li><tt class="docutils literal"><span class="pre">db_select()</span></tt> will now always (if required by the driver) be called by <tt class="docutils literal"><span class="pre">db_connect()</span></tt> instead of only when initializing.</li>
 <li>Replaced the <tt class="docutils literal"><span class="pre">_error_message()</span></tt> and <tt class="docutils literal"><span class="pre">_error_number()</span></tt> methods with <tt class="docutils literal"><span class="pre">error()</span></tt>, which returns an array containing the last database error code and message.</li>
 <li>Improved <tt class="docutils literal"><span class="pre">version()</span></tt> implementation so that drivers that have a native function to get the version number don&#8217;t have to be defined in the core <tt class="docutils literal"><span class="pre">DB_driver</span></tt> class.</li>
 <li>Added capability for packages to hold <em>config/database.php</em> config files.</li>
@@ -353,12 +354,16 @@ Only entries in <tt class="docutils literal"><span class="pre">$autoload['librar
 </ul>
 </li>
 <li><a class="reference internal" href="libraries/file_uploading.html"><em>File Uploading Library</em></a> changes include:<ul>
-<li>Added <strong>max_filename_increment</strong> config setting.</li>
-<li>Added an <strong>index</strong> parameter to the <tt class="docutils literal"><span class="pre">data()</span></tt> method.</li>
-<li>Added the <strong>min_width</strong> and <strong>min_height</strong> options for images.</li>
+<li>Added method chaining support.</li>
+<li>Added support for using array notation in file field names.</li>
+<li>Added <strong>max_filename_increment</strong> and <strong>file_ext_tolower</strong> configuration settings.</li>
+<li>Added <strong>min_width</strong> and <strong>min_height</strong> configuration settings for images.</li>
+<li>Added <strong>mod_mime_fix</strong> configuration setting to disable suffixing multiple file extensions with an underscore.</li>
+<li>Added the possibility pass <strong>allowed_types</strong> as an array.</li>
+<li>Added an <tt class="docutils literal"><span class="pre">$index</span></tt> parameter to the method <tt class="docutils literal"><span class="pre">data()</span></tt>.</li>
+<li>Added a <tt class="docutils literal"><span class="pre">$reset</span></tt> parameter to method <tt class="docutils literal"><span class="pre">initialize()</span></tt>.</li>
 <li>Removed method <tt class="docutils literal"><span class="pre">clean_file_name()</span></tt> and its usage in favor of <a class="reference internal" href="libraries/security.html"><em>Security Library</em></a>&#8216;s <tt class="docutils literal"><span class="pre">sanitize_filename()</span></tt>.</li>
-<li>Added <strong>file_ext_tolower</strong> config setting.</li>
-<li>Added <strong>mod_mime_fix</strong> option to disable suffixing multiple file extensions with an underscore.</li>
+<li>Removed method <tt class="docutils literal"><span class="pre">mimes_types()</span></tt>.</li>
 </ul>
 </li>
 <li><a class="reference internal" href="libraries/calendar.html"><em>Calendar Library</em></a> changes include:<ul>
@@ -493,7 +498,7 @@ Only entries in <tt class="docutils literal"><span class="pre">$autoload['librar
 <li>Renamed internal method <tt class="docutils literal"><span class="pre">_detect_uri()</span></tt> to <tt class="docutils literal"><span class="pre">_parse_request_uri()</span></tt>.</li>
 <li>Changed <tt class="docutils literal"><span class="pre">_parse_request_uri()</span></tt> to accept absolute URIs for compatibility with HTTP/1.1 as per <cite>RFC2616 &lt;http://www.ietf.org/rfc/rfc2616.txt&gt;</cite>.</li>
 <li>Added protected method <tt class="docutils literal"><span class="pre">_parse_query_string()</span></tt> to URI paths in the the <strong>QUERY_STRING</strong> value, like <tt class="docutils literal"><span class="pre">_parse_request_uri()</span></tt> does.</li>
-<li>Changed <tt class="docutils literal"><span class="pre">_fetch_uri_string()</span></tt> to try the <strong>PATH_INFO</strong> variable first when auto-detecting.</li>
+<li>Changed URI string detection logic to try the <strong>PATH_INFO</strong> variable first when auto-detecting.</li>
 <li>Removed methods <tt class="docutils literal"><span class="pre">_remove_url_suffix()</span></tt>, <tt class="docutils literal"><span class="pre">_explode_segments()</span></tt> and moved their logic into <tt class="docutils literal"><span class="pre">_set_uri_string()</span></tt>.</li>
 <li>Removed method <tt class="docutils literal"><span class="pre">_fetch_uri_string()</span></tt> and moved its logic into the class constructor.</li>
 <li>Removed method <tt class="docutils literal"><span class="pre">_reindex_segments()</span></tt>.</li>
@@ -535,6 +540,7 @@ Only entries in <tt class="docutils literal"><span class="pre">$autoload['librar
 <li>Added function <a class="reference internal" href="general/common_functions.html#is_cli" title="is_cli"><tt class="xref py py-func docutils literal"><span class="pre">is_cli()</span></tt></a> to replace the <tt class="docutils literal"><span class="pre">CI_Input::is_cli_request()</span></tt> method.</li>
 <li>Added function <a class="reference internal" href="general/common_functions.html#function_usable" title="function_usable"><tt class="xref py py-func docutils literal"><span class="pre">function_usable()</span></tt></a> to work around a bug in <cite>Suhosin &lt;http://www.hardened-php.net/suhosin/&gt;</cite>.</li>
 <li>Removed the third (<cite>$php_error</cite>) argument from function <a class="reference internal" href="general/errors.html#log_message" title="log_message"><tt class="xref py py-func docutils literal"><span class="pre">log_message()</span></tt></a>.</li>
+<li>Changed internal function <tt class="docutils literal"><span class="pre">load_class()</span></tt> to accept a constructor parameter instead of (previously unused) class name prefix.</li>
 </ul>
 </li>
 <li><a class="reference internal" href="libraries/output.html"><em>Output Library</em></a> changes include:<ul>
@@ -571,7 +577,7 @@ Only entries in <tt class="docutils literal"><span class="pre">$autoload['librar
 </li>
 <li>UTF-8 Library changes include:<ul>
 <li><tt class="docutils literal"><span class="pre">UTF8_ENABLED</span></tt> now requires only one of <a class="reference external" href="http://php.net/mbstring">Multibyte String</a> or <a class="reference external" href="http://php.net/iconv">iconv</a> to be available instead of both.</li>
-<li>Changed method <tt class="docutils literal"><span class="pre">clean_string()</span></tt> to utilize <tt class="docutils literal"><span class="pre">mb_convert_encoding()</span></tt> if it is available but <tt class="docutils literal"><span class="pre">iconv()</span></tt> is not.</li>
+<li>Changed method <tt class="docutils literal"><span class="pre">clean_string()</span></tt> to utilize <tt class="docutils literal"><span class="pre">mb_convert_encoding()</span></tt> if it is available.</li>
 <li>Renamed method <tt class="docutils literal"><span class="pre">_is_ascii()</span></tt> to <tt class="docutils literal"><span class="pre">is_ascii()</span></tt> and made it public.</li>
 </ul>
 </li>
@@ -787,6 +793,8 @@ Only entries in <tt class="docutils literal"><span class="pre">$autoload['librar
 <li>Fixed a bug (#43) <a class="reference internal" href="libraries/image_lib.html"><em>Image Manipulation Library</em></a> method <tt class="docutils literal"><span class="pre">text_watermark()</span></tt> didn&#8217;t properly determine watermark placement.</li>
 <li>Fixed a bug where <a class="reference internal" href="libraries/table.html"><em>HTML Table Library</em></a> ignored its <em>auto_heading</em> setting if headings were not already set.</li>
 <li>Fixed a bug (#2364) - <a class="reference internal" href="libraries/pagination.html"><em>Pagination Library</em></a> appended the query string (if used) multiple times when there are successive calls to <tt class="docutils literal"><span class="pre">create_links()</span></tt> with no <tt class="docutils literal"><span class="pre">initialize()</span></tt> in between them.</li>
+<li>Partially fixed a bug (#261) - UTF-8 class method <tt class="docutils literal"><span class="pre">clean_string()</span></tt> generating log messages and/or not producing the desired result due to an upstream bug in iconv.</li>
+<li>Fixed a bug where <tt class="docutils literal"><span class="pre">CI_Xmlrpcs::parseRequest()</span></tt> could fail if <tt class="docutils literal"><span class="pre">$HTTP_RAW_POST_DATA</span></tt> is not populated.</li>
 </ul>
 </div>
 </div>
