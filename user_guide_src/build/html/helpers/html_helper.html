@@ -31,7 +31,7 @@
 	<body>
 		<div id="table-contents">
 			<div class="toctree-wrapper compound">
-			<function <lambda> at 0x2eccb90>
+			<function <lambda> at 0x4ff7aa0>
 			</div>
 		</div>
 
@@ -89,32 +89,6 @@ HTML.</p>
 <div class="section" id="available-functions">
 <h2><a class="toc-backref" href="#id2">Available Functions</a><a class="headerlink" href="#available-functions" title="Permalink to this headline">¶</a></h2>
 <p>The following functions are available:</p>
-<dl class="function">
-<dt id="br">
-<tt class="descname">br</tt><big>(</big><span class="optional">[</span><em>$count = 1</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#br" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>$count</strong> (<em>int</em>) &#8211; Number of times to repeat the tag</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">HTML line break tag</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">string</td>
-</tr>
-</tbody>
-</table>
-<p>Generates line break tags (&lt;br /&gt;) based on the number you submit.
-Example:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span class="k">echo</span> <span class="nx">br</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span>
-</pre></div>
-</div>
-<p>The above would produce:</p>
-<div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;br</span> <span class="nt">/&gt;&lt;br</span> <span class="nt">/&gt;&lt;br</span> <span class="nt">/&gt;</span>
-</pre></div>
-</div>
-</dd></dl>
-
 <dl class="function">
 <dt id="heading">
 <tt class="descname">heading</tt><big>(</big><span class="optional">[</span><em>$data = ''</em><span class="optional">[</span>, <em>$h = '1'</em><span class="optional">[</span>, <em>$attributes = ''</em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#heading" title="Permalink to this definition">¶</a></dt>
@@ -262,32 +236,6 @@ for complete control over all attributes and values:</p>
 
 <span class="k">echo</span> <span class="nx">link_tag</span><span class="p">(</span><span class="nv">$link</span><span class="p">);</span>
 <span class="c1">// &lt;link href=&quot;http://site.com/css/printer.css&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot; media=&quot;print&quot; /&gt;</span>
-</pre></div>
-</div>
-</dd></dl>
-
-<dl class="function">
-<dt id="nbs">
-<tt class="descname">nbs</tt><big>(</big><span class="optional">[</span><em>$num = 1</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#nbs" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>$num</strong> (<em>int</em>) &#8211; Number of space entities to produce</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">A sequence of non-breaking space HTML entities</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">string</td>
-</tr>
-</tbody>
-</table>
-<p>Generates non-breaking spaces (&amp;nbsp;) based on the number you submit.
-Example:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span class="k">echo</span> <span class="nx">nbs</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span>
-</pre></div>
-</div>
-<p>The above would produce:</p>
-<div class="highlight-html"><div class="highlight"><pre><span class="ni">&amp;nbsp;&amp;nbsp;&amp;nbsp;</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -635,6 +583,68 @@ pulled from application/config/doctypes.php</p>
 </tr>
 </tbody>
 </table>
+</dd></dl>
+
+<dl class="function">
+<dt id="br">
+<tt class="descname">br</tt><big>(</big><span class="optional">[</span><em>$count = 1</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#br" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>$count</strong> (<em>int</em>) &#8211; Number of times to repeat the tag</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">HTML line break tag</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">string</td>
+</tr>
+</tbody>
+</table>
+<p>Generates line break tags (&lt;br /&gt;) based on the number you submit.
+Example:</p>
+<div class="highlight-ci"><div class="highlight"><pre><span class="k">echo</span> <span class="nx">br</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>The above would produce:</p>
+<div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;br</span> <span class="nt">/&gt;&lt;br</span> <span class="nt">/&gt;&lt;br</span> <span class="nt">/&gt;</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">This function is DEPRECATED. Use the native <tt class="docutils literal"><span class="pre">str_repeat()</span></tt>
+in combination with <tt class="docutils literal"><span class="pre">&lt;br</span> <span class="pre">/&gt;</span></tt> instead.</p>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="nbs">
+<tt class="descname">nbs</tt><big>(</big><span class="optional">[</span><em>$num = 1</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#nbs" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>$num</strong> (<em>int</em>) &#8211; Number of space entities to produce</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">A sequence of non-breaking space HTML entities</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">string</td>
+</tr>
+</tbody>
+</table>
+<p>Generates non-breaking spaces (&amp;nbsp;) based on the number you submit.
+Example:</p>
+<div class="highlight-ci"><div class="highlight"><pre><span class="k">echo</span> <span class="nx">nbs</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>The above would produce:</p>
+<div class="highlight-html"><div class="highlight"><pre><span class="ni">&amp;nbsp;&amp;nbsp;&amp;nbsp;</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">This function is DEPRECATED. Use the native <tt class="docutils literal"><span class="pre">str_repeat()</span></tt>
+in combination with <tt class="docutils literal"><span class="pre">&amp;nbsp;</span></tt> instead.</p>
+</div>
 </dd></dl>
 
 </div>

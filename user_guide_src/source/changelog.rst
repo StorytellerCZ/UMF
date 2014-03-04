@@ -86,7 +86,8 @@ Release Date: Not Released
 
       - Added more doctypes.
       - Changed application and environment config files to be loaded in a cascade-like manner.
-      - The doctypes array is now cached and loaded only once.
+      - Changed :func:`doctype()` to cache and only load once the doctypes array.
+      - Deprecated functions ``nbs()`` and ``br()``, which are just aliases for the native ``str_repeat()`` with ``&nbsp;`` and ``<br />`` respectively.
 
    -  :doc:`Inflector Helper <helpers/inflector_helper>` changes include:
 
@@ -465,6 +466,7 @@ Release Date: Not Released
       -  Changed method ``_fetch_from_array()`` to parse array notation in field name.
       -  Added an option for ``_clean_input_keys()`` to return FALSE instead of terminating the whole script.
       -  Deprecated the ``is_cli_request()`` method, it is now an alias for the new :func:`is_cli()` common function.
+      -  Added an ``$xss_clean`` parameter to method ``user_agent()`` and removed the ``$user_agent`` property.
 
    -  :doc:`Common functions <general/common_functions>` changes include:
 

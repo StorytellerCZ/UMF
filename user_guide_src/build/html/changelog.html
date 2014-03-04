@@ -30,7 +30,7 @@
 	<body>
 		<div id="table-contents">
 			<div class="toctree-wrapper compound">
-			<function <lambda> at 0x552dc80>
+			<function <lambda> at 0x48aa7d0>
 			</div>
 		</div>
 
@@ -151,7 +151,8 @@ Only entries in <tt class="docutils literal"><span class="pre">$autoload['librar
 <li><a class="reference internal" href="helpers/html_helper.html"><em>HTML Helper</em></a> changes include:<ul>
 <li>Added more doctypes.</li>
 <li>Changed application and environment config files to be loaded in a cascade-like manner.</li>
-<li>The doctypes array is now cached and loaded only once.</li>
+<li>Changed <a class="reference internal" href="helpers/html_helper.html#doctype" title="doctype"><tt class="xref py py-func docutils literal"><span class="pre">doctype()</span></tt></a> to cache and only load once the doctypes array.</li>
+<li>Deprecated functions <tt class="docutils literal"><span class="pre">nbs()</span></tt> and <tt class="docutils literal"><span class="pre">br()</span></tt>, which are just aliases for the native <tt class="docutils literal"><span class="pre">str_repeat()</span></tt> with <tt class="docutils literal"><span class="pre">&amp;nbsp;</span></tt> and <tt class="docutils literal"><span class="pre">&lt;br</span> <span class="pre">/&gt;</span></tt> respectively.</li>
 </ul>
 </li>
 <li><a class="reference internal" href="helpers/inflector_helper.html"><em>Inflector Helper</em></a> changes include:<ul>
@@ -529,6 +530,7 @@ Only entries in <tt class="docutils literal"><span class="pre">$autoload['librar
 <li>Changed method <tt class="docutils literal"><span class="pre">_fetch_from_array()</span></tt> to parse array notation in field name.</li>
 <li>Added an option for <tt class="docutils literal"><span class="pre">_clean_input_keys()</span></tt> to return FALSE instead of terminating the whole script.</li>
 <li>Deprecated the <tt class="docutils literal"><span class="pre">is_cli_request()</span></tt> method, it is now an alias for the new <a class="reference internal" href="general/common_functions.html#is_cli" title="is_cli"><tt class="xref py py-func docutils literal"><span class="pre">is_cli()</span></tt></a> common function.</li>
+<li>Added an <tt class="docutils literal"><span class="pre">$xss_clean</span></tt> parameter to method <tt class="docutils literal"><span class="pre">user_agent()</span></tt> and removed the <tt class="docutils literal"><span class="pre">$user_agent</span></tt> property.</li>
 </ul>
 </li>
 <li><a class="reference internal" href="general/common_functions.html"><em>Common functions</em></a> changes include:<ul>
