@@ -31,7 +31,7 @@
 	<body>
 		<div id="table-contents">
 			<div class="toctree-wrapper compound">
-			<function <lambda> at 0x38995f0>
+			<function <lambda> at 0x42e0578>
 			</div>
 		</div>
 
@@ -241,7 +241,7 @@ Encryption library to use that cipher:</p>
 </tr>
 <tr class="row-even"><td>CAST5 / CAST-128</td>
 <td>cast5</td>
-<td>40-128 / 5-16</td>
+<td>88-128 / 11-16</td>
 <td>CBC, CFB, OFB, ECB</td>
 </tr>
 <tr class="row-odd"><td>RC4 / ARCFour</td>
@@ -339,57 +339,62 @@ but regardless, here&#8217;s a list of most of them:</p>
 <td>128 / 16, 192 / 24, 256 / 32</td>
 <td>CBC, CTR, CFB, CFB8, OFB, OFB8, ECB</td>
 </tr>
-<tr class="row-even"><td>CAST-256</td>
+<tr class="row-even"><td>CAST-128</td>
+<td>MCrypt</td>
+<td>40-128 / 5-16</td>
+<td>CBC, CTR, CFB, CFB8, OFB, OFB8, ECB</td>
+</tr>
+<tr class="row-odd"><td>CAST-256</td>
 <td>MCrypt</td>
 <td>128 / 16, 192 / 24, 256 / 32</td>
 <td>CBC, CTR, CFB, CFB8, OFB, OFB8, ECB</td>
 </tr>
-<tr class="row-odd"><td>Loki97</td>
+<tr class="row-even"><td>Loki97</td>
 <td>MCrypt</td>
 <td>128 / 16, 192 / 24, 256 / 32</td>
 <td>CBC, CTR, CFB, CFB8, OFB, OFB8, ECB</td>
 </tr>
-<tr class="row-even"><td>SaferPlus</td>
+<tr class="row-odd"><td>SaferPlus</td>
 <td>MCrypt</td>
 <td>128 / 16, 192 / 24, 256 / 32</td>
 <td>CBC, CTR, CFB, CFB8, OFB, OFB8, ECB</td>
 </tr>
-<tr class="row-odd"><td>Serpent</td>
+<tr class="row-even"><td>Serpent</td>
 <td>MCrypt</td>
 <td>128 / 16, 192 / 24, 256 / 32</td>
 <td>CBC, CTR, CFB, CFB8, OFB, OFB8, ECB</td>
 </tr>
-<tr class="row-even"><td>XTEA</td>
+<tr class="row-odd"><td>XTEA</td>
 <td>MCrypt</td>
 <td>128 / 16</td>
 <td>CBC, CTR, CFB, CFB8, OFB, OFB8, ECB</td>
 </tr>
-<tr class="row-odd"><td>RC2</td>
+<tr class="row-even"><td>RC2</td>
 <td>MCrypt</td>
 <td>8-1024 / 1-128</td>
 <td>CBC, CTR, CFB, CFB8, OFB, OFB8, ECB</td>
 </tr>
-<tr class="row-even"><td>RC2</td>
+<tr class="row-odd"><td>RC2</td>
 <td>OpenSSL</td>
 <td>8-1024 / 1-128</td>
 <td>CBC, CFB, OFB, ECB</td>
 </tr>
-<tr class="row-odd"><td>Camellia-128</td>
+<tr class="row-even"><td>Camellia-128</td>
 <td>OpenSSL</td>
 <td>128 / 16</td>
 <td>CBC, CFB, CFB8, OFB, ECB</td>
 </tr>
-<tr class="row-even"><td>Camellia-192</td>
+<tr class="row-odd"><td>Camellia-192</td>
 <td>OpenSSL</td>
 <td>192 / 24</td>
 <td>CBC, CFB, CFB8, OFB, ECB</td>
 </tr>
-<tr class="row-odd"><td>Camellia-256</td>
+<tr class="row-even"><td>Camellia-256</td>
 <td>OpenSSL</td>
 <td>256 / 32</td>
 <td>CBC, CFB, CFB8, OFB, ECB</td>
 </tr>
-<tr class="row-even"><td>Seed</td>
+<tr class="row-odd"><td>Seed</td>
 <td>OpenSSL</td>
 <td>128 / 16</td>
 <td>CBC, CFB, OFB, ECB</td>
@@ -408,6 +413,13 @@ are also listed in the portable ciphers list. This is because
 drivers support different modes for these ciphers. Also, it is
 important to note that AES-128 and Rijndael-128 are actually
 the same cipher, but <strong>only</strong> when used with a 128-bit key.</p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">CAST-128 / CAST-5 is also listed in both the portable and
+driver-specific ciphers list. This is because OpenSSL&#8217;s
+implementation doesn&#8217;t appear to be working correctly with
+key sizes of 80 bits and lower.</p>
 </div>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>

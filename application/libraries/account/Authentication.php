@@ -61,7 +61,7 @@ class Authentication {
 		else
 		{
 			$validation = $this->check_user_validation_suspend($user);
-			if($validation != 'invalid' || $validation != 'suspended')
+			if($validation && !is_string($validation))
 			{
 				// Check password
 				if ( ! $this->check_password($user->password, $password))

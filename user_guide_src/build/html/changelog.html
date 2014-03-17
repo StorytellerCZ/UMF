@@ -30,7 +30,7 @@
 	<body>
 		<div id="table-contents">
 			<div class="toctree-wrapper compound">
-			<function <lambda> at 0x48aa7d0>
+			<function <lambda> at 0x53c82a8>
 			</div>
 		</div>
 
@@ -381,7 +381,7 @@ Only entries in <tt class="docutils literal"><span class="pre">$autoload['librar
 <li>Added unicode support for product names.</li>
 <li>Added support for disabling product name strictness via the <tt class="docutils literal"><span class="pre">$product_name_safe</span></tt> property.</li>
 <li>Changed <tt class="docutils literal"><span class="pre">insert()</span></tt> method to auto-increment quantity for an item when inserted twice instead of resetting it.</li>
-<li>Changed <tt class="docutils literal"><span class="pre">update()</span></tt> method to support updating all properties attached to an item.</li>
+<li>Changed <tt class="docutils literal"><span class="pre">update()</span></tt> method to support updating all properties attached to an item and not to require &#8216;qty&#8217;.</li>
 </ul>
 </li>
 <li><a class="reference internal" href="libraries/image_lib.html"><em>Image Manipulation Library</em></a> changes include:<ul>
@@ -409,6 +409,7 @@ Only entries in <tt class="docutils literal"><span class="pre">$autoload['librar
 <li><a class="reference internal" href="libraries/language.html"><em>Language</em></a> line keys must now be prefixed with <strong>form_validation_</strong>.</li>
 <li>Added rule <strong>alpha_numeric_spaces</strong>.</li>
 <li>Added support for custom error messages per field rule.</li>
+<li>Added support for callable rules when they are passed as an array.</li>
 </ul>
 </li>
 <li><a class="reference internal" href="libraries/caching.html"><em>Caching Library</em></a> changes include:<ul>
@@ -573,6 +574,7 @@ Only entries in <tt class="docutils literal"><span class="pre">$autoload['librar
 </ul>
 </li>
 <li><a class="reference internal" href="general/hooks.html"><em>Hooks Library</em></a> changes include:<ul>
+<li>Added support for closure hooks (or anything that <tt class="docutils literal"><span class="pre">is_callable()</span></tt> returns TRUE for).</li>
 <li>Renamed method <tt class="docutils literal"><span class="pre">_call_hook()</span></tt> to <tt class="docutils literal"><span class="pre">call_hook()</span></tt>.</li>
 <li>Class instances are now stored in order to maintain their state.</li>
 </ul>
@@ -797,6 +799,7 @@ Only entries in <tt class="docutils literal"><span class="pre">$autoload['librar
 <li>Fixed a bug (#2364) - <a class="reference internal" href="libraries/pagination.html"><em>Pagination Library</em></a> appended the query string (if used) multiple times when there are successive calls to <tt class="docutils literal"><span class="pre">create_links()</span></tt> with no <tt class="docutils literal"><span class="pre">initialize()</span></tt> in between them.</li>
 <li>Partially fixed a bug (#261) - UTF-8 class method <tt class="docutils literal"><span class="pre">clean_string()</span></tt> generating log messages and/or not producing the desired result due to an upstream bug in iconv.</li>
 <li>Fixed a bug where <tt class="docutils literal"><span class="pre">CI_Xmlrpcs::parseRequest()</span></tt> could fail if <tt class="docutils literal"><span class="pre">$HTTP_RAW_POST_DATA</span></tt> is not populated.</li>
+<li>Fixed a bug in <a class="reference internal" href="libraries/zip.html"><em>Zip Library</em></a> internal method <tt class="docutils literal"><span class="pre">_get_mod_time()</span></tt> where it was not parsing result returned by <tt class="docutils literal"><span class="pre">filemtime()</span></tt>.</li>
 </ul>
 </div>
 </div>

@@ -35,6 +35,7 @@ $lang['sign_up_email_confirmation'] = "Hello, %s <br /><br /> In order to activa
 
 $lang['sign_up_validation'] = 'Your e-mail has been validated! You can now login!';
 $lang['sign_up_validation_send'] = "In order to finish your registration we need to validate your email. <br />We have send an email, to the adress you registered under, with a validation link to finish your registration.";
+$lang['sign_up_validation_resend'] = "We have re-send validation e-mail to the e-mail adress you have specified when you registered.";
 
 /*
  * JS Validation language files

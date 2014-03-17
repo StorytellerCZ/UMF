@@ -24,7 +24,7 @@ $lang['sign_in_recaptcha_incorrect'] = 'The captcha test is incorrect.';
 
 //Sign in errors
 $lang['sign_in_combination_incorrect'] = 'Sorry, your Username/Email and Password combination is incorrect.';
-$lang['sign_in_non_validated_email'] = 'Sorry, but you need to validate your e-mail before you can sign in.';
+$lang['sign_in_non_validated_email'] = 'Sorry, but you need to validate your e-mail before you can sign in. <a href="/account/validate/resend/%s">Re-send validation e-mail.</a>';
 $lang['sign_in_suspended_account'] = 'Sorry, your account has been suspended. Please contect the administrator.';
 
 /* End of file sign_in_lang.php */
