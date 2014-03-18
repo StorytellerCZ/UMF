@@ -6,7 +6,7 @@
 
     <div class="well">
 		<?php if (isset($sign_in_error)) : ?>
-	<div class="form_error"><?php echo $sign_in_error; ?></div>
+			<div class="alert alert-danger"><?php echo $sign_in_error; ?></div>
 		<?php endif; ?>
 
 	<div class="form-group <?php echo (form_error('sign_in_username_email') || isset($sign_in_username_email_error)) ? 'error' : ''; ?>">
@@ -67,7 +67,7 @@
 
 <div class="col-lg-6">
 	<?php if ($third_party_auth = $this->config->item('third_party_auth')) : ?>
-		<h3><?php echo sprintf(lang('sign_up_third_party_heading')); ?></h3>
+		<h3><?php echo lang('sign_ip_third_party_heading'); ?></h3>
 		<ul>
 			<?php foreach($third_party_auth['providers'] as $provider_name => $provider_values) : ?>
 				<?php if($provider_values['enabled']) : ?>

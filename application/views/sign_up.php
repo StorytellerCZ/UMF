@@ -3,7 +3,7 @@
 		<div class="page-header">
 			<h1><?php echo sprintf(lang('sign_up_heading'), lang('website_title')); ?></h1>
 		</div>
-		<div class="alert">
+		<div class="alert alert-danger">
 			<strong><?php echo lang('notice');?> </strong> <?php echo lang('registration_disabled'); ?>
 		</div>
 	</div>
@@ -112,7 +112,7 @@
 
 	<div class="col-lg-6">
 		<?php if ($third_party_auth = $this->config->item('third_party_auth')) : ?>
-			<h3><?php echo sprintf(lang('sign_up_third_party_heading')); ?></h3>
+			<h3><?php echo lang('sign_up_third_party_heading'); ?></h3>
 			<ul>
 				<?php foreach ($third_party_auth['providers'] as $provider_name => $provider_values) : ?>
 					<?php if($provider_values['enabled']) : ?>
