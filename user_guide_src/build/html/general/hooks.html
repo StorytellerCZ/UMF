@@ -31,7 +31,7 @@
 	<body>
 		<div id="table-contents">
 			<div class="toctree-wrapper compound">
-			<function <lambda> at 0x323f488>
+			<function <lambda> at 0x3bf7f50>
 			</div>
 		</div>
 
@@ -90,7 +90,7 @@ following item in the <strong>application/config/config.php</strong> file:</p>
 </div>
 <div class="section" id="defining-a-hook">
 <h2>Defining a Hook<a class="headerlink" href="#defining-a-hook" title="Permalink to this headline">¶</a></h2>
-<p>Hooks are defined in <strong>application/config/hooks.php</strong> file.
+<p>Hooks are defined in the <strong>application/config/hooks.php</strong> file.
 Each hook is specified as an array with this prototype:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="nv">$hook</span><span class="p">[</span><span class="s1">&#39;pre_controller&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
         <span class="s1">&#39;class&#39;</span>    <span class="o">=&gt;</span> <span class="s1">&#39;MyClass&#39;</span><span class="p">,</span>
@@ -122,6 +122,14 @@ filepath. No trailing slash.</li>
 <li><strong>params</strong> Any parameters you wish to pass to your script. This item
 is optional.</li>
 </ul>
+<p>If you&#8217;re running PHP 5.3+, you can also use lambda/anoymous functions
+(or closures) as hooks, with a simpler syntax:</p>
+<div class="highlight-ci"><div class="highlight"><pre><span class="nv">$hook</span><span class="p">[</span><span class="s1">&#39;post_controller&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="k">function</span><span class="p">()</span>
+<span class="p">{</span>
+        <span class="cm">/* do something here */</span>
+<span class="p">};</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="multiple-calls-to-the-same-hook">
 <h2>Multiple Calls to the Same Hook<a class="headerlink" href="#multiple-calls-to-the-same-hook" title="Permalink to this headline">¶</a></h2>

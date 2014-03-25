@@ -118,10 +118,10 @@ if ( ! function_exists('_list'))
 		}
 
 		// Set the indentation based on the depth
-		$out = str_repeat(' ', $depth);
+		$out = str_repeat(' ', $depth)
+			// Write the opening list tag
+			.'<'.$type._stringify_attributes($attributes).">\n";
 
-		// Write the opening list tag
-		$out .= '<'.$type._stringify_attributes($attributes).">\n";
 
 		// Cycle through the list elements.  If an array is
 		// encountered we will recursively call _list()
@@ -147,22 +147,6 @@ if ( ! function_exists('_list'))
 
 		// Set the indentation for the closing tag and apply it
 		return $out.str_repeat(' ', $depth).'</'.$type.">\n";
-	}
-}
-
-// ------------------------------------------------------------------------
-
-if ( ! function_exists('br'))
-{
-	/**
-	 * Generates HTML BR tags based on number supplied
-	 *
-	 * @param	int	$count	Number of times to repeat the tag
-	 * @return	string
-	 */
-	function br($count = 1)
-	{
-		return str_repeat('<br />', $count);
 	}
 }
 
@@ -197,7 +181,7 @@ if ( ! function_exists('img'))
 
 		foreach ($src as $k => $v)
 		{
-			if ($k === 'src' && strpos($v, '://') === FALSE)
+			if ($k === 'src' && ! preg_match('#^([a-z]+:)?//#i', $v))
 			{
 				if ($index_page === TRUE)
 				{
@@ -289,7 +273,7 @@ if ( ! function_exists('link_tag'))
 		{
 			foreach ($href as $k => $v)
 			{
-				if ($k === 'href' && strpos($v, '://') === FALSE)
+				if ($k === 'href' && ! preg_match('#^([a-z]+:)?//#i', $v))
 				{
 					if ($index_page === TRUE)
 					{
@@ -308,7 +292,7 @@ if ( ! function_exists('link_tag'))
 		}
 		else
 		{
-			if (strpos($href, '://') !== FALSE)
+			if ( ! preg_match('#^([a-z]+:)?//#i', $href))
 			{
 				$link .= 'href="'.$href.'" ';
 			}
@@ -368,7 +352,7 @@ if ( ! function_exists('meta'))
 		$str = '';
 		foreach ($name as $meta)
 		{
-			$type		= ( ! isset($meta['type']) OR $meta['type'] === 'name') ? 'name' : 'http-equiv';
+			$type		= (isset($meta['type']) && $meta['type'] !== 'name')	? 'http-equiv' : 'name';
 			$name		= isset($meta['name'])					? $meta['name'] : '';
 			$content	= isset($meta['content'])				? $meta['content'] : '';
 			$newline	= isset($meta['newline'])				? $meta['newline'] : "\n";
@@ -382,11 +366,29 @@ if ( ! function_exists('meta'))
 
 // ------------------------------------------------------------------------
 
+if ( ! function_exists('br'))
+{
+	/**
+	 * Generates HTML BR tags based on number supplied
+	 *
+	 * @deprecated	3.0.0	Use str_repeat() instead
+	 * @param	int	$count	Number of times to repeat the tag
+	 * @return	string
+	 */
+	function br($count = 1)
+	{
+		return str_repeat('<br />', $count);
+	}
+}
+
+// ------------------------------------------------------------------------
+
 if ( ! function_exists('nbs'))
 {
 	/**
 	 * Generates non-breaking space entities based on number supplied
 	 *
+	 * @deprecated	3.0.0	Use str_repeat() instead
 	 * @param	int
 	 * @return	string
 	 */
