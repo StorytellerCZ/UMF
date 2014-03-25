@@ -18,7 +18,7 @@
 	<span class="help-inline">
 			<?php echo form_error('sign_in_username_email'); ?>
 				<?php if (isset($sign_in_username_email_error)) : ?>
-		<span class="field_error"><?php echo $sign_in_username_email_error; ?></span>
+		<span class="alert alert-danger"><?php echo $sign_in_username_email_error; ?></span>
 				<?php endif; ?>
 			</span>
 			<?php endif; ?>
@@ -37,7 +37,7 @@
 		<?php if (isset($recaptcha)) : ?>
 			<?php echo $recaptcha; ?>
 			<?php if (isset($sign_in_recaptcha_error)) : ?>
-				<span class="field_error"><?php echo $sign_in_recaptcha_error; ?></span>
+				<span class="alert alert-danger"><?php echo $sign_in_recaptcha_error; ?></span>
 			<?php endif; ?>
 		<?php endif; ?>
 	    </div>

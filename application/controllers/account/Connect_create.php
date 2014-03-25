@@ -38,7 +38,7 @@ class Connect_create extends CI_Controller {
 		$data['connect_create'] = $this->session->userdata('connect_create');
 
 		// Setup form validation
-		$this->form_validation->set_error_delimiters('<span class="field_error">', '</span>');
+		$this->form_validation->set_error_delimiters('<span class="alert alert-danger">', '</span>');
 		$this->form_validation->set_rules(array(array('field' => 'connect_create_username', 'label' => 'lang:connect_create_username', 'rules' => 'trim|required|alpha_numeric|min_length[2]|max_length[16]'), array('field' => 'connect_create_email', 'label' => 'lang:connect_create_email', 'rules' => 'trim|required|valid_email|max_length[160]')));
 
 		// Run form validation

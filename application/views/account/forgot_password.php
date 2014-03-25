@@ -32,10 +32,10 @@
 </div>
 <div class="col-lg-offset-2">
 	    <?php if (isset($recaptcha)) : ?>
-	    <?php echo $recaptcha; ?>
-	    <?php if (isset($forgot_password_recaptcha_error)) : ?>
-    <span class="field_error"><?php echo $forgot_password_recaptcha_error; ?></span>
-		    <?php endif; ?>
+		<?php if (isset($forgot_password_recaptcha_error)) : ?>
+		    <span class="alert alert-danger"><?php echo $forgot_password_recaptcha_error; ?></span>
+		<?php endif; ?>
+		<?php echo $recaptcha; ?>
 	    <?php endif; ?>
 </div>
 <div class="clearfix">

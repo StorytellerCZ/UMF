@@ -9,18 +9,18 @@
 
 <?php if (isset($connect_openid_error)) : ?>
     <div class="col-lg-6">
-	<div class="field_error"><?php echo $connect_openid_error; ?></div>
+	<div class="alert alert-danger"><?php echo $connect_openid_error; ?></div>
     </div>
 <?php endif; ?>
 <?php if ($this->session->flashdata('connect_openid_error')) : ?>
     <div class="col-lg-6">
-	<div class="field_error"><?php echo $this->session->flashdata('connect_openid_error'); ?></div>
+	<div class="alert alert-danger"><?php echo $this->session->flashdata('connect_openid_error'); ?></div>
     </div>
 <?php endif; ?>
 
 <div class="col-lg-4">
 		<?php echo form_input(array('name' => 'connect_openid_url', 'id' => 'connect_openid_url', 'class' => 'openid', 'value' => set_value('connect_openid_url'))); ?>
-		<?php echo "<br />".'<span class="field_error">'.form_error('connect_openid_url')."</span>"; ?>
+		<?php echo "<br />".'<span class="alert alert-danger">'.form_error('connect_openid_url')."</span>"; ?>
 </div>
 
 <div class="col-lg-2">

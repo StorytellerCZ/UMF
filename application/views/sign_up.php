@@ -27,7 +27,7 @@
 						<span class="help-inline">
 						<?php echo form_error('sign_up_username'); ?>
 						<?php if (isset($sign_up_username_error)) : ?>
-							<span class="field_error"><?php echo $sign_up_username_error; ?></span>
+							<span class="alert alert-danger"><?php echo $sign_up_username_error; ?></span>
 						<?php endif; ?>
 						</span>
 					<?php endif; ?>
@@ -43,7 +43,7 @@
 						<span class="help-inline">
 						<?php echo form_error('sign_up_email'); ?>
 						<?php if (isset($sign_up_email_error)) : ?>
-							<span class="field_error"><?php echo $sign_up_email_error; ?></span>
+							<span class="alert alert-danger"><?php echo $sign_up_email_error; ?></span>
 						<?php endif; ?>
 						</span>
 					<?php endif; ?>
@@ -84,7 +84,7 @@
 					<span class="help-inline">
 					<?php echo form_error('sign_up_terms'); ?>
 					<?php if (isset($sign_up_terms_error)) : ?>
-						<span class="field_error"><?php echo $sign_up_terms_error; ?></span>
+						<span class="alert alert-danger"><?php echo $sign_up_terms_error; ?></span>
 					<?php endif; ?>
 					</span>
 				<?php endif; ?>
@@ -93,7 +93,7 @@
 			<?php if (isset($recaptcha)) :
 				echo $recaptcha;
 				if (isset($sign_up_recaptcha_error)) : ?>
-					<span class="field_error"><?php echo $sign_up_recaptcha_error; ?></span>
+					<span class="alert alert-danger"><?php echo $sign_up_recaptcha_error; ?></span>
 				<?php endif; ?>
 			<?php endif; ?>
 			
