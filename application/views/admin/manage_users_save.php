@@ -123,7 +123,7 @@
             ?>
             <div class="checkbox">
               <label>
-                <?php echo form_checkbox("account_role_{$role->id}", 'apply', $check_it, 'class="form-control"'); ?>
+                <?php echo form_checkbox("account_role_{$role->id}", 'apply', $check_it); ?>
                 <?php echo $role->name; ?>
               </label>
             </div>
@@ -137,7 +137,7 @@
     <?php echo form_label(lang('users_creation_send_info'), 'account_creation_info_send', array('class' => "control-label col-lg-2")); ?>
     <div class="col-lg-10">
       <div class="checkbox">
-        <?php echo form_checkbox("account_creation_info_send", 'send', TRUE,'class="form-control"'); ?>
+        <?php echo form_checkbox("account_creation_info_send", 'send', TRUE); ?>
       </div>
     </div>
   </div>
