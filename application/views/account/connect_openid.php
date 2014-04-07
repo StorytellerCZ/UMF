@@ -1,5 +1,5 @@
 <div class="page-header">
-    <h1<?php echo sprintf(lang('connect_with_x'), lang('connect_openid')); ?></h1>
+    <h1><?php echo sprintf(lang('connect_with_x'), lang('connect_openid')); ?></h1>
 </div>
 
 <h3><?php echo sprintf(lang('connect_enter_your'), lang('connect_openid_url')); ?>

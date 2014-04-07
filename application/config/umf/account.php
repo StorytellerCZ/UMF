@@ -84,11 +84,6 @@ $config['third_party_auth'] = array(
                 "keys"    => array ( "id" => "", "secret" => "" )
         ),
 
-        "MySpace" => array (
-                "enabled" => FALSE,
-                "keys"    => array ( "key" => "", "secret" => "" )
-        ),
-
         "LinkedIn" => array (
                 "enabled" => FALSE,
                 "keys"    => array ( "key" => "", "secret" => "" )
