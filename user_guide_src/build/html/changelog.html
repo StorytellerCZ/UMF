@@ -30,7 +30,7 @@
 	<body>
 		<div id="table-contents">
 			<div class="toctree-wrapper compound">
-			<function <lambda> at 0x5c7e5f0>
+			<function <lambda> at 0x554f7d0>
 			</div>
 		</div>
 
@@ -114,6 +114,8 @@ Only entries in <tt class="docutils literal"><span class="pre">$autoload['librar
 <li>Removed previously deprecated EXT constant.</li>
 <li>Updated all classes to be written in PHP 5 style, with visibility declarations and no <tt class="docutils literal"><span class="pre">var</span></tt> usage for properties.</li>
 <li>Moved error templates to <em>application/views/errors/</em>.</li>
+<li>Added support non-HTML error templates for CLI applications.</li>
+<li>Made error templates path configurable using <tt class="docutils literal"><span class="pre">$config['error_views_path']</span></tt>.</li>
 <li>Moved the Log class to <em>application/core/</em></li>
 <li>Global config files are loaded first, then environment ones. Environment config keys overwrite base ones, allowing to only set the keys we want changed per environment.</li>
 <li>Changed detection of <tt class="docutils literal"><span class="pre">$view_folder</span></tt> so that if it&#8217;s not found in the current path, it will now also be searched for under the application folder.</li>
@@ -122,7 +124,6 @@ Only entries in <tt class="docutils literal"><span class="pre">$autoload['librar
 <li>Changed environment defaults to report all errors in <em>development</em> and only fatal ones in <em>testing</em>, <em>production</em> but only display them in <em>development</em>.</li>
 <li>Updated <em>ip_address</em> database field lengths from 16 to 45 for supporting IPv6 address on <a class="reference internal" href="libraries/trackback.html"><em>Trackback Library</em></a> and <a class="reference internal" href="helpers/captcha_helper.html"><em>Captcha Helper</em></a>.</li>
 <li>Removed <em>cheatsheets</em> and <em>quick_reference</em> PDFs from the documentation.</li>
-<li>Added support non-HTML error templates for CLI applications.</li>
 <li>Added availability checks where usage of dangerous functions like <tt class="docutils literal"><span class="pre">eval()</span></tt> and <tt class="docutils literal"><span class="pre">exec()</span></tt> is required.</li>
 <li>Added support for changing the file extension of log files using <tt class="docutils literal"><span class="pre">$config['log_file_extension']</span></tt>.</li>
 <li>Added support for turning newline standardization on/off via <tt class="docutils literal"><span class="pre">$config['standardize_newlines']</span></tt>.</li>

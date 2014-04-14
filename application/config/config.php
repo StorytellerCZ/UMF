@@ -181,10 +181,10 @@ $config['permitted_uri_chars'] = 'a-z 0-9~%.:_\-';
 | use segment based URLs.
 |
 */
-$config['allow_get_array']		= TRUE;
+$config['allow_get_array']	= TRUE;
 $config['enable_query_strings'] = FALSE;
 $config['controller_trigger']	= 'c';
-$config['function_trigger']		= 'm';
+$config['function_trigger']	= 'm';
 $config['directory_trigger']	= 'd'; // experimental not currently in use
 
 /*
@@ -219,7 +219,7 @@ $config['log_threshold'] = 1;
 |--------------------------------------------------------------------------
 |
 | Leave this BLANK unless you would like to set something other than the default
-| application/logs/ folder. Use a full server path with trailing slash.
+| application/logs/ directory. Use a full server path with trailing slash.
 |
 */
 $config['log_path'] = '';
@@ -251,11 +251,22 @@ $config['log_date_format'] = 'Y-m-d H:i:s';
 
 /*
 |--------------------------------------------------------------------------
+| Error Views Directory Path
+|--------------------------------------------------------------------------
+|
+| Leave this BLANK unless you would like to set something other than the default
+| application/views/errors/ directory. Use a full server path with trailing slash.
+|
+*/
+$config['error_views_path'] = '';
+
+/*
+|--------------------------------------------------------------------------
 | Cache Directory Path
 |--------------------------------------------------------------------------
 |
 | Leave this BLANK unless you would like to set something other than the default
-| application/cache/ folder.  Use a full server path with trailing slash.
+| application/cache/ directory.  Use a full server path with trailing slash.
 |
 */
 $config['cache_path'] = '';
@@ -295,15 +306,15 @@ $config['encryption_key'] = '';
 | 'sess_time_to_update'		= how many seconds between CI refreshing Session Information
 |
 */
-$config['sess_driver']			= 'cookie';
+$config['sess_driver']		= 'cookie';
 $config['sess_valid_drivers']	= array();
-$config['sess_cookie_name']		= 'ci_session';
-$config['sess_expiration']		= 7200;
+$config['sess_cookie_name']	= 'ci_session';
+$config['sess_expiration']	= 7200;
 $config['sess_expire_on_close']	= FALSE;
 $config['sess_encrypt_cookie']	= FALSE;
 $config['sess_use_database']	= TRUE;
-$config['sess_table_name']		= 'ci_sessions';
-$config['sess_match_ip']		= FALSE;
+$config['sess_table_name']	= 'ci_sessions';
+$config['sess_match_ip']	= FALSE;
 $config['sess_match_useragent']	= TRUE;
 $config['sess_time_to_update']	= 300;
 
