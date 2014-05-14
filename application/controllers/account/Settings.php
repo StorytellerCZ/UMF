@@ -80,7 +80,6 @@ class Settings extends CI_Controller {
 				$attributes['firstname'] = $this->input->post('settings_firstname', TRUE) ? $this->input->post('settings_firstname', TRUE) : NULL;
 				$attributes['lastname'] = $this->input->post('settings_lastname', TRUE) ? $this->input->post('settings_lastname', TRUE) : NULL;
 				$attributes['gender'] = $this->input->post('settings_gender', TRUE) ? $this->input->post('settings_gender', TRUE) : NULL;
-				$attributes['postalcode'] = $this->input->post('settings_postalcode', TRUE) ? $this->input->post('settings_postalcode', TRUE) : NULL;
 				$attributes['country'] = $this->input->post('settings_country', TRUE) ? $this->input->post('settings_country', TRUE) : NULL;
 				$attributes['language'] = $this->input->post('settings_language', TRUE) ? $this->input->post('settings_language', TRUE) : NULL;
 				$attributes['timezone'] = $this->input->post('settings_timezone', TRUE) ? $this->input->post('settings_timezone', TRUE) : NULL;

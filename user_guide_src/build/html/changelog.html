@@ -30,7 +30,7 @@
 	<body>
 		<div id="table-contents">
 			<div class="toctree-wrapper compound">
-			<function <lambda> at 0x554f7d0>
+			<function <lambda> at 0x2b70d3646050>
 			</div>
 		</div>
 
@@ -126,7 +126,7 @@ Only entries in <tt class="docutils literal"><span class="pre">$autoload['librar
 <li>Removed <em>cheatsheets</em> and <em>quick_reference</em> PDFs from the documentation.</li>
 <li>Added availability checks where usage of dangerous functions like <tt class="docutils literal"><span class="pre">eval()</span></tt> and <tt class="docutils literal"><span class="pre">exec()</span></tt> is required.</li>
 <li>Added support for changing the file extension of log files using <tt class="docutils literal"><span class="pre">$config['log_file_extension']</span></tt>.</li>
-<li>Added support for turning newline standardization on/off via <tt class="docutils literal"><span class="pre">$config['standardize_newlines']</span></tt>.</li>
+<li>Added support for turning newline standardization on/off via <tt class="docutils literal"><span class="pre">$config['standardize_newlines']</span></tt> and set it to FALSE by default.</li>
 </ul>
 </li>
 <li>Helpers<ul>
@@ -571,7 +571,7 @@ Only entries in <tt class="docutils literal"><span class="pre">$autoload['librar
 </li>
 <li><a class="reference internal" href="libraries/language.html"><em>Language Library</em></a> changes include:<ul>
 <li>Changed method <tt class="docutils literal"><span class="pre">load()</span></tt> to filter the language name with <tt class="docutils literal"><span class="pre">ctype_alpha()</span></tt>.</li>
-<li>Added an optional second parameter to method <tt class="docutils literal"><span class="pre">line()</span></tt> to disable error login for line keys that were not found.</li>
+<li>Added an optional second parameter to method <tt class="docutils literal"><span class="pre">line()</span></tt> to disable error logging for line keys that were not found.</li>
 <li>Language files are now loaded in a cascading style with the one in <strong>system/</strong> always loaded and overriden afterwards, if another one is found.</li>
 </ul>
 </li>
@@ -589,7 +589,7 @@ Only entries in <tt class="docutils literal"><span class="pre">$autoload['librar
 </li>
 <li>Added <cite>compatibility layers &lt;general/compatibility_functions&gt;</cite> for:<ul>
 <li><a class="reference external" href="http://php.net/mbstring">Multibyte String</a> (limited support).</li>
-<li><a class="reference external" href="http://php.net/hash">Hash</a> (just <tt class="docutils literal"><span class="pre">hash_pbkdf2()</span></tt>).</li>
+<li><a class="reference external" href="http://php.net/hash">Hash</a> (<tt class="docutils literal"><span class="pre">hash_equals()</span></tt>, <tt class="docutils literal"><span class="pre">hash_pbkdf2()</span></tt>).</li>
 <li><a class="reference external" href="http://php.net/password">Password Hashing</a>.</li>
 <li><a class="reference external" href="http://php.net/book.array">Array Functions</a> (<tt class="docutils literal"><span class="pre">array_column()</span></tt>, <tt class="docutils literal"><span class="pre">array_replace()</span></tt>, <tt class="docutils literal"><span class="pre">array_replace_recursive()</span></tt>).</li>
 </ul>

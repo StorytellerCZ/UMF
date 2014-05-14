@@ -31,7 +31,7 @@
 	<body>
 		<div id="table-contents">
 			<div class="toctree-wrapper compound">
-			<function <lambda> at 0x2eccb90>
+			<function <lambda> at 0x2b2474264b90>
 			</div>
 		</div>
 
@@ -110,9 +110,9 @@ fetchable results.</p>
 </div>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">PostgreSQL&#8217;s pg_exec() function always returns a resource on
-success, even for write type queries. So take that in mind if
-you&#8217;re looking for a boolean value.</p>
+<p class="last">PostgreSQL&#8217;s <tt class="docutils literal"><span class="pre">pg_exec()</span></tt> function (for example) always
+returns a resource on success, even for write type queries.
+So take that in mind if you&#8217;re looking for a boolean value.</p>
 </div>
 <div class="section" id="working-with-database-prefixes-manually">
 <h3>Working with Database prefixes manually<a class="headerlink" href="#working-with-database-prefixes-manually" title="Permalink to this headline">¶</a></h3>
@@ -137,6 +137,13 @@ automatically protected</strong>, however if you need to manually protect an
 identifier you can use:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">protect_identifiers</span><span class="p">(</span><span class="s1">&#39;table_name&#39;</span><span class="p">);</span>
 </pre></div>
+</div>
+<div class="admonition important">
+<p class="first admonition-title">Important</p>
+<p class="last">Although the Query Builder will try its best to properly
+quote any field and table names that you feed it, note that it
+is NOT designed to work with arbitrary user input. DO NOT feed it
+with unsanitized user data.</p>
 </div>
 <p>This function will also add a table prefix to your table, assuming you
 have a prefix specified in your database config file. To enable the

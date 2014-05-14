@@ -60,7 +60,7 @@ Release Date: Not Released
    -  Removed *cheatsheets* and *quick_reference* PDFs from the documentation.
    -  Added availability checks where usage of dangerous functions like ``eval()`` and ``exec()`` is required.
    -  Added support for changing the file extension of log files using ``$config['log_file_extension']``.
-   -  Added support for turning newline standardization on/off via ``$config['standardize_newlines']``.
+   -  Added support for turning newline standardization on/off via ``$config['standardize_newlines']`` and set it to FALSE by default.
 
 -  Helpers
 
@@ -278,7 +278,7 @@ Release Date: Not Released
 
       -  Library changed to :doc:`Driver <general/drivers>` with classic 'cookie' driver as the default.
       -  Added a 'native' PHP Session driver to work with ``$_SESSION``.
-      -  Added a new **tempdata** feature that allows setting userdata items with expiration time (``tempdata()``, ``set_tempdata()``, ``unset_tempdata()``). 
+      -  Added a new **tempdata** feature that allows setting userdata items with expiration time (``tempdata()``, ``set_tempdata()``, ``unset_tempdata()``).
       -  Added default ``$config['sess_driver']`` and ``$config['sess_valid_drivers']`` items to *application/config.php* file.
       -  Changed 'cookie' driver to respect php.ini's *session.gc_probability* and *session.gc_divisor* settings.
       -  Changed 'cookie' driver to use HMAC authentication instead of a simple md5 checksum.
@@ -507,7 +507,7 @@ Release Date: Not Released
    -  :doc:`Language Library <libraries/language>` changes include:
 
       -  Changed method ``load()`` to filter the language name with ``ctype_alpha()``.
-      -  Added an optional second parameter to method ``line()`` to disable error login for line keys that were not found.
+      -  Added an optional second parameter to method ``line()`` to disable error logging for line keys that were not found.
       -  Language files are now loaded in a cascading style with the one in **system/** always loaded and overriden afterwards, if another one is found.
 
    -  :doc:`Hooks Library <general/hooks>` changes include:
@@ -525,7 +525,7 @@ Release Date: Not Released
    -  Added `compatibility layers <general/compatibility_functions>` for:
 
       - `Multibyte String <http://php.net/mbstring>`_ (limited support).
-      - `Hash <http://php.net/hash>`_ (just ``hash_pbkdf2()``).
+      - `Hash <http://php.net/hash>`_ (``hash_equals()``, ``hash_pbkdf2()``).
       - `Password Hashing <http://php.net/password>`_.
       - `Array Functions <http://php.net/book.array>`_ (``array_column()``, ``array_replace()``, ``array_replace_recursive()``).
 

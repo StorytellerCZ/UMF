@@ -24,10 +24,10 @@
 				<div id="username_controls" class="col-lg-10">
 					<?php echo form_input(array('name' => 'sign_up_username', 'id' => 'sign_up_username', 'value' => set_value('sign_up_username'), 'maxlength' => '24', 'class' => 'form-control')); ?>
 					<?php if (form_error('sign_up_username') || isset($sign_up_username_error)) : ?>
-						<span class="help-inline">
+						<span class="alert alert-danger">
 						<?php echo form_error('sign_up_username'); ?>
 						<?php if (isset($sign_up_username_error)) : ?>
-							<span class="alert alert-danger"><?php echo $sign_up_username_error; ?></span>
+							<?php echo $sign_up_username_error; ?>
 						<?php endif; ?>
 						</span>
 					<?php endif; ?>
@@ -40,10 +40,10 @@
 				<div id="email_controls" class="col-lg-10">
 					<?php echo form_input(array('name' => 'sign_up_email', 'id' => 'sign_up_email', 'value' => set_value('sign_up_email'), 'maxlength' => '160', 'class' => 'form-control')); ?>
 					<?php if (form_error('sign_up_email') || isset($sign_up_email_error)) : ?>
-						<span class="help-inline">
+						<span class="alert alert-danger">
 						<?php echo form_error('sign_up_email'); ?>
 						<?php if (isset($sign_up_email_error)) : ?>
-							<span class="alert alert-danger"><?php echo $sign_up_email_error; ?></span>
+							<?php echo $sign_up_email_error; ?>
 						<?php endif; ?>
 						</span>
 					<?php endif; ?>
@@ -56,7 +56,7 @@
 				<div id="password_controls" class="col-lg-10">
 					<?php echo form_password(array('name' => 'sign_up_password', 'id' => 'sign_up_password', 'value' => set_value('sign_up_password'), 'class' => 'form-control')); ?>
 					<?php if (form_error('sign_up_password')) : ?>
-						<span class="help-inline">
+						<span class="alert alert-danger">
 						<?php echo form_error('sign_up_password'); ?>
 						</span>
 					<?php endif; ?>
@@ -69,7 +69,7 @@
 				<div id="confirm_password_controls" class="col-lg-10">
 					<?php echo form_password(array('name' => 'sign_up_confirm_password', 'id' => 'sign_up_confirm_password', 'value' => set_value('sign_up_confirm_password'), 'class' => 'form-control')); ?>
 					<?php if (form_error('sign_up_confirm_password')) : ?>
-						<span class="help-inline">
+						<span class="alert alert-danger">
 						<?php echo form_error('sign_up_confirm_password'); ?>
 						</span>
 					<?php endif; ?>
@@ -81,10 +81,10 @@
 					<input type="checkbox" name="sign_up_terms" value="agree"><?php echo lang('sign_up_terms');?>
 				</label>
 				<?php if (form_error('sign_up_terms') || isset($sign_up_terms_error)) : ?>
-					<span class="help-inline">
+					<span class="alert alert-danger">
 					<?php echo form_error('sign_up_terms'); ?>
 					<?php if (isset($sign_up_terms_error)) : ?>
-						<span class="alert alert-danger"><?php echo $sign_up_terms_error; ?></span>
+						<?php echo $sign_up_terms_error; ?>
 					<?php endif; ?>
 					</span>
 				<?php endif; ?>

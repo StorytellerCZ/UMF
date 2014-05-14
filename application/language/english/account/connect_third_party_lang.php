@@ -10,7 +10,7 @@ $lang['connect_yahoo'] = 'Yahoo!';
 $lang['connect_aol'] = 'AOL';
 $lang['connect_openid'] = 'OpenID';
 $lang['connect_facebook'] = 'Facebook';
-$lang['connect_myspace'] = 'MySpace';
+$lang['connect_live'] = 'Microsoft Account';
 $lang['connect_twitter'] = 'Twitter';
 $lang['connect_linkedin'] = 'LinkedIn';
 

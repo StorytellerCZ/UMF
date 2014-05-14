@@ -101,9 +101,14 @@ class Forgot_password extends CI_Controller {
 					}
 					else
 					{
-						//if the email could not be sent it will display the error
-						//should not happen if you have email configured correctly
-						$data['content'] = $this->email->print_debugger();
+						if(ENVIRONMENT == 'development')
+						{
+							$data['content'] = $this->email->print_debugger();
+						}
+						else
+						{
+							show_error('There was an error sending the e-mail. Please contact the webmaster.');
+						}
 					}
 					
 					$this->load->view('template', $data);
