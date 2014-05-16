@@ -17,7 +17,6 @@ function showPhoto($picture = NULL, $param = NULL)
 	$check = (isset($param['check'])) ? $param['check'] : FALSE;
 	$nocache = (isset($param['nocache'])) ? $param['nocache'] : FALSE; // TRUE = disable caching, add time string to image url
 	$title = (isset($param['title'])) ? $param['title'] : "User's Photo";
-	$class = (isset($param['class'])) ? $param['class'] : "user-photo";
 
 	if (isset($picture) && strlen(trim($picture)) > 0)
 	{

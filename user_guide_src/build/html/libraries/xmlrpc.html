@@ -31,7 +31,7 @@
 	<body>
 		<div id="table-contents">
 			<div class="toctree-wrapper compound">
-			<function <lambda> at 0x254bb18>
+			<function <lambda> at 0x2b7062330e60>
 			</div>
 		</div>
 
@@ -167,7 +167,7 @@ information:</p>
 
 <span class="k">if</span> <span class="p">(</span> <span class="o">!</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">xmlrpc</span><span class="o">-&gt;</span><span class="na">send_request</span><span class="p">())</span>
 <span class="p">{</span>
-    <span class="k">echo</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">xmlrpc</span><span class="o">-&gt;</span><span class="na">display_error</span><span class="p">();</span>
+        <span class="k">echo</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">xmlrpc</span><span class="o">-&gt;</span><span class="na">display_error</span><span class="p">();</span>
 <span class="p">}</span>
 </pre></div>
 </div>
@@ -226,7 +226,7 @@ processing.</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">library</span><span class="p">(</span><span class="s1">&#39;xmlrpc&#39;</span><span class="p">);</span>
 <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">library</span><span class="p">(</span><span class="s1">&#39;xmlrpcs&#39;</span><span class="p">);</span>
 
-<span class="nv">$config</span><span class="p">[</span><span class="s1">&#39;functions&#39;</span><span class="p">][</span><span class="s1">&#39;new_post&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span><span class="s1">&#39;function&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;My_blog.new_entry&#39;</span><span class="p">),</span>
+<span class="nv">$config</span><span class="p">[</span><span class="s1">&#39;functions&#39;</span><span class="p">][</span><span class="s1">&#39;new_post&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span><span class="s1">&#39;function&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;My_blog.new_entry&#39;</span><span class="p">);</span>
 <span class="nv">$config</span><span class="p">[</span><span class="s1">&#39;functions&#39;</span><span class="p">][</span><span class="s1">&#39;update_post&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span><span class="s1">&#39;function&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;My_blog.update_entry&#39;</span><span class="p">);</span>
 <span class="nv">$config</span><span class="p">[</span><span class="s1">&#39;object&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nv">$this</span><span class="p">;</span>
 
@@ -638,7 +638,6 @@ seven types of values that you can send via XML-RPC:</p>
 <p>The request sending method. Returns boolean TRUE or FALSE based on success for failure, enabling it to be used conditionally.</p>
 </dd></dl>
 
-<p>Enables or disables debugging, which will display a variety of information and error data helpful during development.</p>
 <dl class="method">
 <dt id="CI_Xmlrpc.display_error">
 <tt class="descname">display_error</tt><big>(</big><big>)</big><a class="headerlink" href="#CI_Xmlrpc.display_error" title="Permalink to this definition">¶</a></dt>
