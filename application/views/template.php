@@ -25,12 +25,14 @@
 <body>
     <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
         <div class="container">
-            <a class="navbar-toggle collapsed" data-toggle="collapse" data-target=".nav-collapse">
+            <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
-            </a>
+            </button>
                 <?php echo anchor('', lang('website_title'), 'class="navbar-brand"'); ?>
+            </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li class="divider-vertical"></li>

@@ -31,7 +31,7 @@
 	<body>
 		<div id="table-contents">
 			<div class="toctree-wrapper compound">
-			<function <lambda> at 0x323f1b8>
+			<function <lambda> at 0x2abd98361f50>
 			</div>
 		</div>
 
@@ -191,9 +191,11 @@ hidden.</td>
 </table>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">Disabling the <strong>save_queries</strong> setting in your database configuration
+<p class="last">Disabling the (save_queries)[<a class="reference external" href="http://ellislab.com/codeigniter/user-guide/database/configuration.html">http://ellislab.com/codeigniter/user-guide/database/configuration.html</a>] setting in your database configuration
 will also effectively disable profiling for database queries and render
-the &#8216;queries&#8217; setting above useless.</p>
+the &#8216;queries&#8217; setting above useless. You can optionally override this
+setting with <cite>$this-&gt;db-&gt;save_queries = TRUE;</cite>. Without this setting you
+won&#8217;t be able to view the queries or the (last_query)[<a class="reference external" href="http://ellislab.com/codeigniter/user-guide/database/helpers.html">http://ellislab.com/codeigniter/user-guide/database/helpers.html</a>].</p>
 </div>
 </div>
 </div>

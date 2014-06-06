@@ -31,7 +31,7 @@
 	<body>
 		<div id="table-contents">
 			<div class="toctree-wrapper compound">
-			<function <lambda> at 0x404ccf8>
+			<function <lambda> at 0x2b90daab9cf8>
 			</div>
 		</div>
 
@@ -71,13 +71,8 @@
 		<div class="section body" id="content">
   <div class="section" id="encrypt-class">
 <h1>Encrypt Class<a class="headerlink" href="#encrypt-class" title="Permalink to this headline">¶</a></h1>
-<p>The Encrypt Class provides two-way data encryption. It uses a scheme
-that either compiles the message using a randomly hashed bitwise XOR
-encoding scheme, or is encrypted using the Mcrypt library. If Mcrypt is
-not available on your server the encoded message will still provide a
-reasonable degree of security for encrypted sessions or other such
-&#8220;light&#8221; purposes. If Mcrypt is available, you&#8217;ll be provided with a high
-degree of security appropriate for storage.</p>
+<p>The Encrypt Class provides two-way data encryption. It encrypted using
+the Mcrypt PHP extension, which is required for the Encrypt Class to run.</p>
 <div class="admonition important">
 <p class="first admonition-title">Important</p>
 <p class="last">This library has been DEPRECATED and is only kept for

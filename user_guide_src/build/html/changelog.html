@@ -30,7 +30,7 @@
 	<body>
 		<div id="table-contents">
 			<div class="toctree-wrapper compound">
-			<function <lambda> at 0x2b70d3646050>
+			<function <lambda> at 0x2b90db8cb1b8>
 			</div>
 		</div>
 
@@ -411,6 +411,7 @@ Only entries in <tt class="docutils literal"><span class="pre">$autoload['librar
 <li>Added rule <strong>alpha_numeric_spaces</strong>.</li>
 <li>Added support for custom error messages per field rule.</li>
 <li>Added support for callable rules when they are passed as an array.</li>
+<li>Added support for non-ASCII domains in <strong>valid_email</strong> rule, depending on the Intl extension.</li>
 </ul>
 </li>
 <li><a class="reference internal" href="libraries/caching.html"><em>Caching Library</em></a> changes include:<ul>
@@ -439,6 +440,7 @@ Only entries in <tt class="docutils literal"><span class="pre">$autoload['librar
 <li>Added an optional parameter to <tt class="docutils literal"><span class="pre">print_debugger()</span></tt> to allow specifying which parts of the message should be printed (&#8216;headers&#8217;, &#8216;subject&#8217;, &#8216;body&#8217;).</li>
 <li>Added SMTP keepalive option to avoid opening the connection for each <tt class="docutils literal"><span class="pre">send()</span></tt> call. Accessible as <tt class="docutils literal"><span class="pre">$smtp_keepalive</span></tt>.</li>
 <li>Public method <tt class="docutils literal"><span class="pre">set_header()</span></tt> now filters the input by removing all &#8220;\r&#8221; and &#8220;\n&#8221; characters.</li>
+<li>Added support for non-ASCII domains in <tt class="docutils literal"><span class="pre">valid_email()</span></tt>, depending on the Intl extension.</li>
 </ul>
 </li>
 <li><a class="reference internal" href="libraries/pagination.html"><em>Pagination Library</em></a> changes include:<ul>
@@ -617,7 +619,6 @@ Only entries in <tt class="docutils literal"><span class="pre">$autoload['librar
 <li>Fixed a bug (#795) - <a class="reference internal" href="helpers/form_helper.html"><em>Form Helper</em></a> <a class="reference internal" href="helpers/form_helper.html#form_open" title="form_open"><tt class="xref py py-func docutils literal"><span class="pre">form_open()</span></tt></a> didn&#8217;t add the default form <em>method</em> and <em>accept-charset</em> when an empty array is passed to it.</li>
 <li>Fixed a bug (#797) - <a class="reference internal" href="helpers/date_helper.html"><em>Date Helper</em></a> <a class="reference internal" href="helpers/date_helper.html#timespan" title="timespan"><tt class="xref py py-func docutils literal"><span class="pre">timespan()</span></tt></a> was using incorrect seconds for year and month.</li>
 <li>Fixed a bug in <a class="reference internal" href="libraries/cart.html"><em>Cart Library</em></a> method <tt class="docutils literal"><span class="pre">contents()</span></tt> where if called without a TRUE (or equal) parameter, it would fail due to a typo.</li>
-<li>Fixed a bug (#696) - make <tt class="docutils literal"><span class="pre">oci_execute()</span></tt> calls inside <tt class="docutils literal"><span class="pre">num_rows()</span></tt> non-committing, since they are only there to reset which row is next in line for oci_fetch calls and thus don&#8217;t need to be committed.</li>
 <li>Fixed a bug (#406) - SQLSRV DB driver not returning resource on <tt class="docutils literal"><span class="pre">db_pconnect()</span></tt>.</li>
 <li>Fixed a bug in <a class="reference internal" href="libraries/image_lib.html"><em>Image Manipulation Library</em></a> method <tt class="docutils literal"><span class="pre">gd_loaded()</span></tt> where it was possible for the script execution to end or a PHP E_WARNING message to be emitted.</li>
 <li>Fixed a bug in the <a class="reference internal" href="libraries/pagination.html"><em>Pagination library</em></a> where when use_page_numbers=TRUE previous link and page 1 link did not have the same url.</li>
@@ -769,7 +770,6 @@ Only entries in <tt class="docutils literal"><span class="pre">$autoload['librar
 <li>Fixed a bug (#2551) - <a class="reference internal" href="libraries/loader.html"><em>Loader Library</em></a> method <tt class="docutils literal"><span class="pre">library()</span></tt> didn&#8217;t properly check if a class that is being loaded already exists.</li>
 <li>Fixed a bug (#2560) - <a class="reference internal" href="helpers/form_helper.html"><em>Form Helper</em></a> function <a class="reference internal" href="helpers/form_helper.html#form_open" title="form_open"><tt class="xref py py-func docutils literal"><span class="pre">form_open()</span></tt></a> set the &#8216;method=&#8221;post&#8221;&#8217; attribute only if the passed attributes equaled an empty string.</li>
 <li>Fixed a bug (#2585) - <a class="reference internal" href="database/query_builder.html"><em>Query Builder</em></a> methods <tt class="docutils literal"><span class="pre">min()</span></tt>, <tt class="docutils literal"><span class="pre">max()</span></tt>, <tt class="docutils literal"><span class="pre">avg()</span></tt>, <tt class="docutils literal"><span class="pre">sum()</span></tt> didn&#8217;t escape field names.</li>
-<li>Fixed an edge case (#2583) in the <a class="reference internal" href="libraries/email.html"><em>Email Library</em></a> where <cite>Suhosin &lt;http://www.hardened-php.net/suhosin/&gt;</cite> blocked messages sent via <tt class="docutils literal"><span class="pre">mail()</span></tt> due to trailing newspaces in headers.</li>
 <li>Fixed a bug (#2590) - <a class="reference internal" href="general/common_functions.html"><em>Common function</em></a> <a class="reference internal" href="general/errors.html#log_message" title="log_message"><tt class="xref py py-func docutils literal"><span class="pre">log_message()</span></tt></a> didn&#8217;t actually cache the <tt class="docutils literal"><span class="pre">CI_Log</span></tt> class instance.</li>
 <li>Fixed a bug (#2609) - <a class="reference internal" href="general/common_functions.html"><em>Common function</em></a> <tt class="xref py py-func docutils literal"><span class="pre">get_config()</span></tt> optional argument was only effective on first function call. Also, it can now add items, in addition to updating existing items.</li>
 <li>Fixed a bug in the &#8216;postgre&#8217; <a class="reference internal" href="database/index.html"><em>database</em></a> driver where the connection ID wasn&#8217;t passed to <tt class="docutils literal"><span class="pre">pg_escape_string()</span></tt>.</li>
@@ -794,7 +794,6 @@ Only entries in <tt class="docutils literal"><span class="pre">$autoload['librar
 <li>Fixed a bug (#2737) - <a class="reference internal" href="libraries/xmlrpc.html"><em>XML-RPC Library</em></a> used objects as array keys, which triggered E_NOTICE messages.</li>
 <li>Fixed a bug (#2729) - <a class="reference internal" href="libraries/security.html"><em>Security Library</em></a> internal method <tt class="docutils literal"><span class="pre">_validate_entities()</span></tt> used overly-intrusive <tt class="docutils literal"><span class="pre">preg_replace()</span></tt> patterns that produced false-positives.</li>
 <li>Fixed a bug (#2771) - <a class="reference internal" href="libraries/security.html"><em>Security Library</em></a> method <tt class="docutils literal"><span class="pre">xss_clean()</span></tt> didn&#8217;t take into account HTML5 entities.</li>
-<li>Fixed a bug in the <a class="reference internal" href="libraries/sessions.html"><em>Session Library</em></a> &#8216;cookie&#8217; driver where authentication was not performed for encrypted cookies.</li>
 <li>Fixed a bug (#2856) - ODBC method <tt class="docutils literal"><span class="pre">affected_rows()</span></tt> passed an incorrect value to <tt class="docutils literal"><span class="pre">odbc_num_rows()</span></tt>.</li>
 <li>Fixed a bug (#43) <a class="reference internal" href="libraries/image_lib.html"><em>Image Manipulation Library</em></a> method <tt class="docutils literal"><span class="pre">text_watermark()</span></tt> didn&#8217;t properly determine watermark placement.</li>
 <li>Fixed a bug where <a class="reference internal" href="libraries/table.html"><em>HTML Table Library</em></a> ignored its <em>auto_heading</em> setting if headings were not already set.</li>
@@ -802,6 +801,27 @@ Only entries in <tt class="docutils literal"><span class="pre">$autoload['librar
 <li>Partially fixed a bug (#261) - UTF-8 class method <tt class="docutils literal"><span class="pre">clean_string()</span></tt> generating log messages and/or not producing the desired result due to an upstream bug in iconv.</li>
 <li>Fixed a bug where <tt class="docutils literal"><span class="pre">CI_Xmlrpcs::parseRequest()</span></tt> could fail if <tt class="docutils literal"><span class="pre">$HTTP_RAW_POST_DATA</span></tt> is not populated.</li>
 <li>Fixed a bug in <a class="reference internal" href="libraries/zip.html"><em>Zip Library</em></a> internal method <tt class="docutils literal"><span class="pre">_get_mod_time()</span></tt> where it was not parsing result returned by <tt class="docutils literal"><span class="pre">filemtime()</span></tt>.</li>
+</ul>
+</div>
+</div>
+<div class="section" id="version-2-2-0">
+<h2>Version 2.2.0<a class="headerlink" href="#version-2-2-0" title="Permalink to this headline">¶</a></h2>
+<p>Release Date: June 2, 2014</p>
+<ul class="simple">
+<li>General Changes<ul>
+<li>Security: <a class="reference internal" href="libraries/encrypt.html"><em>Encrypt Library</em></a> method <tt class="docutils literal"><span class="pre">xor_encode()</span></tt> has been removed. The Encrypt Class now requires the Mcrypt extension to be installed.</li>
+<li>Security: The <a class="reference internal" href="libraries/sessions.html"><em>Session Library</em></a> now uses HMAC authentication instead of a simple MD5 checksum.</li>
+</ul>
+</li>
+</ul>
+<div class="section" id="bug-fixes-for-2-2-0">
+<h3>Bug fixes for 2.2.0<a class="headerlink" href="#bug-fixes-for-2-2-0" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Fixed an edge case (#2583) in the <a class="reference internal" href="libraries/email.html"><em>Email Library</em></a> where <cite>Suhosin &lt;http://www.hardened-php.net/suhosin/&gt;</cite> blocked messages sent via <tt class="docutils literal"><span class="pre">mail()</span></tt> due to trailing newspaces in headers.</li>
+<li>Fixed a bug (#696) - make <tt class="docutils literal"><span class="pre">oci_execute()</span></tt> calls inside <tt class="docutils literal"><span class="pre">num_rows()</span></tt> non-committing, since they are only there to reset which row is next in line for oci_fetch calls and thus don&#8217;t need to be committed.</li>
+<li>Fixed a bug (#2689) - <a class="reference internal" href="database/forge.html"><em>Database Force</em></a> methods <tt class="docutils literal"><span class="pre">create_table()</span></tt>, <tt class="docutils literal"><span class="pre">drop_table()</span></tt> and <tt class="docutils literal"><span class="pre">rename_table()</span></tt> produced broken SQL for tge &#8216;sqlsrv&#8217; driver.</li>
+<li>Fixed a bug (#2427) - PDO <a class="reference internal" href="database/index.html"><em>Database driver</em></a> didn&#8217;t properly check for query failures.</li>
+<li>Fixed a bug in the <a class="reference internal" href="libraries/sessions.html"><em>Session Library</em></a> where authentication was not performed for encrypted cookies.</li>
 </ul>
 </div>
 </div>

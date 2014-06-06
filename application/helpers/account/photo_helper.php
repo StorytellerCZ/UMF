@@ -3,7 +3,7 @@
 /**
  * Shows users photo
  * @param string $picture Description
- * @param Array $param Array with parameters to be included in the generated img tag (height, width, id, align, check, nocache, title, class)
+ * @param Array $param Array with parameters to be included in the generated img tag (height, width, id, check, nocache, title, class)
  * @return string
  */
 function showPhoto($picture = NULL, $param = NULL)
@@ -13,10 +13,10 @@ function showPhoto($picture = NULL, $param = NULL)
 	$height = (isset($param['height'])) ? $param['height'] : 100;
 	$width = (isset($param['width'])) ? $param['width'] : 100;
 	$id = (isset($param['id'])) ? $param['id'] : FALSE;
-	$align = (isset($param['align'])) ? $param['align'] : "absmiddle";
 	$check = (isset($param['check'])) ? $param['check'] : FALSE;
 	$nocache = (isset($param['nocache'])) ? $param['nocache'] : FALSE; // TRUE = disable caching, add time string to image url
 	$title = (isset($param['title'])) ? $param['title'] : "User's Photo";
+	$class = (isset($param['class'])) ? $param['class'] : FALSE;
 
 	if (isset($picture) && strlen(trim($picture)) > 0)
 	{

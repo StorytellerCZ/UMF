@@ -4,7 +4,7 @@
 			<h1><?php echo sprintf(lang('sign_up_heading'), lang('website_title')); ?></h1>
 		</div>
 		<div class="alert alert-danger">
-			<strong><?php echo lang('notice');?> </strong> <?php echo lang('registration_disabled'); ?>
+			<strong><?php echo lang('sign_up_notice');?> </strong> <?php echo lang('sign_up_registration_disabled'); ?>
 		</div>
 	</div>
 <?php endif;?>
