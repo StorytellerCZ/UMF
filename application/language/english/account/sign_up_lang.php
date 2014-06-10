@@ -31,7 +31,7 @@ $lang['sign_up_notice'] = 'NOTICE:';
 $lang['sign_up_registration_disabled'] = 'New account registrations are currently disabled.';
 
 $lang['sign_up_email_subject'] = '%s account validation';
-$lang['sign_up_email_confirmation'] = "Hello, %s <br /><br /> In order to activate your %s account, please please click on the link below or copy and paste the URL into your browser: <br /> %s";
+$lang['sign_up_email_confirmation'] = "Hello %s, <br /><br /> In order to activate your %s account, please please click on the link below or copy and paste the URL into your browser: <br /> %s";
 
 $lang['sign_up_validation'] = 'Your e-mail has been validated! You can now login!';
 $lang['sign_up_validation_send'] = "In order to finish your registration we need to validate your email. <br />We have send an email, to the adress you registered under, with a validation link to finish your registration.";

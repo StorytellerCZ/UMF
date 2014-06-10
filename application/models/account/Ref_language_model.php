@@ -1,6 +1,16 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class Ref_language_model extends CI_Model {
+/**
+ * Ref_language
+ *
+ * Model for the Ref_language table.
+ * Refferencing language information.
+ *
+ * @package A3M
+ * @subpackage Models
+ */
+class Ref_language_model extends CI_Model
+{
 
 	/**
 	 * Get ref language
@@ -31,9 +41,6 @@ class Ref_language_model extends CI_Model {
 		$this->db->order_by('language', 'asc');
 		return $this->db->get($this->db->dbprefix . 'ref_language')->result();
 	}
-
 }
-
-
 /* End of file Ref_language_model.php */
 /* Location: ./application/models/account/Ref_language_model.php */

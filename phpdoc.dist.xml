@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <phpdoc>
-	<title>CodeIgniter v3.0.0 API</title>
+	<title>UMF API</title>
     <parser>
         <target>./api/</target>
     </parser>
@@ -8,7 +8,10 @@
         <target>./api/</target>
     </transformer>
     <files>
-        <directory>./system</directory>
+        <directory>./application/controllers</directory>
+        <directory>./application/helpers</directory>
+        <directory>./application/libraries</directory>
+        <directory>./application/models</directory>
     </files>
 
     <logging>

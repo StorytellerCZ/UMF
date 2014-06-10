@@ -49,7 +49,6 @@
                         <ul class="dropdown-menu">
                                 <?php if ($this->authentication->is_signed_in()) : ?>
                             <li class="dropdown-header"><?php echo lang('website_account_info'); ?></li>
-                                <li><?php echo anchor('account/profile', lang('website_profile')); ?></li>
                                 <li><?php echo anchor('account/settings', lang('website_account')); ?></li>
                                 <?php if ($account->password) : ?>
                                         <li><?php echo anchor('account/password', lang('website_password')); ?></li>

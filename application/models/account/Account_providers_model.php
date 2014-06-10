@@ -1,11 +1,20 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class Account_providers_model extends CI_Model {
-    
-    /*
-     * Gets all of user's connection
-     * @param int $user_id
-     * @return array
+/**
+ * Account_providers_model
+ *
+ * Model for the Social Network providers connections.
+ *
+ * @package A3M
+ * @subpackage Models
+ */
+class Account_providers_model extends CI_Model
+{
+    /**
+     * Gets record by provider uid
+     * @param string $provider Provider's name
+     * @param string $id ID for the user used by the provider
+     * @return object Record object
      */
     public function get_by_user_id($user_id)
     {
@@ -28,8 +37,19 @@ class Account_providers_model extends CI_Model {
     
     // --------------------------------------------------------------------
     
-    /*
+    /**
      * Insert a new record into DB
+     * @param int $user_id User id
+     * @param string $provider Provider's name
+     * @param string $provider_uid User's id from the provider
+     * @param string $email User's e-mail provided by the provider
+     * @param string $display_name Display/Nickaname from the provider
+     * @param string $first_name
+     * @param string $last_name
+     * @param string $profile_url Link to user's profile with the provider
+     * @param string $website_url
+     * @param string $photo_url
+     * @return int Insert id
      */
     public function insert($user_id, $provider, $provider_uid, $email, $display_name, $first_name, $last_name, $profile_url, $website_url, $photo_url)
     {
@@ -39,11 +59,11 @@ class Account_providers_model extends CI_Model {
     
     // --------------------------------------------------------------------
     
-    /*
+    /**
      * Delete given record from table
      * @param int $user_id
      * @param string $provider Provider name
-     * @param string $id Provider id
+     * @param string $uid Provider uid
      */
     public function delete($user_id, $provider, $uid)
     {

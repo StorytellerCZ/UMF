@@ -1,6 +1,16 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class Rel_account_permission_model extends CI_Model {
+/**
+ * Rel_account_permissions
+ *
+ * Model for the Rel_account_permissions table.
+ * Managing user's assigned permissions.
+ *
+ * @package A3M
+ * @subpackage Models
+ */
+class Rel_account_permission_model extends CI_Model
+{
 
   /**
    * Get all override account permissions

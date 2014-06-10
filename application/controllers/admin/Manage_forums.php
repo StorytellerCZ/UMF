@@ -1,9 +1,25 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class Manage_forums extends CI_Controller {    
+/**
+ * Administration for the forums
+ *
+ * @package CIBB
+ * @subpackage Controllers
+ */
+class Manage_forums extends CI_Controller
+{
+    /**
+     * @var array
+     */
     public $data         = array();
+    /**
+     * @var array
+     */
     public $page_config  = array();
     
+    /**
+     * Constructor
+     */
     public function __construct() 
     {
         parent::__construct();
@@ -14,12 +30,17 @@ class Manage_forums extends CI_Controller {
         
     }
     
+    /**
+     * Index will show the category view and management
+     */
     public function index()
     {
 	$this->category_view();
     }
     
-    // start category function
+    /**
+     * Forum categoris management
+     */
     public function category_create()
     {
 	maintain_ssl($this->config->item("ssl_enabled"));
@@ -61,6 +82,9 @@ class Manage_forums extends CI_Controller {
         $this->load->view('template', $data);
     }
     
+    /**
+     * Details of a specific category
+     */
     public function category_view()
     {
 	maintain_ssl($this->config->item("ssl_enabled"));
@@ -85,6 +109,10 @@ class Manage_forums extends CI_Controller {
         $this->load->view('template', $data);
     }
     
+    /**
+     * Editing a category
+     * @param int $category_id ID of a forum category to edit
+     */
     public function category_edit($category_id)
     {
 	maintain_ssl($this->config->item("ssl_enabled"));
@@ -128,6 +156,10 @@ class Manage_forums extends CI_Controller {
         $this->load->view('template', $data);
     }
     
+    /**
+     * Delete a category
+     * @param int $category_id
+     */
     public function category_delete($category_id)
     {
 	maintain_ssl($this->config->item("ssl_enabled"));
@@ -152,7 +184,11 @@ class Manage_forums extends CI_Controller {
     }
     // end category function
     
-    // start thread function
+    /**
+     * Display threads for a specific category
+     * @param Number $category_id Category for which to display threads
+     * @param Number $page Page number for pagination
+     */
     public function thread_view($category_id, $page = 0)
     {
 	maintain_ssl($this->config->item("ssl_enabled"));
@@ -192,6 +228,10 @@ class Manage_forums extends CI_Controller {
         $this->load->view('template', $data);
     }
     
+    /**
+     * Edit a thread
+     * @param Number $thread_id
+     */
     public function thread_edit($thread_id)
     {
 	maintain_ssl($this->config->item("ssl_enabled"));
@@ -234,6 +274,10 @@ class Manage_forums extends CI_Controller {
         $this->load->view('template', $data);
     }
     
+    /**
+     * Delete a thread
+     * @param Number $thread_id
+     */
     public function thread_delete($thread_id)
     {
 	maintain_ssl($this->config->item("ssl_enabled"));
@@ -258,3 +302,5 @@ class Manage_forums extends CI_Controller {
     }
     // end thread function
 }
+/* End of file Manage_forums.php */
+/* Location: ./application/controllers/admin/Manage_forums.php */

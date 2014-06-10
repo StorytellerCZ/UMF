@@ -8,7 +8,7 @@
 <?php if ($this->session->flashdata('linked_error')) : ?>
     <div class="alert alert-warning alert-dismissable fade in">
 	<button type="button" class="close" data-dismiss="alert">&times;</button>
-	    <?php echo $this->session->flashdata('linked_error'); ?>
+		<?php echo $this->session->flashdata('linked_error'); ?>
     </div>
 <?php endif; ?>
 
@@ -55,7 +55,6 @@
 
 <h3 class="clearfix"><?php echo lang('linked_link_with_your_account_from'); ?></h3>
 <?php if ($third_party_auth = $this->config->item('third_party_auth')) : ?>
-    <h3><?php echo sprintf(lang('sign_up_third_party_heading')); ?></h3>
     <ul>
 	<?php foreach ($third_party_auth['providers'] as $provider_name => $provider_values) : ?>
 	    <?php if($provider_values['enabled']) : ?>

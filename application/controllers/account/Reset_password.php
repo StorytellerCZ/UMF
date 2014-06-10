@@ -1,6 +1,8 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
-/*
- * Reset_password Controller
+/**
+ * Reset password
+ * @package A3M
+ * @subpackage Controllers
  */
 class Reset_password extends CI_Controller {
 
@@ -20,6 +22,8 @@ class Reset_password extends CI_Controller {
 
 	/**
 	 * Reset password
+	 *
+	 * Password reset landing after clicking on a link in the 
 	 */
 	function index($id=null)
 	{
@@ -74,9 +78,6 @@ class Reset_password extends CI_Controller {
 		$data['content'] = $this->load->view('account/reset_password_unsuccessful', isset($data) ? $data : NULL, TRUE);
 		$this->load->view('template', $data);
 	}
-
 }
-
-
 /* End of file Reset_password.php */
 /* Location: ./application/controllers/account/Reset_password.php */

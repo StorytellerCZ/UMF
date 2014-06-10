@@ -1,4 +1,10 @@
-<?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+<?php
+/**
+ * Helper for managing and getting user avatars
+ * @package A3M
+ * @subpackage Helpers
+ */
+if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
 /**
  * Shows users photo
@@ -77,7 +83,10 @@ function showPhoto($picture = NULL, $param = NULL)
 
 }
 
-/* Used for checking if a particular file exists (locally). Use sparingly as it is time consuming!
+/**
+ * Check if file exists
+ * 
+ * Used for checking if a particular file exists (locally). Use sparingly as it is time consuming!
  *
  */
 function fileExists($path)

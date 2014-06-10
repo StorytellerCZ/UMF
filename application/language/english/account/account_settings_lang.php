@@ -6,7 +6,7 @@
 |--------------------------------------------------------------------------
 */
 $lang['settings_page_name'] = 'Account Settings';
-$lang['settings_privacy_statement'] = 'The information we collect on this page is private and will not be shown anywhere on this website or shared with third parties without your explicit permission. For more information, read our %s.';
+$lang['settings_privacy_statement'] = 'The information in this section of the page is private and will not be shown anywhere unless you choose otherwise on this website or shared with third parties without your explicit permission. For more information, read our %s.';
 $lang['settings_privacy_policy'] = 'privacy policy';
 $lang['settings_email'] = 'Email';
 $lang['settings_fullname'] = 'Full Name';
@@ -23,6 +23,18 @@ $lang['settings_cancel'] = 'Cancel';
 $lang['settings_email_exist'] = 'This Email is already registered.';
 $lang['settings_dateofbirth_incomplete'] = 'Date of Birth selection is incomplete.';
 $lang['settings_details_updated'] = 'Your account details have been updated.';
+
+$lang['profile_instructions'] = 'The information you provide in this section is publicly viewable on your site profile.';
+$lang['profile_username'] = 'Username';
+$lang['profile_picture'] = 'Picture';
+$lang['profile_gravatar'] = 'Gravatar';
+$lang['profile_save'] = 'Save changes';
+$lang['profile_updated'] = 'Your profile has been updated.';
+$lang['profile_username_taken'] = 'This Username is already taken.';
+$lang['profile_custom_upload_picture'] = 'Custom Upload';
+$lang['profile_delete_picture'] = 'Change your image';
+$lang['profile_picture_guidelines'] = 'Maximum file size of 800 kb. JPG, GIF, PNG.';
+$lang['admin_or'] = '&nbsp;or&nbsp;';
 
 $lang['dateofbirth_month'] = '- Month -';
 $lang['dateofbirth_day'] = '- Day -';

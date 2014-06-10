@@ -6,6 +6,8 @@
  * @credit        Inspired by nevercraft - http://codeigniter.com/forums/viewthread/83154/#454992@package
  * @version        1.0
  * @license        MIT License Copyright (c) 2010
+ * @package A3M
+ * @subpackage Helpers
  */
 
 // ------------------------------------------------------------------------

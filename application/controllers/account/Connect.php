@@ -1,6 +1,8 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
-/*
- * Connect Controller
+/**
+ * Connect to social providers
+ * @package A3M
+ * @subpackage Controllers
  */
 class Connect extends CI_Controller
 {
@@ -18,6 +20,11 @@ class Connect extends CI_Controller
         $this->load->language(array('general', 'account/connect_third_party'));
     }
     
+    /**
+     * The initiation of connecting to a third party provider
+     * @param string $provider Name of the provider that we should connect to
+     * @param string $identifier For OpenID, the link to the account
+     */
     function Index($provider = NULL, $identifier = NULL)
     {
         // Enable SSL?

@@ -1,6 +1,16 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class Rel_role_permission_model extends CI_Model {
+/**
+ * Rel_role_permissions
+ *
+ * Model for the Rel_role_permissions table.
+ * Managing what permissions a role has.
+ *
+ * @package A3M
+ * @subpackage Models
+ */
+class Rel_role_permission_model extends CI_Model
+{
 
   /**
    * Get all role permissions
@@ -151,7 +161,7 @@ class Rel_role_permission_model extends CI_Model {
    * Delete all by role id
    *
    * @access public
-   * @param int $permission_id
+   * @param int $role_id
    * @return void
    */
   function delete_by_role($role_id)

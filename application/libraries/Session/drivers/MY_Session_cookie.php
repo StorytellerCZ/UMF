@@ -6,9 +6,16 @@
  *
  * 1) Ability to create a session that expire when the browser closes
  * 2) Prevent session loss when parallel requests are made using AJAX
+ *
+ * @package A3M
+ * @subpackage Drivers
  */ 
-class MY_Session_cookie extends CI_Session_cookie {
+class MY_Session_cookie extends CI_Session_cookie
+{
 	
+	/**
+	 * Constructor
+	 */
 	function __construct()
 	{
 	    parent::__construct();
@@ -23,6 +30,7 @@ class MY_Session_cookie extends CI_Session_cookie {
 	 * to create session cookies that expire when the browser closes
 	 *
 	 * @access    public
+	 * @param boolean $asleep
 	 * @return    void
 	 */
 	public function cookie_monster($asleep)
@@ -41,6 +49,7 @@ class MY_Session_cookie extends CI_Session_cookie {
 	 * Write the session cookie
 	 *
 	 * @access    public
+	 * @param object $cookie_data
 	 * @return    void
 	 */
 	public function _set_cookie($cookie_data = NULL)
@@ -79,6 +88,7 @@ class MY_Session_cookie extends CI_Session_cookie {
 	 * Update an existing session
 	 *
 	 * @access    public
+	 * @param boolean $force
 	 * @return    void
 	 */
 	public function _sess_update($force = FALSE)
@@ -93,6 +103,5 @@ class MY_Session_cookie extends CI_Session_cookie {
 	// ------------------------------------------------------------------------
         
 }
-
 /* End of file MY_Session.php */
 /* Location: ./application/libraries/Session/drivers/MY_Session_cookie.php */

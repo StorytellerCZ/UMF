@@ -1,6 +1,8 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
-/*
- * Connect_end Controller
+/**
+ * End point for social providers return data
+ * @package A3M
+ * @subpackage Controllers
  */
 class Connect_end extends CI_Controller
 {
@@ -12,6 +14,9 @@ class Connect_end extends CI_Controller
         parent::__construct();
     }
     
+    /**
+     * Endpoint for Hybrid Auth connection
+     */
     public function Index()
     {
         log_message('debug', 'controllers.HAuth.endpoint called.');
@@ -29,7 +34,7 @@ class Connect_end extends CI_Controller
         log_message('debug', 'controllers.HAuth.endpoint: loading the original HybridAuth endpoint script.');
 	
 	//require_once APPPATH.'/helper/account/Hybrid/index.php';
-	/*!
+	/**
 	* HybridAuth
 	* http://hybridauth.sourceforge.net | http://github.com/hybridauth/hybridauth
 	* (c) 2009-2012, HybridAuth authors | http://hybridauth.sourceforge.net/licenses.html 

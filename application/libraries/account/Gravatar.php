@@ -1,20 +1,29 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed'); // Remove line to use class outside of codeigniter
-/*
+/**
 * Gravatar library for use with codeigniter
 * 
 * @author Ryan Marshall <ryan@irealms.co.uk>
 * @link https://github.com/rsmarshall/Codeigniter-Gravatar
-* @package Codeigniter
+* @package CodeIgniter
 * @subpackage Gravatar
 *
 */
 
-class Gravatar {
-    
+class Gravatar
+{
+    /**
+     * Base Gravatar URL
+     * @var string
+     */
     private $base_url = 'http://www.gravatar.com/';
+    
+    /**
+     * Secured URL to Gravatar
+     * @var string
+     */
     private $secure_base_url = 'https://secure.gravatar.com/';
 
-    /*
+    /**
      * Set the email to be used, converting it into an md5 hash as required by gravatar.com
      * 
      * @param string $email
@@ -34,11 +43,11 @@ class Gravatar {
         return NULL;
     }
 
-    /*
+    /**
     * get_gravatar_url
     * 
     * @see http://en.gravatar.com/site/implement/images/ for available options
-    *
+    * @param string $email
     * @param string $rating defaults to g
     * @param string $size defaults to 80
     * @param string $default_image default sets can be found on the above link
@@ -91,11 +100,11 @@ class Gravatar {
         return $base .'avatar/'. $hash . $query_string;
     }
 
-    /*
+    /**
      * Grab the full profile data for a given email from gravatar.com in xml format
      * 
      * @param string $email
-     * @param string fetch_method defaults to file, 'curl' is the other option
+     * @param string $fetch_method defaults to file, 'curl' is the other option
      * 
      * @return object|null $xml->entry on success, NULL on an error
      */

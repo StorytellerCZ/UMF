@@ -1,7 +1,17 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class Authentication {
-
+/**
+ * A3M Authentication library
+ *
+ * @package A3M
+ * @subpackage Libraries
+ */
+class Authentication
+{
+	/**
+	 * The CI object
+	 * @var object
+	 */
 	var $CI;
 
 	/**
@@ -23,6 +33,46 @@ class Authentication {
 		}
 		
 		log_message('debug', 'Authentication Class Initalized');
+	}
+
+	// --------------------------------------------------------------------
+	
+	/**
+	 * Page Initialization
+	 *
+	 * The initial steps that are taken at the beginning of each page
+	 * @param boolean $login_required Is this page accessible only when logged in?
+	 * @param string $page Page location to take location into account
+	 * @return Array  Returns array with properties portraying to the user
+	 */
+	function initialize($login_required = FALSE, $page = NULL)
+	{
+		//first check for SSL
+		$this->CI->load->helper('account/ssl');
+		$this->CI->load->config('account/account');
+		maintain_ssl($this->CI->config->item("ssl_enabled"));
+		
+		// Redirect unauthenticated users to signin page
+		$this->CI->load->model('account/Account_model');
+		if($login_required)
+		{
+			if ( ! $this->is_signed_in())
+			{
+				redirect('user/sign_in/?continue='.urlencode(base_url($page)));
+			}
+			else
+			{
+				// Retrieve sign in user
+				$data['account'] = $this->CI->Account_model->get_by_id($this->CI->session->userdata('account_id'));
+			}
+		}
+		else
+		{
+			// Retrieve sign in user
+			$data['account'] = $this->CI->Account_model->get_by_id($this->CI->session->userdata('account_id'));
+		}
+		
+		return $data;
 	}
 
 	// --------------------------------------------------------------------
@@ -190,7 +240,5 @@ class Authentication {
 		}
 	}
 }
-
-
 /* End of file Authentication.php */
 /* Location: ./application/account/libraries/Authentication.php */

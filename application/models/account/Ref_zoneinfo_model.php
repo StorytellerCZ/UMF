@@ -1,6 +1,16 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class Ref_zoneinfo_model extends CI_Model {
+/**
+ * Ref_zoneinfo
+ *
+ * Model for the Ref_zoneinfo table.
+ * Refferencing timezone information.
+ *
+ * @package A3M
+ * @subpackage Models
+ */
+class Ref_zoneinfo_model extends CI_Model
+{
 
 	/**
 	 * Get by zoneinfo
@@ -47,7 +57,5 @@ class Ref_zoneinfo_model extends CI_Model {
 	}
 
 }
-
-
 /* End of file Ref_zoneinfo_model.php */
 /* Location: ./application/models/account/Ref_zoneinfo_model.php */

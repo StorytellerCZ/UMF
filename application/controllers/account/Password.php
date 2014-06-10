@@ -1,8 +1,12 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
-/*
- * Account_password Controller
+/**
+ * Password manager
+ *
+ * @package A3M
+ * @subpackage Controllers
  */
-class Password extends CI_Controller {
+class Password extends CI_Controller
+{
 
 	/**
 	 * Constructor
@@ -19,7 +23,9 @@ class Password extends CI_Controller {
 	}
 
 	/**
-	 * Account password
+	 * Account password manager
+	 *
+	 * Allows users to change their password
 	 */
 	function index()
 	{
@@ -54,9 +60,6 @@ class Password extends CI_Controller {
 		$data['content'] = $this->load->view('account/account_password', $data, TRUE);
 		$this->load->view('template', $data);
 	}
-
 }
-
-
 /* End of file Ppassword.php */
 /* Location: ./application/controllers/account/Password.php */

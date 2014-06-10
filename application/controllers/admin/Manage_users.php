@@ -1,8 +1,11 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
-/*
- * Manage_users Controller
+/**
+ * Manage users
+ * @package A3M
+ * @subpackage Controllers
  */
-class Manage_users extends CI_Controller {
+class Manage_users extends CI_Controller
+{
 
   /**
    * Constructor
@@ -19,7 +22,7 @@ class Manage_users extends CI_Controller {
   }
 
   /**
-   * Manage Users
+   * Overview of all users
    */
   function index()
   {
@@ -89,8 +92,14 @@ class Manage_users extends CI_Controller {
 
   /**
    * Create/Update Users
+   *
+   * If user ID is passed in, it will allow to edit the given user.
+   * If no user ID is passed then it will allow the creation of a new user.
+   * When you create a new user an e-mail is going to be send out to that user with their login information.
+   *
+   * @param int $id User id
    */
-  function save($id=null)
+  function save($id = NULL)
   {
     // Keep track if this is a new user
     $is_new = empty($id);
@@ -279,11 +288,11 @@ class Manage_users extends CI_Controller {
    * Filter the user list by permission or role.
    *
    * @access public
-   * @param string $type (permission, role)
-   * @param int $id (permission_id, role_id)
+   * @param string $type permission, role
+   * @param int $id permission_id, role_id
    * @return void
    */
-  function filter($type=null,$id=null)
+  function filter($type = NULL, $id = NULL)
   {
     $this->index();
   }
@@ -292,7 +301,7 @@ class Manage_users extends CI_Controller {
    * Check if a username exist
    *
    * @access public
-   * @param string
+   * @param string $username
    * @return bool
    */
   function username_check($username)
@@ -304,7 +313,7 @@ class Manage_users extends CI_Controller {
    * Check if an email exist
    *
    * @access public
-   * @param string
+   * @param string $email
    * @return bool
    */
   function email_check($email)
@@ -312,6 +321,5 @@ class Manage_users extends CI_Controller {
     return $this->Account_model->get_by_email($email) ? TRUE : FALSE;
   }
 }
-
 /* End of file Manage_users.php */
 /* Location: ./application/controllers/admin/Manage_users.php */

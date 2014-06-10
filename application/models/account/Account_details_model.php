@@ -1,6 +1,15 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class Account_details_model extends CI_Model {
+/**
+ * Account_details_model
+ *
+ * Model to retrieve and update more detailed information about user.
+ *
+ * @package A3M
+ * @subpackage Models
+ */
+class Account_details_model extends CI_Model
+{
 
 	/**
 	 * Get details for all account
@@ -113,6 +122,5 @@ class Account_details_model extends CI_Model {
 	}
 
 }
-
 /* End of file Account_details_model.php */
 /* Location: ./application/models/account/Account_details_model.php */

@@ -1,8 +1,11 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
-/*
- * Manage_permissions Controller
+/**
+ * Manage user permissions
+ * @package A3M
+ * @subpackage Controllers
  */
-class Manage_permissions extends CI_Controller {
+class Manage_permissions extends CI_Controller
+{
 
   /**
    * Constructor
@@ -19,7 +22,9 @@ class Manage_permissions extends CI_Controller {
   }
 
   /**
-   * Manage Permissions
+   * Overview
+   *
+   * Overview of all permissions and options
    */
   function index()
   {
@@ -83,7 +88,12 @@ class Manage_permissions extends CI_Controller {
 
 
   /**
-   * Manage Permissions
+   * Create/edit permissions
+   *
+   * If permission ID is defined it will edit it.
+   * If ID is null it will create a new permission.
+   *
+   * @param int $id ID of a specific permission
    */
   function save($id=null)
   {
@@ -206,7 +216,7 @@ class Manage_permissions extends CI_Controller {
    * Check if the permission name exists
    *
    * @access public
-   * @param string
+   * @param string $permission_name
    * @return bool
    */
   function name_check($permission_name)
@@ -214,6 +224,5 @@ class Manage_permissions extends CI_Controller {
     return $this->Acl_permission_model->get_by_name($permission_name) ? TRUE : FALSE;
   }
 }
-
 /* End of file Manage_permissions.php */
 /* Location: ./application/controllers/admin/Manage_permissions.php */

@@ -1,8 +1,12 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
-/*
- * Connect_openid Controller
+/**
+ * Page to put in adress to openid provider
+ * 
+ * @package A3M
+ * @subpackage Controllers
  */
-class Connect_openid extends CI_Controller {
+class Connect_openid extends CI_Controller
+{
 
 	/**
 	 * Constructor
@@ -17,7 +21,10 @@ class Connect_openid extends CI_Controller {
 		$this->load->model(array('account/Account_model'));
 		$this->load->language(array('general', 'account/sign_in', 'account/account_linked', 'account/connect_third_party'));
 	}
-
+	
+	/**
+	 * Page to specify OpenID provider
+	 */
 	function index()
 	{
 		// Enable SSL?
@@ -47,9 +54,6 @@ class Connect_openid extends CI_Controller {
 		$data['content'] = $this->load->view('account/connect_openid', isset($data) ? $data : NULL, TRUE);
 		$this->load->view('template', $data);
 	}
-
 }
-
-
 /* End of file Connect_openid.php */
 /* Location: ./application/controllers/account/Connect_openid.php */

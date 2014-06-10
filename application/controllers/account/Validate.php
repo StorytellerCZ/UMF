@@ -1,8 +1,12 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
-/*
- * Validate Controller
+/**
+ * E-mail validation
+ *
+ * @package A3M
+ * @subpackage Controllers
  */
-class Validate extends CI_Controller {
+class Validate extends CI_Controller
+{
     
     function __construct()
     {
@@ -109,6 +113,5 @@ class Validate extends CI_Controller {
 	}
     }
 }
-
 /* End of file Validate.php */
 /* Location: ./application/controllers/account/Validate.php */

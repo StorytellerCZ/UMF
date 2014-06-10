@@ -1,6 +1,16 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class Rel_account_role_model extends CI_Model {
+/**
+ * Rel_account_role
+ *
+ * Model for the Rel_account_role table.
+ * Managing user's assigned roles
+ *
+ * @package A3M
+ * @subpackage Models
+ */
+class Rel_account_role_model extends CI_Model
+{
 
   /**
    * Get all account roles
@@ -10,7 +20,7 @@ class Rel_account_role_model extends CI_Model {
    */
   function get()
   {
-    return $this->db->get('a3m_rel_account_role')->result();
+    return $this->db->get($this->db->dbprefix .'a3m_rel_account_role')->result();
   }
 
   /**

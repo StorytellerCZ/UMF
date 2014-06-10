@@ -1,6 +1,16 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class Acl_permission_model extends CI_Model {
+/**
+ * Acl_permissions_model
+ *
+ * Model for the Acl_permission table.
+ * Holds permissions information.
+ *
+ * @package A3M
+ * @subpackage Models
+ */
+class Acl_permission_model extends CI_Model
+{
 
   /**
    * Get all permissions, used for Admin Panel
@@ -153,6 +163,5 @@ class Acl_permission_model extends CI_Model {
     $this->db->delete($this->db->dbprefix . 'a3m_acl_permission', array('id' => $permission_id));
   }
 }
-
 /* End of file Acl_permission_model.php */
 /* Location: ./application/models/account/Acl_permission_model.php */
