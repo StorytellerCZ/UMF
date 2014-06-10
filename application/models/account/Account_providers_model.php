@@ -11,10 +11,9 @@
 class Account_providers_model extends CI_Model
 {
     /**
-     * Gets record by provider uid
-     * @param string $provider Provider's name
-     * @param string $id ID for the user used by the provider
-     * @return object Record object
+     * Gets all of user's connection
+     * @param int $user_id
+     * @return array
      */
     public function get_by_user_id($user_id)
     {
