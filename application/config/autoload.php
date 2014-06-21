@@ -145,7 +145,7 @@ $autoload['config'] = array('umf/account');
 |
 */
 
-$autoload['language'] = array('general');
+$autoload['language'] = array();
 
 
 /*

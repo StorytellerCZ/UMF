@@ -1,16 +1,35 @@
-<?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+<?php
+/**
+* CodeIgniter Bulletin Board
+*
+* Original Author of CIBB:
+* @author Aditia Rahman
+* @link http://superdit.com/2012/08/15/cibb-an-experimental-basic-forum-built-with-codeigniter-and-twitter-bootstrap/
+*
+* Rewrite Author:
+* @author Jan Dvorak IV.
+* @link https://github.com/AdwinTrave
+*
+*/
+if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
+/**
+ * Threads
+ * @package CIBB
+ * @subpackage Controllers
+ */
 class Thread extends CI_Controller {
-    public $data         = array();
-    public $page_config  = array();
     
+    /**
+     * Constructor
+     */
     public function __construct() 
     {
         parent::__construct();
         $this->load->config('umf/forums');
         $this->load->model(array('forums/thread_model', 'forums/category_model', 'forums/posts_model'));
         $this->load->helper('pagination');
-        $this->load->language('forums/forums');
+        $this->load->language(array('general', 'forums/forums'));
         $this->load->library(array('form_validation', 'forums/cibb'));
     }
     
@@ -57,6 +76,10 @@ class Thread extends CI_Controller {
     }
     */
     
+    /**
+     * Create a forum thread
+     * @param int $category_id Category id in which the thread should be created
+     */
     public function create($category_id)
     {
         maintain_ssl($this->config->item("ssl_enabled"));
@@ -100,10 +123,15 @@ class Thread extends CI_Controller {
         $this->load->view('template', $data);
     }
     
-    /*
+    /**
+     * Individual thread
+     *
      * Originally talk
+     *
+     * @param string $slug
+     * @param Number $page
      */
-    public function Index($slug, $start = 0)
+    public function Index($slug, $page = 0)
     {
         maintain_ssl($this->config->item("ssl_enabled"));
 	
@@ -152,7 +180,7 @@ class Thread extends CI_Controller {
         
         $data['categories']    = $this->category_model->get_all();
         $data['page']   = $this->pagination->create_links();
-        $data['posts']  = $this->posts_model->get($data['thread']->id, $start, $this->page_config['per_page']);
+        $data['posts']  = $this->posts_model->get($data['thread']->id, $page, $this->page_config['per_page']);
         //$this->thread_model->get_posts_threaded($thread->id, $start, $this->page_config['per_page']);
         $data['cat']    = $this->category_model->get_all_parent($data['thread']->category_id, 0);
         
@@ -160,3 +188,5 @@ class Thread extends CI_Controller {
         $this->load->view('template', $data);
     }
 }
+/* End of file Thread.php */
+/* Location: ./application/controllers/forums/Thread.php */

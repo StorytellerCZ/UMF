@@ -1,7 +1,30 @@
-<?php defined('BASEPATH') OR exit('No direct script access allowed');
+<?php
+/**
+ * Mahana Messaging Library for CodeIgniter
+ *
+ * CI library for linking to application's existing user table and
+ * creating basis of an internal messaging system. No views or controllers
+ * included.
+ *
+ * @author      Jeff Madsen
+ *              jrmadsen67@gmail.com
+ *              http://www.codebyjeff.com
+ * 
+ */
+if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class Message extends CI_Controller {
-    
+/**
+ * Mahana Messaging Mesage Control
+ * 
+ * @author Jan Dvorak IV. <webmaster@freedombase.net>
+ * @package Mahana Messaging
+ * @subpackage Controller
+ */
+class Message extends CI_Controller
+{
+    /**
+     * Constructor
+     */
     function __construct()
     {
         parent::__construct();
@@ -9,26 +32,18 @@ class Message extends CI_Controller {
         // Load the necessary stuff...
         $this->load->helper(array('language', 'url', 'form', 'account/ssl'));
         $this->load->library(array('account/authorization', 'pm/mahana_messaging', 'form_validation'));
-        $this->load->language(array('pm/pm', 'pm/mahana'));
+        $this->load->language(array('general', 'pm/pm', 'pm/mahana'));
     }
-
+    
+    /**
+     * Message thread
+     * 
+     * @param int $id Description
+     * @access public
+     */
     function index($id = NULL)
     {
-        maintain_ssl($this->config->item("ssl_enabled"));
-        
-        // Redirect unauthenticated users to signin page
-        if ( ! $this->authentication->is_signed_in())
-        {
-            redirect('account/sign_in/?continue='.urlencode(base_url().'pm/Message'.$id));
-        }
-        
-        $data['account'] = $this->Account_model->get_by_id($this->session->userdata('account_id'));
-        
-        //check that they are authorized to use private messaging
-        if(! $this->authorization->is_permitted('msg_use'))
-        {
-            redirect(base_url());
-        }
+        $data = $this->authentication->initialize(TRUE, 'pm/message/'.$id, NULL, 'msg_use');
         
         //if no message is defined, then redirect back to overview
         if($id == NULL || !is_numeric($id))
@@ -87,3 +102,5 @@ class Message extends CI_Controller {
         $this->load->view('template', $data);
     }
 }
+/* End of file Message.php */
+/* Location: ./application/controllers/pm/Message.php */

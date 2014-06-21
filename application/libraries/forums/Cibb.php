@@ -1,34 +1,46 @@
-<?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed');
-
+<?php
 /**
-* Name:        CodeIgniter Bulletin Board
+* CodeIgniter Bulletin Board
 *
-* Original Author of CIBB:      Aditia Rahman
-*              http://superdit.com/2012/08/15/cibb-an-experimental-basic-forum-built-with-codeigniter-and-twitter-bootstrap/
+* Original Author of CIBB:
+* @author Aditia Rahman
+* @link http://superdit.com/2012/08/15/cibb-an-experimental-basic-forum-built-with-codeigniter-and-twitter-bootstrap/
 *
-* Rewrite Author:       Jan Dvorak
-*               https://github.com/AdwinTrave
+* Rewrite Author:
+* @author Jan Dvorak IV.
+* @link https://github.com/AdwinTrave
 *
 */
+if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
+/**
+ * CIBB
+ * 
+ * @package CIBB
+ * @subpackage Libraries
+ */
 class Cibb
 {
-    
+    /**
+     * Constructor
+     */
     public function __construct()
     {
         $this->CI =& get_instance();
-        
-        $this->CI->load->model(array('forums/category_model', 'forums/thread_model'));
+        //$this->CI->load->model(array('forums/category_model', 'forums/thread_model'));
+        $this->CI->load->language('forums/forums');
+        $this->CI->load->helper('language');
     }
     
-    /*
-     * BUG: language doesn't load
+    /**
+     * Transforms date to a string on how long ago it was
+     * 
+     * @param date $date
+     * @return string
      */
     public function time_ago($date)
     {
-        //load the appropriate lang file
-        $this->CI->lang->load('forums/forums');
-        $this->CI->load->helper('language');
+        $this->CI =& get_instance();
         
         if(empty($date)) {
             return lang('forums_time_no_date');
@@ -63,3 +75,5 @@ class Cibb
         return "$difference $periods[$j] {$tense}";
     }
 }
+/* End of file Cibb.php */
+/* Location: ./application/libraries/forums/Cibb.php */

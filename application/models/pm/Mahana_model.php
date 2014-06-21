@@ -1,5 +1,24 @@
-<?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+<?php  
+/**
+ * Mahana Messaging Library for CodeIgniter
+ *
+ * CI library for linking to application's existing user table and
+ * creating basis of an internal messaging system. No views or controllers
+ * included.
+ *
+ * @author      Jeff Madsen
+ *              jrmadsen67@gmail.com
+ *              http://www.codebyjeff.com
+ * 
+ */
+if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
+/**
+ * Mahana Messaging Model
+ *
+ * @package Mahana Messaging
+ * @subpackage Models
+ */
 class Mahana_model extends CI_Model
 {
     /**

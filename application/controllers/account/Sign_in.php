@@ -26,7 +26,7 @@ class Sign_in extends CI_Controller {
 		$this->load->helper(array('language', 'account/ssl', 'url'));
 		$this->load->library(array('account/authentication', 'account/authorization', 'account/recaptcha', 'form_validation'));
 		$this->load->model('account/Account_model');
-		$this->load->language(array('account/sign_in', 'account/connect_third_party'));
+		$this->load->language(array('general', 'account/sign_in', 'account/connect_third_party'));
 	}
 
 	/**

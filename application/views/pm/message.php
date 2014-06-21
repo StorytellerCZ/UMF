@@ -1,7 +1,7 @@
 <div class="col-lg-12">
     <div class="page-header">
         <h1><?php echo $thread[0]['subject']; ?>
-        <?php echo anchor('pm', lang('pm_back_to_overview'), array('class' => 'btn btn-default pull-right')) ?></h1>
+        <?php echo anchor('pm', '<span class="glyphicon glyphicon-arrow-left"></span> ' . lang('pm_back_to_overview'), array('class' => 'btn btn-default pull-right')) ?></h1>
     </div>
     <div class="col-lg-10">
     <?php //print_r($thread);

@@ -1,17 +1,41 @@
-<?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+<?php
+/**
+* CodeIgniter Bulletin Board
+*
+* Original Author of CIBB:
+* @author Aditia Rahman
+* @link http://superdit.com/2012/08/15/cibb-an-experimental-basic-forum-built-with-codeigniter-and-twitter-bootstrap/
+*
+* Rewrite Author:
+* @author Jan Dvorak IV.
+* @link https://github.com/AdwinTrave
+*
+*/
+if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
+/**
+ * Forum main page
+ * @package CIBB
+ * @subpackage Controllers
+ */
 class Forums extends CI_Controller {
     
+    /**
+     * Constructor
+     */
     public function __construct() 
     {
         parent::__construct();
         $this->load->config('umf/forums');
         $this->load->model(array('forums/thread_model', 'forums/category_model'));
         $this->load->helper('pagination');
-	$this->load->language('forums/forums');
+	$this->load->language(array('general', 'forums/forums'));
 	$this->load->library('forums/cibb');
     }
     
+    /**
+     * Forum index
+     */
     public function index()
     {
         maintain_ssl($this->config->item("ssl_enabled"));
@@ -41,3 +65,5 @@ class Forums extends CI_Controller {
         $this->load->view('template', $data);
     }
 }
+/* End of file Forums.php */
+/* Location: ./application/controllers/forums/Forums.php */

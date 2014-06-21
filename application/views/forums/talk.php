@@ -34,43 +34,6 @@
         <h1><?php echo $thread->title; ?></h1>
     </div>
     
-    <?php
-    function time_ago($date) {
-
-        if(empty($date)) {
-            return "No date provided";
-        }
-
-        $periods = array("second", "minute", "hour", "day", "week", "month", "year", "decade");
-        $lengths = array("60","60","24","7","4.35","12","10");
-        $now = time();
-        $unix_date = strtotime($date);
-
-        // check validity of date
-
-        if(empty($unix_date)) {
-            return "Bad date";
-        }
-
-        // is it future date or past date
-        if($now > $unix_date) {
-            $difference = $now - $unix_date;
-            $tense = "ago";
-        } else {
-            $difference = $unix_date - $now;
-            $tense = "from now";
-        }
-        for($j = 0; $difference >= $lengths[$j] && $j < count($lengths)-1; $j++) {
-            $difference /= $lengths[$j];
-        }
-        $difference = round($difference);
-        if($difference != 1) {
-            $periods[$j].= "s";
-        }
-
-        return "$difference $periods[$j] {$tense}";
-    }
-    ?>
     <!--
     <link rel="stylesheet" href="<?php echo base_url(); ?>resources/jquery/jwysiwyg/jquery.wysiwyg.css"/>
     <script src="<?php echo base_url(); ?>resources/jquery/jwysiwyg/jquery.wysiwyg.js" charset="utf-8"></script>
@@ -140,7 +103,7 @@
             </ul>
             -->
             <span style="font-size:11px;float:right;position: relative;top:14px;">
-                posted by <?php echo $post->username; ?>, <?php echo time_ago($post->date_add); ?>
+                posted by <?php echo $post->username; ?>, <?php echo $this->cibb->time_ago($post->date_add); ?>
             </span>
             <div class="clearfix" style="height: 30px;"></div>
 

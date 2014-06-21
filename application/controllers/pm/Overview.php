@@ -1,7 +1,29 @@
-<?php defined('BASEPATH') OR exit('No direct script access allowed');
+<?php
+/**
+ * Mahana Messaging Library for CodeIgniter
+ *
+ * CI library for linking to application's existing user table and
+ * creating basis of an internal messaging system. No views or controllers
+ * included.
+ *
+ * @author      Jeff Madsen
+ *              jrmadsen67@gmail.com
+ *              http://www.codebyjeff.com
+ * 
+ */
+if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
+/**
+ * Mahana Messaging Messages Overview
+ *
+ * @author Jan Dvorak IV. <webmaster@freedombase.net>
+ * @package Mahana Messaging
+ * @subpackage Controller
+ */
 class Overview extends CI_Controller {
-    
+    /**
+     * Constructor
+     */
     function __construct()
     {
         parent::__construct();
@@ -9,30 +31,17 @@ class Overview extends CI_Controller {
         // Load the necessary stuff...
         $this->load->helper(array('language', 'url', 'form', 'account/ssl'));
         $this->load->library(array('pm/mahana_messaging', 'form_validation'));
-        $this->load->language(array('pm/pm', 'pm/mahana'));
+        $this->load->language(array('general', 'pm/pm', 'pm/mahana'));
     }
     
-    /*
+    /**
      * Overview of user's messages with an option to create a new one
+     * 
      * @access public
      */
     function index()
     {
-        maintain_ssl($this->config->item("ssl_enabled"));
-        
-        // Redirect unauthenticated users to signin page
-        if ( ! $this->authentication->is_signed_in())
-        {
-            redirect('account/sign_in/?continue='.urlencode(base_url().'pm/Message'));
-        }
-        
-        $data['account'] = $this->Account_model->get_by_id($this->session->userdata('account_id'));
-        
-        //check that they are authorized to use private messaging
-        if(! $this->authorization->is_permitted('msg_use'))
-        {
-            redirect('');
-        }
+        $data = $this->authentication->initialize(TRUE, 'pm/overview', NULL, 'msg_use');
         
         $threads_grouped = $this->mahana_messaging->get_all_threads_grouped($this->session->userdata('account_id'));
         $data['threads'] = $threads_grouped['retval'];
@@ -75,3 +84,5 @@ class Overview extends CI_Controller {
         $this->load->view('template', $data);
     }
 }
+/* End of file Overview.php */
+/* Location: ./application/controllers/pm/Overview.php */

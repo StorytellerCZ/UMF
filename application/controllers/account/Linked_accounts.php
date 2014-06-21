@@ -36,17 +36,7 @@ class Linked_accounts extends CI_Controller {
 	 */
 	function index()
 	{
-		// Enable SSL?
-		maintain_ssl($this->config->item("ssl_enabled"));
-
-		// Redirect unauthenticated users to signin page
-		if ( ! $this->authentication->is_signed_in())
-		{
-			redirect('account/sign_in/?continue='.urlencode(base_url('account/linked_accounts')));
-		}
-
-		// Retrieve sign in user
-		$data['account'] = $this->Account_model->get_by_id($this->session->userdata('account_id'));
+		$data = $this->authentication->initialize(TRUE, 'account/linked_accounts');
 		
 		//delete a linked account
 		if ($this->input->post('provider') && $this->input->post('uid'))

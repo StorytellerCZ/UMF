@@ -35,17 +35,7 @@ class Settings extends CI_Controller
 	 */
 	function index($action = NULL)
 	{
-		// Enable SSL?
-		maintain_ssl($this->config->item("ssl_enabled"));
-
-		// Redirect unauthenticated users to signin page
-		if ( ! $this->authentication->is_signed_in())
-		{
-			redirect('account/sign_in/?continue='.urlencode(base_url().'account/settings'));
-		}
-
-		// Retrieve sign in user
-		$data['account'] = $this->Account_model->get_by_id($this->session->userdata('account_id'));
+		$data = $this->authentication->initialize(TRUE, 'account/settings');
 		$data['account_details'] = $this->Account_details_model->get_by_account_id($this->session->userdata('account_id'));
 
 		// Retrieve countries, languages and timezones

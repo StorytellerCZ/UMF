@@ -26,7 +26,7 @@ class Manage_forums extends CI_Controller
 	$this->load->library(array('forums/cibb', 'form_validation'));
         $this->load->model(array('forums/category_model', 'forums/thread_model'));
 	$this->load->helper(array('pagination', 'form'));
-	$this->load->language('forums/forums');
+	$this->load->language(array('general', 'forums/forums'));
         
     }
     
@@ -43,21 +43,7 @@ class Manage_forums extends CI_Controller
      */
     public function category_create()
     {
-	maintain_ssl($this->config->item("ssl_enabled"));
-	
-	// Redirect unauthenticated users to signin page
-        if ( ! $this->authentication->is_signed_in())
-        {
-            redirect('account/sign_in/?continue='.urlencode(base_url().'admin/manage_forums/category_create'));
-        }
-	
-	// Redirect unauthorized users to account profile page
-	if ( ! $this->authorization->is_permitted('forums_categories_create'))
-	{
-	    redirect('account/profile');
-	}
-	
-	$data['account'] = $this->Account_model->get_by_id($this->session->userdata('account_id'));
+	$data = $this->authentication->initialize(TRUE, 'admin/manage_forums/category_create', NULL, 'forums_categories_create');
 	
 	//validate data
         $this->form_validation->set_rules('category_name', 'lang:forums_name', 'required|trim|xss_clean|is_unique[forums_categories.name]');
@@ -87,21 +73,7 @@ class Manage_forums extends CI_Controller
      */
     public function category_view()
     {
-	maintain_ssl($this->config->item("ssl_enabled"));
-	
-	// Redirect unauthenticated users to signin page
-        if ( ! $this->authentication->is_signed_in())
-        {
-            redirect('account/sign_in/?continue='.urlencode(base_url().'admin/manage_forums/category_view'));
-        }
-	
-	// Redirect unauthorized users to account profile page
-	if ( ! $this->authorization->is_permitted(array('forums_categories_create', 'forums_categories_edit', 'forums_categories_delete')))
-	{
-	    redirect('account/profile');
-	}
-        
-        $data['account'] = $this->Account_model->get_by_id($this->session->userdata('account_id'));
+	$data = $this->authentication->initialize(TRUE, 'admin/manage_forums/category_view', NULL, array('forums_categories_create', 'forums_categories_edit', 'forums_categories_delete'));
 	
         $data['categories'] = $this->category_model->get_all();
         
@@ -115,21 +87,13 @@ class Manage_forums extends CI_Controller
      */
     public function category_edit($category_id)
     {
-	maintain_ssl($this->config->item("ssl_enabled"));
-	
-	// Redirect unauthenticated users to signin page
-        if ( ! $this->authentication->is_signed_in())
-        {
-            redirect('account/sign_in/?continue='.urlencode(base_url().'admin/manage_forums/category_edit/'.$category_id));
-        }
+	$data = $this->authentication->initialize(TRUE, 'admin/manage_forums/category_edit/'.$category_id, NULL, 'forums_categories_edit');
 	
 	// Redirect unauthorized users to account profile page
-	if ( ! $this->authorization->is_permitted('forums_categories_edit') || $category_id == NULL)
+	if ($category_id == NULL)
 	{
 	    redirect('account/profile');
 	}
-        
-        $data['account'] = $this->Account_model->get_by_id($this->session->userdata('account_id'));
 	
         //validate data
         $this->form_validation->set_rules('category_name', 'lang:forums_name', 'required|trim|xss_clean|is_unique[forums_categories.name]');
@@ -162,21 +126,7 @@ class Manage_forums extends CI_Controller
      */
     public function category_delete($category_id)
     {
-	maintain_ssl($this->config->item("ssl_enabled"));
-	
-	// Redirect unauthenticated users to signin page
-        if ( ! $this->authentication->is_signed_in())
-        {
-            redirect('account/sign_in/?continue='.urlencode(base_url().'admin/manage_forums/category_delete'));
-        }
-	
-	// Redirect unauthorized users to account profile page
-	if ( ! $this->authorization->is_permitted('forums_categories_delete'))
-	{
-	    redirect('account/profile');
-	}
-        
-        $data['account'] = $this->Account_model->get_by_id($this->session->userdata('account_id'));
+	$data = $this->authentication->initialize(TRUE, 'admin/manage_forums/category_delete/'.$category_id, NULL, 'forums_categories_delete');
 	
         $this->category_model->delete($category_id);
         $this->session->set_userdata('tmp_success_del', 1);
@@ -191,21 +141,7 @@ class Manage_forums extends CI_Controller
      */
     public function thread_view($category_id, $page = 0)
     {
-	maintain_ssl($this->config->item("ssl_enabled"));
-	
-	// Redirect unauthenticated users to signin page
-        if ( ! $this->authentication->is_signed_in())
-        {
-            redirect('account/sign_in/?continue='.urlencode(base_url('admin/manage_forums/thread_view')));
-        }
-	
-	// Redirect unauthorized users to account profile page
-	if ( ! $this->authorization->is_permitted(array('forums_threads_edit', 'forums_threads_create', 'forum_threads_delete')))
-	{
-	    redirect('account/profile');
-	}
-        
-        $data['account'] = $this->Account_model->get_by_id($this->session->userdata('account_id'));
+	$data = $this->authentication->initialize(TRUE, 'admin/manage_forums/thread_view/'.$category_id.'/'.$page, NULL, array('forums_threads_edit', 'forums_threads_create', 'forum_threads_delete'));
 	
         // set pagination
         $this->load->library('pagination');
@@ -234,21 +170,7 @@ class Manage_forums extends CI_Controller
      */
     public function thread_edit($thread_id)
     {
-	maintain_ssl($this->config->item("ssl_enabled"));
-	
-	// Redirect unauthenticated users to signin page
-        if ( ! $this->authentication->is_signed_in())
-        {
-            redirect('account/sign_in/?continue='.urlencode(base_url().'admin/manage_forums/thread_edit'));
-        }
-	
-	// Redirect unauthorized users to account profile page
-	if ( ! $this->authorization->is_permitted('forums_threads_edit'))
-	{
-	    redirect('account/profile');
-	}
-        
-        $data['account'] = $this->Account_model->get_by_id($this->session->userdata('account_id'));
+	$data = $this->authentication->initialize(TRUE, 'admin/manage_forums/thread_edit/'.$thread_id, NULL, 'forums_threads_edit');
 	
 	//validate data
         $this->form_validation->set_rules('thread-title', 'lang:forums_name', 'required|trim|xss_clean|is_unique[forums_categories.name]');
@@ -280,21 +202,7 @@ class Manage_forums extends CI_Controller
      */
     public function thread_delete($thread_id)
     {
-	maintain_ssl($this->config->item("ssl_enabled"));
-	
-	// Redirect unauthenticated users to signin page
-        if ( ! $this->authentication->is_signed_in())
-        {
-            redirect('account/sign_in/?continue='.urlencode(base_url().'admin/manage_forums/thread_delete'));
-        }
-	
-	// Redirect unauthorized users to account profile page
-	if ( ! $this->authorization->is_permitted('forums_threads_delete'))
-	{
-	    redirect('account/profile');
-	}
-        
-        $data['account'] = $this->Account_model->get_by_id($this->session->userdata('account_id'));
+	$data = $this->authentication->initialize(TRUE, 'admin/manage_forums/category_delete/'.$thread_id, NULL, 'forums_threads_delete');
 	
 	$this->thread_model->delete($thread_id);
 	

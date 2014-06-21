@@ -1,7 +1,28 @@
-<?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+<?php
+/**
+* CodeIgniter Bulletin Board
+*
+* Original Author of CIBB:
+* @author Aditia Rahman
+* @link http://superdit.com/2012/08/15/cibb-an-experimental-basic-forum-built-with-codeigniter-and-twitter-bootstrap/
+*
+* Rewrite Author:
+* @author Jan Dvorak IV.
+* @link https://github.com/AdwinTrave
+*
+*/
+if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
+/**
+ * Category
+ * @package CIBB
+ * @subpackage Controllers
+ */
 class Category extends CI_Controller {
     
+    /**
+     * Constructor
+     */
     public function __construct() 
     {
         parent::__construct();
@@ -9,10 +30,15 @@ class Category extends CI_Controller {
         $this->load->model(array('forums/thread_model', 'forums/category_model'));
         $this->load->library(array('pagination', 'forums/cibb'));
         $this->load->helper('pagination');
-        $this->load->language('forums/forums');
+        $this->load->language(array('general', 'forums/forums'));
     }
     
-    public function Index($slug, $start = 0)
+    /**
+     * Category view
+     * @param string $slug Slug
+     * @param Number $page page number
+     */
+    public function Index($slug, $page = 0)
     {
 	maintain_ssl($this->config->item("ssl_enabled"));
 	
@@ -51,7 +77,7 @@ class Category extends CI_Controller {
         
         $data['page']    = $this->pagination->create_links();
         
-        $data['threads'] = $this->thread_model->get_by_category($start, $this->page_config['per_page'], $category->id);
+        $data['threads'] = $this->thread_model->get_by_category($page, $this->page_config['per_page'], $category->id);
         
         $data['type']    = 'category';
         

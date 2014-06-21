@@ -60,7 +60,7 @@ class Authentication
 	{
 		//first check for SSL
 		$this->CI->load->helper('account/ssl');
-		$this->CI->load->config('account/account');
+		$this->CI->load->config('umf/account');
 		maintain_ssl($this->CI->config->item("ssl_enabled"));
 		
 		// Redirect unauthenticated users to signin page

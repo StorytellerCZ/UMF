@@ -1,4 +1,4 @@
-<?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+<?php  
 /**
  * Mahana Messaging Library for CodeIgniter
  *
@@ -9,10 +9,16 @@
  * @author      Jeff Madsen
  *              jrmadsen67@gmail.com
  *              http://www.codebyjeff.com
+ * 
+ */
+if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+
+/**
+ * Mahana Messaging Library
+ *
  * @package Mahana Messaging
  * @subpackage Libraries
  */
-
 class Mahana_messaging
 {
     /**

@@ -29,7 +29,7 @@ class Recaptcha
 		$this->CI->load->helper('account/recaptcha');
 
 		// Load reCAPTCHA config
-		$this->CI->config->load('account/recaptcha');
+		$this->CI->config->load('umf/recaptcha');
 	}
 
 	// --------------------------------------------------------------------
