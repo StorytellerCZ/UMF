@@ -31,7 +31,7 @@
 	<body>
 		<div id="table-contents">
 			<div class="toctree-wrapper compound">
-			<function <lambda> at 0x2acc02b08938>
+			<function <lambda> at 0x2b9e15e3a938>
 			</div>
 		</div>
 
@@ -715,31 +715,24 @@ impact security, so please do so with caution.</p>
 <td>Yes</td>
 <td>Encryption key.</td>
 </tr>
-<tr class="row-odd"><td>iv</td>
-<td>N/A</td>
-<td>No</td>
-<td>Initialization vector (IV).
-If not provided it will be automatically generated
-during encryption and looked for during decryption.</td>
-</tr>
-<tr class="row-even"><td>hmac</td>
+<tr class="row-odd"><td>hmac</td>
 <td>TRUE</td>
 <td>No</td>
 <td>Whether to use a HMAC.
 Boolean. If set to FALSE, then <em>hmac_digest</em> and
 <em>hmac_key</em> will be ignored.</td>
 </tr>
-<tr class="row-odd"><td>hmac_digest</td>
+<tr class="row-even"><td>hmac_digest</td>
 <td>sha512</td>
 <td>No</td>
 <td>HMAC message digest algorithm (see <a class="reference internal" href="#digests"><em>Supported HMAC authentication algorithms</em></a>).</td>
 </tr>
-<tr class="row-even"><td>hmac_key</td>
+<tr class="row-odd"><td>hmac_key</td>
 <td>N/A</td>
 <td>Yes, unless <em>hmac</em> is FALSE</td>
 <td>HMAC key.</td>
 </tr>
-<tr class="row-odd"><td>raw_data</td>
+<tr class="row-even"><td>raw_data</td>
 <td>FALSE</td>
 <td>No</td>
 <td>Whether the cipher-text should be raw.

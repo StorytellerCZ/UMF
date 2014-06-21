@@ -1,4 +1,12 @@
-<?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+<?php
+/**
+ * A3M (Account Authentication & Authorization) is a CodeIgniter 3.x package.
+ * It gives you the CRUD to get working right away without too much fuss and tinkering!
+ * Designed for building webapps from scratch without all that tiresome login / logout / admin stuff thats always required.
+ *
+ * @link https://github.com/donjakobo/A3M GitHub repository
+ */
+if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
 /**
  * A3M Authentication library
@@ -42,10 +50,13 @@ class Authentication
 	 *
 	 * The initial steps that are taken at the beginning of each page
 	 * @param boolean $login_required Is this page accessible only when logged in?
-	 * @param string $page Page location to take location into account
-	 * @return Array  Returns array with properties portraying to the user
+	 * @param string $page Page location to redirect back after login
+	 * @param array/string $role role(s) that are allowed to access the page
+	 * @param array/string $permission permissions needed to access the page
+	 * @param boolean $require_all If all roles and permissions are required to access the page
+	 * @return Object  Returns user object
 	 */
-	function initialize($login_required = FALSE, $page = NULL)
+	function initialize($login_required = FALSE, $page = NULL, $role = NULL, $permission = NULL, $require_all = FALSE)
 	{
 		//first check for SSL
 		$this->CI->load->helper('account/ssl');
@@ -58,19 +69,45 @@ class Authentication
 		{
 			if ( ! $this->is_signed_in())
 			{
-				redirect('user/sign_in/?continue='.urlencode(base_url($page)));
+				if($page != NULL)
+				{
+					redirect('account/sign_in/?continue='.urlencode(base_url($page)));
+				}
+				else
+				{
+					redirect('account/sign_in/');
+				}
 			}
 			else
 			{
-				// Retrieve sign in user
-				$data['account'] = $this->CI->Account_model->get_by_id($this->CI->session->userdata('account_id'));
+				//check if role permission is set
+				if($role != NULL)
+				{
+					//check that the given role is allowed
+					$this->CI->load->library('account/Authorization');
+					
+					if(!$this->CI->authorization->is_role($role, $require_all))
+					{
+						redirect(base_url());
+					}					
+				}
+				
+				//check if permission requirement is set
+				if($permission != NULL)
+				{
+					//check if the given permission is allowed
+					$this->CI->load->library('account/Authorization');
+					
+					if(!$this->CI->authorization->is_permitted($permission, $require_all))
+					{
+						redirect(base_url());
+					}
+				}
 			}
 		}
-		else
-		{
-			// Retrieve sign in user
-			$data['account'] = $this->CI->Account_model->get_by_id($this->CI->session->userdata('account_id'));
-		}
+		
+		// made it here, so retireve user data and proceed
+		$data['account'] = $this->CI->Account_model->get_by_id($this->CI->session->userdata('account_id'));
 		
 		return $data;
 	}
@@ -149,7 +186,7 @@ class Authentication
 		$this->CI->session->unset_userdata('sign_in_failed_attempts');
 		
 		//This needs more testing to make sure that is works properly as many changes were made to this due to CI3 upgrade
-		$remember ? $this->CI->session->cookie->cookie_monster(TRUE) : $this->CI->session->cookie->cookie_monster(FALSE);
+		//$remember ? $this->CI->session->cookie->cookie_monster(TRUE) : $this->CI->session->cookie->cookie_monster(FALSE);
 		
 		$this->CI->session->set_userdata('account_id', $account_id);
 		
