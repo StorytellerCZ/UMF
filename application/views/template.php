@@ -89,7 +89,39 @@
     
     <div class="container">
         <div class="row">
-            <div class="col-lg-12">
+            <!-- Any alert messages you want to display show up here -->
+            <?php if($this->session->flashdata('message')): ?>
+                <div class="alert
+                <?php if($this->session->flashdata('message_type'))
+                {
+                    switch($this->session->flashdata('message_type'))
+                    {
+                        case 'danger':
+                            echo 'alert-danger';
+                            break;
+                        case 'success':
+                            echo 'alert-success';
+                            break;
+                        case 'info':
+                            echo 'alert-info';
+                            break;
+                        case 'warning':
+                            echo 'alert-warning';
+                            break;
+                        default:
+                            echo 'alert-warning';
+                            break;
+                    }
+                }
+                else
+                {
+                    echo 'alert-warning';
+                } ?>">
+                    <button type="button" class="close" data-dismiss="alert">&times;</button>
+                    <?php echo $this->session->flashdata('message'); ?>
+                </div>
+            <?php endif; ?>
+            <div class="col-sm-12">
                 <?php echo $content; ?>
             </div>
         </div>
