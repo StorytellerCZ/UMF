@@ -558,8 +558,14 @@ class Mahana_model extends CI_Model
     {
         $this->db->join($this->db->dbprefix . 'msg_messages',
                         $this->db->dbprefix . 'msg_messages.id = '.$this->db->dbprefix . 'msg_status.message_id');
-        $this->db->delete($this->db->dbprefix . 'msg_status', array($this->db->dbprefix .'msg_messages.thread_id' => $thread_id, $this->db->dbprefix . 'msg_status.user_id' => $user_id));
-
+        $list = $this->db->get_where($this->db->dbprefix . 'msg_status', array($this->db->dbprefix . 'msg_messages.thread_id' => $thread_id, $this->db->dbprefix . 'msg_status.user_id' => $user_id))->result();
+        
+        foreach($list AS $item)
+        {
+            $this->db->where(array('message_id' => $item->message_id, 'user_id' => $item->user_id));
+        }
+        $this->db->delete($this->db->dbprefix . 'msg_status');
+        
         return TRUE;
     }
 }

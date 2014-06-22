@@ -31,7 +31,7 @@
 	<body>
 		<div id="table-contents">
 			<div class="toctree-wrapper compound">
-			<function <lambda> at 0x2b9e15e3a938>
+			<function <lambda> at 0x2b35264d51b8>
 			</div>
 		</div>
 
@@ -161,12 +161,17 @@ someone gain access to your key, the data will be easily decrypted. If
 your server is not totally under your control it&#8217;s impossible to ensure
 key security so you may want to think carefully before using it for
 anything that requires high security, like storing credit card numbers.</p>
-<p>Your encryption key should be as long as the encyption algorithm in use
-allows. For AES-128, that&#8217;s 128 bits or 16 bytes (charcters) long. The
-key should be as random as possible and it should <strong>not</strong> be a simple
-text string.</p>
-<p>You will find a table below that shows the supported key lengths of
+<p>Your encryption key <strong>must</strong> be as long as the encyption algorithm in use
+allows. For AES-128, that&#8217;s 128 bits or 16 bytes (charcters) long.
+You will find a table below that shows the supported key lengths of
 different ciphers.</p>
+<p>The key should be as random as possible and it <strong>must not</strong> be a regular
+text string, nor the output of a hashing function, etc. In order to create
+a proper key, you must use the Encryption library&#8217;s <tt class="docutils literal"><span class="pre">create_key()</span></tt> method</p>
+<div class="highlight-ci"><div class="highlight"><pre><span class="c1">// $key will be assigned a 16-byte (128-bit) random key</span>
+<span class="nv">$key</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">encryption</span><span class="o">-&gt;</span><span class="na">create_key</span><span class="p">(</span><span class="mi">16</span><span class="p">);</span>
+</pre></div>
+</div>
 <p>The key can be either stored in your <em>application/config/config.php</em>, or
 you can design your own storage mechanism and pass the key dynamically
 when encrypting/decrypting.</p>

@@ -363,7 +363,7 @@ class Mahana_messaging
             return $this->_invalid_id(MSG_ERR_INVALID_THREAD_ID);
         }
 
-        if ($participants = $this->ci->Mahana_model-> get_participant_list($thread_id, $sender_id))
+        if ($participants = $this->ci->Mahana_model->get_participant_list($thread_id, $sender_id))
         {
             return $this->_success($participants);
         }
@@ -416,7 +416,7 @@ class Mahana_messaging
                 $user = $this->ci->Account_model->get_by_username($username);
                 if(isset($user->id))
                 {
-                    $return[$user->id];
+                    $return[$user->id] = $user->id;
                 }
             }
             return $return;

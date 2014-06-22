@@ -34,44 +34,6 @@
         <h1><?php echo $thread->title; ?></h1>
     </div>
     
-    <!--
-    <link rel="stylesheet" href="<?php echo base_url(); ?>resources/jquery/jwysiwyg/jquery.wysiwyg.css"/>
-    <script src="<?php echo base_url(); ?>resources/jquery/jwysiwyg/jquery.wysiwyg.js" charset="utf-8"></script>
-    <script src="<?php echo base_url(); ?>resources/jquery/jwysiwyg/controls/wysiwyg.link.js" charset="utf-8"></script>
-    
-    <script>
-        controlValue = {
-                justifyLeft: { visible : false },
-                justifyCenter: { visible : false },
-                justifyRight: { visible : false },
-                justifyFull: { visible : false },
-                insertHorizontalRule: { visible: false },
-                insertTable: { visible: false },
-                insertImage: { visible: false },
-                h1: { visible: false },
-                h2: { visible: false },
-                h3: { visible: false }
-            };
-            cssValue = {
-                fontFamily: 'Verdana',
-                fontSize: '13px'
-            };
-        $(document).ready(function(){
-            $('#textpost').wysiwyg({
-                initialContent: '', html: '',
-                controls: controlValue,
-                css: cssValue,
-                autoGrow: true
-            });
-            
-            $('.textpostreply').wysiwyg({
-                initialContent: '', html: '',
-                controls: controlValue,
-                css: cssValue
-            });
-        });
-    </script>
-    -->
     <?php foreach ($posts as $post): ?>
         <div class="well">
             <?php echo $post->post; ?><br/><br/>

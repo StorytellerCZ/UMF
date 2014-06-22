@@ -72,7 +72,7 @@ class Overview extends CI_Controller {
                 $text = $this->input->post('msg-text', TRUE);
                 
                 //convert usernames to ids
-                //@todo check for multiple recipients and convert to array if needed
+                $recipients = explode(',', $recipients);
                 $recipients = $this->mahana_messaging->usernames_to_ids($recipients);
                 
                 //submit
