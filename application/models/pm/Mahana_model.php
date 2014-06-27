@@ -570,4 +570,5 @@ class Mahana_model extends CI_Model
     }
 }
 
-/* end of file mahana_model.php */
+/* End of file mahana_model.php */
+/* Location: ./application/models/pm/mahana_model.php */

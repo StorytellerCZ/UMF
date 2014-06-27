@@ -1,4 +1,4 @@
-<div class="col-md-12">
+<div class="col-sm-12">
     <ul class="breadcrumb">
     <li>
         <a href="<?php echo site_url('thread'); ?>"><?php echo lang('website_forums'); ?></a>

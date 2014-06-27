@@ -505,3 +505,5 @@ class Mahana_messaging
         );
     }
 }
+/* End of file Mahana_messaging.php */
+/* Location: ./application/libraries/pm/Mahana_messaging.php */

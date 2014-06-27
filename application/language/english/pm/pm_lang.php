@@ -21,3 +21,6 @@ $lang['pm_add_users'] = "Add users";
 $lang['pm_remove_user'] = "Remove this user from this conversation";
 $lang['pm_remove_participant'] = "Remove from this conversation";
 $lang['pm_action_not_allowed'] = "You are not allowed to perform this action.";
+
+/* End of file pm_lang.php */
+/* Location: ./application/language/english/pm/pm_lang.php */
