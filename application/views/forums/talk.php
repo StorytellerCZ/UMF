@@ -36,13 +36,15 @@
     
     <?php foreach ($posts as $post): ?>
         <div class="well">
-            <?php echo htmlspecialchars_decode($post->post, ENT_QUOTES); ?><br/><br/>
-            
+            <div id="post-<?php echo $post->id; ?>">
+                <?php echo htmlspecialchars_decode($post->post, ENT_QUOTES); ?>
+            </div>
+                <br/><br/>
+                <a class="btn btn-default" onclick="quote('post-<?php echo $post->id; ?>', '<?php echo $post->username; ?>')"><?php echo lang('forums_quote'); ?></a>
             <span class="pull-right">
                 <?php echo lang('forums_posted_by') . $post->username; ?>, <?php echo $this->cibb->time_ago($post->date_add); ?>
             </span>
-            <div class="clearfix" style="height: 30px;"></div>
-
+            <div class="clearfix" style="height: 20px;"></div>
         </div>
     <?php endforeach; ?>
 
@@ -65,4 +67,13 @@
     echo '</div><div class="clearfix"></div>';
     echo form_close();
     ?>
+    <script>
+        function quote(post, author)
+        {
+            var text = $('#'+post).html();
+            var quote = '<blockquote>'+text+'<span class="pull-right">'+'<a href="<?php echo base_url("forums/thread/".$thread->slug.'/'); ?>#'+post+'"><?php echo lang('forums_posted_by'); ?>'+author+'</a></span></blockquote>';
+            var value = $('textarea.editable').val();
+            $('textarea.editable').val(value + quote);
+        }
+    </script>
 </div>

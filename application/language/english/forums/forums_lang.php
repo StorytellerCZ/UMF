@@ -38,6 +38,7 @@ $lang['forums_initial_post'] = "First post";
 $lang['forums_reply'] = "Reply";
 $lang['forums_reply_posted'] = "Reply posted!";
 $lang['forums_posted_by'] = "Posted by ";
+$lang['forums_quote'] = "Quote this post";
 
 //for librari's time_ago function
 $lang['forums_time_second'] = "second";
