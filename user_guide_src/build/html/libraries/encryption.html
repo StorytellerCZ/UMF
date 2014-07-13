@@ -31,7 +31,7 @@
 	<body>
 		<div id="table-contents">
 			<div class="toctree-wrapper compound">
-			<function <lambda> at 0x2b35264d51b8>
+			<function <lambda> at 0x2b986e4e15f0>
 			</div>
 		</div>
 
@@ -74,13 +74,13 @@
 <p>The Encryption Library provides two-way data encryption. To do so in
 a cryptographically secure way, it utilizes PHP extensions that are
 unfortunately not always available on all systems.
-You must meet one of the following dependancies in order to use this
+You must meet one of the following dependencies in order to use this
 library:</p>
 <ul class="simple">
 <li><a class="reference external" href="http://php.net/openssl">OpenSSL</a> (and PHP 5.3.3)</li>
 <li><a class="reference external" href="http://php.net/mcrypt">MCrypt</a> (and <cite>MCRYPT_DEV_URANDOM</cite> availability)</li>
 </ul>
-<p>If neither of the above dependancies is met, we simply cannot offer
+<p>If neither of the above dependencies is met, we simply cannot offer
 you a good enough implementation to meet the high standards required
 for proper cryptography.</p>
 <div class="contents local topic" id="contents">
@@ -307,17 +307,17 @@ but regardless, here&#8217;s a list of most of them:</p>
 <tr class="row-even"><td>AES-128</td>
 <td>OpenSSL</td>
 <td>128 / 16</td>
-<td>CBC, CTR, CFB, CFB8, OFB, ECB, GCM, XTS</td>
+<td>CBC, CTR, CFB, CFB8, OFB, ECB, XTS</td>
 </tr>
 <tr class="row-odd"><td>AES-192</td>
 <td>OpenSSL</td>
 <td>192 / 24</td>
-<td>CBC, CTR, CFB, CFB8, OFB, ECB, GCM, XTS</td>
+<td>CBC, CTR, CFB, CFB8, OFB, ECB, XTS</td>
 </tr>
 <tr class="row-even"><td>AES-256</td>
 <td>OpenSSL</td>
 <td>256 / 32</td>
-<td>CBC, CTR, CFB, CFB8, OFB, ECB, GCM, XTS</td>
+<td>CBC, CTR, CFB, CFB8, OFB, ECB, XTS</td>
 </tr>
 <tr class="row-odd"><td>Rijndael-128</td>
 <td>MCrypt</td>
@@ -495,17 +495,12 @@ general purposes.</p>
 <td>MCrypt, OpenSSL</td>
 <td>Ignores IV (not recommended).</td>
 </tr>
-<tr class="row-odd"><td>GCM</td>
-<td>gcm</td>
-<td>OpenSSL</td>
-<td>Provides authentication and therefore doesn&#8217;t need a HMAC.</td>
-</tr>
-<tr class="row-even"><td>XTS</td>
+<tr class="row-odd"><td>XTS</td>
 <td>xts</td>
 <td>OpenSSL</td>
 <td>Usually used for encrypting random access data such as RAM or hard-disk storage.</td>
 </tr>
-<tr class="row-odd"><td>Stream</td>
+<tr class="row-even"><td>Stream</td>
 <td>stream</td>
 <td>MCrypt, OpenSSL</td>
 <td>This is not actually a mode, it just says that a stream cipher is being used. Required because of the general cipher+mode initialization process.</td>
@@ -519,10 +514,9 @@ general purposes.</p>
 <p>It&#8217;s probably important for you to know that an encrypted string is usually
 longer than the original, plain-text string (depending on the cipher).</p>
 <p>This is influenced by the cipher algorithm itself, the IV prepended to the
-cipher-text and (unless you are using GCM mode) the HMAC authentication
-message that is also prepended. Furthermore, the encrypted message is also
-Base64-encoded so that it is safe for storage and transmission, regardless
-of a possible character set in use.</p>
+cipher-text and the HMAC authentication message that is also prepended.
+Furthermore, the encrypted message is also Base64-encoded so that it is safe
+for storage and transmission, regardless of a possible character set in use.</p>
 <p>Keep this information in mind when selecting your data storage mechanism.
 Cookies, for example, can only hold 4K of information.</p>
 </div>
@@ -753,11 +747,6 @@ be a hexadecimal string.</td>
 a mandatory parameter is not provided or if a provided
 value is incorrect. This includes <em>hmac_key</em>, unless <em>hmac</em>
 is set to FALSE.</p>
-</div>
-<div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">If GCM mode is used, <em>hmac</em> will always be FALSE. This is
-because GCM mode itself provides authentication.</p>
 </div>
 </div>
 <div class="section" id="supported-hmac-authentication-algorithms">

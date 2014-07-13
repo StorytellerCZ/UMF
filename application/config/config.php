@@ -135,6 +135,27 @@ $config['enable_hooks'] = FALSE;
 */
 $config['subclass_prefix'] = 'MY_';
 
+/*
+|--------------------------------------------------------------------------
+| Composer auto-loading
+|--------------------------------------------------------------------------
+|
+| Enabling this setting will tell CodeIgniter to look for a Composer
+| package auto-loader script in application/vendor/autoload.php.
+|
+|	$config['composer_autoload'] = TRUE;
+|
+| Or if you have your vendor/ directory located somewhere else, you
+| can opt to set a specific path as well:
+|
+|	$config['composer_autoload'] = '/path/to/vendor/autoload.php';
+|
+| For more information about Composer, please visit http://getcomposer.org/
+|
+| Note: This will NOT disable or override the CodeIgniter-specific
+|	autoloading (application/config/autoload.php)
+*/
+$config['composer_autoload'] = FALSE;
 
 /*
 |--------------------------------------------------------------------------
@@ -306,7 +327,7 @@ $config['encryption_key'] = '';
 | 'sess_time_to_update'		= how many seconds between CI refreshing Session Information
 |
 */
-$config['sess_driver']		= 'cookie';
+$config['sess_driver']		= 'database';
 $config['sess_valid_drivers']	= array();
 $config['sess_cookie_name']	= 'ci_session';
 $config['sess_expiration']	= 7200;

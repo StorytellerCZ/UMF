@@ -23,6 +23,9 @@ $config['sign_in_recaptcha_offset'] 	= 3;
 $config['sign_up_recaptcha_enabled'] 	= FALSE;
 $config['sign_up_auto_sign_in'] 	= TRUE;
 $config['sign_up_default_user_group']   = 2;
+$config['sign_up_username_min_length']  = 2;
+$config['sign_up_username_max_length']  = 24;
+$config['sign_up_password_min_length']  = 6;
 
 /*
 |--------------------------------------------------------------------------

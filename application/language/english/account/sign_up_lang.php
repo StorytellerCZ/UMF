@@ -41,22 +41,15 @@ $lang['sign_up_validation_resend'] = "We have re-send validation e-mail to the e
  * JS Validation language files
  */
 $lang['sign_up_js_validation_no_username'] = "Enter a username.";
-$lang['sign_up_js_validation_short'] = "Please enter a longer username. (2-24 characters)";
-$lang['sign_up_js_validation_invalid_chars'] = "Invaild character detected. Only letters, numbers, -, and _ are vaild.";
-$lang['sign_up_js_validation_username_available'] = "This username is available!";
+$lang['sign_up_js_validation_short'] = "Please enter a longer username. (%s-%s characters)";
 
 $lang['sign_up_js_validation_email_invaild'] = "Please enter a valid email.";
-$lang['sign_up_js_validation_email_vaild'] = "Vaild Email.";
 
 $lang['sign_up_js_validation_password_no'] = "Enter a password.";
-$lang['sign_up_js_validation_password_short'] = "Enter a longer password. Please enter more than 6 characters.";
-$lang['sign_up_js_validation_password_good'] = "That works!";
+$lang['sign_up_js_validation_password_short'] = "Enter a longer password. Please enter more than %s characters.";
 
-$lang['sign_up_js_validation_password_confirm_dot'] = "...";
-$lang['sign_up_js_validation_password_cofirm_nomatch'] = "The passwords must match!";
-$lang['sign_up_js_validation_password_cofirm_match'] = "That matches!";
-
-$lang['sign_up_js_validation_checking'] = "Checking if available...";
+$lang['sign_up_js_validation_password_confirm_nomatch'] = "The passwords must match!";
+$lang['sign_up_js_validation_terms'] = "We can't register you if you don't agree to our Terms of Service.";
 
 /* End of file sign_up_lang.php */
 /* Location: ./application/account/language/english/sign_up_lang.php */

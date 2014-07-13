@@ -26,7 +26,7 @@ class Settings extends CI_Controller
 		$this->load->helper(array('date', 'language', 'account/ssl', 'url', 'account/photo'));
 		$this->load->library(array('account/authentication', 'account/authorization', 'form_validation', 'account/gravatar'));
 		$this->load->model(array('account/Account_model', 'account/Account_details_model', 'account/Ref_country_model', 'account/Ref_language_model', 'account/Ref_zoneinfo_model'));
-		$this->load->language(array('general', 'account/account_settings'));
+		$this->load->language(array('general', 'account/account_settings', 'account/sign_up'));
 	}
 
 	/**
@@ -74,7 +74,10 @@ class Settings extends CI_Controller
 		
 		if($this->input->post('form_type', TRUE) == 'settings')
 		{
-			$this->form_validation->set_rules(array(array('field' => 'settings_email', 'label' => 'lang:settings_email', 'rules' => 'trim|required|valid_email|max_length[160]'), array('field' => 'settings_firstname', 'label' => 'lang:settings_firstname', 'rules' => 'trim|max_length[80]'), array('field' => 'settings_lastname', 'label' => 'lang:settings_lastname', 'rules' => 'trim|max_length[80]')));
+			$this->form_validation->set_rules(array(
+                            array('field' => 'settings_email', 'label' => 'lang:settings_email', 'rules' => 'trim|required|valid_email|max_length[160]'),
+                            array('field' => 'settings_firstname', 'label' => 'lang:settings_firstname', 'rules' => 'trim|max_length[80]'),
+                            array('field' => 'settings_lastname', 'label' => 'lang:settings_lastname', 'rules' => 'trim|max_length[80]')));
 			
 			// Run form validation
 			if ($this->form_validation->run())
@@ -113,7 +116,10 @@ class Settings extends CI_Controller
 		}
 		elseif($this->input->post('form_type', TRUE) == 'profile')
 		{
-			$this->form_validation->set_rules(array(array('field' => 'profile_username', 'label' => 'lang:profile_username', 'rules' => 'trim|required|alpha_dash|min_length[2]|max_length[24]')));
+			$this->form_validation->set_rules(array(
+                            array('field' => 'profile_username',
+                                'label' => 'lang:profile_username',
+                                'rules' => 'trim|required|alpha_dash|min_length['.$this->config->item('sign_up_username_min_length').']|max_length['.$this->config->item('sign_up_username_max_length').']')));
 			
 			// Run form validation
 			if ($this->form_validation->run())
@@ -211,7 +217,7 @@ class Settings extends CI_Controller
 	 */
 	private function username_check($username)
 	{
-		return $this->Account_model->get_by_username($username) ? TRUE : FALSE;
+		return $this->Account_model->get_by_username($username) ? FALSE : TRUE;
 	}
 	
 	/**
@@ -221,9 +227,13 @@ class Settings extends CI_Controller
 	* @param string $username
 	* @return boolean
 	*/
-	public function username_exists($username)
+	public function username_exists($username = NULL)
 	{
-		echo $this->username_check($username);
+                if($username === NULL)
+                {
+                    $username = $this->input->post('sign_up_username', TRUE);
+                }
+		echo json_encode(array('valid' => $this->username_check((string)$username)));
 	}
 }
 /* End of file Settings.php */

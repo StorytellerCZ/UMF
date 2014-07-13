@@ -267,16 +267,16 @@ SELECT 1, `id` FROM `a3m_acl_permission`;
 --
 -- Table structure for table `ci_sessions`
 --
+DROP TABLE IF EXISTS `ci_sessions` ;
 
-CREATE TABLE IF NOT EXISTS  `ci_sessions` (
-    `session_id` varchar(40) DEFAULT '0' NOT NULL,
-    `ip_address` varchar(45) DEFAULT '0' NOT NULL,
-    `user_agent` varchar(120) NOT NULL,
-    `last_activity` int(10) unsigned DEFAULT 0 NOT NULL,
-    `user_data` text NOT NULL,
-    PRIMARY KEY (`session_id`, `ip_address`, `user_agent`),
-    KEY `last_activity_idx` (`last_activity`)
-);
+CREATE TABLE IF NOT EXISTS `ci_sessions` (
+  `id` varchar(40) NOT NULL,
+  `ip_address` varchar(45) NOT NULL,
+  `timestamp` int(11) NOT NULL,
+  `data` blob NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `ip_address` (`ip_address`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 

@@ -44,7 +44,10 @@ class Password extends CI_Controller
 
 		### Setup form validation
 		$this->form_validation->set_error_delimiters('<span class="alert alert-danger">', '</span>');
-		$this->form_validation->set_rules(array(array('field' => 'password_new_password', 'label' => 'lang:password_new_password', 'rules' => 'trim|required|min_length[6]'), array('field' => 'password_retype_new_password', 'label' => 'lang:password_retype_new_password', 'rules' => 'trim|required|matches[password_new_password]')));
+		$this->form_validation->set_rules(array(
+                    array('field' => 'password_new_password', 'label' => 'lang:password_new_password', 'rules' => 'trim|required|min_length['.$this->config->item('sign_up_password_min_length').']'),
+                    array('field' => 'password_retype_new_password', 'label' => 'lang:password_retype_new_password', 'rules' => 'trim|required|matches[password_new_password]')
+                    ));
 
 		### Run form validation
 		if ($this->form_validation->run())

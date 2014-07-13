@@ -8,7 +8,7 @@
 	<?php echo $profile_info; ?>
 </div>
 <?php endif;
-echo form_open_multipart(uri_string(), 'class="form-horizontal" role="form"');
+echo form_open_multipart(uri_string(), 'class="form-horizontal" role="form" id="form-profile"');
 echo form_hidden('form_type', 'profile');
 echo form_fieldset(); ?>
 
@@ -33,7 +33,7 @@ echo form_fieldset(); ?>
     <div class="col-lg-10">
 	<?php if (isset($account_details->picture) && strlen(trim($account_details->picture)) > 0) : ?>
 	<?php echo showPhoto($account_details->picture); ?> &nbsp;
-	<?php echo anchor('account/profile/index/delete', '<i class="glyphicon glyphicon-trash"></i> '.lang('profile_delete_picture'), 'class="btn btn-default"'); ?>
+	<?php echo anchor('account/settings/index/delete', '<i class="glyphicon glyphicon-trash"></i> '.lang('profile_delete_picture'), 'class="btn btn-default"'); ?>
 	<?php else : ?>
 		
 	<div class="accountPicSelect clearfix">
@@ -85,7 +85,7 @@ echo form_close(); ?>
 	<?php echo $settings_info; ?>
 </div>
 <?php endif;
-echo form_open(uri_string(), 'class="form-horizontal"');
+echo form_open(uri_string(), 'class="form-horizontal" id="form-settings"');
 echo form_hidden('form_type', 'settings');
 echo form_fieldset(); ?>
 
@@ -244,3 +244,33 @@ echo form_fieldset(); ?>
 
 <?php echo form_fieldset_close();
 echo form_close(); ?>
+<script>
+$(document).ready(function() {
+    $('#form-profile').bootstrapValidator({
+        feedbackIcons: {
+            valid: 'glyphicon glyphicon-ok',
+            invalid: 'glyphicon glyphicon-remove',
+            validating: 'glyphicon glyphicon-refresh'
+        },
+        fields: {
+            profile_username:{
+                threshold: 3,
+                validators:{
+                    notEmpty: {
+                        message: '<?php echo lang('sign_up_js_validation_no_username'); ?>'
+                    },
+                    stringLength:{
+                        min: <?php echo $this->config->item('sign_up_username_min_length'); ?>,
+                        max: <?php echo $this->config->item('sign_up_username_max_length'); ?>,
+                        message: '<?php echo sprintf(lang('sign_up_js_validation_short'), $this->config->item('sign_up_username_min_length'), $this->config->item('sign_up_username_max_length')); ?>'
+                    },
+                    remote:{
+                        url: "./account/settings/username_exists/",
+                        message: '<?php echo lang('sign_up_username_taken'); ?>'
+                    }
+                }
+            }
+        }
+    });
+});
+</script>

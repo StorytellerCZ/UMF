@@ -5,7 +5,7 @@
  * Designed for building webapps from scratch without all that tiresome login / logout / admin stuff thats always required.
  *
  * @link https://github.com/donjakobo/A3M GitHub repository
- */s
+ */
 if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 /**
  * End point for social providers return data

@@ -15,7 +15,7 @@
 class Hybrid_Providers_Facebook extends Hybrid_Provider_Model
 {
 	// default permissions, and a lot of them. You can change them from the configuration by setting the scope to what you want/need
-	public $scope = "email, user_about_me, user_birthday, user_hometown, user_website, read_stream, offline_access, publish_stream, read_friendlists";
+	public $scope = "email, user_about_me, user_birthday, user_hometown, user_website, read_stream, publish_actions, user_friends";
 
 	/**
 	* IDp wrappers initializer 
@@ -175,11 +175,19 @@ class Hybrid_Providers_Facebook extends Hybrid_Provider_Model
 		$this->user->profile->profileURL    = (array_key_exists('link',$data))?$data['link']:""; 
 		$this->user->profile->webSiteURL    = (array_key_exists('website',$data))?$data['website']:""; 
 		$this->user->profile->gender        = (array_key_exists('gender',$data))?$data['gender']:"";
-		$this->user->profile->description   = (array_key_exists('bio',$data))?$data['bio']:"";
+		$this->user->profile->description   = (array_key_exists('about',$data))?$data['about']:"";
 		$this->user->profile->email         = (array_key_exists('email',$data))?$data['email']:"";
 		$this->user->profile->emailVerified = (array_key_exists('email',$data))?$data['email']:"";
 		$this->user->profile->region        = (array_key_exists("hometown",$data)&&array_key_exists("name",$data['hometown']))?$data['hometown']["name"]:"";
-
+		
+		if(!empty($this->user->profile->region )){
+			$regionArr = explode(',',$this->user->profile->region );
+			if(count($regionArr) > 1){
+				$this->user->profile->city = trim($regionArr[0]);
+				$this->user->profile->country = trim($regionArr[1]);
+			}
+		}
+		
 		if( array_key_exists('birthday',$data) ) {
 			list($birthday_month, $birthday_day, $birthday_year) = explode( "/", $data['birthday'] );
 
