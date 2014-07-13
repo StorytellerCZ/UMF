@@ -36,7 +36,7 @@
             <div class="list-group">
                 <a href="pm/message/<?php echo $thread['thread_id']; ?>" class="list-group-item">
                     <h4 class="list-group-item-heading"><?php echo $from . " - " . $last_message['subject']; ?> <span class="pull-right glyphicon glyphicon-comment"></span></h4>
-                    <p class="list-group-item-text"><?php echo $last_message['body']; ?></p>
+                    <p class="list-group-item-text"><?php echo htmlspecialchars_decode($last_message['body'], ENT_QUOTES); ?></p>
                 </a>
             </div><?php }
         }
@@ -77,7 +77,7 @@
             <?php
                 echo form_label(lang('pm_text'), 'msg-text');
                 echo form_error('msg-text', '<div class="error">', '</div>');
-                echo form_textarea(array('name' => 'msg-text', 'id' => 'msg-text', 'class' => 'form-control'));
+                echo form_textarea(array('name' => 'msg-text', 'id' => 'msg-text', 'class' => 'form-control editable'));
             ?>
         </div>
       </div>

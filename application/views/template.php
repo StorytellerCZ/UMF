@@ -153,6 +153,32 @@
             </div>
         </div>
     </div>
-
+    <?php
+        //figure out which CKEditor to load if any
+        if(isset($ckeditor)):
+            if($ckeditor == 'standard')
+            {
+                echo '<script src="//cdn.ckeditor.com/4.4.2/standard/ckeditor.js"></script>';
+            }
+            elseif($ckeditor == 'full')
+            {
+                echo '<script src="//cdn.ckeditor.com/4.4.2/full/ckeditor.js"></script>';
+            }
+            else
+            {
+                echo '<script src="//cdn.ckeditor.com/4.4.2/basic/ckeditor.js"></script>';
+            }
+            echo '<script src="'.base_url(RES_DIR.'/ckeditor/adapters/jquery.js') .'"></script>';
+    ?>
+    <script>
+        $(document).ready(function()
+        {
+            //load for all text areas that have "editable" as class
+            $(".editable").ckeditor({
+                //customization
+            });
+        });
+    </script>
+    <?php endif; ?>
 </body>
 </html>

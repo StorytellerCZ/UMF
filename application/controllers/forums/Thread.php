@@ -100,9 +100,9 @@ class Thread extends CI_Controller {
         
         //validate data
         $this->form_validation->set_error_delimiters('<div class="alert alert-danger">', '</div>');
-        $this->form_validation->set_rules('thread-title', 'lang:forums_name', 'required|trim|xss_clean');
-	$this->form_validation->set_rules('thread-slug', 'lang:forums_slug', 'required|trim|xss_clean|alpha_dash|is_unique[forums_threads.slug]');
-        $this->form_validation->set_rules('thread-post', 'lang:forums_initial_post', 'required|trim|xss_clean');
+        $this->form_validation->set_rules('thread-title', 'lang:forums_name', 'required|strip_tags|trim|xss_clean');
+	$this->form_validation->set_rules('thread-slug', 'lang:forums_slug', 'required|trim|alpha_dash|is_unique[forums_threads.slug]|strip_tags|xss_clean');
+        $this->form_validation->set_rules('thread-post', 'lang:forums_initial_post', 'required|trim|html_escape|xss_clean');
         
         if($this->form_validation->run())
         {
@@ -117,7 +117,7 @@ class Thread extends CI_Controller {
             //redirect to the new thread
             redirect('forums/thread/'.$slug);
         }
-        
+        $data['ckeditor'] = "basic";
         $data['categories'] = $this->category_model->get_all();
         $data['content'] = $this->load->view('forums/create', isset($data) ? $data : NULL, TRUE);
         $this->load->view('template', $data);
@@ -157,7 +157,7 @@ class Thread extends CI_Controller {
         $data['thread'] = $this->thread_model->get_by_slug($slug);
         
         //check for reply
-        $this->form_validation->set_rules('reply-post', 'lang:forums_post', 'required|trim|xss_clean');
+        $this->form_validation->set_rules('reply-post', 'lang:forums_post', 'required|trim|html_escape|xss_clean');
         
         if($this->form_validation->run())
         {
@@ -183,7 +183,7 @@ class Thread extends CI_Controller {
         $data['posts']  = $this->posts_model->get($data['thread']->id, $page, $this->page_config['per_page']);
         //$this->thread_model->get_posts_threaded($thread->id, $start, $this->page_config['per_page']);
         $data['cat']    = $this->category_model->get_all_parent($data['thread']->category_id, 0);
-        
+        $data['ckeditor'] = "basic";
         $data['content'] = $this->load->view('forums/talk', isset($data) ? $data : NULL, TRUE);
         $this->load->view('template', $data);
     }

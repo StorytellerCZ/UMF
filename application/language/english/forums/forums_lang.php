@@ -37,6 +37,7 @@ $lang['forums_last_update'] = "Last update";
 $lang['forums_initial_post'] = "First post";
 $lang['forums_reply'] = "Reply";
 $lang['forums_reply_posted'] = "Reply posted!";
+$lang['forums_posted_by'] = "Posted by ";
 
 //for librari's time_ago function
 $lang['forums_time_second'] = "second";

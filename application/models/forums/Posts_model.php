@@ -82,8 +82,8 @@ class Posts_model extends CI_Model {
      */
     public function get_latest_in_thread($thread_id)
     {
-        $this->db->select_max('date_add');
-        $this->db->where('thread_id', $where);
+        $this->db->order_by('date_add', 'DESC');
+        $this->db->where('thread_id', $thread_id);
         $this->db->limit(1);
         return $this->db->get($this->db->dbprefix . 'forums_posts')->row();
     }

@@ -133,10 +133,9 @@ class Authentication
 	 * @access public
 	 * @param string  $username Username or e-mail
 	 * @param string  $password
-	 * @param bool $remember
 	 * @return bool or string
 	 */
-	function sign_in($username, $password, $remember = FALSE)
+	function sign_in($username, $password)
 	{
 		// Get user by username / email
 		$this->CI->load->model('account/Account_model');
@@ -160,7 +159,7 @@ class Authentication
 				}
 				else
 				{
-					$this->sign_in_by_id($user->id, $remember);
+					$this->sign_in_by_id($user->id);
 				}
 			}
 			else
@@ -177,16 +176,12 @@ class Authentication
 	 *
 	 * @access public
 	 * @param int  $account_id
-	 * @param bool $remember
 	 * @return void
 	 */
-	function sign_in_by_id($account_id, $remember = FALSE)
+	function sign_in_by_id($account_id)
 	{
 		// Clear sign in fail counter
 		$this->CI->session->unset_userdata('sign_in_failed_attempts');
-		
-		//This needs more testing to make sure that is works properly as many changes were made to this due to CI3 upgrade
-		//$remember ? $this->CI->session->cookie->cookie_monster(TRUE) : $this->CI->session->cookie->cookie_monster(FALSE);
 		
 		$this->CI->session->set_userdata('account_id', $account_id);
 		

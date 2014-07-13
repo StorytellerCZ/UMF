@@ -75,7 +75,7 @@ class Sign_in extends CI_Controller {
 			else
 			{
 				// Authenticate
-				$sign_in_error = $this->authentication->sign_in($this->input->post('sign_in_username_email', TRUE), $this->input->post('sign_in_password', TRUE), $this->input->post('sign_in_remember', TRUE));
+				$sign_in_error = $this->authentication->sign_in($this->input->post('sign_in_username_email', TRUE), $this->input->post('sign_in_password', TRUE));
 				if($sign_in_error === "invalid")
 				{
 					//show login error

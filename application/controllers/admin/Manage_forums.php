@@ -46,9 +46,10 @@ class Manage_forums extends CI_Controller
 	$data = $this->authentication->initialize(TRUE, 'admin/manage_forums/category_create', NULL, 'forums_categories_create');
 	
 	//validate data
-        $this->form_validation->set_rules('category_name', 'lang:forums_name', 'required|trim|xss_clean|is_unique[forums_categories.name]');
-	$this->form_validation->set_rules('category_slug', 'lang:forums_slug', 'required|trim|xss_clean|alpha_dash|is_unique[forums_categories.slug]');
-	$this->form_validation->set_rules('category_parent', 'lang:forums_parent', 'required|trim|xss_clean|integer');
+        $this->form_validation->set_error_delimiters('<div class="alert alert-danger">', '</div>');
+        $this->form_validation->set_rules('category_name', 'lang:forums_name', 'required|trim|strip_tags|is_unique[forums_categories.name]|xss_clean');
+	$this->form_validation->set_rules('category_slug', 'lang:forums_slug', 'required|trim|strip_tags|alpha_dash|is_unique[forums_categories.slug]|xss_clean');
+	$this->form_validation->set_rules('category_parent', 'lang:forums_parent', 'required|trim|integer|xss_clean');
 	
 	if($this->form_validation->run())
 	{
@@ -96,8 +97,9 @@ class Manage_forums extends CI_Controller
 	}
 	
         //validate data
-        $this->form_validation->set_rules('category_name', 'lang:forums_name', 'required|trim|xss_clean|is_unique[forums_categories.name]');
-	$this->form_validation->set_rules('category_slug', 'lang:forums_slug', 'required|trim|xss_clean|alpha_dash|is_unique[forums_categories.slug]');
+        $this->form_validation->set_error_delimiters('<div class="alert alert-danger">', '</div>');
+        $this->form_validation->set_rules('category_name', 'lang:forums_name', 'required|trim|strip_tags|is_unique[forums_categories.name]|xss_clean');
+	$this->form_validation->set_rules('category_slug', 'lang:forums_slug', 'required|trim|strip_tags|alpha_dash|is_unique[forums_categories.slug]|xss_clean');
 	$this->form_validation->set_rules('category_parent', 'lang:forums_parent', 'required|trim|xss_clean|integer');
 	
 	if($this->form_validation->run())
@@ -173,8 +175,9 @@ class Manage_forums extends CI_Controller
 	$data = $this->authentication->initialize(TRUE, 'admin/manage_forums/thread_edit/'.$thread_id, NULL, 'forums_threads_edit');
 	
 	//validate data
-        $this->form_validation->set_rules('thread-title', 'lang:forums_name', 'required|trim|xss_clean|is_unique[forums_categories.name]');
-	$this->form_validation->set_rules('thread-slug', 'lang:forums_slug', 'required|trim|xss_clean|alpha_dash|is_unique[forums_categories.slug]');
+        $this->form_validation->set_error_delimiters('<div class="alert alert-danger">', '</div>');
+        $this->form_validation->set_rules('thread-title', 'lang:forums_name', 'required|trim|strip_tags|is_unique[forums_categories.name]|xss_clean');
+	$this->form_validation->set_rules('thread-slug', 'lang:forums_slug', 'required|trim|strip_tags|alpha_dash|is_unique[forums_categories.slug]|xss_clean');
 	$this->form_validation->set_rules('thread-category', 'lang:forums_parent', 'required|trim|xss_clean|integer');
 	
 	if($this->form_validation->run())

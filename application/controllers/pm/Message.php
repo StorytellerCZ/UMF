@@ -30,7 +30,7 @@ class Message extends CI_Controller
         parent::__construct();
         
         // Load the necessary stuff...
-        $this->load->helper(array('language', 'url', 'form', 'account/ssl'));
+        $this->load->helper(array('language', 'url', 'form', 'account/ssl', 'date'));
         $this->load->library(array('account/authorization', 'pm/mahana_messaging', 'form_validation'));
         $this->load->language(array('general', 'pm/pm', 'pm/mahana'));
     }
@@ -61,8 +61,8 @@ class Message extends CI_Controller
             //set rules
             $this->form_validation->set_error_delimiters('<div class="alert alert-danger">', '</div>');
             $this->form_validation->set_rules('msg-reply-id', 'lang:pm_reply', 'required|trim|xss_clean|numeric');
-            $this->form_validation->set_rules('msg-subject', 'lang:pm_subject', 'required|trim|min_length[2]|xss_clean');
-            $this->form_validation->set_rules('msg-text', 'lang:pm_text', 'required|trim|min_length[2]|xss_clean');
+            $this->form_validation->set_rules('msg-subject', 'lang:pm_subject', 'required|strip_tags|trim|min_length[2]|xss_clean');
+            $this->form_validation->set_rules('msg-text', 'lang:pm_text', 'required|html_escape|trim|min_length[2]|xss_clean');
             
             //perform check
             if($this->form_validation->run())
@@ -94,7 +94,7 @@ class Message extends CI_Controller
         //load the thread
         $full_thread = $this->mahana_messaging->get_full_thread($id, $this->session->userdata('account_id'));
         $data['thread'] = $full_thread['retval'];
-        
+        $data['ckeditor'] = "basic";
         $participants_list = $this->mahana_messaging->get_participant_list($id);
         $data['participants'] = $participants_list['retval'];
         
@@ -111,7 +111,8 @@ class Message extends CI_Controller
         $data = $this->authentication->initialize(TRUE, 'pm/message/add_participant/'.$id, NULL, 'msg_use');
         
         //check that the user can do this
-        $participants = $this->mahana_messaging->get_participant_list($id)['retval'];
+        $participants = $this->mahana_messaging->get_participant_list($id);
+        $participants = $participants['retval'];
         $allowed = FALSE;
         foreach($participants AS $participant)
         {

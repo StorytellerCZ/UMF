@@ -26,41 +26,9 @@
         <p class="help-block"><?php echo lang('slug_exp'); ?></p>
         </div><div class="form-group">
         
-        <!--
-        <link rel="stylesheet" href="resources/jquery/jwysiwyg/jquery.wysiwyg.css"/>
-        <script src="resources/jquery/jwysiwyg/jquery.wysiwyg.js" charset="utf-8"></script>
-        <script src="resources/jquery/jwysiwyg/controls/wysiwyg.link.js" charset="utf-8"></script>
-        
-        <script>
-            controlValue = {
-                    justifyLeft: { visible : false },
-                    justifyCenter: { visible : false },
-                    justifyRight: { visible : false },
-                    justifyFull: { visible : false },
-                    insertHorizontalRule: { visible: false },
-                    insertTable: { visible: false },
-                    insertImage: { visible: false },
-                    h1: { visible: false },
-                    h2: { visible: false },
-                    h3: { visible: false }
-                };
-            cssValue = {
-                    fontFamily: 'Verdana',
-                    fontSize: '13px'
-                };
-            $(document).ready(function(){
-                $('#firstpost').wysiwyg({
-                    initialContent: '', html: '',
-                    controls: controlValue,
-                    css: cssValue,
-                    autoGrow: true
-                });
-            });
-        </script>
-        -->
         <?php
         echo form_label(lang('forums_initial_post'), 'thread-post');
-        echo form_textarea(array('class' => 'form-control', 'name' => 'thread-post', 'id' => 'thread-post'), set_value('thread-post'));
+        echo form_textarea(array('class' => 'form-control editable', 'name' => 'thread-post', 'id' => 'thread-post'), set_value('thread-post'));
         echo '</div>';
         echo form_submit(array('class' => 'btn btn-primary btn-large pull-right', 'name' => 'thread-create'), lang('forums_thread_create'));
         echo form_close();

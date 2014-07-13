@@ -43,15 +43,6 @@
 	    </div>
 	</div>
 
-	<div class="form-group">
-	    <div class="col-lg-10 col-lg-offset-2">
-		<label class="checkbox">
-			<?php echo form_checkbox(array('name' => 'sign_in_remember', 'id' => 'sign_in_remember', 'value' => 'checked', 'checked' => $this->input->post('sign_in_remember'))); ?>
-			<?php echo lang('sign_in_remember_me'); ?>
-		</label>
-	    </div>
-	</div>
-
 	<div>
 		<?php echo form_button(array('type' => 'submit', 'class' => 'btn btn-default btn-large pull-right', 'content' => '<i class="glyphicon glyphicon-lock"></i> '.lang('sign_in_sign_in'))); ?>
 	</div>

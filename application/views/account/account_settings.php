@@ -272,5 +272,25 @@ $(document).ready(function() {
             }
         }
     });
+    $('#form-settings').bootstrapValidator({
+        feedbackIcons: {
+            valid: 'glyphicon glyphicon-ok',
+            invalid: 'glyphicon glyphicon-remove',
+            validating: 'glyphicon glyphicon-refresh'
+        },
+        fields: {
+            settings_email:{
+                threshold: 5,
+                validators:{
+                    notEmpty: {
+                        message: '<?php echo lang('sign_up_js_validation_email_invaild'); ?>'
+                    },
+                    emailAddress:{
+                        message: '<?php echo lang('sign_up_js_validation_email_invaild'); ?>'
+                    }
+                }
+            }
+        }
+    });
 });
 </script>

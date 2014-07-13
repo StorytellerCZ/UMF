@@ -60,9 +60,9 @@ class Overview extends CI_Controller {
         {
             //create a new message and redirect to it
             $this->form_validation->set_error_delimiters('<div class="alert alert-danger">', '</div>');
-            $this->form_validation->set_rules('msg-recipients', 'lang:pm_recipients', 'required|trim|xss_clean');
-            $this->form_validation->set_rules('msg-subject', 'lang:pm_subject', 'required|trim|min_length[2]|xss_clean');
-            $this->form_validation->set_rules('msg-text', 'lang:pm_text', 'required|trim|min_length[2]|xss_clean');
+            $this->form_validation->set_rules('msg-recipients', 'lang:pm_recipients', 'required|trim|strip_tags|xss_clean');
+            $this->form_validation->set_rules('msg-subject', 'lang:pm_subject', 'required|trim|min_length[2]|strip_tags|xss_clean');
+            $this->form_validation->set_rules('msg-text', 'lang:pm_text', 'required|trim|min_length[2]|html_escape|xss_clean');
             
             if($this->form_validation->run())
             {
@@ -79,7 +79,7 @@ class Overview extends CI_Controller {
                 $data['response'] = $this->mahana_messaging->send_new_message($this->session->userdata('account_id'), $recipients, $subject, $text);
             }
         }
-        
+        $data['ckeditor'] = "basic";
         $data['content'] = $this->load->view('pm/overview', isset($data) ? $data : NULL, TRUE);
         $this->load->view('template', $data);
     }

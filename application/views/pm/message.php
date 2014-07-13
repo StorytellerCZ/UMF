@@ -11,10 +11,10 @@
         <div class="panel panel-default">
             <div class="panel-heading">
                 <h3 class="panel-title"><?php echo $message['username'] . " - " . $message['subject']; ?>
-                <span class="pull-right"><?php echo $message['cdate']; ?></span></h3>
+                    <span class="pull-right"><?php echo nice_date($message['cdate'], 'h:m d.m.Y'); ?></span></h3>
             </div>
             <div class="panel-body">
-                <?php echo $message['body']; ?>
+                <?php echo htmlspecialchars_decode($message['body'], ENT_QUOTES); ?>
             </div>
         </div>
         <?php
@@ -23,7 +23,7 @@
     echo form_open(uri_string(), array('role' => 'form'), array('msg-subject' => $thread[0]['subject'], 'msg-reply-id' => $thread[0]['id']));
         echo form_label(lang('pm_text'), 'msg-text');
         echo form_error('msg-text', '<div class="error">', '</div>');
-        echo form_textarea(array('name' => 'msg-text', 'id' => 'msg-text', 'class' => 'form-control'));
+        echo form_textarea(array('name' => 'msg-text', 'id' => 'msg-text', 'class' => 'form-control editable'));
         echo form_submit(array('name' => 'msg-reply', 'class' => "btn btn-lg btn-success pull-right"), lang('pm_msg_send'));
     echo form_close();
     ?>
