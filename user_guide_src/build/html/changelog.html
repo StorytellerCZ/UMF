@@ -30,7 +30,7 @@
 	<body>
 		<div id="table-contents">
 			<div class="toctree-wrapper compound">
-			<function <lambda> at 0x2b5cf2de9b90>
+			<function <lambda> at 0x2b09ff915668>
 			</div>
 		</div>
 
@@ -571,6 +571,7 @@ Only entries in <tt class="docutils literal"><span class="pre">$autoload['librar
 <li>Added <tt class="docutils literal"><span class="pre">$config['csrf_regeneration']</span></tt>, which makes token regeneration optional.</li>
 <li>Added <tt class="docutils literal"><span class="pre">$config['csrf_exclude_uris']</span></tt>, which allows you list URIs which will not have the CSRF validation methods run.</li>
 <li>Modified method <tt class="docutils literal"><span class="pre">sanitize_filename()</span></tt> to read a public <tt class="docutils literal"><span class="pre">$filename_bad_chars</span></tt> property for getting the invalid characters list.</li>
+<li>Return status code of 403 instead of a 500 if CSRF protection is enabled but a token is missing from a request.</li>
 </ul>
 </li>
 <li><a class="reference internal" href="libraries/language.html"><em>Language Library</em></a> changes include:<ul>
