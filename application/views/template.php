@@ -176,6 +176,8 @@
             //load for all text areas that have "editable" as class
             $(".editable").ckeditor({
                 //customization
+                htmlEncodeOutput: false,
+                        entities: false
             });
         });
     </script>
