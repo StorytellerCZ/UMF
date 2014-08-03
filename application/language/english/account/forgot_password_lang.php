@@ -22,6 +22,9 @@ $lang['reset_password_email_subject'] = '%s Password Reset';
 $lang['reset_password_email'] = "Hello %s, <br /><br />We have received a request to reset your password.<br /><br />
 To reset your password, please click on the link below or copy and paste the URL into your browser:<br /> %s";
 
+$lang['reset_password_email_send_error'] = "There was an error sending the e-mail. Please contact the webmaster.";
+$lang['form_validation_forgot_password_email_invalid'] = "Invalid e-mail address format";
+$lang['form_validation_forgot_password_username_invalid'] = "Invalid username format";
 
 /* End of file forgot_password_lang.php */
 /* Location: ./application/language/english/account/forgot_password_lang.php */

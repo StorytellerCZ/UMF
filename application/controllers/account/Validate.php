@@ -109,7 +109,8 @@ class Validate extends CI_Controller
 		}
 		else
 		{
-		    show_error('There was an error sending the e-mail. Please contact the webmaster.');
+		    show_error(lang('website_email_send_error'));
+                                                        log_message('error', $this->email->print_debugger());
 		}
 	    }
 	}

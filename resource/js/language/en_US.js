@@ -1,7 +1,6 @@
 (function($) {
     /**
-     * Default English package
-     * It's included in the dist, so you do NOT need to include it to your head tag
+     * Default English package. It's included in the dist, so you do NOT need to include it to your head tag
      * The only reason I put it here is that you can clone it, and translate it into your language
      */
     $.fn.bootstrapValidator.i18n = $.extend(true, $.fn.bootstrapValidator.i18n, {
@@ -185,6 +184,9 @@
         imei: {
             'default': 'Please enter a valid IMEI number'
         },
+        imo: {
+            'default': 'Please enter a valid IMO number'
+        },
         integer: {
             'default': 'Please enter a valid number'
         },
@@ -212,6 +214,9 @@
         mac: {
             'default': 'Please enter a valid MAC address'
         },
+        meid: {
+            'default': 'Please enter a valid MEID number'
+        },
         notEmpty: {
             'default': 'Please enter a value'
         },
@@ -223,6 +228,8 @@
             countryNotSupported: 'The country code %s is not supported',
             country: 'Please enter a valid phone number in %s',
             countries: {
+                ES: 'Spain',
+                FR: 'France',
                 GB: 'United Kingdom',
                 US: 'USA'
             }
@@ -302,7 +309,8 @@
                 RS: 'Serbian',
                 SE: 'Swedish',
                 SI: 'Slovenian',
-                SK: 'Slovak'
+                SK: 'Slovak',
+                ZA: 'South African'
             }
         },
         vin: {
@@ -313,14 +321,14 @@
             countryNotSupported: 'The country code %s is not supported',
             country: 'Please enter a valid %s',
             countries: {
-                'CA': 'Canadian postal code',
-                'DK': 'Danish postal code',
-                'GB': 'United Kingdom postal code',
-                'IT': 'Italian postal code',
-                'NL': 'Dutch postal code',
-                'SE': 'Swiss postal code',
-                'SG': 'Singapore postal code',
-                'US': 'US zip code'
+                CA: 'Canadian postal code',
+                DK: 'Danish postal code',
+                GB: 'United Kingdom postal code',
+                IT: 'Italian postal code',
+                NL: 'Dutch postal code',
+                SE: 'Swiss postal code',
+                SG: 'Singapore postal code',
+                US: 'US zip code'
             }
         }
     });

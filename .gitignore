@@ -1,5 +1,8 @@
+/nbproject/project.xml
+/nbproject/project.properties
 */config/development
 */logs/log-*.php
 */logs/!index.html
 */cache/*
 */cache/!index.html
+/nbproject/private/

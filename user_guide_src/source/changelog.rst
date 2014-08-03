@@ -80,6 +80,7 @@ Release Date: Not Released
       - :func:`url_title()` will now trim extra dashes from beginning and end.
       - :func:`anchor_popup()` will now fill the *href* attribute with the URL and its JS code will return FALSE instead.
       - Added JS window name support to the :func:`anchor_popup()` function.
+      - Added support for menubar attribute to the :func:`anchor_popup()`.
       - Added support (auto-detection) for HTTP/1.1 response codes 303, 307 in :func:`redirect()`.
       - Changed :func:`redirect()` to choose the **refresh** method only on IIS servers, instead of all servers on Windows (when **auto** is used).
       - Changed :func:`anchor()`, :func:`anchor_popup()`, and :func:`redirect()` to support protocol-relative URLs (e.g. *//ellislab.com/codeigniter*).
@@ -738,6 +739,7 @@ Bug fixes for 3.0
 -  Partially fixed a bug (#261) - UTF-8 class method ``clean_string()`` generating log messages and/or not producing the desired result due to an upstream bug in iconv.
 -  Fixed a bug where ``CI_Xmlrpcs::parseRequest()`` could fail if ``$HTTP_RAW_POST_DATA`` is not populated.
 -  Fixed a bug in :doc:`Zip Library <libraries/zip>` internal method ``_get_mod_time()`` where it was not parsing result returned by ``filemtime()``.
+-  Fixed a bug (#3161) - :doc:`Cache Library <libraries/cache>` methods `increment()`, `decrement()` didn't auto-create non-existent items when using redis and/or file storage.
 
 Version 2.2.0
 =============

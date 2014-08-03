@@ -30,7 +30,7 @@
 	<body>
 		<div id="table-contents">
 			<div class="toctree-wrapper compound">
-			<function <lambda> at 0x2b09ff915668>
+			<function <lambda> at 0x2b97f8551668>
 			</div>
 		</div>
 
@@ -145,6 +145,7 @@ Only entries in <tt class="docutils literal"><span class="pre">$autoload['librar
 <li><a class="reference internal" href="helpers/url_helper.html#url_title" title="url_title"><tt class="xref py py-func docutils literal"><span class="pre">url_title()</span></tt></a> will now trim extra dashes from beginning and end.</li>
 <li><a class="reference internal" href="helpers/url_helper.html#anchor_popup" title="anchor_popup"><tt class="xref py py-func docutils literal"><span class="pre">anchor_popup()</span></tt></a> will now fill the <em>href</em> attribute with the URL and its JS code will return FALSE instead.</li>
 <li>Added JS window name support to the <a class="reference internal" href="helpers/url_helper.html#anchor_popup" title="anchor_popup"><tt class="xref py py-func docutils literal"><span class="pre">anchor_popup()</span></tt></a> function.</li>
+<li>Added support for menubar attribute to the <a class="reference internal" href="helpers/url_helper.html#anchor_popup" title="anchor_popup"><tt class="xref py py-func docutils literal"><span class="pre">anchor_popup()</span></tt></a>.</li>
 <li>Added support (auto-detection) for HTTP/1.1 response codes 303, 307 in <a class="reference internal" href="helpers/url_helper.html#redirect" title="redirect"><tt class="xref py py-func docutils literal"><span class="pre">redirect()</span></tt></a>.</li>
 <li>Changed <a class="reference internal" href="helpers/url_helper.html#redirect" title="redirect"><tt class="xref py py-func docutils literal"><span class="pre">redirect()</span></tt></a> to choose the <strong>refresh</strong> method only on IIS servers, instead of all servers on Windows (when <strong>auto</strong> is used).</li>
 <li>Changed <a class="reference internal" href="helpers/url_helper.html#anchor" title="anchor"><tt class="xref py py-func docutils literal"><span class="pre">anchor()</span></tt></a>, <a class="reference internal" href="helpers/url_helper.html#anchor_popup" title="anchor_popup"><tt class="xref py py-func docutils literal"><span class="pre">anchor_popup()</span></tt></a>, and <a class="reference internal" href="helpers/url_helper.html#redirect" title="redirect"><tt class="xref py py-func docutils literal"><span class="pre">redirect()</span></tt></a> to support protocol-relative URLs (e.g. <em>//ellislab.com/codeigniter</em>).</li>
@@ -804,6 +805,7 @@ Only entries in <tt class="docutils literal"><span class="pre">$autoload['librar
 <li>Partially fixed a bug (#261) - UTF-8 class method <tt class="docutils literal"><span class="pre">clean_string()</span></tt> generating log messages and/or not producing the desired result due to an upstream bug in iconv.</li>
 <li>Fixed a bug where <tt class="docutils literal"><span class="pre">CI_Xmlrpcs::parseRequest()</span></tt> could fail if <tt class="docutils literal"><span class="pre">$HTTP_RAW_POST_DATA</span></tt> is not populated.</li>
 <li>Fixed a bug in <a class="reference internal" href="libraries/zip.html"><em>Zip Library</em></a> internal method <tt class="docutils literal"><span class="pre">_get_mod_time()</span></tt> where it was not parsing result returned by <tt class="docutils literal"><span class="pre">filemtime()</span></tt>.</li>
+<li>Fixed a bug (#3161) - <tt class="xref doc docutils literal"><span class="pre">Cache</span> <span class="pre">Library</span></tt> methods <cite>increment()</cite>, <cite>decrement()</cite> didn&#8217;t auto-create non-existent items when using redis and/or file storage.</li>
 </ul>
 </div>
 </div>

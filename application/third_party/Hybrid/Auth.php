@@ -68,6 +68,7 @@ class Hybrid_Auth
 
 		# load hybridauth required files, a autoload is on the way...
 		require_once $config["path_base"] . "Error.php";
+		require_once $config["path_base"] . "Exception.php";
 		require_once $config["path_base"] . "Logger.php";
 
 		require_once $config["path_base"] . "Provider_Adapter.php";
@@ -260,11 +261,11 @@ class Hybrid_Auth
 			Hybrid_Logger::info( "Hybrid_Auth::setup( $providerId ), no stored params found for this provider. Initialize a new one for new session" );
 		}
 
-		if( ! isset( $params["hauth_return_to"] ) ){
+		if( is_array($params) && ! isset( $params["hauth_return_to"] ) ){
 			$params["hauth_return_to"] = Hybrid_Auth::getCurrentUrl(); 
-		}
 
-		Hybrid_Logger::debug( "Hybrid_Auth::setup( $providerId ). HybridAuth Callback URL set to: ", $params["hauth_return_to"] );
+			Hybrid_Logger::debug( "Hybrid_Auth::setup( $providerId ). HybridAuth Callback URL set to: ", $params["hauth_return_to"] );
+		}
 
 		# instantiate a new IDProvider Adapter
 		$provider   = new Hybrid_Provider_Adapter();

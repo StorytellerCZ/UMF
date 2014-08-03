@@ -184,6 +184,9 @@
         imei: {
             'default': 'Veuillez fournir un code IMEI valide'
         },
+        imo: {
+            'default': 'Veuillez fournir un code IMO valide'
+        },
         integer: {
             'default': 'Veuillez fournir un nombre valide'
         },
@@ -211,6 +214,9 @@
         mac: {
             'default': 'Veuillez fournir une adresse MAC valide'
         },
+        meid: {
+            'default': 'Veuillez fournir un code MEID valide'
+        },
         notEmpty: {
             'default': 'Veuillez fournir une valeur'
         },
@@ -222,6 +228,8 @@
             countryNotSupported: 'Le code de pays %s n\'est pas accepté',
             country: 'Veuillez fournir un numéro de téléphone valide pour %s',
             countries: {
+                ES: 'las Espagne',
+                FR: 'la France',
                 GB: 'le Royaume Uni',
                 US: 'les USA'
             }
@@ -301,7 +309,8 @@
                 RS: 'serbe',
                 SE: 'suédois',
                 SI: 'slovène',
-                SK: 'slovaque'
+                SK: 'slovaque',
+                ZA: 'sud-africain'
             }
         },
         vin: {
@@ -312,14 +321,14 @@
             countryNotSupported: 'Le code de pays %s n\'est pas accepté',
             country: 'Veuillez fournir un %s valide',
             countries: {
-                'CA': 'code postal canadien',
-                'DK': 'code postal dannois',
-                'GB': 'code postal anglais',
-                'IT': 'code postal italien',
-                'NL': 'code postal hollandais',
-                'SE': 'code postal suisse',
-                'SG': 'code postal de Singapour',
-                'US': 'code zip US'
+                CA: 'code postal canadien',
+                DK: 'code postal dannois',
+                GB: 'code postal anglais',
+                IT: 'code postal italien',
+                NL: 'code postal hollandais',
+                SE: 'code postal suisse',
+                SG: 'code postal de Singapour',
+                US: 'code zip US'
             }
         }
     });

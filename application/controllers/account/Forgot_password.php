@@ -53,7 +53,7 @@ class Forgot_password extends CI_Controller
 			array(
 				'field' => 'forgot_password_username_email',
 				'label' => 'lang:forgot_password_username_email',
-				'rules' => 'trim|required|min_length[2]|max_length[254]|callback_check_username_or_email'
+				'rules' => 'trim|required|min_length[2]|max_length[254]|callback__check_username_or_email'
 			)
 		));
 
@@ -118,7 +118,8 @@ class Forgot_password extends CI_Controller
 						}
 						else
 						{
-							show_error('There was an error sending the e-mail. Please contact the webmaster.');
+							show_error(lang('website_email_send_error'));
+                                                        log_message('error', $this->email->print_debugger());
 						}
 					}
 					
@@ -144,11 +145,11 @@ class Forgot_password extends CI_Controller
 	 * Will check if the username or e-mail is available and return boolean value.
 	 * This is for AJAX requests.
 	 * 
-	 * @access public
+	 * @access private
 	 * @param object $str Possible username or e-mail to be checked
 	 * @return boolean
 	 */
-	public function check_username_or_email($str)
+	private function _check_username_or_email($str)
 	{
 		//are we checking an email address?
 		if (strpos($str,'@') !== false)
@@ -158,7 +159,7 @@ class Forgot_password extends CI_Controller
 				return TRUE;
 			else
 			{
-				$this->form_validation->set_message('check_username_or_email', 'Invalid e-mail address format');
+				$this->form_validation->set_message('_check_username_or_email', lang('form_validation_forgot_password_email_invalid'));
 				return FALSE;
 			}
 		}
@@ -169,7 +170,7 @@ class Forgot_password extends CI_Controller
 				return TRUE;
 			else
 			{
-				$this->form_validation->set_message('check_username_or_email', 'Invalid username format');
+				$this->form_validation->set_message('_check_username_or_email', lang('form_validation_forgot_password_username_invalid'));
 				return FALSE;
 			}
 		}

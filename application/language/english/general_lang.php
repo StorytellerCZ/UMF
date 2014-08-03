@@ -27,6 +27,7 @@ $lang['website_admin_panel'] = 'Admin Panel';
 $lang['website_forums'] = 'Forums';
 $lang['website_manage_forums'] = 'Manage Forums';
 $lang['website_pm'] = 'Private Messages';
+$lang['website_email_send_error'] = "There was an error sending an e-mail. Please contact the webmaster.";
 
 
 /* End of file general_lang.php */

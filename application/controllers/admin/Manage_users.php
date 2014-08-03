@@ -186,10 +186,14 @@ class Manage_users extends CI_Controller
             $this->email->subject(sprintf(lang('users_creation_email_subject'), lang('website_title')));
             $this->email->message($this->load->view('admin/manage_users_info_email', array('username' => $this->input->post('users_username', TRUE), 'password' => $this->input->post('users_new_password', TRUE)), TRUE));
             
-            if( ! $this->email->send())
+            if(ENVIRONMENT == 'development')
             {
-              //there was an error sending the e-mail
-              print_debugger();
+                echo($this->email->print_debugger());
+            }
+            else
+            {
+                show_error(lang('website_email_send_error'));
+                log_message('error', $this->email->print_debugger());
             }
           }
         }
