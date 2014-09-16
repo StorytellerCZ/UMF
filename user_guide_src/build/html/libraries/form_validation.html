@@ -31,7 +31,7 @@
 	<body>
 		<div id="table-contents">
 			<div class="toctree-wrapper compound">
-			<function <lambda> at 0x47a1050>
+			<function <lambda> at 0x2ad98f5ba0c8>
 			</div>
 		</div>
 
@@ -601,8 +601,37 @@ function:</p>
                 <span class="s1">&#39;required&#39;</span><span class="p">,</span>
                 <span class="k">function</span><span class="p">(</span><span class="nv">$value</span><span class="p">)</span>
                 <span class="p">{</span>
-                        <span class="c1">// Check $value and return TRUE/FALSE</span>
+                        <span class="c1">// Check $value</span>
                 <span class="p">}</span>
+        <span class="p">)</span>
+<span class="p">);</span>
+</pre></div>
+</div>
+<p>Of course, since a Callable rule by itself is not a string, it isn&#8217;t
+a rule name either. That is a problem when you want to set error messages
+for them. In order to get around that problem, you can put such rules as
+the second element of an array, with the first one being the rule name:</p>
+<div class="highlight-ci"><div class="highlight"><pre><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">form_validation</span><span class="o">-&gt;</span><span class="na">set_rules</span><span class="p">(</span>
+        <span class="s1">&#39;username&#39;</span><span class="p">,</span> <span class="s1">&#39;Username&#39;</span><span class="p">,</span>
+        <span class="k">array</span><span class="p">(</span>
+                <span class="s1">&#39;required&#39;</span><span class="p">,</span>
+                <span class="k">array</span><span class="p">(</span><span class="s1">&#39;username_callable&#39;</span><span class="p">,</span> <span class="k">array</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">users_model</span><span class="p">,</span> <span class="s1">&#39;valid_username&#39;</span><span class="p">))</span>
+        <span class="p">)</span>
+<span class="p">);</span>
+</pre></div>
+</div>
+<p>Anonymous function (PHP 5.3+) version:</p>
+<div class="highlight-ci"><div class="highlight"><pre><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">form_validation</span><span class="o">-&gt;</span><span class="na">set_rules</span><span class="p">(</span>
+        <span class="s1">&#39;username&#39;</span><span class="p">,</span> <span class="s1">&#39;Username&#39;</span><span class="p">,</span>
+        <span class="k">array</span><span class="p">(</span>
+                <span class="s1">&#39;required&#39;</span><span class="p">,</span>
+                <span class="k">array</span><span class="p">(</span>
+                        <span class="s1">&#39;username_callable&#39;</span><span class="p">,</span>
+                        <span class="k">function</span><span class="p">(</span><span class="nv">$str</span><span class="p">)</span>
+                        <span class="p">{</span>
+                                <span class="c1">// Check validity of $str and return TRUE or FALSE</span>
+                        <span class="p">}</span>
+                <span class="p">)</span>
         <span class="p">)</span>
 <span class="p">);</span>
 </pre></div>

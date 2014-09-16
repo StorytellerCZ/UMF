@@ -78,6 +78,13 @@ class Hybrid_Providers_Facebook extends Hybrid_Provider_Model
 			}
 		}
 
+        if( isset( $this->config[ 'force' ] ) && $this->config[ 'force' ] === true ){
+            $parameters[ 'auth_type' ]  = 'reauthenticate';
+            $parameters[ 'auth_nonce' ] = md5( uniqid( mt_rand(), true ) );
+
+            Hybrid_Auth::storage()->set( 'fb_auth_nonce', $parameters[ 'auth_nonce' ] );
+        }
+
 		// get the login url 
 		$url = $this->api->getLoginUrl( $parameters );
 
@@ -170,11 +177,12 @@ class Hybrid_Providers_Facebook extends Hybrid_Provider_Model
 		$this->user->profile->displayName   = (array_key_exists('name',$data))?$data['name']:"";
 		$this->user->profile->firstName     = (array_key_exists('first_name',$data))?$data['first_name']:"";
 		$this->user->profile->lastName      = (array_key_exists('last_name',$data))?$data['last_name']:"";
-		$this->user->profile->photoURL      = "https://graph.facebook.com/" . $this->user->profile->identifier . "/picture?width=150&height=150";
-		$this->user->profile->coverInfoURL  = "https://graph.facebook.com/" . $this->user->profile->identifier . "?fields=cover";
+		$this->user->profile->photoURL      = "https://graph.facebook.com/v2.1/" . $this->user->profile->identifier . "/picture?width=150&height=150";
+		$this->user->profile->coverInfoURL  = "https://graph.facebook.com/v2.1/" . $this->user->profile->identifier . "?fields=cover";
 		$this->user->profile->profileURL    = (array_key_exists('link',$data))?$data['link']:""; 
 		$this->user->profile->webSiteURL    = (array_key_exists('website',$data))?$data['website']:""; 
 		$this->user->profile->gender        = (array_key_exists('gender',$data))?$data['gender']:"";
+        	$this->user->profile->language      = (array_key_exists('locale',$data))?$data['locale']:"";
 		$this->user->profile->description   = (array_key_exists('about',$data))?$data['about']:"";
 		$this->user->profile->email         = (array_key_exists('email',$data))?$data['email']:"";
 		$this->user->profile->emailVerified = (array_key_exists('email',$data))?$data['email']:"";
@@ -225,26 +233,42 @@ class Hybrid_Providers_Facebook extends Hybrid_Provider_Model
 	*/
 	function getUserContacts()
 	{
-		try{ 
-			$response = $this->api->api('/me/friends?fields=link,name'); 
+		$apiCall = '?fields=link,name';
+		$returnedContacts = array();
+		$pagedList = false;
+
+		do {
+			try{ 
+				$response = $this->api->api('/me/friends' . $apiCall); 
+			}
+			catch( FacebookApiException $e ){
+				throw new Exception( 'User contacts request failed! {$this->providerId} returned an error: $e' );
+			} 
+
+			// Prepare the next call if paging links have been returned
+			if (array_key_exists('paging', $response) && array_key_exists('next', $response['paging'])) {
+				$pagedList = true;
+			        $next_page = explode('friends', $response['paging']['next']);
+			        $apiCall = $next_page[1];
+			}
+			else{
+				$pagedList = false;
+			}
+
+			// Add the new page contacts
+			$returnedContacts = array_merge($returnedContacts, $response['data']);
 		}
-		catch( FacebookApiException $e ){
-			throw new Exception( "User contacts request failed! {$this->providerId} returned an error: $e" );
-		} 
- 
-		if( ! $response || ! count( $response["data"] ) ){
-			return ARRAY();
-		}
+		while ($pagedList == true);
 
 		$contacts = ARRAY();
  
-		foreach( $response["data"] as $item ){
+		foreach( $returnedContacts as $item ){
 			$uc = new Hybrid_User_Contact();
 
 			$uc->identifier  = (array_key_exists("id",$item))?$item["id"]:"";
 			$uc->displayName = (array_key_exists("name",$item))?$item["name"]:"";
 			$uc->profileURL  = (array_key_exists("link",$item))?$item["link"]:"https://www.facebook.com/profile.php?id=" . $uc->identifier;
-			$uc->photoURL    = "https://graph.facebook.com/" . $uc->identifier . "/picture?width=150&height=150";
+			$uc->photoURL    = "https://graph.facebook.com/v2.1/" . $uc->identifier . "/picture?width=150&height=150";
 
 			$contacts[] = $uc;
 		}
@@ -398,7 +422,7 @@ class Hybrid_Providers_Facebook extends Hybrid_Provider_Model
 				$ua->user->identifier   = (array_key_exists("id",$item["from"]))?$item["from"]["id"]:"";
 				$ua->user->displayName  = (array_key_exists("name",$item["from"]))?$item["from"]["name"]:"";
 				$ua->user->profileURL   = "https://www.facebook.com/profile.php?id=" . $ua->user->identifier;
-				$ua->user->photoURL     = "https://graph.facebook.com/" . $ua->user->identifier . "/picture?type=square";
+				$ua->user->photoURL     = "https://graph.facebook.com/v2.1/" . $ua->user->identifier . "/picture?type=square";
 
 				$activities[] = $ua;
 			}

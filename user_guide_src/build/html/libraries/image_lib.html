@@ -31,7 +31,7 @@
 	<body>
 		<div id="table-contents">
 			<div class="toctree-wrapper compound">
-			<function <lambda> at 0x4770050>
+			<function <lambda> at 0x2ad98f5bae60>
 			</div>
 		</div>
 
@@ -255,14 +255,21 @@ simply outputs the raw image dynamically to your browser, along with
 image headers.</td>
 <td>R, C, X, W</td>
 </tr>
-<tr class="row-even"><td><strong>quality</strong></td>
+<tr class="row-even"><td><strong>file_permissions</strong></td>
+<td>0644</td>
+<td>(integer)</td>
+<td>File system permissions to apply on the resulting image file,
+writing it to the disk. WARNING: Use octal integer notation!</td>
+<td>R, C, X, W</td>
+</tr>
+<tr class="row-odd"><td><strong>quality</strong></td>
 <td>90%</td>
 <td>1 - 100%</td>
 <td>Sets the quality of the image. The higher the quality the larger the
 file size.</td>
 <td>R, C, X, W</td>
 </tr>
-<tr class="row-odd"><td><strong>new_image</strong></td>
+<tr class="row-even"><td><strong>new_image</strong></td>
 <td>None</td>
 <td>None</td>
 <td>Sets the destination image name/path. You&#8217;ll use this preference when
@@ -270,39 +277,39 @@ creating an image copy. The path must be a relative or absolute server
 path, not a URL.</td>
 <td>R, C, X, W</td>
 </tr>
-<tr class="row-even"><td><strong>width</strong></td>
+<tr class="row-odd"><td><strong>width</strong></td>
 <td>None</td>
 <td>None</td>
 <td>Sets the width you would like the image set to.</td>
 <td>R, C</td>
 </tr>
-<tr class="row-odd"><td><strong>height</strong></td>
+<tr class="row-even"><td><strong>height</strong></td>
 <td>None</td>
 <td>None</td>
 <td>Sets the height you would like the image set to.</td>
 <td>R, C</td>
 </tr>
-<tr class="row-even"><td><strong>create_thumb</strong></td>
+<tr class="row-odd"><td><strong>create_thumb</strong></td>
 <td>FALSE</td>
 <td>TRUE/FALSE (boolean)</td>
 <td>Tells the image processing function to create a thumb.</td>
 <td>R</td>
 </tr>
-<tr class="row-odd"><td><strong>thumb_marker</strong></td>
+<tr class="row-even"><td><strong>thumb_marker</strong></td>
 <td>_thumb</td>
 <td>None</td>
 <td>Specifies the thumbnail indicator. It will be inserted just before the
 file extension, so mypic.jpg would become mypic_thumb.jpg</td>
 <td>R</td>
 </tr>
-<tr class="row-even"><td><strong>maintain_ratio</strong></td>
+<tr class="row-odd"><td><strong>maintain_ratio</strong></td>
 <td>TRUE</td>
 <td>TRUE/FALSE (boolean)</td>
 <td>Specifies whether to maintain the original aspect ratio when resizing or
 use hard values.</td>
 <td>R, C</td>
 </tr>
-<tr class="row-odd"><td><strong>master_dim</strong></td>
+<tr class="row-even"><td><strong>master_dim</strong></td>
 <td>auto</td>
 <td>auto, width, height</td>
 <td>Specifies what to use as the master axis when resizing or creating
@@ -313,7 +320,7 @@ the hard value. &#8220;auto&#8221; sets the axis automatically based on whether 
 image is taller than wider, or vice versa.</td>
 <td>R</td>
 </tr>
-<tr class="row-even"><td><strong>rotation_angle</strong></td>
+<tr class="row-odd"><td><strong>rotation_angle</strong></td>
 <td>None</td>
 <td>90, 180, 270, vrt, hor</td>
 <td>Specifies the angle of rotation when rotating images. Note that PHP
@@ -321,14 +328,14 @@ rotates counter-clockwise, so a 90 degree rotation to the right must be
 specified as 270.</td>
 <td>X</td>
 </tr>
-<tr class="row-odd"><td><strong>x_axis</strong></td>
+<tr class="row-even"><td><strong>x_axis</strong></td>
 <td>None</td>
 <td>None</td>
 <td>Sets the X coordinate in pixels for image cropping. For example, a
 setting of 30 will crop an image 30 pixels from the left.</td>
 <td>C</td>
 </tr>
-<tr class="row-even"><td><strong>y_axis</strong></td>
+<tr class="row-odd"><td><strong>y_axis</strong></td>
 <td>None</td>
 <td>None</td>
 <td>Sets the Y coordinate in pixels for image cropping. For example, a

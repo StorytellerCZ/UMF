@@ -31,7 +31,7 @@
 	<body>
 		<div id="table-contents">
 			<div class="toctree-wrapper compound">
-			<function <lambda> at 0x254bc80>
+			<function <lambda> at 0x2ad99385bd70>
 			</div>
 		</div>
 
@@ -491,7 +491,7 @@ server. You must supply a source path and a destination path:</p>
 the folder name you wish to create, with a trailing slash.</p>
 <p>Permissions can be set by passing an octal value in the second parameter.</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="c1">// Creates a folder named &quot;bar&quot;</span>
-<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">ftp</span><span class="o">-&gt;</span><span class="na">mkdir</span><span class="p">(</span><span class="s1">&#39;/public_html/foo/bar/&#39;</span><span class="p">,</span> <span class="nx">DIR_WRITE_MODE</span><span class="p">);</span>
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">ftp</span><span class="o">-&gt;</span><span class="na">mkdir</span><span class="p">(</span><span class="s1">&#39;/public_html/foo/bar/&#39;</span><span class="p">,</span> <span class="mo">0755</span><span class="p">);</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -519,8 +519,8 @@ the folder name you wish to create, with a trailing slash.</p>
 </table>
 <p>Permits you to set file permissions. Supply the path to the file or
 directory you wish to alter permissions on:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span class="c1">// Chmod &quot;bar&quot; to 777</span>
-<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">ftp</span><span class="o">-&gt;</span><span class="na">chmod</span><span class="p">(</span><span class="s1">&#39;/public_html/foo/bar/&#39;</span><span class="p">,</span> <span class="nx">DIR_WRITE_MODE</span><span class="p">);</span>
+<div class="highlight-ci"><div class="highlight"><pre><span class="c1">// Chmod &quot;bar&quot; to 755</span>
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">ftp</span><span class="o">-&gt;</span><span class="na">chmod</span><span class="p">(</span><span class="s1">&#39;/public_html/foo/bar/&#39;</span><span class="p">,</span> <span class="mo">0755</span><span class="p">);</span>
 </pre></div>
 </div>
 </dd></dl>

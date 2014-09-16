@@ -156,6 +156,7 @@
                 BR: 'brazil',
                 CH: 'svájci',
                 CL: 'chilei',
+                CN: 'Kína',
                 CZ: 'cseh',
                 DK: 'dán',
                 EE: 'észt',
@@ -175,6 +176,7 @@
                 SI: 'szlovén',
                 SK: 'szlovák',
                 SM: 'San Marino beli',
+                TH: 'thaiföld',
                 ZA: 'dél afrikai'
             }
         },
@@ -228,10 +230,18 @@
             countryNotSupported: 'A(z) %s országkód nem támogatott',
             country: 'Kérlek, hogy érvényes %s telefonszámot adj meg',
             countries: {
+                BR: 'brazil',
+                CN: 'kína',
+                DK: 'dán',
                 ES: 'spanyol',
                 FR: 'francia',
                 GB: 'Egyesült Királyság beli',
-                US: 'Egyesült Államok beli'
+                MA: 'Marokkó',
+                PK: 'Pakisztán',
+                RO: 'Románia',
+                TH: 'thaiföld',
+                US: 'Egyesült Államok beli',
+                VE: 'venezuelai'
             }
         },
         regexp: {
@@ -280,6 +290,7 @@
                 AT: 'osztrák',
                 BE: 'belga',
                 BG: 'bulgár',
+                BR: 'brazil',
                 CH: 'svájci',
                 CY: 'ciprusi',
                 CZ: 'cseh',
@@ -295,6 +306,7 @@
                 HU: 'magyar',
                 HR: 'horvát',
                 IE: 'ír',
+                IS: 'izlandi',
                 IT: 'olasz',
                 LT: 'litván',
                 LU: 'luxemburgi',
@@ -310,6 +322,7 @@
                 SE: 'svéd',
                 SI: 'szlovén',
                 SK: 'szlovák',
+                VE: 'venezuelai',
                 ZA: 'dél afrikai'
             }
         },
@@ -321,11 +334,14 @@
             countryNotSupported: '%s - nem támogatott ország',
             country: 'Kérlek, hogy helyes %s irányítószámot adj meg',
             countries: {
+                BR: 'brazil',
                 CA: 'kanadai',
                 DK: 'dán',
                 GB: 'Egyesült Királyság beli',
                 IT: 'olasz',
+                MA: 'marokkó',
                 NL: 'holland',
+                RO: 'románia',
                 SE: 'svájci',
                 SG: 'singaporei',
                 US: 'Egyesült Államok beli'

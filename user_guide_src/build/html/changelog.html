@@ -30,7 +30,7 @@
 	<body>
 		<div id="table-contents">
 			<div class="toctree-wrapper compound">
-			<function <lambda> at 0x2b97f8551668>
+			<function <lambda> at 0x2ad9947040c8>
 			</div>
 		</div>
 
@@ -202,6 +202,7 @@ Only entries in <tt class="docutils literal"><span class="pre">$autoload['librar
 <li>Added <em>word_length</em> and <em>pool</em> options to allow customization of the generated word.</li>
 <li>Added <em>colors</em> configuration to allow customization for the <em>background</em>, <em>border</em>, <em>text</em> and <em>grid</em> colors.</li>
 <li>Added <em>filename</em> to the returned array elements.</li>
+<li>Updated to use <cite>imagepng()</cite> in case that <cite>imagejpeg()</cite> isn&#8217;t available.</li>
 </ul>
 </li>
 <li><a class="reference internal" href="helpers/text_helper.html"><em>Text Helper</em></a> changes include:<ul>
@@ -250,6 +251,7 @@ Only entries in <tt class="docutils literal"><span class="pre">$autoload['librar
 <li>Changed <tt class="docutils literal"><span class="pre">limit()</span></tt> to ignore NULL values instead of always casting to integer.</li>
 <li>Changed <tt class="docutils literal"><span class="pre">offset()</span></tt> to ignore empty values instead of always casting to integer.</li>
 <li>Methods <tt class="docutils literal"><span class="pre">insert_batch()</span></tt> and <tt class="docutils literal"><span class="pre">update_batch()</span></tt> now return an integer representing the number of rows affected by them.</li>
+<li>Methods <tt class="docutils literal"><span class="pre">where()</span></tt>, <tt class="docutils literal"><span class="pre">or_where()</span></tt>, <tt class="docutils literal"><span class="pre">having()</span></tt> and <tt class="docutils literal"><span class="pre">or_having()</span></tt> now convert the operators <em>&lt;&gt;</em> and <em>!=</em> into <em>IS NOT NULL</em> when the supplied for comparison value is equal to <em>NULL</em>.</li>
 </ul>
 </li>
 <li><a class="reference internal" href="database/results.html"><em>Database Results</em></a> changes include:<ul>
@@ -368,6 +370,7 @@ Only entries in <tt class="docutils literal"><span class="pre">$autoload['librar
 <li>Added a <tt class="docutils literal"><span class="pre">$reset</span></tt> parameter to method <tt class="docutils literal"><span class="pre">initialize()</span></tt>.</li>
 <li>Removed method <tt class="docutils literal"><span class="pre">clean_file_name()</span></tt> and its usage in favor of <a class="reference internal" href="libraries/security.html"><em>Security Library</em></a>&#8216;s <tt class="docutils literal"><span class="pre">sanitize_filename()</span></tt>.</li>
 <li>Removed method <tt class="docutils literal"><span class="pre">mimes_types()</span></tt>.</li>
+<li>Changed <tt class="docutils literal"><span class="pre">CI_Upload::_prep_filename()</span></tt> to simply replace all (but the last) dots in the filename with underscores, instead of suffixing them.</li>
 </ul>
 </li>
 <li><a class="reference internal" href="libraries/calendar.html"><em>Calendar Library</em></a> changes include:<ul>
@@ -394,6 +397,7 @@ Only entries in <tt class="docutils literal"><span class="pre">$autoload['librar
 <li>If property <em>maintain_ratio</em> is set to TRUE, <tt class="docutils literal"><span class="pre">image_reproportion()</span></tt> now doesn&#8217;t need both width and height to be specified.</li>
 <li>Property <em>maintain_ratio</em> is now taken into account when resizing images using ImageMagick library.</li>
 <li>Added support for maintaining transparency for PNG images in method <tt class="docutils literal"><span class="pre">text_watermark()</span></tt>.</li>
+<li>Added a <strong>file_permissions</strong> setting.</li>
 </ul>
 </li>
 <li><a class="reference internal" href="libraries/form_validation.html"><em>Form Validation Library</em></a> changes include:<ul>
@@ -551,6 +555,7 @@ Only entries in <tt class="docutils literal"><span class="pre">$autoload['librar
 <li>Removed the third (<cite>$php_error</cite>) argument from function <a class="reference internal" href="general/errors.html#log_message" title="log_message"><tt class="xref py py-func docutils literal"><span class="pre">log_message()</span></tt></a>.</li>
 <li>Changed internal function <tt class="docutils literal"><span class="pre">load_class()</span></tt> to accept a constructor parameter instead of (previously unused) class name prefix.</li>
 <li>Removed default parameter value of <a class="reference internal" href="general/common_functions.html#is_php" title="is_php"><tt class="xref py py-func docutils literal"><span class="pre">is_php()</span></tt></a>.</li>
+<li>Added a second argument <tt class="docutils literal"><span class="pre">$double_encode</span></tt> to <a class="reference internal" href="general/common_functions.html#html_escape" title="html_escape"><tt class="xref py py-func docutils literal"><span class="pre">html_escape()</span></tt></a>.</li>
 </ul>
 </li>
 <li><a class="reference internal" href="libraries/output.html"><em>Output Library</em></a> changes include:<ul>
@@ -568,9 +573,10 @@ Only entries in <tt class="docutils literal"><span class="pre">$autoload['librar
 </ul>
 </li>
 <li><a class="reference internal" href="libraries/security.html"><em>Security Library</em></a> changes include:<ul>
+<li>Added <tt class="docutils literal"><span class="pre">$config['csrf_regeneration']</span></tt>, which makes CSRF token regeneration optional.</li>
+<li>Added <tt class="docutils literal"><span class="pre">$config['csrf_exclude_uris']</span></tt>, allowing for exclusion of URIs from the CSRF protection (regular expressions are supported).</li>
 <li>Added method <tt class="docutils literal"><span class="pre">strip_image_tags()</span></tt>.</li>
-<li>Added <tt class="docutils literal"><span class="pre">$config['csrf_regeneration']</span></tt>, which makes token regeneration optional.</li>
-<li>Added <tt class="docutils literal"><span class="pre">$config['csrf_exclude_uris']</span></tt>, which allows you list URIs which will not have the CSRF validation methods run.</li>
+<li>Added method <tt class="docutils literal"><span class="pre">get_random_bytes()</span></tt> and switched CSRF &amp; XSS token generation to use it.</li>
 <li>Modified method <tt class="docutils literal"><span class="pre">sanitize_filename()</span></tt> to read a public <tt class="docutils literal"><span class="pre">$filename_bad_chars</span></tt> property for getting the invalid characters list.</li>
 <li>Return status code of 403 instead of a 500 if CSRF protection is enabled but a token is missing from a request.</li>
 </ul>
@@ -593,6 +599,11 @@ Only entries in <tt class="docutils literal"><span class="pre">$autoload['librar
 <li>Renamed method <tt class="docutils literal"><span class="pre">_is_ascii()</span></tt> to <tt class="docutils literal"><span class="pre">is_ascii()</span></tt> and made it public.</li>
 </ul>
 </li>
+<li>Log Library changes include:<ul>
+<li>Added a <tt class="docutils literal"><span class="pre">$config['log_file_permissions']</span></tt> setting.</li>
+<li>Changed the library constructor to try to create the <strong>log_path</strong> directory if it doesn&#8217;t exist.</li>
+</ul>
+</li>
 <li>Added <cite>compatibility layers &lt;general/compatibility_functions&gt;</cite> for:<ul>
 <li><a class="reference external" href="http://php.net/mbstring">Multibyte String</a> (limited support).</li>
 <li><a class="reference external" href="http://php.net/hash">Hash</a> (<tt class="docutils literal"><span class="pre">hash_equals()</span></tt>, <tt class="docutils literal"><span class="pre">hash_pbkdf2()</span></tt>).</li>
@@ -601,7 +612,6 @@ Only entries in <tt class="docutils literal"><span class="pre">$autoload['librar
 </ul>
 </li>
 <li>Removed <tt class="docutils literal"><span class="pre">CI_CORE</span></tt> boolean constant from <em>CodeIgniter.php</em> (no longer Reactor and Core versions).</li>
-<li>Log Library will now try to create the <strong>log_path</strong> directory if it doesn&#8217;t exist.</li>
 <li>Added support for HTTP-Only cookies with new config option <em>cookie_httponly</em> (default FALSE).</li>
 <li><tt class="docutils literal"><span class="pre">$config['time_reference']</span></tt> now supports all timezone strings supported by PHP.</li>
 <li>Fatal PHP errors are now also passed to <tt class="docutils literal"><span class="pre">_exception_handler()</span></tt>, so they can be logged.</li>
@@ -806,6 +816,7 @@ Only entries in <tt class="docutils literal"><span class="pre">$autoload['librar
 <li>Fixed a bug where <tt class="docutils literal"><span class="pre">CI_Xmlrpcs::parseRequest()</span></tt> could fail if <tt class="docutils literal"><span class="pre">$HTTP_RAW_POST_DATA</span></tt> is not populated.</li>
 <li>Fixed a bug in <a class="reference internal" href="libraries/zip.html"><em>Zip Library</em></a> internal method <tt class="docutils literal"><span class="pre">_get_mod_time()</span></tt> where it was not parsing result returned by <tt class="docutils literal"><span class="pre">filemtime()</span></tt>.</li>
 <li>Fixed a bug (#3161) - <tt class="xref doc docutils literal"><span class="pre">Cache</span> <span class="pre">Library</span></tt> methods <cite>increment()</cite>, <cite>decrement()</cite> didn&#8217;t auto-create non-existent items when using redis and/or file storage.</li>
+<li>Fixed a bug (#3189) - <a class="reference internal" href="libraries/parser.html"><em>Parser Library</em></a> used double replacement on <tt class="docutils literal"><span class="pre">key-&gt;value</span></tt> pairs, exposing a potential template injection vulnerability.</li>
 </ul>
 </div>
 </div>

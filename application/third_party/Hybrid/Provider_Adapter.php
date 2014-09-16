@@ -82,7 +82,9 @@ class Hybrid_Provider_Adapter
 
 		# include the adapter wrapper
 		if( isset( $this->config["wrapper"] ) && is_array( $this->config["wrapper"] ) ){
-			require_once $this->config["wrapper"]["path"];
+			if (isset( $this->config["wrapper"]["path"] )) {
+				require_once $this->config["wrapper"]["path"];
+			}
 
 			if( ! class_exists( $this->config["wrapper"]["class"] ) ){
 				throw new Exception( "Unable to load the adapter class.", 3 );
@@ -130,7 +132,7 @@ class Hybrid_Provider_Adapter
 		if (empty(Hybrid_Auth::$config["base_url"])) {
 	        // the base url wasn't provide, so we must use the current
 	        // url (which makes sense actually)
-			$url  = empty($_SERVER['HTTPS']) ? 'http' : 'https';
+			$url  = empty($_SERVER['HTTPS']) || $_SERVER['HTTPS'] == 'off' ? 'http' : 'https';
 			$url .= '://' . $_SERVER['HTTP_HOST'];
 			$url .= $_SERVER['REQUEST_URI'];
 			$HYBRID_AUTH_URL_BASE = $url;

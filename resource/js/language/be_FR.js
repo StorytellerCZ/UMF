@@ -1,7 +1,7 @@
 (function($) {
     /**
-     * French language package
-     * Translated by @dlucazeau
+     * Belgium (French) language package
+     * Translated by @neilime
      */
     $.fn.bootstrapValidator.i18n = $.extend(true, $.fn.bootstrapValidator.i18n, {
         base64: {

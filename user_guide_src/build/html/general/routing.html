@@ -26,12 +26,12 @@
 	    <link rel="top" title="CodeIgniter 3.0-dev documentation" href="../index.html" />
 	    <link rel="up" title="General Topics" href="index.html" />
 	    <link rel="next" title="Error Handling" href="errors.html" />
-	    <link rel="prev" title="Common Functions" href="common_functions.html" /> 
+	    <link rel="prev" title="Compatibility Functions" href="compatibility_functions.html" /> 
 	</head>
 	<body>
 		<div id="table-contents">
 			<div class="toctree-wrapper compound">
-			<function <lambda> at 0x323fb18>
+			<function <lambda> at 0x2ad99385bc08>
 			</div>
 		</div>
 
@@ -178,15 +178,13 @@ rather than the double backslash syntax.</p>
 call the &#8220;shirts&#8221; controller class and the &#8220;id_123&#8221; method.</p>
 <p>With regular expressions, you can also catch a segment containing a
 forward slash (&#8216;/&#8217;), which would usually represent the delimiter between
-multiple segments.
-For example, if a user accesses a password protected area of your web
+multiple segments.</p>
+<p>For example, if a user accesses a password protected area of your web
 application and you wish to be able to redirect them back to the same
 page after they log in, you may find this example useful:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="nv">$route</span><span class="p">[</span><span class="s1">&#39;login/(.+)&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;auth/login/$1&#39;</span><span class="p">;</span>
 </pre></div>
 </div>
-<p>That will call the &#8220;auth&#8221; controller class and its <tt class="docutils literal"><span class="pre">login()</span></tt> method,
-passing everything contained in the URI after <em>login/</em> as a parameter.</p>
 <p>For those of you who don&#8217;t know regular expressions and want to learn
 more about them, <cite>regular-expressions.info &lt;http://www.regular-expressions.info/&gt;</cite>
 might be a good starting point.</p>
