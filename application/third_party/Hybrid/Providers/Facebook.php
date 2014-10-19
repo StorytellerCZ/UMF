@@ -177,8 +177,8 @@ class Hybrid_Providers_Facebook extends Hybrid_Provider_Model
 		$this->user->profile->displayName   = (array_key_exists('name',$data))?$data['name']:"";
 		$this->user->profile->firstName     = (array_key_exists('first_name',$data))?$data['first_name']:"";
 		$this->user->profile->lastName      = (array_key_exists('last_name',$data))?$data['last_name']:"";
-		$this->user->profile->photoURL      = "https://graph.facebook.com/v2.1/" . $this->user->profile->identifier . "/picture?width=150&height=150";
-		$this->user->profile->coverInfoURL  = "https://graph.facebook.com/v2.1/" . $this->user->profile->identifier . "?fields=cover";
+		$this->user->profile->photoURL      = "https://graph.facebook.com/" . $this->user->profile->identifier . "/picture?width=150&height=150";
+		$this->user->profile->coverInfoURL  = "https://graph.facebook.com/" . $this->user->profile->identifier . "?fields=cover";
 		$this->user->profile->profileURL    = (array_key_exists('link',$data))?$data['link']:""; 
 		$this->user->profile->webSiteURL    = (array_key_exists('website',$data))?$data['website']:""; 
 		$this->user->profile->gender        = (array_key_exists('gender',$data))?$data['gender']:"";
@@ -268,7 +268,7 @@ class Hybrid_Providers_Facebook extends Hybrid_Provider_Model
 			$uc->identifier  = (array_key_exists("id",$item))?$item["id"]:"";
 			$uc->displayName = (array_key_exists("name",$item))?$item["name"]:"";
 			$uc->profileURL  = (array_key_exists("link",$item))?$item["link"]:"https://www.facebook.com/profile.php?id=" . $uc->identifier;
-			$uc->photoURL    = "https://graph.facebook.com/v2.1/" . $uc->identifier . "/picture?width=150&height=150";
+			$uc->photoURL    = "https://graph.facebook.com/" . $uc->identifier . "/picture?width=150&height=150";
 
 			$contacts[] = $uc;
 		}
@@ -422,7 +422,7 @@ class Hybrid_Providers_Facebook extends Hybrid_Provider_Model
 				$ua->user->identifier   = (array_key_exists("id",$item["from"]))?$item["from"]["id"]:"";
 				$ua->user->displayName  = (array_key_exists("name",$item["from"]))?$item["from"]["name"]:"";
 				$ua->user->profileURL   = "https://www.facebook.com/profile.php?id=" . $ua->user->identifier;
-				$ua->user->photoURL     = "https://graph.facebook.com/v2.1/" . $ua->user->identifier . "/picture?type=square";
+				$ua->user->photoURL     = "https://graph.facebook.com/" . $ua->user->identifier . "/picture?type=square";
 
 				$activities[] = $ua;
 			}

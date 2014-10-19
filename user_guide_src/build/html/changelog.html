@@ -30,7 +30,7 @@
 	<body>
 		<div id="table-contents">
 			<div class="toctree-wrapper compound">
-			<function <lambda> at 0x2ad9947040c8>
+			<function <lambda> at 0x2b6886a5a578>
 			</div>
 		</div>
 
@@ -251,7 +251,7 @@ Only entries in <tt class="docutils literal"><span class="pre">$autoload['librar
 <li>Changed <tt class="docutils literal"><span class="pre">limit()</span></tt> to ignore NULL values instead of always casting to integer.</li>
 <li>Changed <tt class="docutils literal"><span class="pre">offset()</span></tt> to ignore empty values instead of always casting to integer.</li>
 <li>Methods <tt class="docutils literal"><span class="pre">insert_batch()</span></tt> and <tt class="docutils literal"><span class="pre">update_batch()</span></tt> now return an integer representing the number of rows affected by them.</li>
-<li>Methods <tt class="docutils literal"><span class="pre">where()</span></tt>, <tt class="docutils literal"><span class="pre">or_where()</span></tt>, <tt class="docutils literal"><span class="pre">having()</span></tt> and <tt class="docutils literal"><span class="pre">or_having()</span></tt> now convert the operators <em>&lt;&gt;</em> and <em>!=</em> into <em>IS NOT NULL</em> when the supplied for comparison value is equal to <em>NULL</em>.</li>
+<li>Methods <tt class="docutils literal"><span class="pre">where()</span></tt>, <tt class="docutils literal"><span class="pre">or_where()</span></tt>, <tt class="docutils literal"><span class="pre">having()</span></tt> and <tt class="docutils literal"><span class="pre">or_having()</span></tt> now convert trailing  <tt class="docutils literal"><span class="pre">=</span></tt> and <tt class="docutils literal"><span class="pre">&lt;&gt;</span></tt>,  <tt class="docutils literal"><span class="pre">!=</span></tt> SQL operators to <tt class="docutils literal"><span class="pre">IS</span> <span class="pre">NULL</span></tt> and <tt class="docutils literal"><span class="pre">IS</span> <span class="pre">NOT</span> <span class="pre">NULL</span></tt> respectively when the supplied comparison value is <tt class="docutils literal"><span class="pre">NULL</span></tt>.</li>
 </ul>
 </li>
 <li><a class="reference internal" href="database/results.html"><em>Database Results</em></a> changes include:<ul>
@@ -556,6 +556,7 @@ Only entries in <tt class="docutils literal"><span class="pre">$autoload['librar
 <li>Changed internal function <tt class="docutils literal"><span class="pre">load_class()</span></tt> to accept a constructor parameter instead of (previously unused) class name prefix.</li>
 <li>Removed default parameter value of <a class="reference internal" href="general/common_functions.html#is_php" title="is_php"><tt class="xref py py-func docutils literal"><span class="pre">is_php()</span></tt></a>.</li>
 <li>Added a second argument <tt class="docutils literal"><span class="pre">$double_encode</span></tt> to <a class="reference internal" href="general/common_functions.html#html_escape" title="html_escape"><tt class="xref py py-func docutils literal"><span class="pre">html_escape()</span></tt></a>.</li>
+<li>Changed function <tt class="docutils literal"><span class="pre">config_item()</span></tt> to return NULL instead of FALSE when no value is found.</li>
 </ul>
 </li>
 <li><a class="reference internal" href="libraries/output.html"><em>Output Library</em></a> changes include:<ul>
@@ -879,7 +880,7 @@ Only entries in <tt class="docutils literal"><span class="pre">$autoload['librar
 <li>Fixed a bug (#227) - <a class="reference internal" href="libraries/input.html"><em>Input Library</em></a> allowed unconditional spoofing of HTTP clients&#8217; IP addresses through the <em>HTTP_CLIENT_IP</em> header.</li>
 <li>Fixed a bug (#907) - <a class="reference internal" href="libraries/input.html"><em>Input Library</em></a> ignored <em>HTTP_X_CLUSTER_CLIENT_IP</em> and <em>HTTP_X_CLIENT_IP</em> headers when checking for proxies.</li>
 <li>Fixed a bug (#940) - <tt class="docutils literal"><span class="pre">csrf_verify()</span></tt> used to set the CSRF cookie while processing a POST request with no actual POST data, which resulted in validating a request that should be considered invalid.</li>
-<li>Fixed a bug (#499) - <a class="reference internal" href="libraries/security.html"><em>Security Library</em></a> where a CSRF cookie was created even if <tt class="docutils literal"><span class="pre">$config['csrf_protection']</span></tt> is set tot FALSE.</li>
+<li>Fixed a bug (#499) - <a class="reference internal" href="libraries/security.html"><em>Security Library</em></a> where a CSRF cookie was created even if <tt class="docutils literal"><span class="pre">$config['csrf_protection']</span></tt> is set to FALSE.</li>
 <li>Fixed a bug (#1715) - <a class="reference internal" href="libraries/input.html"><em>Input Library</em></a> triggered <tt class="docutils literal"><span class="pre">csrf_verify()</span></tt> on CLI requests.</li>
 <li>Fixed a bug (#751) - <a class="reference internal" href="database/query_builder.html"><em>Query Builder</em></a> didn&#8217;t properly handle cached field escaping overrides.</li>
 <li>Fixed a bug (#2004) - <a class="reference internal" href="database/query_builder.html"><em>Query Builder</em></a> didn&#8217;t properly merge cached calls with non-cache ones.</li>
