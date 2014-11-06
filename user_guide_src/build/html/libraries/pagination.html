@@ -1,74 +1,58 @@
-<!DOCTYPE html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 
-<html>
-	<head>
-		<meta charset="utf-8">
-	    
-	    <title>Pagination Class &mdash; CodeIgniter 3.0-dev documentation</title>
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Pagination Class &mdash; CodeIgniter 3.0-dev documentation</title>
+    
+    <link rel="stylesheet" href="../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '3.0-dev',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  false
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/sidebar.js"></script>
+    <link rel="shortcut icon" href="../_static/ci-icon.ico"/>
+    <link rel="top" title="CodeIgniter 3.0-dev documentation" href="../index.html" />
+    <link rel="up" title="Libraries" href="index.html" />
+    <link rel="next" title="Template Parser Class" href="parser.html" />
+    <link rel="prev" title="Output Class" href="output.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="parser.html" title="Template Parser Class"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="output.html" title="Output Class"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">CodeIgniter 3.0-dev documentation</a> &raquo;</li>
+          <li><a href="index.html" accesskey="U">Libraries</a> &raquo;</li> 
+      </ul>
+    </div>  
 
-	    <link rel="stylesheet" href="../_static/asset/css/common.css" type="text/css" />
-	    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-	    <script type="text/javascript">
-	      var DOCUMENTATION_OPTIONS = {
-	        URL_ROOT:    '../',
-	        VERSION:     '3.0-dev',
-	        COLLAPSE_INDEX: false,
-	        FILE_SUFFIX: '.html',
-	        HAS_SOURCE:  false
-	      };
-	    </script>
-	    <script type="text/javascript" src="../_static/jquery.js"></script>
-	    <script type="text/javascript" src="../_static/underscore.js"></script>
-	    <script type="text/javascript" src="../_static/doctools.js"></script>
-
-	    <script type="text/javascript" src="../_static/asset/js/method-toc.js"></script>
-	    <link rel="top" title="CodeIgniter 3.0-dev documentation" href="../index.html" />
-	    <link rel="up" title="Libraries" href="index.html" />
-	    <link rel="next" title="Template Parser Class" href="parser.html" />
-	    <link rel="prev" title="Output Class" href="output.html" /> 
-	</head>
-	<body>
-		<div id="table-contents">
-			<div class="toctree-wrapper compound">
-			<function <lambda> at 0x7f8b53bac9b0>
-			</div>
-		</div>
-
-		<div id="brand" class="ci">
-			<a href="http://codeigniter.com/"><img src="../_static/asset/img/ci-logo.gif" alt="CodeIgniter"></a>
-			<p>3.0-dev User Guide</p>
-		</div><!-- /#brand -->
-
-		<div id="header"><!--
-	--------------------------------
-	Original Google search box block
-	--------------------------------
-	
-<form method="get" action="http://www.google.com/search">
-	<fieldset>
-		<input type="text" name="q" id="q" value="">
-		<input type="hidden" name="as_sitesearch" id="as_sitesearch" value="codeigniter.com/user_guide/" />
-		<input class="grades" type="submit" value="search">
-	</fieldset>
-</form>
--->
-
-
-<form class="search" action="../search.html" method="get">
-  <input type="text" name="q" id="q" value="" />
-  <input type="submit" value="search" />
-  <input type="hidden" name="check_keywords" value="yes" />
-  <input type="hidden" name="area" value="default" />
-</form>
-			<ul>
-				<li><a href="../index.html">User Guide Home</a>&nbsp;&nbsp; &rsaquo;</li>
-				<li><a href="index.html" accesskey="U">Libraries</a>&nbsp;&nbsp;  &rsaquo;</li>
-				<li><strong>Pagination Class</strong></li>
-			</ul>
-		</div><!-- /#header -->
-
-		<div class="section body" id="content">
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
   <div class="section" id="pagination-class">
 <h1>Pagination Class<a class="headerlink" href="#pagination-class" title="Permalink to this headline">¶</a></h1>
 <p>CodeIgniter&#8217;s Pagination class is very easy to use, and it is 100%
@@ -447,13 +431,120 @@ you can pass boolean FALSE as a regular attribute</p>
 </div>
 
 
-		</div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Pagination Class</a><ul>
+<li><a class="reference internal" href="#example">Example</a><ul>
+<li><a class="reference internal" href="#notes">Notes</a></li>
+<li><a class="reference internal" href="#setting-preferences-in-a-config-file">Setting preferences in a config file</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#customizing-the-pagination">Customizing the Pagination</a><ul>
+<li><a class="reference internal" href="#config-uri-segment-3">$config[&#8216;uri_segment&#8217;] = 3;</a></li>
+<li><a class="reference internal" href="#config-num-links-2">$config[&#8216;num_links&#8217;] = 2;</a></li>
+<li><a class="reference internal" href="#config-use-page-numbers-true">$config[&#8216;use_page_numbers&#8217;] = TRUE;</a></li>
+<li><a class="reference internal" href="#config-page-query-string-true">$config[&#8216;page_query_string&#8217;] = TRUE;</a></li>
+<li><a class="reference internal" href="#config-reuse-query-string-false">$config[&#8216;reuse_query_string&#8217;] = FALSE;</a></li>
+<li><a class="reference internal" href="#config-prefix">$config[&#8216;prefix&#8217;] = &#8216;&#8217;;</a></li>
+<li><a class="reference internal" href="#config-suffix">$config[&#8216;suffix&#8217;] = &#8216;&#8217;;</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#adding-enclosing-markup">Adding Enclosing Markup</a><ul>
+<li><a class="reference internal" href="#config-full-tag-open-p">$config[&#8216;full_tag_open&#8217;] = &#8216;&lt;p&gt;&#8217;;</a></li>
+<li><a class="reference internal" href="#config-full-tag-close-p">$config[&#8216;full_tag_close&#8217;] = &#8216;&lt;/p&gt;&#8217;;</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#customizing-the-first-link">Customizing the First Link</a><ul>
+<li><a class="reference internal" href="#config-first-link-first">$config[&#8216;first_link&#8217;] = &#8216;First&#8217;;</a></li>
+<li><a class="reference internal" href="#config-first-tag-open-div">$config[&#8216;first_tag_open&#8217;] = &#8216;&lt;div&gt;&#8217;;</a></li>
+<li><a class="reference internal" href="#config-first-tag-close-div">$config[&#8216;first_tag_close&#8217;] = &#8216;&lt;/div&gt;&#8217;;</a></li>
+<li><a class="reference internal" href="#config-first-url">$config[&#8216;first_url&#8217;] = &#8216;&#8217;;</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#customizing-the-last-link">Customizing the Last Link</a><ul>
+<li><a class="reference internal" href="#config-last-link-last">$config[&#8216;last_link&#8217;] = &#8216;Last&#8217;;</a></li>
+<li><a class="reference internal" href="#config-last-tag-open-div">$config[&#8216;last_tag_open&#8217;] = &#8216;&lt;div&gt;&#8217;;</a></li>
+<li><a class="reference internal" href="#config-last-tag-close-div">$config[&#8216;last_tag_close&#8217;] = &#8216;&lt;/div&gt;&#8217;;</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#customizing-the-next-link">Customizing the &#8220;Next&#8221; Link</a><ul>
+<li><a class="reference internal" href="#config-next-link-gt">$config[&#8216;next_link&#8217;] = &#8216;&amp;gt;&#8217;;</a></li>
+<li><a class="reference internal" href="#config-next-tag-open-div">$config[&#8216;next_tag_open&#8217;] = &#8216;&lt;div&gt;&#8217;;</a></li>
+<li><a class="reference internal" href="#config-next-tag-close-div">$config[&#8216;next_tag_close&#8217;] = &#8216;&lt;/div&gt;&#8217;;</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#customizing-the-previous-link">Customizing the &#8220;Previous&#8221; Link</a><ul>
+<li><a class="reference internal" href="#config-prev-link-lt">$config[&#8216;prev_link&#8217;] = &#8216;&amp;lt;&#8217;;</a></li>
+<li><a class="reference internal" href="#config-prev-tag-open-div">$config[&#8216;prev_tag_open&#8217;] = &#8216;&lt;div&gt;&#8217;;</a></li>
+<li><a class="reference internal" href="#config-prev-tag-close-div">$config[&#8216;prev_tag_close&#8217;] = &#8216;&lt;/div&gt;&#8217;;</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#customizing-the-current-page-link">Customizing the &#8220;Current Page&#8221; Link</a><ul>
+<li><a class="reference internal" href="#config-cur-tag-open-b">$config[&#8216;cur_tag_open&#8217;] = &#8216;&lt;b&gt;&#8217;;</a></li>
+<li><a class="reference internal" href="#config-cur-tag-close-b">$config[&#8216;cur_tag_close&#8217;] = &#8216;&lt;/b&gt;&#8217;;</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#customizing-the-digit-link">Customizing the &#8220;Digit&#8221; Link</a><ul>
+<li><a class="reference internal" href="#config-num-tag-open-div">$config[&#8216;num_tag_open&#8217;] = &#8216;&lt;div&gt;&#8217;;</a></li>
+<li><a class="reference internal" href="#config-num-tag-close-div">$config[&#8216;num_tag_close&#8217;] = &#8216;&lt;/div&gt;&#8217;;</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#hiding-the-pages">Hiding the Pages</a></li>
+<li><a class="reference internal" href="#adding-attributes-to-anchors">Adding attributes to anchors</a></li>
+<li><a class="reference internal" href="#disabling-the-rel-attribute">Disabling the &#8220;rel&#8221; attribute</a></li>
+<li><a class="reference internal" href="#class-reference">Class Reference</a></li>
+</ul>
+</li>
+</ul>
 
-		<!-- {user_guide_comments} -->
-		
-		<div id="footer">
-			<p class="top"><a href="#header" title="Return to top">Return to top</a></p>
-			<p><a href="http://codeigniter.com/">CodeIgniter</a> &ndash; Copyright &copy; 2014, EllisLab, Inc.</a></p>
-		</div><!-- /#footer -->
-	</body>
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="output.html"
+                        title="previous chapter">Output Class</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="parser.html"
+                        title="next chapter">Template Parser Class</a></p>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="parser.html" title="Template Parser Class"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="output.html" title="Output Class"
+             >previous</a> |</li>
+        <li><a href="../index.html">CodeIgniter 3.0-dev documentation</a> &raquo;</li>
+          <li><a href="index.html" >Libraries</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, British Columbia Institute of Technology.
+      Last updated on Nov 06, 2014.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
+    </div>
+  </body>
 </html>

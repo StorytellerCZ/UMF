@@ -1,72 +1,56 @@
-<!DOCTYPE html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 
-<html>
-	<head>
-		<meta charset="utf-8">
-	    
-	    <title>Change Log &mdash; CodeIgniter 3.0-dev documentation</title>
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Change Log &mdash; CodeIgniter 3.0-dev documentation</title>
+    
+    <link rel="stylesheet" href="_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '3.0-dev',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  false
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/sidebar.js"></script>
+    <link rel="shortcut icon" href="_static/ci-icon.ico"/>
+    <link rel="top" title="CodeIgniter 3.0-dev documentation" href="index.html" />
+    <link rel="next" title="The MIT License (MIT)" href="license.html" />
+    <link rel="prev" title="Developer’s Certificate of Origin 1.1" href="DCO.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="license.html" title="The MIT License (MIT)"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="DCO.html" title="Developer’s Certificate of Origin 1.1"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html">CodeIgniter 3.0-dev documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
 
-	    <link rel="stylesheet" href="_static/asset/css/common.css" type="text/css" />
-	    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-	    <script type="text/javascript">
-	      var DOCUMENTATION_OPTIONS = {
-	        URL_ROOT:    './',
-	        VERSION:     '3.0-dev',
-	        COLLAPSE_INDEX: false,
-	        FILE_SUFFIX: '.html',
-	        HAS_SOURCE:  false
-	      };
-	    </script>
-	    <script type="text/javascript" src="_static/jquery.js"></script>
-	    <script type="text/javascript" src="_static/underscore.js"></script>
-	    <script type="text/javascript" src="_static/doctools.js"></script>
-
-	    <script type="text/javascript" src="_static/asset/js/method-toc.js"></script>
-	    <link rel="top" title="CodeIgniter 3.0-dev documentation" href="index.html" />
-	    <link rel="next" title="Open Software License (“OSL”) v 3.0" href="license.html" />
-	    <link rel="prev" title="Developer’s Certificate of Origin 1.1" href="DCO.html" /> 
-	</head>
-	<body>
-		<div id="table-contents">
-			<div class="toctree-wrapper compound">
-			<function <lambda> at 0x7f8b52859e60>
-			</div>
-		</div>
-
-		<div id="brand" class="ci">
-			<a href="http://codeigniter.com/"><img src="_static/asset/img/ci-logo.gif" alt="CodeIgniter"></a>
-			<p>3.0-dev User Guide</p>
-		</div><!-- /#brand -->
-
-		<div id="header"><!--
-	--------------------------------
-	Original Google search box block
-	--------------------------------
-	
-<form method="get" action="http://www.google.com/search">
-	<fieldset>
-		<input type="text" name="q" id="q" value="">
-		<input type="hidden" name="as_sitesearch" id="as_sitesearch" value="codeigniter.com/user_guide/" />
-		<input class="grades" type="submit" value="search">
-	</fieldset>
-</form>
--->
-
-
-<form class="search" action="search.html" method="get">
-  <input type="text" name="q" id="q" value="" />
-  <input type="submit" value="search" />
-  <input type="hidden" name="check_keywords" value="yes" />
-  <input type="hidden" name="area" value="default" />
-</form>
-			<ul>
-				<li><a href="index.html">User Guide Home</a>&nbsp;&nbsp; &rsaquo;</li>
-				<li><strong>Change Log</strong></li>
-			</ul>
-		</div><!-- /#header -->
-
-		<div class="section body" id="content">
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
   <div class="section" id="change-log">
 <h1>Change Log<a class="headerlink" href="#change-log" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="version-3-0-planned">
@@ -74,13 +58,7 @@
 <p>Release Date: Not Released</p>
 <ul class="simple">
 <li>License<ul>
-<li>CodeIgniter has been relicensed with the Open Software License (3.0), eliminating its old proprietary licensing.<ul>
-<li>All system files are licensed with OSL 3.0.</li>
-<li>Config, error, and sample files shipped in the application folder are
-licensed with the Academic Free License (3.0) to allow you to retain
-all licensing authority over your own application code.</li>
-</ul>
-</li>
+<li>CodeIgniter has been relicensed with the <a class="reference external" href="http://opensource.org/licenses/MIT">MIT License</a>, eliminating its old proprietary licensing.</li>
 </ul>
 </li>
 <li>General Changes<ul>
@@ -113,9 +91,9 @@ all licensing authority over your own application code.</li>
 Only entries in <tt class="docutils literal"><span class="pre">$autoload['libraries']</span></tt> are auto-loaded now.</li>
 <li>Removed previously deprecated EXT constant.</li>
 <li>Updated all classes to be written in PHP 5 style, with visibility declarations and no <tt class="docutils literal"><span class="pre">var</span></tt> usage for properties.</li>
-<li>Moved error templates to <em>application/views/errors/</em>.</li>
+<li>Added an Exception handler.</li>
+<li>Moved error templates to <em>application/views/errors/</em> and made the path configurable via <tt class="docutils literal"><span class="pre">$config['error_views_path']</span></tt>.</li>
 <li>Added support non-HTML error templates for CLI applications.</li>
-<li>Made error templates path configurable using <tt class="docutils literal"><span class="pre">$config['error_views_path']</span></tt>.</li>
 <li>Moved the Log class to <em>application/core/</em></li>
 <li>Global config files are loaded first, then environment ones. Environment config keys overwrite base ones, allowing to only set the keys we want changed per environment.</li>
 <li>Changed detection of <tt class="docutils literal"><span class="pre">$view_folder</span></tt> so that if it&#8217;s not found in the current path, it will now also be searched for under the application folder.</li>
@@ -239,6 +217,7 @@ Only entries in <tt class="docutils literal"><span class="pre">$autoload['librar
 <li>Added Interbase/Firebird database support via the <em>ibase</em> driver.</li>
 <li>Added ODBC support for <tt class="docutils literal"><span class="pre">create_database()</span></tt>, <tt class="docutils literal"><span class="pre">drop_database()</span></tt> and <tt class="docutils literal"><span class="pre">drop_table()</span></tt> in <a class="reference internal" href="database/forge.html"><em>Database Forge</em></a>.</li>
 <li>Added <strong>save_queries</strong> configuration setting to <em>application/config/database.php</em> (defaults to <tt class="docutils literal"><span class="pre">TRUE</span></tt>).</li>
+<li>Added support to binding arrays as <tt class="docutils literal"><span class="pre">IN()</span></tt> sets in <tt class="docutils literal"><span class="pre">query()</span></tt>.</li>
 <li><a class="reference internal" href="database/query_builder.html"><em>Query Builder</em></a> changes include:<ul>
 <li>Renamed the Active Record class to Query Builder to remove confusion with the Active Record design pattern.</li>
 <li>Added the ability to insert objects with <tt class="docutils literal"><span class="pre">insert_batch()</span></tt>.</li>
@@ -322,6 +301,7 @@ Only entries in <tt class="docutils literal"><span class="pre">$autoload['librar
 <li>Added support for passing a custom database object to the loader.</li>
 <li>Added support for passing custom table attributes (such as <tt class="docutils literal"><span class="pre">ENGINE</span></tt> for MySQL) to <tt class="docutils literal"><span class="pre">create_table()</span></tt>.</li>
 <li>Added support for usage of the <em>FIRST</em> clause in <tt class="docutils literal"><span class="pre">add_column()</span></tt> for MySQL and CUBRID.</li>
+<li>Added partial support for field comments (MySQL, PostgreSQL, Oracle).</li>
 <li>Deprecated <tt class="docutils literal"><span class="pre">add_column()</span></tt>&#8216;s third method. <em>AFTER</em> clause should now be added to the field definition array instead.</li>
 <li>Overall improved support for all of the drivers.</li>
 </ul>
@@ -548,7 +528,8 @@ Only entries in <tt class="docutils literal"><span class="pre">$autoload['librar
 <li>Added function <a class="reference internal" href="general/common_functions.html#get_mimes" title="get_mimes"><tt class="xref py py-func docutils literal"><span class="pre">get_mimes()</span></tt></a> to return the <em>application/config/mimes.php</em> array.</li>
 <li>Added support for HTTP code 303 (&#8220;See Other&#8221;) in <a class="reference internal" href="general/common_functions.html#set_status_header" title="set_status_header"><tt class="xref py py-func docutils literal"><span class="pre">set_status_header()</span></tt></a>.</li>
 <li>Removed redundant conditional to determine HTTP server protocol in <a class="reference internal" href="general/common_functions.html#set_status_header" title="set_status_header"><tt class="xref py py-func docutils literal"><span class="pre">set_status_header()</span></tt></a>.</li>
-<li>Changed <tt class="docutils literal"><span class="pre">_exception_handler()</span></tt> to respect php.ini <em>display_errors</em> setting.</li>
+<li>Renamed <tt class="docutils literal"><span class="pre">_exception_handler()</span></tt> to <tt class="docutils literal"><span class="pre">_error_handler()</span></tt> and replaced it with a real exception handler.</li>
+<li>Changed <tt class="docutils literal"><span class="pre">_error_handler()</span></tt> to respect php.ini <em>display_errors</em> setting.</li>
 <li>Added function <a class="reference internal" href="general/common_functions.html#is_https" title="is_https"><tt class="xref py py-func docutils literal"><span class="pre">is_https()</span></tt></a> to check if a secure connection is used.</li>
 <li>Added function <a class="reference internal" href="general/common_functions.html#is_cli" title="is_cli"><tt class="xref py py-func docutils literal"><span class="pre">is_cli()</span></tt></a> to replace the <tt class="docutils literal"><span class="pre">CI_Input::is_cli_request()</span></tt> method.</li>
 <li>Added function <a class="reference internal" href="general/common_functions.html#function_usable" title="function_usable"><tt class="xref py py-func docutils literal"><span class="pre">function_usable()</span></tt></a> to work around a bug in <cite>Suhosin &lt;http://www.hardened-php.net/suhosin/&gt;</cite>.</li>
@@ -571,6 +552,7 @@ Only entries in <tt class="docutils literal"><span class="pre">$autoload['librar
 <li>Removed internal method <tt class="docutils literal"><span class="pre">_assign_to_config()</span></tt> and moved its implementation to <em>CodeIgniter.php</em> instead.</li>
 <li><tt class="docutils literal"><span class="pre">item()</span></tt> now returns NULL instead of FALSE when the required config item doesn&#8217;t exist.</li>
 <li>Added an optional second parameter to both <tt class="docutils literal"><span class="pre">base_url()</span></tt> and <tt class="docutils literal"><span class="pre">site_url()</span></tt> that allows enforcing of a protocol different than the one in the <em>base_url</em> configuration setting.</li>
+<li>Added HTTP &#8220;Host&#8221; header character validation to prevent cache poisoning attacks when <tt class="docutils literal"><span class="pre">base_url</span></tt> auto-detection is used.</li>
 </ul>
 </li>
 <li><a class="reference internal" href="libraries/security.html"><em>Security Library</em></a> changes include:<ul>
@@ -615,7 +597,7 @@ Only entries in <tt class="docutils literal"><span class="pre">$autoload['librar
 <li>Removed <tt class="docutils literal"><span class="pre">CI_CORE</span></tt> boolean constant from <em>CodeIgniter.php</em> (no longer Reactor and Core versions).</li>
 <li>Added support for HTTP-Only cookies with new config option <em>cookie_httponly</em> (default FALSE).</li>
 <li><tt class="docutils literal"><span class="pre">$config['time_reference']</span></tt> now supports all timezone strings supported by PHP.</li>
-<li>Fatal PHP errors are now also passed to <tt class="docutils literal"><span class="pre">_exception_handler()</span></tt>, so they can be logged.</li>
+<li>Fatal PHP errors are now also passed to <tt class="docutils literal"><span class="pre">_error_handler()</span></tt>, so they can be logged.</li>
 </ul>
 </li>
 </ul>
@@ -816,7 +798,7 @@ Only entries in <tt class="docutils literal"><span class="pre">$autoload['librar
 <li>Partially fixed a bug (#261) - UTF-8 class method <tt class="docutils literal"><span class="pre">clean_string()</span></tt> generating log messages and/or not producing the desired result due to an upstream bug in iconv.</li>
 <li>Fixed a bug where <tt class="docutils literal"><span class="pre">CI_Xmlrpcs::parseRequest()</span></tt> could fail if <tt class="docutils literal"><span class="pre">$HTTP_RAW_POST_DATA</span></tt> is not populated.</li>
 <li>Fixed a bug in <a class="reference internal" href="libraries/zip.html"><em>Zip Library</em></a> internal method <tt class="docutils literal"><span class="pre">_get_mod_time()</span></tt> where it was not parsing result returned by <tt class="docutils literal"><span class="pre">filemtime()</span></tt>.</li>
-<li>Fixed a bug (#3161) - <tt class="xref doc docutils literal"><span class="pre">Cache</span> <span class="pre">Library</span></tt> methods <cite>increment()</cite>, <cite>decrement()</cite> didn&#8217;t auto-create non-existent items when using redis and/or file storage.</li>
+<li>Fixed a bug (#3161) - <a class="reference internal" href="libraries/caching.html"><em>Cache Library</em></a> methods <cite>increment()</cite>, <cite>decrement()</cite> didn&#8217;t auto-create non-existent items when using redis and/or file storage.</li>
 <li>Fixed a bug (#3189) - <a class="reference internal" href="libraries/parser.html"><em>Parser Library</em></a> used double replacement on <tt class="docutils literal"><span class="pre">key-&gt;value</span></tt> pairs, exposing a potential template injection vulnerability.</li>
 </ul>
 </div>
@@ -3113,12 +3095,144 @@ and fixed various typos.</li>
 </div>
 
 
-		</div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Change Log</a><ul>
+<li><a class="reference internal" href="#version-3-0-planned">Version 3.0 (planned)</a><ul>
+<li><a class="reference internal" href="#bug-fixes-for-3-0">Bug fixes for 3.0</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#version-2-2-0">Version 2.2.0</a><ul>
+<li><a class="reference internal" href="#bug-fixes-for-2-2-0">Bug fixes for 2.2.0</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#version-2-1-4">Version 2.1.4</a><ul>
+<li><a class="reference internal" href="#bug-fixes-for-2-1-4">Bug fixes for 2.1.4</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#version-2-1-3">Version 2.1.3</a><ul>
+<li><a class="reference internal" href="#bug-fixes-for-2-1-3">Bug fixes for 2.1.3</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#version-2-1-2">Version 2.1.2</a></li>
+<li><a class="reference internal" href="#version-2-1-1">Version 2.1.1</a><ul>
+<li><a class="reference internal" href="#bug-fixes-for-2-1-1">Bug fixes for 2.1.1</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#version-2-1-0">Version 2.1.0</a><ul>
+<li><a class="reference internal" href="#bug-fixes-for-2-1-0">Bug fixes for 2.1.0</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#version-2-0-3">Version 2.0.3</a><ul>
+<li><a class="reference internal" href="#bug-fixes-for-2-0-3">Bug fixes for 2.0.3</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#version-2-0-2">Version 2.0.2</a><ul>
+<li><a class="reference internal" href="#bug-fixes-for-2-0-2">Bug fixes for 2.0.2</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#version-2-0-1">Version 2.0.1</a><ul>
+<li><a class="reference internal" href="#bug-fixes-for-2-0-1">Bug fixes for 2.0.1</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#version-2-0-0">Version 2.0.0</a><ul>
+<li><a class="reference internal" href="#bug-fixes-for-2-0-0">Bug fixes for 2.0.0</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#version-1-7-2">Version 1.7.2</a><ul>
+<li><a class="reference internal" href="#bug-fixes-for-1-7-2">Bug fixes for 1.7.2</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#version-1-7-1">Version 1.7.1</a><ul>
+<li><a class="reference internal" href="#bug-fixes-for-1-7-1">Bug fixes for 1.7.1</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#version-1-7">Version 1.7</a><ul>
+<li><a class="reference internal" href="#bug-fixes-for-1-7-0">Bug fixes for 1.7.0</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#version-1-6-3">Version 1.6.3</a><ul>
+<li><a class="reference internal" href="#bug-fixes-for-1-6-3">Bug fixes for 1.6.3</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#version-1-6-2">Version 1.6.2</a><ul>
+<li><a class="reference internal" href="#bugfixes-for-1-6-2">Bugfixes for 1.6.2</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#version-1-6-1">Version 1.6.1</a><ul>
+<li><a class="reference internal" href="#bugfixes-for-1-6-1">Bugfixes for 1.6.1</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#version-1-6-0">Version 1.6.0</a><ul>
+<li><a class="reference internal" href="#bug-fixes-for-version-1-6-0">Bug fixes for Version 1.6.0</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#version-1-5-4">Version 1.5.4</a></li>
+<li><a class="reference internal" href="#version-1-5-3">Version 1.5.3</a></li>
+<li><a class="reference internal" href="#version-1-5-2">Version 1.5.2</a></li>
+<li><a class="reference internal" href="#version-1-5-1">Version 1.5.1</a></li>
+<li><a class="reference internal" href="#version-1-5-0-1">Version 1.5.0.1</a></li>
+<li><a class="reference internal" href="#version-1-5-0">Version 1.5.0</a></li>
+<li><a class="reference internal" href="#version-1-4-1">Version 1.4.1</a></li>
+<li><a class="reference internal" href="#version-1-4-0">Version 1.4.0</a></li>
+<li><a class="reference internal" href="#version-1-3-3">Version 1.3.3</a></li>
+<li><a class="reference internal" href="#version-1-3-2">Version 1.3.2</a></li>
+<li><a class="reference internal" href="#version-1-3-1">Version 1.3.1</a></li>
+<li><a class="reference internal" href="#version-1-3">Version 1.3</a></li>
+<li><a class="reference internal" href="#version-1-2">Version 1.2</a></li>
+<li><a class="reference internal" href="#version-beta-1-1">Version Beta 1.1</a></li>
+<li><a class="reference internal" href="#version-beta-1-0">Version Beta 1.0</a></li>
+</ul>
+</li>
+</ul>
 
-		
-		<div id="footer">
-			<p class="top"><a href="#header" title="Return to top">Return to top</a></p>
-			<p><a href="http://codeigniter.com/">CodeIgniter</a> &ndash; Copyright &copy; 2014, EllisLab, Inc.</a></p>
-		</div><!-- /#footer -->
-	</body>
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="DCO.html"
+                        title="previous chapter">Developer&#8217;s Certificate of Origin 1.1</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="license.html"
+                        title="next chapter">The MIT License (MIT)</a></p>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="license.html" title="The MIT License (MIT)"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="DCO.html" title="Developer’s Certificate of Origin 1.1"
+             >previous</a> |</li>
+        <li><a href="index.html">CodeIgniter 3.0-dev documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, British Columbia Institute of Technology.
+      Last updated on Nov 06, 2014.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
+    </div>
+  </body>
 </html>
