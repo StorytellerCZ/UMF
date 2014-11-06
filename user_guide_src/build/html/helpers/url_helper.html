@@ -31,7 +31,7 @@
 	<body>
 		<div id="table-contents">
 			<div class="toctree-wrapper compound">
-			<function <lambda> at 0x254baa0>
+			<function <lambda> at 0x7f8b53dd3f50>
 			</div>
 		</div>
 
@@ -325,18 +325,19 @@ attributes in the third parameter to control how the window is opened.
 If the third parameter is not set it will simply open a new window with
 your own browser settings.</p>
 <p>Here is an example with attributes:</p>
-<div class="highlight-ci"><pre>$atts = array(
-        'width'       =&gt; 800,
-        'height'      =&gt; 600,
-        'scrollbars'  =&gt; 'yes',
-        'status'      =&gt; 'yes',
-        'resizable'   =&gt; 'yes',
-        'screenx'     =&gt; 0,
-        'screeny'     =&gt; 0,
-        'window_name' =&gt; '_blank'
+<div class="highlight-ci"><div class="highlight"><pre>$atts = array(
+        &#39;width&#39;       =&gt; 800,
+        &#39;height&#39;      =&gt; 600,
+        &#39;scrollbars&#39;  =&gt; &#39;yes&#39;,
+        &#39;status&#39;      =&gt; &#39;yes&#39;,
+        &#39;resizable&#39;   =&gt; &#39;yes&#39;,
+        &#39;screenx&#39;     =&gt; 0,
+        &#39;screeny&#39;     =&gt; 0,
+        &#39;window_name&#39; =&gt; &#39;_blank&#39;
 );
 
-echo anchor_popup('news/local/123', 'Click Me!', $atts);</pre>
+echo anchor_popup(&#39;news/local/123&#39;, &#39;Click Me!&#39;, $atts);
+</pre></div>
 </div>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>

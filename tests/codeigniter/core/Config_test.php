@@ -76,8 +76,7 @@ class Config_test extends CI_TestCase {
 
 		// Capture server vars
 		$old_host = isset($_SERVER['HTTP_HOST']) ? $_SERVER['HTTP_HOST'] : NULL;
-		$old_script_name = isset($_SERVER['SCRIPT_NAME']) ? $_SERVER['SCRIPT_NAME'] : NULL;
-		$old_script_filename = $_SERVER['SCRIPT_FILENAME'];
+		$old_script = isset($_SERVER['SCRIPT_NAME']) ? $_SERVER['SCRIPT_NAME'] : NULL;
 		$old_https = isset($_SERVER['HTTPS']) ? $_SERVER['HTTPS'] : NULL;
 
 		// Setup server vars for detection
@@ -86,7 +85,6 @@ class Config_test extends CI_TestCase {
 		$script = 'base_test.php';
 		$_SERVER['HTTP_HOST'] = $host;
 		$_SERVER['SCRIPT_NAME'] = $path.$script;
-		$_SERVER['SCRIPT_FILENAME'] = '/foo/bar/'.$script;
 
 		// Rerun constructor
 		$this->config = new $cls;
@@ -97,7 +95,6 @@ class Config_test extends CI_TestCase {
 		// Rerun constructor
 		$path = '/path/';
 		$_SERVER['SCRIPT_NAME'] = $path.$script;
-		$_SERVER['SCRIPT_FILENAME'] = '/foo/bar/'.$path.$script;
 		$this->config = new $cls;
 
 		// Test plain detected (subfolder)
@@ -113,12 +110,10 @@ class Config_test extends CI_TestCase {
 		// Restore server vars
 		if ($old_host === NULL) unset($_SERVER['HTTP_HOST']);
 		else $_SERVER['HTTP_HOST'] = $old_host;
-		if ($old_script_name === NULL) unset($_SERVER['SCRIPT_NAME']);
-		else $_SERVER['SCRIPT_NAME'] = $old_script_name;
+		if ($old_script === NULL) unset($_SERVER['SCRIPT_NAME']);
+		else $_SERVER['SCRIPT_NAME'] = $old_script;
 		if ($old_https === NULL) unset($_SERVER['HTTPS']);
 		else $_SERVER['HTTPS'] = $old_https;
-
-		$_SERVER['SCRIPT_FILENAME'] = $old_script_filename;
 	}
 
 	// --------------------------------------------------------------------

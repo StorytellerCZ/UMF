@@ -31,7 +31,7 @@
 	<body>
 		<div id="table-contents">
 			<div class="toctree-wrapper compound">
-			<function <lambda> at 0x457bc08>
+			<function <lambda> at 0x7f8b526b7488>
 			</div>
 		</div>
 
@@ -250,8 +250,9 @@ use this function. When omitted, CodeIgniter assumes you wish to SELECT *</p>
 <p>$this-&gt;db-&gt;select() accepts an optional second parameter. If you set it
 to FALSE, CodeIgniter will not try to protect your field or table names
 with backticks. This is useful if you need a compound select statement.</p>
-<div class="highlight-ci"><pre>$this-&gt;db-&gt;select('(SELECT SUM(payments.amount) FROM payments WHERE payments.invoice_id=4') AS amount_paid', FALSE);
-$query = $this-&gt;db-&gt;get('mytable');</pre>
+<div class="highlight-ci"><div class="highlight"><pre>$this-&gt;db-&gt;select(&#39;(SELECT SUM(payments.amount) FROM payments WHERE payments.invoice_id=4&#39;) AS amount_paid&#39;, FALSE);
+$query = $this-&gt;db-&gt;get(&#39;mytable&#39;);
+</pre></div>
 </div>
 </div>
 <div class="section" id="this-db-select-max">

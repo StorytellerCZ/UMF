@@ -31,7 +31,7 @@
 	<body>
 		<div id="table-contents">
 			<div class="toctree-wrapper compound">
-			<function <lambda> at 0x3547938>
+			<function <lambda> at 0x7f8b53bac9b0>
 			</div>
 		</div>
 
@@ -280,18 +280,20 @@ found in URL protocol prefixes (e.g. <a class="reference external" href="http://
 </table>
 <p>Removes any slashes from an array of strings.</p>
 <p>Example:</p>
-<div class="highlight-ci"><pre>$str = array(
-        'question'  =&gt; 'Is your name O\'reilly?',
-        'answer' =&gt; 'No, my name is O\'connor.'
+<div class="highlight-ci"><div class="highlight"><pre>$str = array(
+        &#39;question&#39;  =&gt; &#39;Is your name O\&#39;reilly?&#39;,
+        &#39;answer&#39; =&gt; &#39;No, my name is O\&#39;connor.&#39;
 );
 
-$str = strip_slashes($str);</pre>
+$str = strip_slashes($str);
+</pre></div>
 </div>
 <p>The above will return the following array:</p>
-<div class="highlight-ci"><pre>array(
-        'question'  =&gt; "Is your name O'reilly?",
-        'answer' =&gt; "No, my name is O'connor."
-);</pre>
+<div class="highlight-ci"><div class="highlight"><pre>array(
+        &#39;question&#39;  =&gt; &quot;Is your name O&#39;reilly?&quot;,
+        &#39;answer&#39; =&gt; &quot;No, my name is O&#39;connor.&quot;
+);
+</pre></div>
 </div>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>

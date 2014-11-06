@@ -1,4 +1,4 @@
-<?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+<?php
 /**
  * CodeIgniter
  *
@@ -18,12 +18,13 @@
  *
  * @package		CodeIgniter
  * @author		EllisLab Dev Team
- * @copyright	Copyright (c) 2008 - 2013, EllisLab, Inc. (http://ellislab.com/)
+ * @copyright	Copyright (c) 2008 - 2014, EllisLab, Inc. (http://ellislab.com/)
  * @license		http://opensource.org/licenses/AFL-3.0 Academic Free License (AFL 3.0)
  * @link		http://codeigniter.com
  * @since		Version 1.0
  * @filesource
  */
+defined('BASEPATH') OR exit('No direct script access allowed');
 
 /*
 | -------------------------------------------------------------------------
@@ -73,23 +74,9 @@
 | Examples:	my-controller/index	-> my_controller/index
 |		my-controller/my-method	-> my_controller/my_method
 */
-
-$route['default_controller'] = 'home';
+$route['default_controller'] = 'welcome';
 $route['404_override'] = '';
-
-$route['sign_up'] = "account/sign_up";
-$route['sign_in'] = "account/sign_in";
-$route['sign_out'] = "account/sign_out";
-$route['login'] = "account/sign_in";
-$route['logout'] = "account/sign_out";
-$route['register'] = "account/sign_up";
-$route['forums'] = "forums/forums/index";
-$route['forums/category/(:any)'] = "forums/category/index/$1";
-$route['forums/thread/(:any)'] = "forums/thread/index/$1";
-$route['pm'] = "pm/overview";
-$route['pm/message/(:num)'] = "pm/message/index/$1";
-$route['account/connect/(.+)'] = "account/connect/index/$1";
-$route['account/connect_end(:any)'] = "account/connect/index$1";
+$route['translate_uri_dashes'] = FALSE;
 
 /* End of file routes.php */
 /* Location: ./application/config/routes.php */

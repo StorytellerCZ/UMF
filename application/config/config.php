@@ -1,4 +1,4 @@
-<?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+<?php
 /**
  * CodeIgniter
  *
@@ -18,12 +18,13 @@
  *
  * @package		CodeIgniter
  * @author		EllisLab Dev Team
- * @copyright	Copyright (c) 2008 - 2013, EllisLab, Inc. (http://ellislab.com/)
+ * @copyright	Copyright (c) 2008 - 2014, EllisLab, Inc. (http://ellislab.com/)
  * @license		http://opensource.org/licenses/AFL-3.0 Academic Free License (AFL 3.0)
  * @link		http://codeigniter.com
  * @since		Version 1.0
  * @filesource
  */
+defined('BASEPATH') OR exit('No direct script access allowed');
 
 /*
 |--------------------------------------------------------------------------
@@ -120,7 +121,6 @@ $config['charset'] = 'UTF-8';
 */
 $config['enable_hooks'] = FALSE;
 
-
 /*
 |--------------------------------------------------------------------------
 | Class Extension Prefix
@@ -162,14 +162,17 @@ $config['composer_autoload'] = FALSE;
 | Allowed URL Characters
 |--------------------------------------------------------------------------
 |
-| This lets you specify with a regular expression which characters are permitted
-| within your URLs.  When someone tries to submit a URL with disallowed
-| characters they will get a warning message.
+| This lets you specify which characters are permitted within your URLs.
+| When someone tries to submit a URL with disallowed characters they will
+| get a warning message.
 |
 | As a security measure you are STRONGLY encouraged to restrict URLs to
 | as few characters as possible.  By default only these are allowed: a-z 0-9~%.:_-
 |
 | Leave blank to allow all characters -- but only if you are insane.
+|
+| The configured value is actually a regular expression character group
+| and it will be executed as: ! preg_match('/^[<permitted_uri_chars>]+$/i
 |
 | DO NOT CHANGE THIS UNLESS YOU FULLY UNDERSTAND THE REPERCUSSIONS!!
 |
@@ -202,10 +205,10 @@ $config['permitted_uri_chars'] = 'a-z 0-9~%.:_\-';
 | use segment based URLs.
 |
 */
-$config['allow_get_array']	= TRUE;
+$config['allow_get_array']		= TRUE;
 $config['enable_query_strings'] = FALSE;
 $config['controller_trigger']	= 'c';
-$config['function_trigger']	= 'm';
+$config['function_trigger']		= 'm';
 $config['directory_trigger']	= 'd'; // experimental not currently in use
 
 /*
@@ -232,7 +235,7 @@ $config['directory_trigger']	= 'd'; // experimental not currently in use
 | your log files will fill up very fast.
 |
 */
-$config['log_threshold'] = 1;
+$config['log_threshold'] = 0;
 
 /*
 |--------------------------------------------------------------------------
@@ -261,6 +264,18 @@ $config['log_file_extension'] = '';
 
 /*
 |--------------------------------------------------------------------------
+| Log File Permissions
+|--------------------------------------------------------------------------
+|
+| The file system permissions to be applied on newly created log files.
+|
+| IMPORTANT: This MUST be an integer (no quotes) and you MUST use octal
+|            integer notation (i.e. 0700, 0644, etc.)
+*/
+$config['log_file_permissions'] = 0644;
+
+/*
+|--------------------------------------------------------------------------
 | Date Format for Logs
 |--------------------------------------------------------------------------
 |
@@ -276,7 +291,7 @@ $config['log_date_format'] = 'Y-m-d H:i:s';
 |--------------------------------------------------------------------------
 |
 | Leave this BLANK unless you would like to set something other than the default
-| application/views/errors/ directory. Use a full server path with trailing slash.
+| application/views/errors/ directory.  Use a full server path with trailing slash.
 |
 */
 $config['error_views_path'] = '';
@@ -311,33 +326,41 @@ $config['encryption_key'] = '';
 | Session Variables
 |--------------------------------------------------------------------------
 |
-| 'sess_driver'				= the driver to load: cookie (Classic), native (PHP sessions),
-|	or your custom driver name
-| 'sess_valid_drivers'		= additional valid drivers which may be loaded
-| 'sess_cookie_name'		= the name you want for the cookie, must contain only [0-9a-z_-] characters
-| 'sess_expiration'			= the number of SECONDS you want the session to last.
-|   by default sessions last 7200 seconds (two hours).  Set to zero for no expiration.
-| 'sess_expire_on_close'	= Whether to cause the session to expire automatically
-|   when the browser window is closed
-| 'sess_encrypt_cookie'		= Whether to encrypt the cookie
-| 'sess_use_database'		= Whether to save the session data to a database
-| 'sess_table_name'			= The name of the session database table
-| 'sess_match_ip'			= Whether to match the user's IP address when reading the session data
-| 'sess_match_useragent'	= Whether to match the User Agent when reading the session data
-| 'sess_time_to_update'		= how many seconds between CI refreshing Session Information
+| 'sess_driver'
+|
+|	The storage driver to use: files, database, redis, memcache
+|
+| 'sess_cookie_name'
+|
+|	The session cookie name, must contain only [0-9a-z_-] characters
+|
+| 'sess_expiration'
+|
+|	The number of SECONDS you want the session to last.
+|	Setting to 0 (zero) means expire when the browser is closed.
+|
+| 'sess_save_path'
+|
+|	The location to save sessions to, driver dependant.
+|
+| 'sess_match_ip'
+|
+|	Whether to match the user's IP address when reading the session data.
+|
+| 'sess_time_to_update'
+|
+|	How many seconds between CI regenerating the session ID.
+|
+| Other session cookie settings are shared with the rest of the application,
+| except for 'cookie_prefix', which is ignored here.
 |
 */
-$config['sess_driver']		= 'database';
-$config['sess_valid_drivers']	= array();
-$config['sess_cookie_name']	= 'ci_session';
-$config['sess_expiration']	= 7200;
-$config['sess_expire_on_close']	= FALSE;
-$config['sess_encrypt_cookie']	= FALSE;
-$config['sess_use_database']	= TRUE;
-$config['sess_table_name']	= 'ci_sessions';
-$config['sess_match_ip']	= FALSE;
-$config['sess_match_useragent']	= TRUE;
-$config['sess_time_to_update']	= 300;
+$config['sess_driver'] = 'database';
+$config['sess_cookie_name'] = 'ci_sessions';
+$config['sess_expiration'] = 7200;
+$config['sess_save_path'] = NULL;
+$config['sess_match_ip'] = FALSE;
+$config['sess_time_to_update'] = 300;
 
 /*
 |--------------------------------------------------------------------------
@@ -369,7 +392,7 @@ $config['cookie_httponly'] 	= FALSE;
 | (usually \n) and Windows (\r\n).
 |
 */
-$config['standardize_newlines'] = TRUE;
+$config['standardize_newlines'] = FALSE;
 
 /*
 |--------------------------------------------------------------------------
@@ -412,6 +435,9 @@ $config['csrf_exclude_uris'] = array();
 | the output class will test whether your server supports Gzip.
 | Even if it does, however, not all browsers support compression
 | so enable only if you are reasonably sure your visitors can handle it.
+|
+| Only used if zlib.output_compression is turned off in your php.ini.
+| Please do not use it together with httpd-level output compression.
 |
 | VERY IMPORTANT:  If you are getting a blank page when compression is enabled it
 | means you are prematurely outputting something to your browser. It could

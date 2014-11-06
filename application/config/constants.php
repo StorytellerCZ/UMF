@@ -1,4 +1,4 @@
-<?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+<?php
 /**
  * CodeIgniter
  *
@@ -18,12 +18,13 @@
  *
  * @package		CodeIgniter
  * @author		EllisLab Dev Team
- * @copyright	Copyright (c) 2008 - 2013, EllisLab, Inc. (http://ellislab.com/)
+ * @copyright	Copyright (c) 2008 - 2014, EllisLab, Inc. (http://ellislab.com/)
  * @license		http://opensource.org/licenses/AFL-3.0 Academic Free License (AFL 3.0)
  * @link		http://codeigniter.com
  * @since		Version 1.0
  * @filesource
  */
+defined('BASEPATH') OR exit('No direct script access allowed');
 
 /*
 |--------------------------------------------------------------------------
@@ -41,7 +42,7 @@
 define('FILE_READ_MODE', 0644);
 define('FILE_WRITE_MODE', 0666);
 define('DIR_READ_MODE', 0755);
-define('DIR_WRITE_MODE', 0777);
+define('DIR_WRITE_MODE', 0755);
 
 /*
 |--------------------------------------------------------------------------
@@ -81,11 +82,11 @@ define('SHOW_DEBUG_BACKTRACE', TRUE);
 | Used to indicate the conditions under which the script is exit()ing.
 | While there is no universal standard for error codes, there are some
 | broad conventions.  Three such conventions are mentioned below, for
-| those who wish to make use of them.  The CodeIgniter defaults were 
+| those who wish to make use of them.  The CodeIgniter defaults were
 | chosen for the least overlap with these conventions, while still
 | leaving room for others to be defined in future versions and user
 | applications.
-| 
+|
 | The three main conventions used for determining exit status codes
 | are as follows:
 |
@@ -108,65 +109,6 @@ define('EXIT_USER_INPUT', 7); // invalid user input
 define('EXIT_DATABASE', 8); // database error
 define('EXIT__AUTO_MIN', 9); // lowest automatically-assigned error code
 define('EXIT__AUTO_MAX', 125); // highest automatically-assigned error code
- 
-/*
-|--------------------------------------------------------------------------
-| A3M Constants
-|--------------------------------------------------------------------------
-| 
-| Here you can change the directory of your resource file which contains
-| image, CSS, JavaScript and anything else you might need.
-| 
-*/
- 
-/*
- * Define root resources folder name for js/css/img files
- */
-define('RES_DIR', 'resource');
-
-/*
- * Detect AJAX Request for MY_Session
- */
-define('IS_AJAX', isset($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) == 'xmlhttprequest');
-
-/*
- * Portable PHP password hashing framework
- * http://www.openwall.com/phpass/
- */
-define('PHPASS_HASH_STRENGTH', 8);
-define('PHPASS_HASH_PORTABLE', FALSE);
-
-/*
-|--------------------------------------------------------------------------
-| Mahana Messaging Constants
-|--------------------------------------------------------------------------
- */
-// message statuses
-define('MSG_STATUS_UNREAD', 0);
-define('MSG_STATUS_READ', 1);
-define('MSG_STATUS_ARCHIVED', 2);
-
-// priority
-define('PRIORITY_LOW', 1);
-define('PRIORITY_NORMAL', 2);
-define('PRIORITY_HIGH', 3);
-define('PRIORITY_URGENT', 4);
-
-// status return message codes
-define('MSG_SUCCESS', 0);
-define('MSG_ERR_GENERAL', 1);
-define('MSG_ERR_INVALID_USER_ID', 2);
-define('MSG_ERR_INVALID_MSG_ID', 3);
-define('MSG_ERR_INVALID_THREAD_ID', 4);
-define('MSG_ERR_INVALID_STATUS_ID', 5);
-define('MSG_ERR_INVALID_SENDER_ID', 6);
-define('MSG_ERR_INVALID_RECIPIENTS', 7);
-define('MSG_MESSAGE_SENT', 8);
-define('MSG_STATUS_UPDATE', 9);
-define('MSG_PARTICIPANT_ADDED', 10);
-define('MSG_ERR_PARTICIPANT_EXISTS', 11);
-define('MSG_ERR_PARTICIPANT_NONSYSTEM', 12);
-define('MSG_PARTICIPANT_REMOVED', 13);
 
 /* End of file constants.php */
 /* Location: ./application/config/constants.php */

@@ -31,7 +31,7 @@
 	<body>
 		<div id="table-contents">
 			<div class="toctree-wrapper compound">
-			<function <lambda> at 0x2530ed8>
+			<function <lambda> at 0x7f8b537dc6e0>
 			</div>
 		</div>
 
@@ -112,10 +112,11 @@ with your URI data. In addition, your URLs can be remapped using the
 file by using a .htaccess file with some simple rules. Here is an example
 of such a file, using the &#8220;negative&#8221; method in which everything is redirected
 except the specified items:</p>
-<div class="highlight-ci"><pre>RewriteEngine On
+<div class="highlight-ci"><div class="highlight"><pre>RewriteEngine On
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule ^(.*)$ index.php/$1 [L]</pre>
+RewriteRule ^(.*)$ index.php/$1 [L]
+</pre></div>
 </div>
 <p>In the above example, any HTTP request other than those for existing
 directories and existing files is treated as a request for your index.php file.</p>

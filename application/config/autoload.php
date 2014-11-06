@@ -1,4 +1,4 @@
-<?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+<?php
 /**
  * CodeIgniter
  *
@@ -18,12 +18,13 @@
  *
  * @package		CodeIgniter
  * @author		EllisLab Dev Team
- * @copyright	Copyright (c) 2008 - 2013, EllisLab, Inc. (http://ellislab.com/)
+ * @copyright	Copyright (c) 2008 - 2014, EllisLab, Inc. (http://ellislab.com/)
  * @license		http://opensource.org/licenses/AFL-3.0 Academic Free License (AFL 3.0)
  * @link		http://codeigniter.com
  * @since		Version 1.0
  * @filesource
  */
+defined('BASEPATH') OR exit('No direct script access allowed');
 
 /*
 | -------------------------------------------------------------------
@@ -81,11 +82,10 @@ $autoload['packages'] = array();
 | You can also supply an alternative library name to be assigned
 | in the controller:
 |
-|  $autoload['libraries'] = array('user_agent' => 'ua');
-
+|	$autoload['libraries'] = array('user_agent' => 'ua');
 */
 
-$autoload['libraries'] = array('account/Authorization', 'account/Authentication');
+$autoload['libraries'] = array();
 
 
 /*
@@ -113,7 +113,7 @@ $autoload['drivers'] = array();
 |	$autoload['helper'] = array('url', 'file');
 */
 
-$autoload['helper'] = array('account/ssl', 'language', 'url');
+$autoload['helper'] = array();
 
 
 /*
@@ -129,7 +129,7 @@ $autoload['helper'] = array('account/ssl', 'language', 'url');
 |
 */
 
-$autoload['config'] = array('umf/account');
+$autoload['config'] = array();
 
 
 /*
@@ -162,7 +162,7 @@ $autoload['language'] = array();
 |	$autoload['model'] = array('first_model' => 'first');
 */
 
-$autoload['model'] = array('account/Account_model');
+$autoload['model'] = array();
 
 
 /* End of file autoload.php */
