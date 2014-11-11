@@ -20,6 +20,9 @@
             more: 'Wybierz maksymalnie %s opcji',
             between: 'Wybierz przynajmniej %s i maksymalnie %s opcji'
         },
+        color: {
+            'default': 'Wprowadź poprawny kolor w formacie'
+        },
         creditCard: {
             'default': 'Wprowadź poprawny numer karty kredytowej'
         },
@@ -30,7 +33,10 @@
             'default': 'Wprowadź poprawny numer CVV'
         },
         date: {
-            'default': 'Wprowadź poprawną datę'
+            'default': 'Wprowadź poprawną datę',
+            min: 'Wprowadź datę po %s',
+            max: 'Wprowadź datę przed  %s',
+            range: 'Wprowadź datę pomiędzy %s i %s'
         },
         different: {
             'default': 'Wprowadź inną wartość'
@@ -157,7 +163,7 @@
                 CH: 'Szwajcaria',
                 CL: 'Chile',
                 CN: 'Chiny',
-                CZ: 'Czeska',
+                CZ: 'Czechy',
                 DK: 'Dania',
                 EE: 'Estonia',
                 ES: 'Hiszpania',
@@ -232,6 +238,8 @@
             countries: {
                 BR: 'Brazylia',
                 CN: 'Chiny',
+                CZ: 'Czechy',
+                DE: 'Niemcy',
                 DK: 'Dania',
                 ES: 'Hiszpania',
                 FR: 'Francja',
@@ -239,6 +247,8 @@
                 MA: 'Maroko',
                 PK: 'Pakistan',
                 RO: 'Rumunia',
+                RU: 'Rosja',
+                SK: 'Słowacja',
                 TH: 'Tajlandia',
                 US: 'USA',
                 VE: 'Wenezuela'
@@ -293,7 +303,7 @@
                 BR: 'Brazylia',
                 CH: 'Szwajcaria',
                 CY: 'Cypr',
-                CZ: 'Czeska',
+                CZ: 'Czechy',
                 DE: 'Niemcy',
                 DK: 'Dania',
                 EE: 'Estonia',
@@ -334,16 +344,25 @@
             countryNotSupported: 'Kod kraju %s nie jest obsługiwany',
             country: 'Wprowadź poprawny kod pocztowy w kraju %s',
             countries: {
+                AT: 'Austria',
                 BR: 'Brazylia',
                 CA: 'Kanada',
+                CH: 'Szwajcaria',
+                CZ: 'Czechy',
+                DE: 'Niemcy',
                 DK: 'Dania',
+                FR: 'Francja',
                 GB: 'Wielka Brytania',
+                IE: 'Irlandia',
                 IT: 'Włochy',
                 MA: 'Maroko',
                 NL: 'Holandia',
+                PT: 'Portugalia',
                 RO: 'Rumunia',
+                RU: 'Rosja',
                 SE: 'Szwecja',
                 SG: 'Singapur',
+                SK: 'Słowacja',
                 US: 'USA'
             }
         }

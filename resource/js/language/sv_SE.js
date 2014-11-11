@@ -20,6 +20,9 @@
             more: 'Vänligen välj max %s alternativ',
             between: 'Vänligen välj %s - %s alternativ'
         },
+        color: {
+            'default': 'Vänligen mata in en giltig färg'
+        },
         creditCard: {
             'default': 'Vänligen mata in ett giltigt kredikortsnummer'
         },
@@ -30,7 +33,10 @@
             'default': 'Vänligen mata in ett giltigt CVV-nummer'
         },
         date: {
-            'default': 'Vänligen mata in ett giltigt datum'
+            'default': 'Vänligen mata in ett giltigt datum',
+            min: 'Vänligen mata in ett datum efter %s',
+            max: 'Vänligen mata in ett datum före %s',
+            range: 'Vänligen mata in ett datum i intervallet %s - %s'
         },
         different: {
             'default': 'Vänligen mata in ett annat värde'
@@ -157,7 +163,7 @@
                 CH: 'Schweiz',
                 CL: 'Chile',
                 CN: 'Kina',
-                CZ: 'Tjeck',
+                CZ: 'Tjeckien',
                 DK: 'Danmark',
                 EE: 'Estland',
                 ES: 'Spanien',
@@ -232,6 +238,8 @@
             countries: {
                 BR: 'Brasilien',
                 CN: 'Kina',
+                CZ: 'Tjeckien',
+                DE: 'Tyskland',
                 DK: 'Danmark',
                 ES: 'Spanien',
                 FR: 'Frankrike',
@@ -239,6 +247,8 @@
                 MA: 'Marocko',
                 PK: 'Pakistan',
                 RO: 'Rumänien',
+                RU: 'Ryssland',
+                SK: 'Slovakien',
                 TH: 'Thailand',
                 US: 'USA',
                 VE: 'Venezuela'
@@ -293,7 +303,7 @@
                 BR: 'Brasilien',
                 CH: 'Schweiz',
                 CY: 'Cypern',
-                CZ: 'Tjeck',
+                CZ: 'Tjeckien',
                 DE: 'Tyskland',
                 DK: 'Danmark',
                 EE: 'Estland',
@@ -334,16 +344,25 @@
             countryNotSupported: 'Landskoden %s stöds inte',
             country: 'Vänligen mata in ett giltigt postnummer i %s',
             countries: {
+                AT: 'Österrike',
                 BR: 'Brasilien',
                 CA: 'Kanada',
+                CH: 'Schweiz',
+                CZ: 'Tjeckien',
+                DE: 'Tyskland',
                 DK: 'Danmark',
+                FR: 'Frankrike',
                 GB: 'Förenade Kungariket',
+                IE: 'Irland',
                 IT: 'Italien',
                 MA: 'Marocko',
                 NL: 'Nederländerna',
+                PT: 'Portugal',
                 RO: 'Rumänien',
+                RU: 'Ryssland',
                 SE: 'Sverige',
                 SG: 'Singapore',
+                SK: 'Slovakien',
                 US: 'USA'
             }
         }

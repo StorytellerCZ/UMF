@@ -20,6 +20,9 @@
             more: 'Por favor elija %s optiones como máximo',
             between: 'Por favor elija de %s a %s opciones'
         },
+        color: {
+            'default': 'Por favor introduce un color válido'
+        },
         creditCard: {
             'default': 'Por favor introduce un número válido de tarjeta de crédito'
         },
@@ -30,7 +33,10 @@
             'default': 'Por favor introduce un número CVV válido'
         },
         date: {
-            'default': 'Por favor introduce una fecha válida'
+            'default': 'Por favor introduce una fecha válida',
+            min: 'Por favor introduce una fecha posterior al %s',
+            max: 'Por favor introduce una fecha previa al %s',
+            range: 'Por favor introduce una fecha entre el %s y el %s'
         },
         different: {
             'default': 'Por favor introduce un valor distinto'
@@ -157,7 +163,7 @@
                 CH: 'Suiza',
                 CL: 'Chile',
                 CN: 'China',
-                CZ: 'Checa',
+                CZ: 'República Checa',
                 DK: 'Dinamarca',
                 EE: 'Estonia',
                 ES: 'España',
@@ -232,6 +238,8 @@
             countries: {
                 BR: 'Brasil',
                 CN: 'China',
+                CZ: 'República Checa',
+                DE: 'Alemania',
                 DK: 'Dinamarca',
                 ES: 'España',
                 FR: 'Francia',
@@ -239,6 +247,8 @@
                 MA: 'Marruecos',
                 PK: 'Pakistán',
                 RO: 'Rumania',
+                RU: 'Rusa',
+                SK: 'Eslovaquia',
                 TH: 'Tailandia',
                 US: 'Estados Unidos',
                 VE: 'Venezuela'
@@ -293,7 +303,7 @@
                 BR: 'Brasil',
                 CH: 'Suiza',
                 CY: 'Chipre',
-                CZ: 'Checa',
+                CZ: 'República Checa',
                 DE: 'Alemania',
                 DK: 'Dinamarca',
                 EE: 'Estonia',
@@ -334,16 +344,25 @@
             countryNotSupported: 'El código del país %s no está soportado',
             country: 'Por favor introduce un código postal válido en %s',
             countries: {
+                AT: 'Austria',
                 BR: 'Brasil',
                 CA: 'Canadá',
+                CH: 'Suiza',
+                CZ: 'República Checa',
+                DE: 'Alemania',
                 DK: 'Dinamarca',
+                FR: 'Francia',
                 GB: 'Reino Unido',
+                IE: 'Irlanda',
                 IT: 'Italia',
                 MA: 'Marruecos',
                 NL: 'Países Bajos',
+                PT: 'Portugal',
                 RO: 'Rumanía',
+                RU: 'Rusa',
                 SE: 'Suecia',
                 SG: 'Singapur',
+                SK: 'Eslovaquia',
                 US: 'Estados Unidos'
             }
         }

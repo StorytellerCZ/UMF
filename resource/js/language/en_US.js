@@ -20,6 +20,9 @@
             more: 'Please choose %s options at maximum',
             between: 'Please choose %s - %s options'
         },
+        color: {
+            'default': 'Please enter a valid color'
+        },
         creditCard: {
             'default': 'Please enter a valid credit card number'
         },
@@ -30,7 +33,10 @@
             'default': 'Please enter a valid CVV number'
         },
         date: {
-            'default': 'Please enter a valid date'
+            'default': 'Please enter a valid date',
+            min: 'Please enter a date after %s',
+            max: 'Please enter a date before %s',
+            range: 'Please enter a date in the range %s - %s'
         },
         different: {
             'default': 'Please enter a different value'
@@ -85,10 +91,10 @@
                 CR: 'Costa Rica',
                 CV: 'Cape Verde',
                 CY: 'Cyprus',
-                CZ: 'Czech',
+                CZ: 'Czech Republic',
                 DE: 'Germany',
                 DK: 'Denmark',
-                DO: 'Dominica',
+                DO: 'Dominican Republic',
                 DZ: 'Algeria',
                 EE: 'Estonia',
                 ES: 'Spain',
@@ -157,7 +163,7 @@
                 CH: 'Switzerland',
                 CL: 'Chile',
                 CN: 'China',
-                CZ: 'Czech',
+                CZ: 'Czech Republic',
                 DK: 'Denmark',
                 EE: 'Estonia',
                 ES: 'Spain',
@@ -232,6 +238,8 @@
             countries: {
                 BR: 'Brazil',
                 CN: 'China',
+                CZ: 'Czech Republic',
+                DE: 'Germany',
                 DK: 'Denmark',
                 ES: 'Spain',
                 FR: 'France',
@@ -239,6 +247,8 @@
                 MA: 'Morocco',
                 PK: 'Pakistan',
                 RO: 'Romania',
+                RU: 'Russia',
+                SK: 'Slovakia',
                 TH: 'Thailand',
                 US: 'USA',
                 VE: 'Venezuela'
@@ -293,7 +303,7 @@
                 BR: 'Brazil',
                 CH: 'Switzerland',
                 CY: 'Cyprus',
-                CZ: 'Czech',
+                CZ: 'Czech Republic',
                 DE: 'Germany',
                 DK: 'Denmark',
                 EE: 'Estonia',
@@ -334,16 +344,25 @@
             countryNotSupported: 'The country code %s is not supported',
             country: 'Please enter a valid postal code in %s',
             countries: {
+                AT: 'Austria',
                 BR: 'Brazil',
                 CA: 'Canada',
+                CH: 'Switzerland',
+                CZ: 'Czech Republic',
+                DE: 'Germany',
                 DK: 'Denmark',
+                FR: 'France',
                 GB: 'United Kingdom',
+                IE: 'Ireland',
                 IT: 'Italy',
                 MA: 'Morocco',
                 NL: 'Netherlands',
+                PT: 'Portugal',
                 RO: 'Romania',
+                RU: 'Russia',
                 SE: 'Sweden',
                 SG: 'Singapore',
+                SK: 'Slovakia',
                 US: 'USA'
             }
         }

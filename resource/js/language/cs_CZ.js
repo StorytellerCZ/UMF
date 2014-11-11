@@ -1,7 +1,7 @@
 (function($) {
     /**
      * Czech language package
-     * Translated by @AdwinTrave
+     * Translated by @AdwinTrave. Improved by @cuchac
      */
     $.fn.bootstrapValidator.i18n = $.extend(true, $.fn.bootstrapValidator.i18n, {
         base64: {
@@ -20,6 +20,9 @@
             more: 'Hodnota nesmí být více jak %s',
             between: 'Prosím vyberte mezi %s a %s'
         },
+        color: {
+            'default': 'Prosím zadejte správnou barvu'
+        },
         creditCard: {
             'default': 'Prosím zadejte správné číslo kreditní karty'
         },
@@ -30,7 +33,10 @@
             'default': 'Prosím zadejte správné CVV číslo'
         },
         date: {
-            'default': 'Prosím zadejte správný datum'
+            'default': 'Prosím zadejte správné datum',
+            min: 'Prosím zadejte datum před %s',
+            max: 'Prosím zadejte datum po %s',
+            range: 'Prosím zadejte datum v rozmezí %s až %s'
         },
         different: {
             'default': 'Prosím zadejte jinou hodnotu'
@@ -157,7 +163,7 @@
                 CH: 'Švýcarsko',
                 CL: 'Chile',
                 CN: 'Čína',
-                CZ: 'Čechy',
+                CZ: 'Českou Republiku',
                 DK: 'Dánsko',
                 EE: 'Estonsko',
                 ES: 'Špaňelsko',
@@ -181,7 +187,7 @@
             }
         },
         identical: {
-            'default': 'Prosím zadejte stejné číslo'
+            'default': 'Prosím zadejte stejnou hodnotu'
         },
         imei: {
             'default': 'Prosím zadejte správné IMEI číslo'
@@ -232,6 +238,8 @@
             countries: {
                 BR: 'Brazílii',
                 CN: 'Čína',
+                CZ: 'Českou Republiku',
+                DE: 'Německo',
                 DK: 'Dánsko',
                 ES: 'Španělsko',
                 FR: 'Francie',
@@ -239,6 +247,8 @@
                 MA: 'Maroko',
                 PK: 'Pákistán',
                 RO: 'Rumunsko',
+                RU: 'Rusko',
+                SK: 'Slovensko',
                 TH: 'Thajsko',
                 US: 'Spojené Státy Americké',
                 VE: 'Venezuelský'
@@ -293,7 +303,7 @@
                 BR: 'Brazílii',
                 CH: 'Švýcarsko',
                 CY: 'Kypr',
-                CZ: 'Čechy',
+                CZ: 'Českou Republiku',
                 DE: 'Německo',
                 DK: 'Dánsko',
                 EE: 'Estonsko',
@@ -330,20 +340,29 @@
             'default': 'Prosím zadejte správné VIN číslo'
         },
         zipCode: {
-            'default': 'Prosím zadejte správné PSČ číslo',
+            'default': 'Prosím zadejte správné PSČ',
             countryNotSupported: '%s není podporované',
-            country: 'Prosím zadejte správné PSČ číslo pro %s',
+            country: 'Prosím zadejte správné PSČ pro %s',
             countries: {
+                AT: 'Rakousko',
                 BR: 'Brazílie',
                 CA: 'Kanada',
+                CH: 'Švýcarsko',
+                CZ: 'Českou Republiku',
+                DE: 'Německo',
                 DK: 'Dánsko',
+                FR: 'Francie',
                 GB: 'Velkou Británii',
+                IE: 'Irsko',
                 IT: 'Itálie',
                 MA: 'Maroko',
                 NL: 'Nizozemí',
+                PT: 'Portugalsko',
                 RO: 'Rumunsko',
+                RU: 'Rusko',
                 SE: 'Švédsko',
                 SG: 'Singapur',
+                SK: 'Slovensko',
                 US: 'Spojené Státy Americké'
             }
         }

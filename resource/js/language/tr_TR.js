@@ -20,6 +20,9 @@
             more: 'Lütfen maksimum %s kadar değer giriniz',
             between: 'Lütfen %s - %s arası seçiniz'
         },
+        color: {
+            'default': 'Lütfen geçerli bir codu giriniz'
+        },
         creditCard: {
             'default': 'Lütfen geçerli bir kredi kartı numarası giriniz'
         },
@@ -30,7 +33,10 @@
             'default': 'Lütfen geçerli bir CCV numarası giriniz'
         },
         date: {
-            'default': 'Lütfen geçerli bir tarih giriniz'
+            'default': 'Lütfen geçerli bir tarih giriniz',
+            min: 'Lütfen %s tarihinden sonra bir tarih giriniz',
+            max: 'Lütfen %s tarihinden önce bir tarih giriniz',
+            range: 'Lütfen %s - %s aralığında bir tarih giriniz'
         },
         different: {
             'default': 'Lütfen farklı bir değer giriniz'
@@ -85,10 +91,10 @@
                 CR: 'Kosta Rika',
                 CV: 'Cape Verde',
                 CY: 'Kıbrıs',
-                CZ: 'Çek',
+                CZ: 'Çek Cumhuriyeti',
                 DE: 'Almanya',
                 DK: 'Danimarka',
-                DO: 'Dominika',
+                DO: 'Dominik Cumhuriyeti',
                 DZ: 'Cezayir',
                 EE: 'Estonya',
                 ES: 'İspanya',
@@ -157,7 +163,7 @@
                 CH: 'İsviçre',
                 CL: 'Şili',
                 CN: 'Çin',
-                CZ: 'Çek',
+                CZ: 'Çek Cumhuriyeti',
                 DK: 'Danimarka',
                 EE: 'Estonya',
                 ES: 'İspanya',
@@ -232,6 +238,8 @@
             countries: {
                 BR: 'Brezilya',
                 CN: 'Çin',
+                CZ: 'Çek Cumhuriyeti',
+                DE: 'Almanya',
                 DK: 'Danimarka',
                 ES: 'İspanya',
                 FR: 'Fransa',
@@ -239,6 +247,8 @@
                 MA: 'Fas',
                 PK: 'Pakistan',
                 RO: 'Romanya',
+                RU: 'Rusya',
+                SK: 'Slovakya',
                 TH: 'Tayland',
                 US: 'Amerika',
                 VE: 'Venezüella'
@@ -293,7 +303,7 @@
                 BR: 'Brezilya',
                 CH: 'İsviçre',
                 CY: 'Kıbrıs',
-                CZ: 'Çek',
+                CZ: 'Çek Cumhuriyeti',
                 DE: 'Almanya',
                 DK: 'Danimarka',
                 EE: 'Estonya',
@@ -334,16 +344,25 @@
             countryNotSupported: '%s ülke kodu desteklenmemektedir',
             country: 'Lütfen geçerli bir posta kodu giriniz içinde %s',
             countries: {
+                AT: 'Avustralya',
                 BR: 'Brezilya',
                 CA: 'Kanada',
+                CH: 'İsviçre',
+                CZ: 'Çek Cumhuriyeti',
+                DE: 'Almanya',
                 DK: 'Danimarka',
+                FR: 'Fransa',
                 GB: 'İngiltere',
+                IE: 'Irlanda',
                 IT: 'İtalya',
                 MA: 'Fas',
                 NL: 'Hollanda',
+                PT: 'Portekiz',
                 RO: 'Romanya',
+                RU: 'Rusya',
                 SE: 'İsveç',
                 SG: 'Singapur',
+                SK: 'Slovakya',
                 US: 'Amerika Birleşik Devletleri'
             }
         }

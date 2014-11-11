@@ -20,6 +20,9 @@
             more: 'Bitte maximal %s Werte eingeben',
             between: 'Zwischen %s - %s Werten wählen'
         },
+        color: {
+            'default': 'Bitte gültige Farbe eingeben'
+        },
         creditCard: {
             'default': 'Bitte gültige Kreditkartennr. eingeben'
         },
@@ -30,7 +33,10 @@
             'default': 'Bitte gültige CVV Nummer eingeben'
         },
         date: {
-            'default': 'Bitte gültiges Datum eingeben'
+            'default': 'Bitte gültiges Datum eingeben',
+            min: 'Bitte gültiges Datum nach %s',
+            max: 'Bitte gültiges Datum vor %s',
+            range: 'Bitte gültiges Datum im zwischen %s - %s'
         },
         different: {
             'default': 'Bitte anderen Wert eingeben'
@@ -85,10 +91,10 @@
                 CR: 'Costa Rica',
                 CV: 'Kap Verde',
                 CY: 'Zypern',
-                CZ: 'Tschechisch',
+                CZ: 'Tschechische',
                 DE: 'Deutschland',
                 DK: 'Dänemark',
-                DO: 'Dominica',
+                DO: 'Dominikanische Republik',
                 DZ: 'Algerien',
                 EE: 'Estland',
                 ES: 'Spanien',
@@ -157,7 +163,7 @@
                 CH: 'Schweiz',
                 CL: 'Chile',
                 CN: 'China',
-                CZ: 'Tschechisch',
+                CZ: 'Tschechische',
                 DK: 'Dänemark',
                 EE: 'Estland',
                 ES: 'Spanien',
@@ -232,6 +238,8 @@
             countries: {
                 BR: 'Brasilien',
                 CN: 'China',
+                CZ: 'Tschechische',
+                DE: 'Deutschland',
                 DK: 'Dänemark',
                 ES: 'Spanien',
                 FR: 'Frankreich',
@@ -239,6 +247,8 @@
                 MA: 'Marokko',
                 PK: 'Pakistan',
                 RO: 'Rumänien',
+                RU: 'Russland',
+                SK: 'Slowakei',
                 TH: 'Thailand',
                 US: 'Vereinigte Staaten von Amerika',
                 VE: 'Venezuela'
@@ -293,7 +303,7 @@
                 BR: 'Brasilien',
                 CH: 'Schweiz',
                 CY: 'Zypern',
-                CZ: 'Tschechisch',
+                CZ: 'Tschechische',
                 DE: 'Deutschland',
                 DK: 'Dänemark',
                 EE: 'Estland',
@@ -334,16 +344,25 @@
             countryNotSupported: 'Der Ländercode %s wird nicht unterstützt',
             country: 'Bitte gültigen Postleitzahl für %s eingeben',
             countries: {
+                AT: 'Österreich',
                 BR: 'Brasilien',
                 CA: 'Kanada',
+                CH: 'Schweiz',
+                CZ: 'Tschechische',
+                DE: 'Deutschland',
                 DK: 'Dänemark',
+                FR: 'Frankreich',
                 GB: 'Vereinigtes Königreich',
+                IE: 'Irland',
                 IT: 'Italien',
                 MA: 'Marokko',
                 NL: 'Niederlande',
+                PT: 'Portugal',
                 RO: 'Rumänien',
+                RU: 'Russland',
                 SE: 'Schweden',
                 SG: 'Singapur',
+                SK: 'Slowakei',
                 US: 'Vereinigte Staaten von Amerika'
             }
         }

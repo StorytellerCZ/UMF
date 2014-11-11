@@ -20,6 +20,9 @@
             more: 'Vælg venligst højst %s valgmuligheder',
             between: 'Vælg venligst %s - %s valgmuligheder'
         },
+        color: {
+            'default': 'Udfyld venligst dette felt med en gyldig farve'
+        },
         creditCard: {
             'default': 'Udfyld venligst dette felt med et gyldigt kreditkort-nummer'
         },
@@ -30,7 +33,10 @@
             'default': 'Udfyld venligst dette felt med et gyldigt CVV-nummer'
         },
         date: {
-            'default': 'Udfyld venligst dette felt med en gyldig dato'
+            'default': 'Udfyld venligst dette felt med en gyldig dato',
+            min: 'Angiv venligst en dato efter %s',
+            max: 'Angiv venligst en dato før %s',
+            range: 'Angiv venligst en dato mellem %s - %s'
         },
         different: {
             'default': 'Udfyld venligst dette felt med en anden værdi'
@@ -88,7 +94,7 @@
                 CZ: 'Tjekkiet',
                 DE: 'Tyskland',
                 DK: 'Danmark',
-                DO: 'Dominica',
+                DO: 'Den Dominikanske Republik',
                 DZ: 'Algeriet',
                 EE: 'Estland',
                 ES: 'Spanien',
@@ -157,7 +163,7 @@
                 CH: 'Schweiz',
                 CL: 'Chile',
                 CN: 'Kina',
-                CZ: 'Tjekkisk',
+                CZ: 'Tjekkiet',
                 DK: 'Danmark',
                 EE: 'Estland',
                 ES: 'Spanien',
@@ -232,6 +238,8 @@
             countries: {
                 BR: 'Brasilien',
                 CN: 'Kina',
+                CZ: 'Tjekkiet',
+                DE: 'Tyskland',
                 DK: 'Danmark',
                 ES: 'Spanien',
                 FR: 'Frankrig',
@@ -239,6 +247,8 @@
                 MA: 'Marokko',
                 PK: 'Pakistan',
                 RO: 'Rumænien',
+                RU: 'Rusland',
+                SK: 'Slovakiet',
                 TH: 'Thailand',
                 US: 'USA',
                 VE: 'Venezuela'
@@ -293,7 +303,7 @@
                 BR: 'Brasilien',
                 CH: 'Schweiz',
                 CY: 'Cypern',
-                CZ: 'Tjekkisk',
+                CZ: 'Tjekkiet',
                 DE: 'Tyskland',
                 DK: 'Danmark',
                 EE: 'Estland',
@@ -334,16 +344,25 @@
             countryNotSupported: 'Landekoden %s understøttes desværre ikke',
             country: 'Udfyld venligst dette felt med et gyldigt postnummer i %s',
             countries: {
+                AT: 'Østrig',
                 BR: 'Brasilien',
                 CA: 'Canada',
+                CH: 'Schweiz',
+                CZ: 'Tjekkiet',
+                DE: 'Tyskland',
                 DK: 'Danmark',
+                FR: 'Frankrig',
                 GB: 'Storbritannien',
+                IE: 'Irland',
                 IT: 'Italien',
                 MA: 'Marokko',
                 NL: 'Holland',
+                PT: 'Portugal',
                 RO: 'Rumænien',
+                RU: 'Rusland',
                 SE: 'Sverige',
                 SG: 'Singapore',
+                SK: 'Slovakiet',
                 US: 'USA'
             }
         }

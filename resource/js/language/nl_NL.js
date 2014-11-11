@@ -20,6 +20,9 @@
             more: 'Kies maximaal %s opties',
             between: 'Kies tussen de %s - %s opties'
         },
+        color: {
+            'default': 'Voer een geldige kleurcode in'
+        },
         creditCard: {
             'default': 'Voer een geldig creditcardnummer in'
         },
@@ -30,7 +33,10 @@
             'default': 'Voer een geldig CVV-nummer in'
         },
         date: {
-            'default': 'Voer een geldige datum in'
+            'default': 'Voer een geldige datum in',
+            min: 'Voer een datum in die na %s ligt',
+            max: 'Voer een datum in die vóór %s ligt',
+            range: 'Voer een datum in die tussen %s en %s ligt'
         },
         different: {
             'default': 'Voer een andere waarde in'
@@ -85,7 +91,7 @@
                 CR: 'Costa Rica',
                 CV: 'Cape Verde',
                 CY: 'Cyprus',
-                CZ: 'Tsjechië',
+                CZ: 'Tsjechische Republiek',
                 DE: 'Duitsland',
                 DK: 'Denemarken',
                 DO: 'Dominicaanse Republiek',
@@ -157,7 +163,7 @@
                 CH: 'Zwitserland',
                 CL: 'Chili',
                 CN: 'China',
-                CZ: 'Tsjechische',
+                CZ: 'Tsjechische Republiek',
                 DK: 'Denemarken',
                 EE: 'Estland',
                 ES: 'Spanje',
@@ -232,6 +238,8 @@
             countries: {
                 BR: 'Brazilië',
                 CN: 'China',
+                CZ: 'Tsjechische Republiek',
+                DE: 'Duitsland',
                 DK: 'Denemarken',
                 ES: 'Spanje',
                 FR: 'Frankrijk',
@@ -239,6 +247,8 @@
                 MA: 'Marokko',
                 PK: 'Pakistan',
                 RO: 'Roemenië',
+                RU: 'Rusland',
+                SK: 'Slowakije',
                 TH: 'Thailand',
                 US: 'VS',
                 VE: 'Venezuela'
@@ -293,7 +303,7 @@
                 BR: 'Brazilië',
                 CH: 'Zwitserland',
                 CY: 'Cyprus',
-                CZ: 'Tsjechische',
+                CZ: 'Tsjechische Republiek',
                 DE: 'Duitsland',
                 DK: 'Denemarken',
                 EE: 'Estland',
@@ -334,16 +344,25 @@
             countryNotSupported: 'De land code %s wordt niet ondersteund',
             country: 'Voer een geldige postcode in uit %s',
             countries: {
+                AT: 'Oostenrijk',
                 BR: 'Brazilië',
                 CA: 'Canada',
+                CH: 'Zwitserland',
+                CZ: 'Tsjechische Republiek',
+                DE: 'Duitsland',
                 DK: 'Denemarken',
+                FR: 'Frankrijk',
                 GB: 'Verenigd Koninkrijk',
+                IE: 'Ierland',
                 IT: 'Italië',
                 MA: 'Marokko',
                 NL: 'Nederland',
+                PT: 'Portugal',
                 RO: 'Roemenië',
+                RU: 'Rusland',
                 SE: 'Zweden',
                 SG: 'Singapore',
+                SK: 'Slowakije',
                 US: 'VS'
             }
         }
