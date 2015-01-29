@@ -2,11 +2,11 @@
 /**
  * CodeIgniter
  *
- * An open source application development framework for PHP 5.2.4 or newer
+ * An open source application development framework for PHP
  *
  * This content is released under the MIT License (MIT)
  *
- * Copyright (c) 2014, British Columbia Institute of Technology
+ * Copyright (c) 2014 - 2015, British Columbia Institute of Technology
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -29,7 +29,7 @@
  * @package	CodeIgniter
  * @author	EllisLab Dev Team
  * @copyright	Copyright (c) 2008 - 2014, EllisLab, Inc. (http://ellislab.com/)
- * @copyright	Copyright (c) 2014, British Columbia Institute of Technology (http://bcit.ca/)
+ * @copyright	Copyright (c) 2014 - 2015, British Columbia Institute of Technology (http://bcit.ca/)
  * @license	http://opensource.org/licenses/MIT	MIT License
  * @link	http://codeigniter.com
  * @since	Version 3.0.0
@@ -89,6 +89,14 @@ abstract class CI_Session_driver implements SessionHandlerInterface {
 
 	// ------------------------------------------------------------------------
 
+	/**
+	 * Cookie destroy
+	 *
+	 * Internal method to force removal of a cookie by the client
+	 * when session_destroy() is called.
+	 *
+	 * @return	bool
+	 */
 	protected function _cookie_destroy()
 	{
 		return setcookie(
@@ -107,34 +115,16 @@ abstract class CI_Session_driver implements SessionHandlerInterface {
 	/**
 	 * Get lock
 	 *
-	 * A default locking mechanism via semaphores, if ext/sysvsem is available.
-	 *
-	 * Drivers will usually override this and only fallback to it if no other
-	 * locking mechanism is available.
+	 * A dummy method allowing drivers with no locking functionality
+	 * (databases other than PostgreSQL and MySQL) to act as if they
+	 * do acquire a lock.
 	 *
 	 * @param	string	$session_id
 	 * @return	bool
 	 */
 	protected function _get_lock($session_id)
 	{
-		if ( ! extension_loaded('sysvsem'))
-		{
-			$this->_lock = TRUE;
-			return TRUE;
-		}
-
-		if (($this->_lock = sem_get($session_id.($this->_config['match_ip'] ? '_'.$_SERVER['REMOTE_ADDR'] : ''), 1, 0644)) === FALSE)
-		{
-			return FALSE;
-		}
-
-		if ( ! sem_acquire($this->_lock))
-		{
-			sem_remove($this->_lock);
-			$this->_lock = FALSE;
-			return FALSE;
-		}
-
+		$this->_lock = TRUE;
 		return TRUE;
 	}
 
@@ -147,10 +137,8 @@ abstract class CI_Session_driver implements SessionHandlerInterface {
 	 */
 	protected function _release_lock()
 	{
-		if (extension_loaded('sysvsem') && $this->_lock)
+		if ($this->_lock)
 		{
-			sem_release($this->_lock);
-			sem_remove($this->_lock);
 			$this->_lock = FALSE;
 		}
 
@@ -158,6 +146,3 @@ abstract class CI_Session_driver implements SessionHandlerInterface {
 	}
 
 }
-
-/* End of file Session_driver.php */
-/* Location: ./system/libraries/Session/Session_driver.php */

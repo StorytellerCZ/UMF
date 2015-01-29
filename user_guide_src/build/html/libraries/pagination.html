@@ -1,57 +1,254 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 
-<html xmlns="http://www.w3.org/1999/xhtml">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
-    <title>Pagination Class &mdash; CodeIgniter 3.0-dev documentation</title>
-    
-    <link rel="stylesheet" href="../_static/default.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '../',
-        VERSION:     '3.0-dev',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  false
-      };
-    </script>
-    <script type="text/javascript" src="../_static/jquery.js"></script>
-    <script type="text/javascript" src="../_static/underscore.js"></script>
-    <script type="text/javascript" src="../_static/doctools.js"></script>
-    <script type="text/javascript" src="../_static/sidebar.js"></script>
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Pagination Class &mdash; CodeIgniter 3.0-dev documentation</title>
+  
+
+  
+  
     <link rel="shortcut icon" href="../_static/ci-icon.ico"/>
-    <link rel="top" title="CodeIgniter 3.0-dev documentation" href="../index.html" />
-    <link rel="up" title="Libraries" href="index.html" />
-    <link rel="next" title="Template Parser Class" href="parser.html" />
-    <link rel="prev" title="Output Class" href="output.html" /> 
-  </head>
-  <body>
-    <div class="related">
-      <h3>Navigation</h3>
-      <ul>
-        <li class="right" style="margin-right: 10px">
-          <a href="../genindex.html" title="General Index"
-             accesskey="I">index</a></li>
-        <li class="right" >
-          <a href="parser.html" title="Template Parser Class"
-             accesskey="N">next</a> |</li>
-        <li class="right" >
-          <a href="output.html" title="Output Class"
-             accesskey="P">previous</a> |</li>
-        <li><a href="../index.html">CodeIgniter 3.0-dev documentation</a> &raquo;</li>
-          <li><a href="index.html" accesskey="U">Libraries</a> &raquo;</li> 
-      </ul>
-    </div>  
+  
 
-    <div class="document">
-      <div class="documentwrapper">
-        <div class="bodywrapper">
-          <div class="body">
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic|Roboto+Slab:400,700|Inconsolata:400,700&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="top" title="CodeIgniter 3.0-dev documentation" href="../index.html"/>
+        <link rel="up" title="Libraries" href="index.html"/>
+        <link rel="next" title="Template Parser Class" href="parser.html"/>
+        <link rel="prev" title="Output Class" href="output.html"/> 
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+          <a href="../index.html" class="fa fa-home"> CodeIgniter</a>
+        
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../general/welcome.html">Welcome to CodeIgniter</a><ul class="simple">
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../installation/index.html">Installation Instructions</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../installation/downloads.html">Downloading CodeIgniter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../installation/index.html">Installation Instructions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../installation/upgrading.html">Upgrading From a Previous Version</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../installation/troubleshooting.html">Troubleshooting</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../overview/index.html">CodeIgniter Overview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../overview/getting_started.html">Getting Started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../overview/at_a_glance.html">CodeIgniter at a Glance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../overview/features.html">Supported Features</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../overview/appflow.html">Application Flow Chart</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../overview/mvc.html">Model-View-Controller</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../overview/goals.html">Architectural Goals</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../tutorial/index.html">Tutorial</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../tutorial/static_pages.html">Static pages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorial/news_section.html">News section</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorial/create_news_items.html">Create news items</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorial/conclusion.html">Conclusion</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../general/index.html">General Topics</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../general/urls.html">CodeIgniter URLs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/controllers.html">Controllers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/reserved_names.html">Reserved Names</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/views.html">Views</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/models.html">Models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/helpers.html">Helpers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/libraries.html">Using CodeIgniter Libraries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/creating_libraries.html">Creating Libraries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/drivers.html">Using CodeIgniter Drivers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/creating_drivers.html">Creating Drivers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/core_classes.html">Creating Core System Classes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/ancillary_classes.html">Creating Ancillary Classes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/hooks.html">Hooks - Extending the Framework Core</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/autoloader.html">Auto-loading Resources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/common_functions.html">Common Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/compatibility_functions.html">Compatibility Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/routing.html">URI Routing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/errors.html">Error Handling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/caching.html">Caching</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/profiling.html">Profiling Your Application</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/cli.html">Running via the CLI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/managing_apps.html">Managing your Applications</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/environments.html">Handling Multiple Environments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/alternative_php.html">Alternate PHP Syntax for View Files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/security.html">Security</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/styleguide.html">PHP Style Guide</a></li>
+</ul>
+</li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Libraries</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="benchmark.html">Benchmarking Class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="caching.html">Caching Driver</a></li>
+<li class="toctree-l2"><a class="reference internal" href="calendar.html">Calendaring Class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cart.html">Shopping Cart Class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="config.html">Config Class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="email.html">Email Class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="encrypt.html">Encrypt Class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="encryption.html">Encryption Library</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_uploading.html">File Uploading Class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="form_validation.html">Form Validation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ftp.html">FTP Class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="image_lib.html">Image Manipulation Class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="input.html">Input Class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="javascript.html">Javascript Class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="language.html">Language Class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="loader.html">Loader Class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="migration.html">Migrations Class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="output.html">Output Class</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">Pagination Class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="parser.html">Template Parser Class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="security.html">Security Class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sessions.html">Session Library</a></li>
+<li class="toctree-l2"><a class="reference internal" href="table.html">HTML Table Class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="trackback.html">Trackback Class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="typography.html">Typography Class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="unit_testing.html">Unit Testing Class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="uri.html">URI Class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user_agent.html">User Agent Class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="xmlrpc.html">XML-RPC and XML-RPC Server Classes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="zip.html">Zip Encoding Class</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../database/index.html">Database Reference</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../database/examples.html">Quick Start: Usage Examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/configuration.html">Database Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/connecting.html">Connecting to a Database</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/queries.html">Running Queries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/results.html">Generating Query Results</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/helpers.html">Query Helper Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/query_builder.html">Query Builder Class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/transactions.html">Transactions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/metadata.html">Getting MetaData</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/call_function.html">Custom Function Calls</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/caching.html">Query Caching</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/forge.html">Database Manipulation with Database Forge</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/utilities.html">Database Utilities Class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/db_driver_reference.html">Database Driver Reference</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../helpers/index.html">Helpers</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/array_helper.html">Array Helper</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/captcha_helper.html">CAPTCHA Helper</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/cookie_helper.html">Cookie Helper</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/date_helper.html">Date Helper</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/directory_helper.html">Directory Helper</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/download_helper.html">Download Helper</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/email_helper.html">Email Helper</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/file_helper.html">File Helper</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/form_helper.html">Form Helper</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/html_helper.html">HTML Helper</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/inflector_helper.html">Inflector Helper</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/language_helper.html">Language Helper</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/number_helper.html">Number Helper</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/path_helper.html">Path Helper</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/security_helper.html">Security Helper</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/smiley_helper.html">Smiley Helper</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/string_helper.html">String Helper</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/text_helper.html">Text Helper</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/typography_helper.html">Typography Helper</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/url_helper.html">URL Helper</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/xml_helper.html">XML Helper</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../contributing/index.html">Contributing to CodeIgniter</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../documentation/index.html">Writing CodeIgniter Documentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../DCO.html">Developer&#8217;s Certificate of Origin 1.1</a></li>
+</ul>
+</li>
+</ul>
+
+          
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">CodeIgniter</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="index.html">Libraries</a> &raquo;</li>
+      
+    <li>Pagination Class</li>
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document">
             
   <div class="section" id="pagination-class">
 <h1>Pagination Class<a class="headerlink" href="#pagination-class" title="Permalink to this headline">¶</a></h1>
@@ -64,60 +261,18 @@ customizable, either dynamically or via stored preferences.</p>
 <li><a class="reference internal" href="#setting-preferences-in-a-config-file" id="id3">Setting preferences in a config file</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#customizing-the-pagination" id="id4">Customizing the Pagination</a><ul>
-<li><a class="reference internal" href="#config-uri-segment-3" id="id5">$config[&#8216;uri_segment&#8217;] = 3;</a></li>
-<li><a class="reference internal" href="#config-num-links-2" id="id6">$config[&#8216;num_links&#8217;] = 2;</a></li>
-<li><a class="reference internal" href="#config-use-page-numbers-true" id="id7">$config[&#8216;use_page_numbers&#8217;] = TRUE;</a></li>
-<li><a class="reference internal" href="#config-page-query-string-true" id="id8">$config[&#8216;page_query_string&#8217;] = TRUE;</a></li>
-<li><a class="reference internal" href="#config-reuse-query-string-false" id="id9">$config[&#8216;reuse_query_string&#8217;] = FALSE;</a></li>
-<li><a class="reference internal" href="#config-prefix" id="id10">$config[&#8216;prefix&#8217;] = &#8216;&#8217;;</a></li>
-<li><a class="reference internal" href="#config-suffix" id="id11">$config[&#8216;suffix&#8217;] = &#8216;&#8217;;</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#adding-enclosing-markup" id="id12">Adding Enclosing Markup</a><ul>
-<li><a class="reference internal" href="#config-full-tag-open-p" id="id13">$config[&#8216;full_tag_open&#8217;] = &#8216;&lt;p&gt;&#8217;;</a></li>
-<li><a class="reference internal" href="#config-full-tag-close-p" id="id14">$config[&#8216;full_tag_close&#8217;] = &#8216;&lt;/p&gt;&#8217;;</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#customizing-the-first-link" id="id15">Customizing the First Link</a><ul>
-<li><a class="reference internal" href="#config-first-link-first" id="id16">$config[&#8216;first_link&#8217;] = &#8216;First&#8217;;</a></li>
-<li><a class="reference internal" href="#config-first-tag-open-div" id="id17">$config[&#8216;first_tag_open&#8217;] = &#8216;&lt;div&gt;&#8217;;</a></li>
-<li><a class="reference internal" href="#config-first-tag-close-div" id="id18">$config[&#8216;first_tag_close&#8217;] = &#8216;&lt;/div&gt;&#8217;;</a></li>
-<li><a class="reference internal" href="#config-first-url" id="id19">$config[&#8216;first_url&#8217;] = &#8216;&#8217;;</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#customizing-the-last-link" id="id20">Customizing the Last Link</a><ul>
-<li><a class="reference internal" href="#config-last-link-last" id="id21">$config[&#8216;last_link&#8217;] = &#8216;Last&#8217;;</a></li>
-<li><a class="reference internal" href="#config-last-tag-open-div" id="id22">$config[&#8216;last_tag_open&#8217;] = &#8216;&lt;div&gt;&#8217;;</a></li>
-<li><a class="reference internal" href="#config-last-tag-close-div" id="id23">$config[&#8216;last_tag_close&#8217;] = &#8216;&lt;/div&gt;&#8217;;</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#customizing-the-next-link" id="id24">Customizing the &#8220;Next&#8221; Link</a><ul>
-<li><a class="reference internal" href="#config-next-link-gt" id="id25">$config[&#8216;next_link&#8217;] = &#8216;&amp;gt;&#8217;;</a></li>
-<li><a class="reference internal" href="#config-next-tag-open-div" id="id26">$config[&#8216;next_tag_open&#8217;] = &#8216;&lt;div&gt;&#8217;;</a></li>
-<li><a class="reference internal" href="#config-next-tag-close-div" id="id27">$config[&#8216;next_tag_close&#8217;] = &#8216;&lt;/div&gt;&#8217;;</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#customizing-the-previous-link" id="id28">Customizing the &#8220;Previous&#8221; Link</a><ul>
-<li><a class="reference internal" href="#config-prev-link-lt" id="id29">$config[&#8216;prev_link&#8217;] = &#8216;&amp;lt;&#8217;;</a></li>
-<li><a class="reference internal" href="#config-prev-tag-open-div" id="id30">$config[&#8216;prev_tag_open&#8217;] = &#8216;&lt;div&gt;&#8217;;</a></li>
-<li><a class="reference internal" href="#config-prev-tag-close-div" id="id31">$config[&#8216;prev_tag_close&#8217;] = &#8216;&lt;/div&gt;&#8217;;</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#customizing-the-current-page-link" id="id32">Customizing the &#8220;Current Page&#8221; Link</a><ul>
-<li><a class="reference internal" href="#config-cur-tag-open-b" id="id33">$config[&#8216;cur_tag_open&#8217;] = &#8216;&lt;b&gt;&#8217;;</a></li>
-<li><a class="reference internal" href="#config-cur-tag-close-b" id="id34">$config[&#8216;cur_tag_close&#8217;] = &#8216;&lt;/b&gt;&#8217;;</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#customizing-the-digit-link" id="id35">Customizing the &#8220;Digit&#8221; Link</a><ul>
-<li><a class="reference internal" href="#config-num-tag-open-div" id="id36">$config[&#8216;num_tag_open&#8217;] = &#8216;&lt;div&gt;&#8217;;</a></li>
-<li><a class="reference internal" href="#config-num-tag-close-div" id="id37">$config[&#8216;num_tag_close&#8217;] = &#8216;&lt;/div&gt;&#8217;;</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#hiding-the-pages" id="id38">Hiding the Pages</a></li>
-<li><a class="reference internal" href="#adding-attributes-to-anchors" id="id39">Adding attributes to anchors</a></li>
-<li><a class="reference internal" href="#disabling-the-rel-attribute" id="id40">Disabling the &#8220;rel&#8221; attribute</a></li>
-<li><a class="reference internal" href="#class-reference" id="id41">Class Reference</a></li>
+<li><a class="reference internal" href="#customizing-the-pagination" id="id4">Customizing the Pagination</a></li>
+<li><a class="reference internal" href="#adding-enclosing-markup" id="id5">Adding Enclosing Markup</a></li>
+<li><a class="reference internal" href="#customizing-the-first-link" id="id6">Customizing the First Link</a></li>
+<li><a class="reference internal" href="#customizing-the-last-link" id="id7">Customizing the Last Link</a></li>
+<li><a class="reference internal" href="#customizing-the-next-link" id="id8">Customizing the &#8220;Next&#8221; Link</a></li>
+<li><a class="reference internal" href="#customizing-the-previous-link" id="id9">Customizing the &#8220;Previous&#8221; Link</a></li>
+<li><a class="reference internal" href="#customizing-the-current-page-link" id="id10">Customizing the &#8220;Current Page&#8221; Link</a></li>
+<li><a class="reference internal" href="#customizing-the-digit-link" id="id11">Customizing the &#8220;Digit&#8221; Link</a></li>
+<li><a class="reference internal" href="#hiding-the-pages" id="id12">Hiding the Pages</a></li>
+<li><a class="reference internal" href="#adding-attributes-to-anchors" id="id13">Adding attributes to anchors</a></li>
+<li><a class="reference internal" href="#disabling-the-rel-attribute" id="id14">Disabling the &#8220;rel&#8221; attribute</a></li>
+<li><a class="reference internal" href="#class-reference" id="id15">Class Reference</a></li>
 </ul>
 </div>
 <div class="custom-index container"></div><p>If you are not familiar with the term &#8220;pagination&#8221;, it refers to links
@@ -175,26 +330,19 @@ your preferences in a config file.</p>
 <h2><a class="toc-backref" href="#id4">Customizing the Pagination</a><a class="headerlink" href="#customizing-the-pagination" title="Permalink to this headline">¶</a></h2>
 <p>The following is a list of all the preferences you can pass to the
 initialization function to tailor the display.</p>
-<div class="section" id="config-uri-segment-3">
-<h3><a class="toc-backref" href="#id5">$config[&#8216;uri_segment&#8217;] = 3;</a><a class="headerlink" href="#config-uri-segment-3" title="Permalink to this headline">¶</a></h3>
+<p><strong>$config[&#8216;uri_segment&#8217;] = 3;</strong></p>
 <p>The pagination function automatically determines which segment of your
 URI contains the page number. If you need something different you can
 specify it.</p>
-</div>
-<div class="section" id="config-num-links-2">
-<h3><a class="toc-backref" href="#id6">$config[&#8216;num_links&#8217;] = 2;</a><a class="headerlink" href="#config-num-links-2" title="Permalink to this headline">¶</a></h3>
+<p><strong>$config[&#8216;num_links&#8217;] = 2;</strong></p>
 <p>The number of &#8220;digit&#8221; links you would like before and after the selected
 page number. For example, the number 2 will place two digits on either
 side, as in the example links at the very top of this page.</p>
-</div>
-<div class="section" id="config-use-page-numbers-true">
-<h3><a class="toc-backref" href="#id7">$config[&#8216;use_page_numbers&#8217;] = TRUE;</a><a class="headerlink" href="#config-use-page-numbers-true" title="Permalink to this headline">¶</a></h3>
+<p><strong>$config[&#8216;use_page_numbers&#8217;] = TRUE;</strong></p>
 <p>By default, the URI segment will use the starting index for the items
 you are paginating. If you prefer to show the the actual page number,
 set this to TRUE.</p>
-</div>
-<div class="section" id="config-page-query-string-true">
-<h3><a class="toc-backref" href="#id8">$config[&#8216;page_query_string&#8217;] = TRUE;</a><a class="headerlink" href="#config-page-query-string-true" title="Permalink to this headline">¶</a></h3>
+<p><strong>$config[&#8216;page_query_string&#8217;] = TRUE;</strong></p>
 <p>By default, the pagination library assume you are using <a class="reference internal" href="../general/urls.html"><em>URI
 Segments</em></a>, and constructs your links something
 like:</p>
@@ -210,9 +358,7 @@ the pagination link will become:</p>
 </div>
 <p>Note that &#8220;per_page&#8221; is the default query string passed, however can be
 configured using <tt class="docutils literal"><span class="pre">$config['query_string_segment']</span> <span class="pre">=</span> <span class="pre">'your_string'</span></tt></p>
-</div>
-<div class="section" id="config-reuse-query-string-false">
-<h3><a class="toc-backref" href="#id9">$config[&#8216;reuse_query_string&#8217;] = FALSE;</a><a class="headerlink" href="#config-reuse-query-string-false" title="Permalink to this headline">¶</a></h3>
+<p><strong>$config[&#8216;reuse_query_string&#8217;] = FALSE;</strong></p>
 <p>By default your Query String arguments (nothing to do with other
 query string options) will be ignored. Setting this config to
 TRUE will add existing query string arguments back into the
@@ -222,139 +368,100 @@ URL after the URI segment and before the suffix.:</p>
 </div>
 <p>This helps you mix together normal <a class="reference internal" href="../general/urls.html"><em>URI Segments</em></a>
 as well as query string arguments, which until 3.0 was not possible.</p>
-</div>
-<div class="section" id="config-prefix">
-<h3><a class="toc-backref" href="#id10">$config[&#8216;prefix&#8217;] = &#8216;&#8217;;</a><a class="headerlink" href="#config-prefix" title="Permalink to this headline">¶</a></h3>
+<p><strong>$config[&#8216;prefix&#8217;] = &#8216;&#8217;;</strong></p>
 <p>A custom prefix added to the path. The prefix value will be right before
 the offset segment.</p>
-</div>
-<div class="section" id="config-suffix">
-<h3><a class="toc-backref" href="#id11">$config[&#8216;suffix&#8217;] = &#8216;&#8217;;</a><a class="headerlink" href="#config-suffix" title="Permalink to this headline">¶</a></h3>
+<p><strong>$config[&#8216;suffix&#8217;] = &#8216;&#8217;;</strong></p>
 <p>A custom suffix added to the path. The sufix value will be right after
 the offset segment.</p>
-</div>
+<p><strong>$config[&#8216;use_global_url_suffix&#8217;] = FALSE;</strong></p>
+<p>When set to TRUE, it will <strong>override</strong> the <tt class="docutils literal"><span class="pre">$config['suffix']</span></tt> value and
+instead set it to the one that you have in <tt class="docutils literal"><span class="pre">$config['url_suffix']</span></tt> in
+your <strong>application/config/config.php</strong> file.</p>
 </div>
 <div class="section" id="adding-enclosing-markup">
-<h2><a class="toc-backref" href="#id12">Adding Enclosing Markup</a><a class="headerlink" href="#adding-enclosing-markup" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id5">Adding Enclosing Markup</a><a class="headerlink" href="#adding-enclosing-markup" title="Permalink to this headline">¶</a></h2>
 <p>If you would like to surround the entire pagination with some markup you
 can do it with these two preferences:</p>
-<div class="section" id="config-full-tag-open-p">
-<h3><a class="toc-backref" href="#id13">$config[&#8216;full_tag_open&#8217;] = &#8216;&lt;p&gt;&#8217;;</a><a class="headerlink" href="#config-full-tag-open-p" title="Permalink to this headline">¶</a></h3>
+<p><strong>$config[&#8216;full_tag_open&#8217;] = &#8216;&lt;p&gt;&#8217;;</strong></p>
 <p>The opening tag placed on the left side of the entire result.</p>
-</div>
-<div class="section" id="config-full-tag-close-p">
-<h3><a class="toc-backref" href="#id14">$config[&#8216;full_tag_close&#8217;] = &#8216;&lt;/p&gt;&#8217;;</a><a class="headerlink" href="#config-full-tag-close-p" title="Permalink to this headline">¶</a></h3>
+<p><strong>$config[&#8216;full_tag_close&#8217;] = &#8216;&lt;/p&gt;&#8217;;</strong></p>
 <p>The closing tag placed on the right side of the entire result.</p>
 </div>
-</div>
 <div class="section" id="customizing-the-first-link">
-<h2><a class="toc-backref" href="#id15">Customizing the First Link</a><a class="headerlink" href="#customizing-the-first-link" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="config-first-link-first">
-<h3><a class="toc-backref" href="#id16">$config[&#8216;first_link&#8217;] = &#8216;First&#8217;;</a><a class="headerlink" href="#config-first-link-first" title="Permalink to this headline">¶</a></h3>
+<h2><a class="toc-backref" href="#id6">Customizing the First Link</a><a class="headerlink" href="#customizing-the-first-link" title="Permalink to this headline">¶</a></h2>
+<p><strong>$config[&#8216;first_link&#8217;] = &#8216;First&#8217;;</strong></p>
 <p>The text you would like shown in the &#8220;first&#8221; link on the left. If you do
 not want this link rendered, you can set its value to FALSE.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p class="last">This value can also be translated via a language file.</p>
 </div>
-</div>
-<div class="section" id="config-first-tag-open-div">
-<h3><a class="toc-backref" href="#id17">$config[&#8216;first_tag_open&#8217;] = &#8216;&lt;div&gt;&#8217;;</a><a class="headerlink" href="#config-first-tag-open-div" title="Permalink to this headline">¶</a></h3>
+<p><strong>$config[&#8216;first_tag_open&#8217;] = &#8216;&lt;div&gt;&#8217;;</strong></p>
 <p>The opening tag for the &#8220;first&#8221; link.</p>
-</div>
-<div class="section" id="config-first-tag-close-div">
-<h3><a class="toc-backref" href="#id18">$config[&#8216;first_tag_close&#8217;] = &#8216;&lt;/div&gt;&#8217;;</a><a class="headerlink" href="#config-first-tag-close-div" title="Permalink to this headline">¶</a></h3>
+<p><strong>$config[&#8216;first_tag_close&#8217;] = &#8216;&lt;/div&gt;&#8217;;</strong></p>
 <p>The closing tag for the &#8220;first&#8221; link.</p>
-</div>
-<div class="section" id="config-first-url">
-<h3><a class="toc-backref" href="#id19">$config[&#8216;first_url&#8217;] = &#8216;&#8217;;</a><a class="headerlink" href="#config-first-url" title="Permalink to this headline">¶</a></h3>
+<p><strong>$config[&#8216;first_url&#8217;] = &#8216;&#8217;;</strong></p>
 <p>An alternative URL to use for the &#8220;first page&#8221; link.</p>
 </div>
-</div>
 <div class="section" id="customizing-the-last-link">
-<h2><a class="toc-backref" href="#id20">Customizing the Last Link</a><a class="headerlink" href="#customizing-the-last-link" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="config-last-link-last">
-<h3><a class="toc-backref" href="#id21">$config[&#8216;last_link&#8217;] = &#8216;Last&#8217;;</a><a class="headerlink" href="#config-last-link-last" title="Permalink to this headline">¶</a></h3>
+<h2><a class="toc-backref" href="#id7">Customizing the Last Link</a><a class="headerlink" href="#customizing-the-last-link" title="Permalink to this headline">¶</a></h2>
+<p><strong>$config[&#8216;last_link&#8217;] = &#8216;Last&#8217;;</strong></p>
 <p>The text you would like shown in the &#8220;last&#8221; link on the right. If you do
 not want this link rendered, you can set its value to FALSE.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p class="last">This value can also be translated via a language file.</p>
 </div>
-</div>
-<div class="section" id="config-last-tag-open-div">
-<h3><a class="toc-backref" href="#id22">$config[&#8216;last_tag_open&#8217;] = &#8216;&lt;div&gt;&#8217;;</a><a class="headerlink" href="#config-last-tag-open-div" title="Permalink to this headline">¶</a></h3>
+<p><strong>$config[&#8216;last_tag_open&#8217;] = &#8216;&lt;div&gt;&#8217;;</strong></p>
 <p>The opening tag for the &#8220;last&#8221; link.</p>
-</div>
-<div class="section" id="config-last-tag-close-div">
-<h3><a class="toc-backref" href="#id23">$config[&#8216;last_tag_close&#8217;] = &#8216;&lt;/div&gt;&#8217;;</a><a class="headerlink" href="#config-last-tag-close-div" title="Permalink to this headline">¶</a></h3>
+<p><strong>$config[&#8216;last_tag_close&#8217;] = &#8216;&lt;/div&gt;&#8217;;</strong></p>
 <p>The closing tag for the &#8220;last&#8221; link.</p>
 </div>
-</div>
 <div class="section" id="customizing-the-next-link">
-<h2><a class="toc-backref" href="#id24">Customizing the &#8220;Next&#8221; Link</a><a class="headerlink" href="#customizing-the-next-link" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="config-next-link-gt">
-<h3><a class="toc-backref" href="#id25">$config[&#8216;next_link&#8217;] = &#8216;&amp;gt;&#8217;;</a><a class="headerlink" href="#config-next-link-gt" title="Permalink to this headline">¶</a></h3>
+<h2><a class="toc-backref" href="#id8">Customizing the &#8220;Next&#8221; Link</a><a class="headerlink" href="#customizing-the-next-link" title="Permalink to this headline">¶</a></h2>
+<p><strong>$config[&#8216;next_link&#8217;] = &#8216;&amp;gt;&#8217;;</strong></p>
 <p>The text you would like shown in the &#8220;next&#8221; page link. If you do not
 want this link rendered, you can set its value to FALSE.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p class="last">This value can also be translated via a language file.</p>
 </div>
-</div>
-<div class="section" id="config-next-tag-open-div">
-<h3><a class="toc-backref" href="#id26">$config[&#8216;next_tag_open&#8217;] = &#8216;&lt;div&gt;&#8217;;</a><a class="headerlink" href="#config-next-tag-open-div" title="Permalink to this headline">¶</a></h3>
+<p><strong>$config[&#8216;next_tag_open&#8217;] = &#8216;&lt;div&gt;&#8217;;</strong></p>
 <p>The opening tag for the &#8220;next&#8221; link.</p>
-</div>
-<div class="section" id="config-next-tag-close-div">
-<h3><a class="toc-backref" href="#id27">$config[&#8216;next_tag_close&#8217;] = &#8216;&lt;/div&gt;&#8217;;</a><a class="headerlink" href="#config-next-tag-close-div" title="Permalink to this headline">¶</a></h3>
+<p><strong>$config[&#8216;next_tag_close&#8217;] = &#8216;&lt;/div&gt;&#8217;;</strong></p>
 <p>The closing tag for the &#8220;next&#8221; link.</p>
 </div>
-</div>
 <div class="section" id="customizing-the-previous-link">
-<h2><a class="toc-backref" href="#id28">Customizing the &#8220;Previous&#8221; Link</a><a class="headerlink" href="#customizing-the-previous-link" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="config-prev-link-lt">
-<h3><a class="toc-backref" href="#id29">$config[&#8216;prev_link&#8217;] = &#8216;&amp;lt;&#8217;;</a><a class="headerlink" href="#config-prev-link-lt" title="Permalink to this headline">¶</a></h3>
+<h2><a class="toc-backref" href="#id9">Customizing the &#8220;Previous&#8221; Link</a><a class="headerlink" href="#customizing-the-previous-link" title="Permalink to this headline">¶</a></h2>
+<p><strong>$config[&#8216;prev_link&#8217;] = &#8216;&amp;lt;&#8217;;</strong></p>
 <p>The text you would like shown in the &#8220;previous&#8221; page link. If you do not
 want this link rendered, you can set its value to FALSE.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p class="last">This value can also be translated via a language file.</p>
 </div>
-</div>
-<div class="section" id="config-prev-tag-open-div">
-<h3><a class="toc-backref" href="#id30">$config[&#8216;prev_tag_open&#8217;] = &#8216;&lt;div&gt;&#8217;;</a><a class="headerlink" href="#config-prev-tag-open-div" title="Permalink to this headline">¶</a></h3>
+<p><strong>$config[&#8216;prev_tag_open&#8217;] = &#8216;&lt;div&gt;&#8217;;</strong></p>
 <p>The opening tag for the &#8220;previous&#8221; link.</p>
-</div>
-<div class="section" id="config-prev-tag-close-div">
-<h3><a class="toc-backref" href="#id31">$config[&#8216;prev_tag_close&#8217;] = &#8216;&lt;/div&gt;&#8217;;</a><a class="headerlink" href="#config-prev-tag-close-div" title="Permalink to this headline">¶</a></h3>
+<p><strong>$config[&#8216;prev_tag_close&#8217;] = &#8216;&lt;/div&gt;&#8217;;</strong></p>
 <p>The closing tag for the &#8220;previous&#8221; link.</p>
 </div>
-</div>
 <div class="section" id="customizing-the-current-page-link">
-<h2><a class="toc-backref" href="#id32">Customizing the &#8220;Current Page&#8221; Link</a><a class="headerlink" href="#customizing-the-current-page-link" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="config-cur-tag-open-b">
-<h3><a class="toc-backref" href="#id33">$config[&#8216;cur_tag_open&#8217;] = &#8216;&lt;b&gt;&#8217;;</a><a class="headerlink" href="#config-cur-tag-open-b" title="Permalink to this headline">¶</a></h3>
+<h2><a class="toc-backref" href="#id10">Customizing the &#8220;Current Page&#8221; Link</a><a class="headerlink" href="#customizing-the-current-page-link" title="Permalink to this headline">¶</a></h2>
+<p><strong>$config[&#8216;cur_tag_open&#8217;] = &#8216;&lt;b&gt;&#8217;;</strong></p>
 <p>The opening tag for the &#8220;current&#8221; link.</p>
-</div>
-<div class="section" id="config-cur-tag-close-b">
-<h3><a class="toc-backref" href="#id34">$config[&#8216;cur_tag_close&#8217;] = &#8216;&lt;/b&gt;&#8217;;</a><a class="headerlink" href="#config-cur-tag-close-b" title="Permalink to this headline">¶</a></h3>
+<p><strong>$config[&#8216;cur_tag_close&#8217;] = &#8216;&lt;/b&gt;&#8217;;</strong></p>
 <p>The closing tag for the &#8220;current&#8221; link.</p>
 </div>
-</div>
 <div class="section" id="customizing-the-digit-link">
-<h2><a class="toc-backref" href="#id35">Customizing the &#8220;Digit&#8221; Link</a><a class="headerlink" href="#customizing-the-digit-link" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="config-num-tag-open-div">
-<h3><a class="toc-backref" href="#id36">$config[&#8216;num_tag_open&#8217;] = &#8216;&lt;div&gt;&#8217;;</a><a class="headerlink" href="#config-num-tag-open-div" title="Permalink to this headline">¶</a></h3>
+<h2><a class="toc-backref" href="#id11">Customizing the &#8220;Digit&#8221; Link</a><a class="headerlink" href="#customizing-the-digit-link" title="Permalink to this headline">¶</a></h2>
+<p><strong>$config[&#8216;num_tag_open&#8217;] = &#8216;&lt;div&gt;&#8217;;</strong></p>
 <p>The opening tag for the &#8220;digit&#8221; link.</p>
-</div>
-<div class="section" id="config-num-tag-close-div">
-<h3><a class="toc-backref" href="#id37">$config[&#8216;num_tag_close&#8217;] = &#8216;&lt;/div&gt;&#8217;;</a><a class="headerlink" href="#config-num-tag-close-div" title="Permalink to this headline">¶</a></h3>
+<p><strong>$config[&#8216;num_tag_close&#8217;] = &#8216;&lt;/div&gt;&#8217;;</strong></p>
 <p>The closing tag for the &#8220;digit&#8221; link.</p>
 </div>
-</div>
 <div class="section" id="hiding-the-pages">
-<h2><a class="toc-backref" href="#id38">Hiding the Pages</a><a class="headerlink" href="#hiding-the-pages" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id12">Hiding the Pages</a><a class="headerlink" href="#hiding-the-pages" title="Permalink to this headline">¶</a></h2>
 <p>If you wanted to not list the specific pages (for example, you only want
 &#8220;next&#8221; and &#8220;previous&#8221; links), you can suppress their rendering by
 adding:</p>
@@ -363,7 +470,7 @@ adding:</p>
 </div>
 </div>
 <div class="section" id="adding-attributes-to-anchors">
-<h2><a class="toc-backref" href="#id39">Adding attributes to anchors</a><a class="headerlink" href="#adding-attributes-to-anchors" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id13">Adding attributes to anchors</a><a class="headerlink" href="#adding-attributes-to-anchors" title="Permalink to this headline">¶</a></h2>
 <p>If you want to add an extra attribute to be added to every link rendered
 by the pagination class, you can set them as key/value pairs in the
 &#8220;attributes&#8221; config:</p>
@@ -378,7 +485,7 @@ is deprecated.</p>
 </div>
 </div>
 <div class="section" id="disabling-the-rel-attribute">
-<h2><a class="toc-backref" href="#id40">Disabling the &#8220;rel&#8221; attribute</a><a class="headerlink" href="#disabling-the-rel-attribute" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id14">Disabling the &#8220;rel&#8221; attribute</a><a class="headerlink" href="#disabling-the-rel-attribute" title="Permalink to this headline">¶</a></h2>
 <p>By default the rel attribute is dynamically generated and appended to
 the appropriate anchors. If for some reason you want to turn it off,
 you can pass boolean FALSE as a regular attribute</p>
@@ -387,7 +494,7 @@ you can pass boolean FALSE as a regular attribute</p>
 </div>
 </div>
 <div class="section" id="class-reference">
-<h2><a class="toc-backref" href="#id41">Class Reference</a><a class="headerlink" href="#class-reference" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id15">Class Reference</a><a class="headerlink" href="#class-reference" title="Permalink to this headline">¶</a></h2>
 <dl class="class">
 <dt id="CI_Pagination">
 <em class="property">class </em><tt class="descname">CI_Pagination</tt><a class="headerlink" href="#CI_Pagination" title="Permalink to this definition">¶</a></dt>
@@ -432,119 +539,69 @@ you can pass boolean FALSE as a regular attribute</p>
 
 
           </div>
-        </div>
-      </div>
-      <div class="sphinxsidebar">
-        <div class="sphinxsidebarwrapper">
-  <h3><a href="../index.html">Table Of Contents</a></h3>
-  <ul>
-<li><a class="reference internal" href="#">Pagination Class</a><ul>
-<li><a class="reference internal" href="#example">Example</a><ul>
-<li><a class="reference internal" href="#notes">Notes</a></li>
-<li><a class="reference internal" href="#setting-preferences-in-a-config-file">Setting preferences in a config file</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#customizing-the-pagination">Customizing the Pagination</a><ul>
-<li><a class="reference internal" href="#config-uri-segment-3">$config[&#8216;uri_segment&#8217;] = 3;</a></li>
-<li><a class="reference internal" href="#config-num-links-2">$config[&#8216;num_links&#8217;] = 2;</a></li>
-<li><a class="reference internal" href="#config-use-page-numbers-true">$config[&#8216;use_page_numbers&#8217;] = TRUE;</a></li>
-<li><a class="reference internal" href="#config-page-query-string-true">$config[&#8216;page_query_string&#8217;] = TRUE;</a></li>
-<li><a class="reference internal" href="#config-reuse-query-string-false">$config[&#8216;reuse_query_string&#8217;] = FALSE;</a></li>
-<li><a class="reference internal" href="#config-prefix">$config[&#8216;prefix&#8217;] = &#8216;&#8217;;</a></li>
-<li><a class="reference internal" href="#config-suffix">$config[&#8216;suffix&#8217;] = &#8216;&#8217;;</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#adding-enclosing-markup">Adding Enclosing Markup</a><ul>
-<li><a class="reference internal" href="#config-full-tag-open-p">$config[&#8216;full_tag_open&#8217;] = &#8216;&lt;p&gt;&#8217;;</a></li>
-<li><a class="reference internal" href="#config-full-tag-close-p">$config[&#8216;full_tag_close&#8217;] = &#8216;&lt;/p&gt;&#8217;;</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#customizing-the-first-link">Customizing the First Link</a><ul>
-<li><a class="reference internal" href="#config-first-link-first">$config[&#8216;first_link&#8217;] = &#8216;First&#8217;;</a></li>
-<li><a class="reference internal" href="#config-first-tag-open-div">$config[&#8216;first_tag_open&#8217;] = &#8216;&lt;div&gt;&#8217;;</a></li>
-<li><a class="reference internal" href="#config-first-tag-close-div">$config[&#8216;first_tag_close&#8217;] = &#8216;&lt;/div&gt;&#8217;;</a></li>
-<li><a class="reference internal" href="#config-first-url">$config[&#8216;first_url&#8217;] = &#8216;&#8217;;</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#customizing-the-last-link">Customizing the Last Link</a><ul>
-<li><a class="reference internal" href="#config-last-link-last">$config[&#8216;last_link&#8217;] = &#8216;Last&#8217;;</a></li>
-<li><a class="reference internal" href="#config-last-tag-open-div">$config[&#8216;last_tag_open&#8217;] = &#8216;&lt;div&gt;&#8217;;</a></li>
-<li><a class="reference internal" href="#config-last-tag-close-div">$config[&#8216;last_tag_close&#8217;] = &#8216;&lt;/div&gt;&#8217;;</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#customizing-the-next-link">Customizing the &#8220;Next&#8221; Link</a><ul>
-<li><a class="reference internal" href="#config-next-link-gt">$config[&#8216;next_link&#8217;] = &#8216;&amp;gt;&#8217;;</a></li>
-<li><a class="reference internal" href="#config-next-tag-open-div">$config[&#8216;next_tag_open&#8217;] = &#8216;&lt;div&gt;&#8217;;</a></li>
-<li><a class="reference internal" href="#config-next-tag-close-div">$config[&#8216;next_tag_close&#8217;] = &#8216;&lt;/div&gt;&#8217;;</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#customizing-the-previous-link">Customizing the &#8220;Previous&#8221; Link</a><ul>
-<li><a class="reference internal" href="#config-prev-link-lt">$config[&#8216;prev_link&#8217;] = &#8216;&amp;lt;&#8217;;</a></li>
-<li><a class="reference internal" href="#config-prev-tag-open-div">$config[&#8216;prev_tag_open&#8217;] = &#8216;&lt;div&gt;&#8217;;</a></li>
-<li><a class="reference internal" href="#config-prev-tag-close-div">$config[&#8216;prev_tag_close&#8217;] = &#8216;&lt;/div&gt;&#8217;;</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#customizing-the-current-page-link">Customizing the &#8220;Current Page&#8221; Link</a><ul>
-<li><a class="reference internal" href="#config-cur-tag-open-b">$config[&#8216;cur_tag_open&#8217;] = &#8216;&lt;b&gt;&#8217;;</a></li>
-<li><a class="reference internal" href="#config-cur-tag-close-b">$config[&#8216;cur_tag_close&#8217;] = &#8216;&lt;/b&gt;&#8217;;</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#customizing-the-digit-link">Customizing the &#8220;Digit&#8221; Link</a><ul>
-<li><a class="reference internal" href="#config-num-tag-open-div">$config[&#8216;num_tag_open&#8217;] = &#8216;&lt;div&gt;&#8217;;</a></li>
-<li><a class="reference internal" href="#config-num-tag-close-div">$config[&#8216;num_tag_close&#8217;] = &#8216;&lt;/div&gt;&#8217;;</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#hiding-the-pages">Hiding the Pages</a></li>
-<li><a class="reference internal" href="#adding-attributes-to-anchors">Adding attributes to anchors</a></li>
-<li><a class="reference internal" href="#disabling-the-rel-attribute">Disabling the &#8220;rel&#8221; attribute</a></li>
-<li><a class="reference internal" href="#class-reference">Class Reference</a></li>
-</ul>
-</li>
-</ul>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="parser.html" class="btn btn-neutral float-right" title="Template Parser Class">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="output.html" class="btn btn-neutral" title="Output Class"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
 
-  <h4>Previous topic</h4>
-  <p class="topless"><a href="output.html"
-                        title="previous chapter">Output Class</a></p>
-  <h4>Next topic</h4>
-  <p class="topless"><a href="parser.html"
-                        title="next chapter">Template Parser Class</a></p>
-<div id="searchbox" style="display: none">
-  <h3>Quick search</h3>
-    <form class="search" action="../search.html" method="get">
-      <input type="text" name="q" />
-      <input type="submit" value="Go" />
-      <input type="hidden" name="check_keywords" value="yes" />
-      <input type="hidden" name="area" value="default" />
-    </form>
-    <p class="searchtip" style="font-size: 90%">
-    Enter search terms or a module, class or function name.
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2014 - 2015, British Columbia Institute of Technology.
+      Last updated on Jan 21, 2015.
     </p>
-</div>
-<script type="text/javascript">$('#searchbox').show(0);</script>
+  </div>
+
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+  
+</footer>
         </div>
       </div>
-      <div class="clearer"></div>
-    </div>
-    <div class="related">
-      <h3>Navigation</h3>
-      <ul>
-        <li class="right" style="margin-right: 10px">
-          <a href="../genindex.html" title="General Index"
-             >index</a></li>
-        <li class="right" >
-          <a href="parser.html" title="Template Parser Class"
-             >next</a> |</li>
-        <li class="right" >
-          <a href="output.html" title="Output Class"
-             >previous</a> |</li>
-        <li><a href="../index.html">CodeIgniter 3.0-dev documentation</a> &raquo;</li>
-          <li><a href="index.html" >Libraries</a> &raquo;</li> 
-      </ul>
-    </div>
-    <div class="footer">
-        &copy; Copyright 2014, British Columbia Institute of Technology.
-      Last updated on Nov 06, 2014.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
-    </div>
-  </body>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'3.0-dev',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  false
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
 </html>

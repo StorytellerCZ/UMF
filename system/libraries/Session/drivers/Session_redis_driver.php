@@ -2,11 +2,11 @@
 /**
  * CodeIgniter
  *
- * An open source application development framework for PHP 5.2.4 or newer
+ * An open source application development framework for PHP
  *
  * This content is released under the MIT License (MIT)
  *
- * Copyright (c) 2014, British Columbia Institute of Technology
+ * Copyright (c) 2014 - 2015, British Columbia Institute of Technology
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -29,7 +29,7 @@
  * @package	CodeIgniter
  * @author	EllisLab Dev Team
  * @copyright	Copyright (c) 2008 - 2014, EllisLab, Inc. (http://ellislab.com/)
- * @copyright	Copyright (c) 2014, British Columbia Institute of Technology (http://bcit.ca/)
+ * @copyright	Copyright (c) 2014 - 2015, British Columbia Institute of Technology (http://bcit.ca/)
  * @license	http://opensource.org/licenses/MIT	MIT License
  * @link	http://codeigniter.com
  * @since	Version 3.0.0
@@ -111,6 +111,15 @@ class CI_Session_redis_driver extends CI_Session_driver implements SessionHandle
 
 	// ------------------------------------------------------------------------
 
+	/**
+	 * Open
+	 *
+	 * Sanitizes save_path and initializes connection.
+	 *
+	 * @param	string	$save_path	Server path
+	 * @param	string	$name		Session cookie name, unused
+	 * @return	bool
+	 */
 	public function open($save_path, $name)
 	{
 		if (empty($this->_config['save_path']))
@@ -142,6 +151,14 @@ class CI_Session_redis_driver extends CI_Session_driver implements SessionHandle
 
 	// ------------------------------------------------------------------------
 
+	/**
+	 * Read
+	 *
+	 * Reads session data and acquires a lock
+	 *
+	 * @param	string	$session_id	Session ID
+	 * @return	string	Serialized session data
+	 */
 	public function read($session_id)
 	{
 		if (isset($this->_redis) && $this->_get_lock($session_id))
@@ -157,6 +174,17 @@ class CI_Session_redis_driver extends CI_Session_driver implements SessionHandle
 		return FALSE;
 	}
 
+	// ------------------------------------------------------------------------
+
+	/**
+	 * Write
+	 *
+	 * Writes (create / update) session data
+	 *
+	 * @param	string	$session_id	Session ID
+	 * @param	string	$session_data	Serialized session data
+	 * @return	bool
+	 */
 	public function write($session_id, $session_data)
 	{
 		if ( ! isset($this->_redis))
@@ -197,6 +225,13 @@ class CI_Session_redis_driver extends CI_Session_driver implements SessionHandle
 
 	// ------------------------------------------------------------------------
 
+	/**
+	 * Close
+	 *
+	 * Releases locks and closes connection.
+	 *
+	 * @return	void
+	 */
 	public function close()
 	{
 		if (isset($this->_redis))
@@ -225,6 +260,14 @@ class CI_Session_redis_driver extends CI_Session_driver implements SessionHandle
 
 	// ------------------------------------------------------------------------
 
+	/**
+	 * Destroy
+	 *
+	 * Destroys the current session.
+	 *
+	 * @param	string	$session_id	Session ID
+	 * @return	bool
+	 */
 	public function destroy($session_id)
 	{
 		if (isset($this->_redis, $this->_lock_key))
@@ -242,6 +285,14 @@ class CI_Session_redis_driver extends CI_Session_driver implements SessionHandle
 
 	// ------------------------------------------------------------------------
 
+	/**
+	 * Garbage Collector
+	 *
+	 * Deletes expired sessions
+	 *
+	 * @param	int 	$maxlifetime	Maximum lifetime of sessions
+	 * @return	bool
+	 */
 	public function gc($maxlifetime)
 	{
 		// Not necessary, Redis takes care of that.
@@ -250,6 +301,14 @@ class CI_Session_redis_driver extends CI_Session_driver implements SessionHandle
 
 	// ------------------------------------------------------------------------
 
+	/**
+	 * Get lock
+	 *
+	 * Acquires an (emulated) lock.
+	 *
+	 * @param	string	$session_id	Session ID
+	 * @return	bool
+	 */
 	protected function _get_lock($session_id)
 	{
 		if (isset($this->_lock_key))
@@ -309,6 +368,13 @@ class CI_Session_redis_driver extends CI_Session_driver implements SessionHandle
 
 	// ------------------------------------------------------------------------
 
+	/**
+	 * Release lock
+	 *
+	 * Releases a previously acquired lock
+	 *
+	 * @return	bool
+	 */
 	protected function _release_lock()
 	{
 		if (isset($this->_redis, $this->_lock_key) && $this->_lock)
@@ -327,6 +393,3 @@ class CI_Session_redis_driver extends CI_Session_driver implements SessionHandle
 	}
 
 }
-
-/* End of file Session_redis_driver.php */
-/* Location: ./system/libraries/Session/drivers/Session_redis_driver.php */

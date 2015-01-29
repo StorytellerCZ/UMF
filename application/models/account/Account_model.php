@@ -38,7 +38,7 @@ class Account_model extends CI_Model
 	 */
 	function get_by_id($account_id)
 	{
-		return $this->db->get_where($this->db->dbprefix . 'a3m_account', array('id' => $account_id))->row();
+		return $this->db->get_where($this->db->dbprefix . 'a3m_account', array('id' => $account_id), 1)->row();
 	}
 
 	// --------------------------------------------------------------------

@@ -2,11 +2,11 @@
 /**
  * CodeIgniter
  *
- * An open source application development framework for PHP 5.2.4 or newer
+ * An open source application development framework for PHP
  *
  * This content is released under the MIT License (MIT)
  *
- * Copyright (c) 2014, British Columbia Institute of Technology
+ * Copyright (c) 2014 - 2015, British Columbia Institute of Technology
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -29,7 +29,7 @@
  * @package	CodeIgniter
  * @author	EllisLab Dev Team
  * @copyright	Copyright (c) 2008 - 2014, EllisLab, Inc. (http://ellislab.com/)
- * @copyright	Copyright (c) 2014, British Columbia Institute of Technology (http://bcit.ca/)
+ * @copyright	Copyright (c) 2014 - 2015, British Columbia Institute of Technology (http://bcit.ca/)
  * @license	http://opensource.org/licenses/MIT	MIT License
  * @link	http://codeigniter.com
  * @since	Version 2.0.0
@@ -47,6 +47,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
  * @link		http://codeigniter.com/user_guide/libraries/sessions.html
  */
 class CI_Session {
+
+	/**
+	 * Userdata array
+	 *
+	 * Just a reference to $_SESSION, for BC purposes.
+	 */
+	public $userdata;
 
 	protected $_driver = 'files';
 	protected $_config;
@@ -122,13 +129,15 @@ class CI_Session {
 			return;
 		}
 
-		// Work-around for PHP bug #66827 (https://bugs.php.net/bug.php?id=66827)
-		//
-		// The session ID sanitizer doesn't check for the value type and blindly does
-		// an implicit cast to string, which triggers an 'Array to string' E_NOTICE.
-		if (isset($_COOKIE[$this->_cookie_name]) && ! is_string($_COOKIE[$this->_cookie_name]))
+		// Sanitize the cookie, because apparently PHP doesn't do that for userspace handlers
+		if (isset($_COOKIE[$this->_config['cookie_name']])
+			&& (
+				! is_string($_COOKIE[$this->_config['cookie_name']])
+				OR ! preg_match('/^[0-9a-f]{40}$/', $_COOKIE[$this->_config['cookie_name']])
+			)
+		)
 		{
-			unset($_COOKIE[$this->_cookie_name]);
+			unset($_COOKIE[$this->_config['cookie_name']]);
 		}
 
 		session_start();
@@ -164,27 +173,22 @@ class CI_Session {
 		}
 
 		$this->_ci_init_vars();
-/*
-		Need to test if this is necessary for a custom driver or if it's only
-		relevant to PHP's own files handler.
 
-		https://bugs.php.net/bug.php?id=65475
-		do this after session is started:
-		if (is_php('5.5.2') && ! is_php('5.5.4'))
-		{
-			$session_id = session_id();
-			if ($_COOKIE[$this->_cookie_name] !== $session_id && file_exists(teh file))
-			{
-				unlink(<teh file>);
-			}
-		}
-*/
-
-		log_message('debug', "Session: Class initialized using '".$this->_driver."' driver.");
+		log_message('info', "Session: Class initialized using '".$this->_driver."' driver.");
 	}
 
 	// ------------------------------------------------------------------------
 
+	/**
+	 * CI Load Classes
+	 *
+	 * An internal method to load all possible dependency and extension
+	 * classes. It kind of emulates the CI_Driver library, but is
+	 * self-sufficient.
+	 *
+	 * @param	string	$driver	Driver name
+	 * @return	string	Driver class name
+	 */
 	protected function _ci_load_classes($driver)
 	{
 		// PHP 5.4 compatibility
@@ -207,6 +211,17 @@ class CI_Session {
 		}
 
 		$class = 'Session_'.$driver.'_driver';
+
+		// Allow custom drivers without the CI_ or MY_ prefix
+		if ( ! class_exists($class, FALSE) && file_exists($file_path = APPPATH.'libraries/Session/drivers/'.$class.'.php'))
+		{
+			require_once($file_path);
+			if (class_exists($class, FALSE))
+			{
+				return $class;
+			}
+		}
+
 		if ( ! class_exists('CI_'.$class, FALSE))
 		{
 			if (file_exists($file_path = APPPATH.'libraries/Session/drivers/'.$class.'.php') OR file_exists($file_path = BASEPATH.'libraries/Session/drivers/'.$class.'.php'))
@@ -214,7 +229,7 @@ class CI_Session {
 				require_once($file_path);
 			}
 
-			if ( ! class_exists('CI_'.$class, FALSE))
+			if ( ! class_exists('CI_'.$class, FALSE) && ! class_exists($class, FALSE))
 			{
 				log_message('error', "Session: Configured driver '".$driver."' was not found. Aborting.");
 				return FALSE;
@@ -343,6 +358,8 @@ class CI_Session {
 				unset($_SESSION['__ci_vars']);
 			}
 		}
+
+		$this->userdata =& $_SESSION;
 	}
 
 	// ------------------------------------------------------------------------
@@ -876,6 +893,3 @@ class CI_Session {
 	}
 
 }
-
-/* End of file Session.php */
-/* Location: ./system/libraries/Session/Session.php */
