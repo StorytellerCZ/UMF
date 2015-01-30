@@ -1,40 +1,4 @@
 <?php
-/**
- * CodeIgniter
- *
- * An open source application development framework for PHP 5.2.4 or newer
- *
- * This content is released under the MIT License (MIT)
- *
- * Copyright (c) 2014, British Columbia Institute of Technology
- *
- * Permission is hereby granted, free of charge, to any person obtaining a copy
- * of this software and associated documentation files (the "Software"), to deal
- * in the Software without restriction, including without limitation the rights
- * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
- * copies of the Software, and to permit persons to whom the Software is
- * furnished to do so, subject to the following conditions:
- *
- * The above copyright notice and this permission notice shall be included in
- * all copies or substantial portions of the Software.
- *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
- * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
- * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
- * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
- * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
- * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
- * THE SOFTWARE.
- *
- * @package	CodeIgniter
- * @author	EllisLab Dev Team
- * @copyright	Copyright (c) 2008 - 2014, EllisLab, Inc. (http://ellislab.com/)
- * @copyright	Copyright (c) 2014, British Columbia Institute of Technology (http://bcit.ca/)
- * @license	http://opensource.org/licenses/MIT	MIT License
- * @link	http://codeigniter.com
- * @since	Version 1.0.0
- * @filesource
- */
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 /*
@@ -218,11 +182,11 @@ $config['permitted_uri_chars'] = 'a-z 0-9~%.:_\-';
 | use segment based URLs.
 |
 */
-$config['allow_get_array']		= TRUE;
+$config['allow_get_array'] = TRUE;
 $config['enable_query_strings'] = FALSE;
-$config['controller_trigger']	= 'c';
-$config['function_trigger']		= 'm';
-$config['directory_trigger']	= 'd'; // experimental not currently in use
+$config['controller_trigger'] = 'c';
+$config['function_trigger'] = 'm';
+$config['directory_trigger'] = 'd';
 
 /*
 |--------------------------------------------------------------------------
@@ -322,14 +286,24 @@ $config['cache_path'] = '';
 
 /*
 |--------------------------------------------------------------------------
+| Cache Include Query String
+|--------------------------------------------------------------------------
+|
+| Set this to TRUE if you want to use different cache files depending on the
+| URL query string.  Please be aware this might result in numerous cache files.
+|
+*/
+$config['cache_query_string'] = FALSE;
+
+/*
+|--------------------------------------------------------------------------
 | Encryption Key
 |--------------------------------------------------------------------------
 |
-| If you use the Encryption class or the Session class you
-| MUST set an encryption key.  See the user guide for info.
+| If you use the Encryption class, you must set an encryption key.
+| See the user guide for more info.
 |
 | http://codeigniter.com/user_guide/libraries/encryption.html
-| http://codeigniter.com/user_guide/libraries/sessions.html
 |
 */
 $config['encryption_key'] = '';
@@ -341,31 +315,35 @@ $config['encryption_key'] = '';
 |
 | 'sess_driver'
 |
-| The storage driver to use: files, database, redis, memcache
+|	The storage driver to use: files, database, redis, memcached
 |
 | 'sess_cookie_name'
 |
-| The session cookie name, must contain only [0-9a-z_-] characters
+|	The session cookie name, must contain only [0-9a-z_-] characters
 |
 | 'sess_expiration'
 |
-| The number of SECONDS you want the session to last.
-| Setting to 0 (zero) means expire when the browser is closed.
+|	The number of SECONDS you want the session to last.
+|	Setting to 0 (zero) means expire when the browser is closed.
 |
 | 'sess_save_path'
 |
-| The location to save sessions to, driver dependant.
+|	The location to save sessions to, driver dependant
+|
+|	For the 'files' driver, it's a path to a directory.
+|	For the 'database' driver, it's a table name.
+|	Please read up the manual for the format with other session drivers.
 |
 | 'sess_match_ip'
 |
-| Whether to match the user's IP address when reading the session data.
+|	Whether to match the user's IP address when reading the session data.
 |
 | 'sess_time_to_update'
 |
-| How many seconds between CI regenerating the session ID.
+|	How many seconds between CI regenerating the session ID.
 |
 | Other session cookie settings are shared with the rest of the application,
-| except for 'cookie_prefix', which is ignored here.
+| except for 'cookie_prefix' and 'cookie_httponly', which are ignored here.
 |
 */
 $config['sess_driver'] = 'database';
@@ -380,11 +358,14 @@ $config['sess_time_to_update'] = 300;
 | Cookie Related Variables
 |--------------------------------------------------------------------------
 |
-| 'cookie_prefix' = Set a prefix if you need to avoid collisions
-| 'cookie_domain' = Set to .your-domain.com for site-wide cookies
-| 'cookie_path'   =  Typically will be a forward slash
-| 'cookie_secure' =  Cookies will only be set if a secure HTTPS connection exists.
+| 'cookie_prefix'   = Set a cookie name prefix if you need to avoid collisions
+| 'cookie_domain'   = Set to .your-domain.com for site-wide cookies
+| 'cookie_path'     = Typically will be a forward slash
+| 'cookie_secure'   = Cookie will only be set if a secure HTTPS connection exists.
 | 'cookie_httponly' = Cookie will only be accessible via HTTP(S) (no javascript)
+|
+| Note: These settings (with the exception of 'cookie_prefix' and
+|       'cookie_httponly') will also affect sessions.
 |
 */
 $config['cookie_prefix']	= '';
@@ -463,18 +444,6 @@ $config['compress_output'] = FALSE;
 
 /*
 |--------------------------------------------------------------------------
-| Minify
-|--------------------------------------------------------------------------
-|
-| Removes extra characters (usually unnecessary spaces) from your
-| output for faster page load speeds.  Makes your outputted HTML source
-| code less readable.
-|
-*/
-$config['minify_output'] = FALSE;
-
-/*
-|--------------------------------------------------------------------------
 | Master Time Reference
 |--------------------------------------------------------------------------
 |
@@ -485,7 +454,6 @@ $config['minify_output'] = FALSE;
 |
 */
 $config['time_reference'] = 'local';
-
 
 /*
 |--------------------------------------------------------------------------
@@ -517,7 +485,3 @@ $config['rewrite_short_tags'] = FALSE;
 | Array:		array('10.0.1.200', '192.168.5.0/24')
 */
 $config['proxy_ips'] = '';
-
-
-/* End of file config.php */
-/* Location: ./application/config/config.php */

@@ -294,9 +294,9 @@ cookies.</p>
 </tr>
 </tbody>
 </table>
-<p>This helper function gives you view file friendly syntax to set browser
-cookies. Refer to the <a class="reference internal" href="../libraries/input.html"><em>Input Library</em></a> for a
-description of its use, as this function is an alias for
+<p>This helper function gives you friendlier syntax to set browser
+cookies. Refer to the <a class="reference internal" href="../libraries/input.html"><em>Input Library</em></a> for
+a description of its use, as this function is an alias for
 <tt class="docutils literal"><span class="pre">CI_Input::set_cookie()</span></tt>.</p>
 </dd></dl>
 
@@ -321,9 +321,12 @@ description of its use, as this function is an alias for
 </tr>
 </tbody>
 </table>
-<p>This helper function gives you view file friendly syntax to get browser
-cookies. Refer to the <a class="reference internal" href="../libraries/input.html"><em>Input Library</em></a> for a
-description of its use, as this function is an alias for <tt class="docutils literal"><span class="pre">CI_Input::cookie()</span></tt>.</p>
+<p>This helper function gives you friendlier syntax to get browser
+cookies. Refer to the <a class="reference internal" href="../libraries/input.html"><em>Input Library</em></a> for
+detailed description of its use, as this function acts very
+similarly to <tt class="docutils literal"><span class="pre">CI_Input::cookie()</span></tt>, except it will also prepend
+the <tt class="docutils literal"><span class="pre">$config['cookie_prefix']</span></tt> that you might&#8217;ve set in your
+<em>application/config/config.php</em> file.</p>
 </dd></dl>
 
 <dl class="function">
@@ -355,7 +358,7 @@ values, only the name of the cookie is needed.</p>
 does not have the value and expiration parameters. You can submit an
 array of values in the first parameter or you can set discrete
 parameters.</p>
-<div class="highlight-ci"><div class="highlight"><pre><span class="nx">delete_cookie</span><span class="p">(</span><span class="nv">$name</span><span class="p">,</span> <span class="nv">$domain</span><span class="p">,</span> <span class="nv">$path</span><span class="p">,</span> <span class="nv">$prefix</span><span class="p">)</span>
+<div class="highlight-ci"><div class="highlight"><pre><span class="nx">delete_cookie</span><span class="p">(</span><span class="nv">$name</span><span class="p">,</span> <span class="nv">$domain</span><span class="p">,</span> <span class="nv">$path</span><span class="p">,</span> <span class="nv">$prefix</span><span class="p">);</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -382,7 +385,7 @@ parameters.</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2015, British Columbia Institute of Technology.
-      Last updated on Jan 21, 2015.
+      Last updated on Jan 29, 2015.
     </p>
   </div>
 

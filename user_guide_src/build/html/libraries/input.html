@@ -561,6 +561,12 @@ as an array.</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">input</span><span class="o">-&gt;</span><span class="na">cookie</span><span class="p">(</span><span class="k">array</span><span class="p">(</span><span class="s1">&#39;some_cookie&#39;</span><span class="p">,</span> <span class="s1">&#39;some_cookie2&#39;</span><span class="p">));</span>
 </pre></div>
 </div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Unlike the <a class="reference internal" href="../helpers/cookie_helper.html"><em>Cookie Helper</em></a>
+function <a class="reference internal" href="../helpers/cookie_helper.html#get_cookie" title="get_cookie"><tt class="xref py py-func docutils literal"><span class="pre">get_cookie()</span></tt></a>, this method does NOT prepend
+your configured <tt class="docutils literal"><span class="pre">$config['cookie_prefix']</span></tt> value.</p>
+</div>
 </dd></dl>
 
 <dl class="method">
@@ -928,7 +934,7 @@ in uppercase or lowercase.</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2015, British Columbia Institute of Technology.
-      Last updated on Jan 21, 2015.
+      Last updated on Jan 29, 2015.
     </p>
   </div>
 

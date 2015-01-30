@@ -596,6 +596,7 @@ Only entries in <tt class="docutils literal"><span class="pre">$autoload['librar
 <li>Fields that have empty rules set no longer run through validation (and therefore are not considered erroneous).</li>
 <li>Added rule <strong>differs</strong> to check if the value of a field differs from the value of another field.</li>
 <li>Added rule <strong>valid_url</strong>.</li>
+<li>Added rule <strong>in_list</strong> to check if the value of a field is within a given list.</li>
 <li>Added support for named parameters in error messages.</li>
 <li><a class="reference internal" href="libraries/language.html"><em>Language</em></a> line keys must now be prefixed with <strong>form_validation_</strong>.</li>
 <li>Added rule <strong>alpha_numeric_spaces</strong>.</li>
@@ -780,7 +781,7 @@ Only entries in <tt class="docutils literal"><span class="pre">$autoload['librar
 <li>Changed method <tt class="docutils literal"><span class="pre">load()</span></tt> to filter the language name with <tt class="docutils literal"><span class="pre">ctype_alpha()</span></tt>.</li>
 <li>Changed method <tt class="docutils literal"><span class="pre">load()</span></tt> to also accept an array of language files.</li>
 <li>Added an optional second parameter to method <tt class="docutils literal"><span class="pre">line()</span></tt> to disable error logging for line keys that were not found.</li>
-<li>Language files are now loaded in a cascading style with the one in <strong>system/</strong> always loaded and overriden afterwards, if another one is found.</li>
+<li>Language files are now loaded in a cascading style with the one in <strong>system/</strong> always loaded and overridden afterwards, if another one is found.</li>
 </ul>
 </li>
 <li><a class="reference internal" href="general/hooks.html"><em>Hooks Library</em></a> changes include:<ul>
@@ -3350,7 +3351,7 @@ and fixed various typos.</li>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2015, British Columbia Institute of Technology.
-      Last updated on Jan 26, 2015.
+      Last updated on Jan 29, 2015.
     </p>
   </div>
 

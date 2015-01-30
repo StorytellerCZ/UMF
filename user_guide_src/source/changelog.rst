@@ -353,6 +353,7 @@ Release Date: Not Released
       -  Fields that have empty rules set no longer run through validation (and therefore are not considered erroneous).
       -  Added rule **differs** to check if the value of a field differs from the value of another field.
       -  Added rule **valid_url**.
+      -  Added rule **in_list** to check if the value of a field is within a given list.
       -  Added support for named parameters in error messages.
       -  :doc:`Language <libraries/language>` line keys must now be prefixed with **form_validation_**.
       -  Added rule **alpha_numeric_spaces**.
@@ -537,7 +538,7 @@ Release Date: Not Released
       -  Changed method ``load()`` to filter the language name with ``ctype_alpha()``.
       -  Changed method ``load()`` to also accept an array of language files.
       -  Added an optional second parameter to method ``line()`` to disable error logging for line keys that were not found.
-      -  Language files are now loaded in a cascading style with the one in **system/** always loaded and overriden afterwards, if another one is found.
+      -  Language files are now loaded in a cascading style with the one in **system/** always loaded and overridden afterwards, if another one is found.
 
    -  :doc:`Hooks Library <general/hooks>` changes include:
 
