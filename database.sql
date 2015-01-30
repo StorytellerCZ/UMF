@@ -258,7 +258,7 @@ CREATE TABLE IF NOT EXISTS `a3m_rel_role_permission` (
 -- Giving the Admin role (1) all permissions
 --
 
-INSERT INTO `a3m_rel_role_permission` (`role_id`, `permission_id`) 
+INSERT INTO `a3m_rel_role_permission` (`role_id`, `permission_id`)
 SELECT 1, `id` FROM `a3m_acl_permission`;
 
 
@@ -272,11 +272,11 @@ DROP TABLE IF EXISTS `ci_sessions` ;
 CREATE TABLE IF NOT EXISTS `ci_sessions` (
   `id` varchar(40) NOT NULL,
   `ip_address` varchar(45) NOT NULL,
-  `timestamp` int(11) NOT NULL,
-  `data` blob NOT NULL,
-  PRIMARY KEY (`id`),
-  KEY `ip_address` (`ip_address`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  `timestamp` int(10) unsigned DEFAULT 0 NOT NULL,
+  `data` blob DEFAULT '' NOT NULL,
+  PRIMARY KEY (id),
+  KEY `ci_sessions_timestamp` (`timestamp`)
+);
 
 -- --------------------------------------------------------
 
