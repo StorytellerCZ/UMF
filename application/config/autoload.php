@@ -76,7 +76,7 @@ $autoload['libraries'] = array('account/Authorization', 'account/Authentication'
 |	$autoload['drivers'] = array('cache');
 */
 
-$autoload['drivers'] = array('session', 'cache');
+$autoload['drivers'] = array();
 
 
 /*
