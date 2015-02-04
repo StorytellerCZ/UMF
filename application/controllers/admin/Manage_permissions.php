@@ -54,7 +54,7 @@ class Manage_permissions extends CI_Controller
             if( $rperm->role_id == $role->id )
             {
               $current['role_list'][] = array(
-                'id' => $role->id, 
+                'id' => $role->id,
                 'name' => $role->name,
                 'title' => $role->description );
             }
@@ -124,20 +124,20 @@ class Manage_permissions extends CI_Controller
         array(
           'field' => 'permission_key',
           'label' => 'lang:permissions_key',
-          'rules' => 'trim|required|alpha_dash|max_length[80]|xss_clean'),
+          'rules' => 'trim|required|alpha_dash|max_length[80]'),
         array(
           'field' => 'permission_description',
           'label' => 'lang:permissions_description',
-          'rules' => 'trim|max_length[160]|xss_clean')
+          'rules' => 'trim|max_length[160]')
       ));
 
     // Run form validation
     if ($this->form_validation->run())
     {
-      
+
       $name_taken = $this->name_check($this->input->post('permission_key', TRUE));
 
-      
+
       if ( (! empty($id) && strtolower($this->input->post('permission_key', TRUE)) != strtolower($data['permission']->key) && $name_taken) || (empty($id) && $name_taken) )
       {
         $data['permission_key_error'] = lang('permissions_name_taken');
@@ -155,10 +155,10 @@ class Manage_permissions extends CI_Controller
 
         $attributes['description'] = $this->input->post('permission_description', TRUE) ? $this->input->post('permission_description', TRUE) : NULL;
         $id = $this->Acl_permission_model->update($id, $attributes);
-      
+
 
         // Check if the permission should be disabled
-        if( $this->authorization->is_permitted('delete_permissions') ) 
+        if( $this->authorization->is_permitted('delete_permissions') )
         {
           if( $this->input->post('manage_permission_ban', TRUE) )
           {
@@ -184,7 +184,7 @@ class Manage_permissions extends CI_Controller
           }
         }
 
-        redirect('admin/manage_permissions'); 
+        redirect('admin/manage_permissions');
       }
     }
     // Load manage permissions view
