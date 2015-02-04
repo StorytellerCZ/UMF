@@ -306,17 +306,22 @@ to avoid collisions when you&#8217;re running multiple applications on the same 
 <dt id="CI_Cache">
 <em class="property">class </em><tt class="descname">CI_Cache</tt><a class="headerlink" href="#CI_Cache" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="method">
-<dt id="CI_Cache.is_supported">
-<tt class="descname">is_supported</tt><big>(</big><em>$driver</em><big>)</big><a class="headerlink" href="#CI_Cache.is_supported" title="Permalink to this definition">¶</a></dt>
+<dt id="CI_Cache::is_supported">
+<tt class="descname">is_supported</tt><big>(</big><em>$driver</em><big>)</big><a class="headerlink" href="#CI_Cache::is_supported" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>$driver</strong> (<em>string</em>) &#8211; the name of the caching driver</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>$driver</strong> (<em>string</em>) &#8211; the name of the caching driver</li>
+</ul>
+</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">TRUE if supported, FALSE if not</td>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">TRUE if supported, FALSE if not</p>
+</td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">bool</p>
+</td>
 </tr>
 </tbody>
 </table>
@@ -336,17 +341,22 @@ hosting environment.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="CI_Cache.get">
-<tt class="descname">get</tt><big>(</big><em>$id</em><big>)</big><a class="headerlink" href="#CI_Cache.get" title="Permalink to this definition">¶</a></dt>
+<dt id="CI_Cache::get">
+<tt class="descname">get</tt><big>(</big><em>$id</em><big>)</big><a class="headerlink" href="#CI_Cache::get" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>$id</strong> (<em>string</em>) &#8211; Cache item name</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>$id</strong> (<em>string</em>) &#8211; Cache item name</li>
+</ul>
+</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Item value or FALSE if not found</td>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Item value or FALSE if not found</p>
+</td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">mixed</td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">mixed</p>
+</td>
 </tr>
 </tbody>
 </table>
@@ -358,8 +368,8 @@ item does not exist, the method will return FALSE.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="CI_Cache.save">
-<tt class="descname">save</tt><big>(</big><em>$id</em>, <em>$data</em><span class="optional">[</span>, <em>$ttl = 60</em><span class="optional">[</span>, <em>$raw = FALSE</em><span class="optional">]</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_Cache.save" title="Permalink to this definition">¶</a></dt>
+<dt id="CI_Cache::save">
+<tt class="descname">save</tt><big>(</big><em>$id</em>, <em>$data</em><span class="optional">[</span>, <em>$ttl = 60</em><span class="optional">[</span>, <em>$raw = FALSE</em><span class="optional">]</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_Cache::save" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -393,17 +403,22 @@ in order to allow usage of <tt class="docutils literal"><span class="pre">increm
 </dd></dl>
 
 <dl class="method">
-<dt id="CI_Cache.delete">
-<tt class="descname">delete</tt><big>(</big><em>$id</em><big>)</big><a class="headerlink" href="#CI_Cache.delete" title="Permalink to this definition">¶</a></dt>
+<dt id="CI_Cache::delete">
+<tt class="descname">delete</tt><big>(</big><em>$id</em><big>)</big><a class="headerlink" href="#CI_Cache::delete" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>$id</strong> (<em>string</em>) &#8211; name of cached item</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>$id</strong> (<em>string</em>) &#8211; name of cached item</li>
+</ul>
+</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">TRUE on success, FALSE on failure</td>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">TRUE on success, FALSE on failure</p>
+</td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">bool</p>
+</td>
 </tr>
 </tbody>
 </table>
@@ -415,8 +430,8 @@ deletion fails, the method will return FALSE.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="CI_Cache.increment">
-<tt class="descname">increment</tt><big>(</big><em>$id</em><span class="optional">[</span>, <em>$offset = 1</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_Cache.increment" title="Permalink to this definition">¶</a></dt>
+<dt id="CI_Cache::increment">
+<tt class="descname">increment</tt><big>(</big><em>$id</em><span class="optional">[</span>, <em>$offset = 1</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_Cache::increment" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -446,8 +461,8 @@ deletion fails, the method will return FALSE.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="CI_Cache.decrement">
-<tt class="descname">decrement</tt><big>(</big><em>$id</em><span class="optional">[</span>, <em>$offset = 1</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_Cache.decrement" title="Permalink to this definition">¶</a></dt>
+<dt id="CI_Cache::decrement">
+<tt class="descname">decrement</tt><big>(</big><em>$id</em><span class="optional">[</span>, <em>$offset = 1</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_Cache::decrement" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -477,8 +492,8 @@ deletion fails, the method will return FALSE.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="CI_Cache.clean">
-<tt class="descname">clean</tt><big>(</big><big>)</big><a class="headerlink" href="#CI_Cache.clean" title="Permalink to this definition">¶</a></dt>
+<dt id="CI_Cache::clean">
+<tt class="descname">clean</tt><big>(</big><big>)</big><a class="headerlink" href="#CI_Cache::clean" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -497,8 +512,8 @@ cache files fails, the method will return FALSE.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="CI_Cache.cache_info">
-<tt class="descname">cache_info</tt><big>(</big><big>)</big><a class="headerlink" href="#CI_Cache.cache_info" title="Permalink to this definition">¶</a></dt>
+<dt id="CI_Cache::cache_info">
+<tt class="descname">cache_info</tt><big>(</big><big>)</big><a class="headerlink" href="#CI_Cache::cache_info" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -521,17 +536,22 @@ on which adapter is being used.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="CI_Cache.get_metadata">
-<tt class="descname">get_metadata</tt><big>(</big><em>$id</em><big>)</big><a class="headerlink" href="#CI_Cache.get_metadata" title="Permalink to this definition">¶</a></dt>
+<dt id="CI_Cache::get_metadata">
+<tt class="descname">get_metadata</tt><big>(</big><em>$id</em><big>)</big><a class="headerlink" href="#CI_Cache::get_metadata" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>$id</strong> (<em>string</em>) &#8211; Cache item name</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>$id</strong> (<em>string</em>) &#8211; Cache item name</li>
+</ul>
+</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Metadata for the cached item</td>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Metadata for the cached item</p>
+</td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">mixed</td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">mixed</p>
+</td>
 </tr>
 </tbody>
 </table>
@@ -653,7 +673,7 @@ support your chosen cache.</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2015, British Columbia Institute of Technology.
-      Last updated on Jan 21, 2015.
+      Last updated on Feb 03, 2015.
     </p>
   </div>
 

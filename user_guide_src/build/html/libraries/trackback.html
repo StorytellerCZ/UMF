@@ -479,17 +479,22 @@ encouraged to add.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="CI_Trackback.send">
-<tt class="descname">send</tt><big>(</big><em>$tb_data</em><big>)</big><a class="headerlink" href="#CI_Trackback.send" title="Permalink to this definition">¶</a></dt>
+<dt id="CI_Trackback::send">
+<tt class="descname">send</tt><big>(</big><em>$tb_data</em><big>)</big><a class="headerlink" href="#CI_Trackback::send" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>$tb_data</strong> (<em>array</em>) &#8211; Trackback data</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>$tb_data</strong> (<em>array</em>) &#8211; Trackback data</li>
+</ul>
+</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">TRUE on success, FALSE on failure</td>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">TRUE on success, FALSE on failure</p>
+</td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">bool</p>
+</td>
 </tr>
 </tbody>
 </table>
@@ -497,8 +502,8 @@ encouraged to add.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="CI_Trackback.receive">
-<tt class="descname">receive</tt><big>(</big><big>)</big><a class="headerlink" href="#CI_Trackback.receive" title="Permalink to this definition">¶</a></dt>
+<dt id="CI_Trackback::receive">
+<tt class="descname">receive</tt><big>(</big><big>)</big><a class="headerlink" href="#CI_Trackback::receive" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -514,15 +519,19 @@ If the data is valid it is set to the <tt class="docutils literal"><span class="
 </dd></dl>
 
 <dl class="method">
-<dt id="CI_Trackback.send_error">
-<tt class="descname">send_error</tt><big>(</big><em>[$message = 'Incomplete information'</em><big>)</big><a class="headerlink" href="#CI_Trackback.send_error" title="Permalink to this definition">¶</a></dt>
+<dt>
+<tt class="descname">send_error([$message = 'Incomplete information')</tt></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>$message</strong> (<em>string</em>) &#8211; Error message</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>$message</strong> (<em>string</em>) &#8211; Error message</li>
+</ul>
+</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">void</td>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">void</p>
+</td>
 </tr>
 </tbody>
 </table>
@@ -534,8 +543,8 @@ If the data is valid it is set to the <tt class="docutils literal"><span class="
 </dd></dl>
 
 <dl class="method">
-<dt id="CI_Trackback.send_success">
-<tt class="descname">send_success</tt><big>(</big><big>)</big><a class="headerlink" href="#CI_Trackback.send_success" title="Permalink to this definition">¶</a></dt>
+<dt id="CI_Trackback::send_success">
+<tt class="descname">send_success</tt><big>(</big><big>)</big><a class="headerlink" href="#CI_Trackback::send_success" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -552,17 +561,22 @@ If the data is valid it is set to the <tt class="docutils literal"><span class="
 </dd></dl>
 
 <dl class="method">
-<dt id="CI_Trackback.data">
-<tt class="descname">data</tt><big>(</big><em>$item</em><big>)</big><a class="headerlink" href="#CI_Trackback.data" title="Permalink to this definition">¶</a></dt>
+<dt id="CI_Trackback::data">
+<tt class="descname">data</tt><big>(</big><em>$item</em><big>)</big><a class="headerlink" href="#CI_Trackback::data" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>$item</strong> (<em>string</em>) &#8211; Data key</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>$item</strong> (<em>string</em>) &#8211; Data key</li>
+</ul>
+</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Data value or empty string if not found</td>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Data value or empty string if not found</p>
+</td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">string</td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">string</p>
+</td>
 </tr>
 </tbody>
 </table>
@@ -570,8 +584,8 @@ If the data is valid it is set to the <tt class="docutils literal"><span class="
 </dd></dl>
 
 <dl class="method">
-<dt id="CI_Trackback.process">
-<tt class="descname">process</tt><big>(</big><em>$url</em>, <em>$data</em><big>)</big><a class="headerlink" href="#CI_Trackback.process" title="Permalink to this definition">¶</a></dt>
+<dt id="CI_Trackback::process">
+<tt class="descname">process</tt><big>(</big><em>$url</em>, <em>$data</em><big>)</big><a class="headerlink" href="#CI_Trackback::process" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -594,17 +608,22 @@ If the data is valid it is set to the <tt class="docutils literal"><span class="
 </dd></dl>
 
 <dl class="method">
-<dt id="CI_Trackback.extract_urls">
-<tt class="descname">extract_urls</tt><big>(</big><em>$urls</em><big>)</big><a class="headerlink" href="#CI_Trackback.extract_urls" title="Permalink to this definition">¶</a></dt>
+<dt id="CI_Trackback::extract_urls">
+<tt class="descname">extract_urls</tt><big>(</big><em>$urls</em><big>)</big><a class="headerlink" href="#CI_Trackback::extract_urls" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>$urls</strong> (<em>string</em>) &#8211; Comma-separated URL list</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>$urls</strong> (<em>string</em>) &#8211; Comma-separated URL list</li>
+</ul>
+</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Array of URLs</td>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Array of URLs</p>
+</td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">array</td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">array</p>
+</td>
 </tr>
 </tbody>
 </table>
@@ -612,15 +631,19 @@ If the data is valid it is set to the <tt class="docutils literal"><span class="
 </dd></dl>
 
 <dl class="method">
-<dt id="CI_Trackback.validate_url">
-<tt class="descname">validate_url</tt><big>(</big><em>&amp;$url</em><big>)</big><a class="headerlink" href="#CI_Trackback.validate_url" title="Permalink to this definition">¶</a></dt>
+<dt id="CI_Trackback::validate_url">
+<tt class="descname">validate_url</tt><big>(</big><em>&amp;$url</em><big>)</big><a class="headerlink" href="#CI_Trackback::validate_url" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>$url</strong> (<em>string</em>) &#8211; Trackback URL</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>$url</strong> (<em>string</em>) &#8211; Trackback URL</li>
+</ul>
+</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">void</td>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">void</p>
+</td>
 </tr>
 </tbody>
 </table>
@@ -628,17 +651,22 @@ If the data is valid it is set to the <tt class="docutils literal"><span class="
 </dd></dl>
 
 <dl class="method">
-<dt id="CI_Trackback.get_id">
-<tt class="descname">get_id</tt><big>(</big><em>$url</em><big>)</big><a class="headerlink" href="#CI_Trackback.get_id" title="Permalink to this definition">¶</a></dt>
+<dt id="CI_Trackback::get_id">
+<tt class="descname">get_id</tt><big>(</big><em>$url</em><big>)</big><a class="headerlink" href="#CI_Trackback::get_id" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>$url</strong> (<em>string</em>) &#8211; Trackback URL</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>$url</strong> (<em>string</em>) &#8211; Trackback URL</li>
+</ul>
+</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">URL ID or FALSE on failure</td>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">URL ID or FALSE on failure</p>
+</td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">string</td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">string</p>
+</td>
 </tr>
 </tbody>
 </table>
@@ -646,17 +674,22 @@ If the data is valid it is set to the <tt class="docutils literal"><span class="
 </dd></dl>
 
 <dl class="method">
-<dt id="CI_Trackback.convert_xml">
-<tt class="descname">convert_xml</tt><big>(</big><em>$str</em><big>)</big><a class="headerlink" href="#CI_Trackback.convert_xml" title="Permalink to this definition">¶</a></dt>
+<dt id="CI_Trackback::convert_xml">
+<tt class="descname">convert_xml</tt><big>(</big><em>$str</em><big>)</big><a class="headerlink" href="#CI_Trackback::convert_xml" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>$str</strong> (<em>string</em>) &#8211; Input string</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>$str</strong> (<em>string</em>) &#8211; Input string</li>
+</ul>
+</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Converted string</td>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Converted string</p>
+</td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">string</td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">string</p>
+</td>
 </tr>
 </tbody>
 </table>
@@ -664,8 +697,8 @@ If the data is valid it is set to the <tt class="docutils literal"><span class="
 </dd></dl>
 
 <dl class="method">
-<dt id="CI_Trackback.limit_characters">
-<tt class="descname">limit_characters</tt><big>(</big><em>$str</em><span class="optional">[</span>, <em>$n = 500</em><span class="optional">[</span>, <em>$end_char = '&amp;#8230;'</em><span class="optional">]</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_Trackback.limit_characters" title="Permalink to this definition">¶</a></dt>
+<dt id="CI_Trackback::limit_characters">
+<tt class="descname">limit_characters</tt><big>(</big><em>$str</em><span class="optional">[</span>, <em>$n = 500</em><span class="optional">[</span>, <em>$end_char = '&amp;#8230;'</em><span class="optional">]</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_Trackback::limit_characters" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -689,17 +722,22 @@ If the data is valid it is set to the <tt class="docutils literal"><span class="
 </dd></dl>
 
 <dl class="method">
-<dt id="CI_Trackback.convert_ascii">
-<tt class="descname">convert_ascii</tt><big>(</big><em>$str</em><big>)</big><a class="headerlink" href="#CI_Trackback.convert_ascii" title="Permalink to this definition">¶</a></dt>
+<dt id="CI_Trackback::convert_ascii">
+<tt class="descname">convert_ascii</tt><big>(</big><em>$str</em><big>)</big><a class="headerlink" href="#CI_Trackback::convert_ascii" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>$str</strong> (<em>string</em>) &#8211; Input string</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>$str</strong> (<em>string</em>) &#8211; Input string</li>
+</ul>
+</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Converted string</td>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Converted string</p>
+</td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">string</td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">string</p>
+</td>
 </tr>
 </tbody>
 </table>
@@ -707,15 +745,19 @@ If the data is valid it is set to the <tt class="docutils literal"><span class="
 </dd></dl>
 
 <dl class="method">
-<dt id="CI_Trackback.set_error">
-<tt class="descname">set_error</tt><big>(</big><em>$msg</em><big>)</big><a class="headerlink" href="#CI_Trackback.set_error" title="Permalink to this definition">¶</a></dt>
+<dt id="CI_Trackback::set_error">
+<tt class="descname">set_error</tt><big>(</big><em>$msg</em><big>)</big><a class="headerlink" href="#CI_Trackback::set_error" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>$msg</strong> (<em>string</em>) &#8211; Error message</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>$msg</strong> (<em>string</em>) &#8211; Error message</li>
+</ul>
+</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">void</td>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">void</p>
+</td>
 </tr>
 </tbody>
 </table>
@@ -723,8 +765,8 @@ If the data is valid it is set to the <tt class="docutils literal"><span class="
 </dd></dl>
 
 <dl class="method">
-<dt id="CI_Trackback.display_errors">
-<tt class="descname">display_errors</tt><big>(</big><span class="optional">[</span><em>$open = '&lt;p&gt;'</em><span class="optional">[</span>, <em>$close = '&lt;/p&gt;'</em><span class="optional">]</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_Trackback.display_errors" title="Permalink to this definition">¶</a></dt>
+<dt id="CI_Trackback::display_errors">
+<tt class="descname">display_errors</tt><big>(</big><span class="optional">[</span><em>$open = '&lt;p&gt;'</em><span class="optional">[</span>, <em>$close = '&lt;/p&gt;'</em><span class="optional">]</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_Trackback::display_errors" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -770,7 +812,7 @@ If the data is valid it is set to the <tt class="docutils literal"><span class="
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2015, British Columbia Institute of Technology.
-      Last updated on Jan 21, 2015.
+      Last updated on Feb 03, 2015.
     </p>
   </div>
 

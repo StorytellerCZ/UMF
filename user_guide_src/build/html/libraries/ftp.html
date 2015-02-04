@@ -341,17 +341,22 @@ file is read and uploaded in ASCII mode. The file permissions are set to
 <dt id="CI_FTP">
 <em class="property">class </em><tt class="descname">CI_FTP</tt><a class="headerlink" href="#CI_FTP" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="method">
-<dt id="CI_FTP.connect">
-<tt class="descname">connect</tt><big>(</big><span class="optional">[</span><em>$config = array()</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_FTP.connect" title="Permalink to this definition">¶</a></dt>
+<dt id="CI_FTP::connect">
+<tt class="descname">connect</tt><big>(</big><span class="optional">[</span><em>$config = array()</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_FTP::connect" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>$config</strong> (<em>array</em>) &#8211; Connection values</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>$config</strong> (<em>array</em>) &#8211; Connection values</li>
+</ul>
+</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">TRUE on success, FALSE on failure</td>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">TRUE on success, FALSE on failure</p>
+</td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">bool</p>
+</td>
 </tr>
 </tbody>
 </table>
@@ -419,8 +424,8 @@ will be used automatically.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="CI_FTP.upload">
-<tt class="descname">upload</tt><big>(</big><em>$locpath</em>, <em>$rempath</em><span class="optional">[</span>, <em>$mode = 'auto'</em><span class="optional">[</span>, <em>$permissions = NULL</em><span class="optional">]</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_FTP.upload" title="Permalink to this definition">¶</a></dt>
+<dt id="CI_FTP::upload">
+<tt class="descname">upload</tt><big>(</big><em>$locpath</em>, <em>$rempath</em><span class="optional">[</span>, <em>$mode = 'auto'</em><span class="optional">[</span>, <em>$permissions = NULL</em><span class="optional">]</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_FTP::upload" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -452,8 +457,8 @@ Example:</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="CI_FTP.download">
-<tt class="descname">download</tt><big>(</big><em>$rempath</em>, <em>$locpath</em><span class="optional">[</span>, <em>$mode = 'auto'</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_FTP.download" title="Permalink to this definition">¶</a></dt>
+<dt id="CI_FTP::download">
+<tt class="descname">download</tt><big>(</big><em>$rempath</em>, <em>$locpath</em><span class="optional">[</span>, <em>$mode = 'auto'</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_FTP::download" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -484,8 +489,8 @@ the local path, and you can optionally set the mode. Example:</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="CI_FTP.rename">
-<tt class="descname">rename</tt><big>(</big><em>$old_file</em>, <em>$new_file</em><span class="optional">[</span>, <em>$move = FALSE</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_FTP.rename" title="Permalink to this definition">¶</a></dt>
+<dt id="CI_FTP::rename">
+<tt class="descname">rename</tt><big>(</big><em>$old_file</em>, <em>$new_file</em><span class="optional">[</span>, <em>$move = FALSE</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_FTP::rename" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -513,8 +518,8 @@ the local path, and you can optionally set the mode. Example:</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="CI_FTP.move">
-<tt class="descname">move</tt><big>(</big><em>$old_file</em>, <em>$new_file</em><big>)</big><a class="headerlink" href="#CI_FTP.move" title="Permalink to this definition">¶</a></dt>
+<dt id="CI_FTP::move">
+<tt class="descname">move</tt><big>(</big><em>$old_file</em>, <em>$new_file</em><big>)</big><a class="headerlink" href="#CI_FTP::move" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -545,17 +550,22 @@ the local path, and you can optionally set the mode. Example:</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="CI_FTP.delete_file">
-<tt class="descname">delete_file</tt><big>(</big><em>$filepath</em><big>)</big><a class="headerlink" href="#CI_FTP.delete_file" title="Permalink to this definition">¶</a></dt>
+<dt id="CI_FTP::delete_file">
+<tt class="descname">delete_file</tt><big>(</big><em>$filepath</em><big>)</big><a class="headerlink" href="#CI_FTP::delete_file" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>$filepath</strong> (<em>string</em>) &#8211; Path to file to delete</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>$filepath</strong> (<em>string</em>) &#8211; Path to file to delete</li>
+</ul>
+</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">TRUE on success, FALSE on failure</td>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">TRUE on success, FALSE on failure</p>
+</td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">bool</p>
+</td>
 </tr>
 </tbody>
 </table>
@@ -566,17 +576,22 @@ the local path, and you can optionally set the mode. Example:</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="CI_FTP.delete_dir">
-<tt class="descname">delete_dir</tt><big>(</big><em>$filepath</em><big>)</big><a class="headerlink" href="#CI_FTP.delete_dir" title="Permalink to this definition">¶</a></dt>
+<dt id="CI_FTP::delete_dir">
+<tt class="descname">delete_dir</tt><big>(</big><em>$filepath</em><big>)</big><a class="headerlink" href="#CI_FTP::delete_dir" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>$filepath</strong> (<em>string</em>) &#8211; Path to directory to delete</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>$filepath</strong> (<em>string</em>) &#8211; Path to directory to delete</li>
+</ul>
+</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">TRUE on success, FALSE on failure</td>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">TRUE on success, FALSE on failure</p>
+</td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">bool</p>
+</td>
 </tr>
 </tbody>
 </table>
@@ -595,17 +610,22 @@ is correct. Try using <tt class="docutils literal"><span class="pre">list_files(
 </dd></dl>
 
 <dl class="method">
-<dt id="CI_FTP.list_files">
-<tt class="descname">list_files</tt><big>(</big><span class="optional">[</span><em>$path = '.'</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_FTP.list_files" title="Permalink to this definition">¶</a></dt>
+<dt id="CI_FTP::list_files">
+<tt class="descname">list_files</tt><big>(</big><span class="optional">[</span><em>$path = '.'</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_FTP::list_files" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>$path</strong> (<em>string</em>) &#8211; Directory path</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>$path</strong> (<em>string</em>) &#8211; Directory path</li>
+</ul>
+</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">An array list of files or FALSE on failure</td>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">An array list of files or FALSE on failure</p>
+</td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">array</td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">array</p>
+</td>
 </tr>
 </tbody>
 </table>
@@ -618,8 +638,8 @@ array. You must supply the path to the desired directory.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="CI_FTP.mirror">
-<tt class="descname">mirror</tt><big>(</big><em>$locpath</em>, <em>$rempath</em><big>)</big><a class="headerlink" href="#CI_FTP.mirror" title="Permalink to this definition">¶</a></dt>
+<dt id="CI_FTP::mirror">
+<tt class="descname">mirror</tt><big>(</big><em>$locpath</em>, <em>$rempath</em><big>)</big><a class="headerlink" href="#CI_FTP::mirror" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -648,8 +668,8 @@ server. You must supply a source path and a destination path:</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="CI_FTP.mkdir">
-<tt class="descname">mkdir</tt><big>(</big><em>$path</em><span class="optional">[</span>, <em>$permissions = NULL</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_FTP.mkdir" title="Permalink to this definition">¶</a></dt>
+<dt id="CI_FTP::mkdir">
+<tt class="descname">mkdir</tt><big>(</big><em>$path</em><span class="optional">[</span>, <em>$permissions = NULL</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_FTP::mkdir" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -678,8 +698,8 @@ the folder name you wish to create, with a trailing slash.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="CI_FTP.chmod">
-<tt class="descname">chmod</tt><big>(</big><em>$path</em>, <em>$perm</em><big>)</big><a class="headerlink" href="#CI_FTP.chmod" title="Permalink to this definition">¶</a></dt>
+<dt id="CI_FTP::chmod">
+<tt class="descname">chmod</tt><big>(</big><em>$path</em>, <em>$perm</em><big>)</big><a class="headerlink" href="#CI_FTP::chmod" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -707,8 +727,8 @@ directory you wish to alter permissions on:</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="CI_FTP.changedir">
-<tt class="descname">changedir</tt><big>(</big><em>$path</em><span class="optional">[</span>, <em>$suppress_debug = FALSE</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_FTP.changedir" title="Permalink to this definition">¶</a></dt>
+<dt id="CI_FTP::changedir">
+<tt class="descname">changedir</tt><big>(</big><em>$path</em><span class="optional">[</span>, <em>$suppress_debug = FALSE</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_FTP::changedir" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -733,8 +753,8 @@ as an <tt class="docutils literal"><span class="pre">is_dir()</span></tt> altern
 </dd></dl>
 
 <dl class="method">
-<dt id="CI_FTP.close">
-<tt class="descname">close</tt><big>(</big><big>)</big><a class="headerlink" href="#CI_FTP.close" title="Permalink to this definition">¶</a></dt>
+<dt id="CI_FTP::close">
+<tt class="descname">close</tt><big>(</big><big>)</big><a class="headerlink" href="#CI_FTP::close" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -773,7 +793,7 @@ when you are finished uploading.</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2015, British Columbia Institute of Technology.
-      Last updated on Jan 21, 2015.
+      Last updated on Feb 03, 2015.
     </p>
   </div>
 

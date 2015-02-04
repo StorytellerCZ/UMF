@@ -1,23 +1,24 @@
 <?php
 /**
- * A3M (Account Authentication & Authorization) is a CodeIgniter 3.x package.
- * It gives you the CRUD to get working right away without too much fuss and tinkering!
- * Designed for building webapps from scratch without all that tiresome login / logout / admin stuff thats always required.
- *
- * @link https://github.com/donjakobo/A3M GitHub repository
- */
+* A3M (Account Authentication & Authorization) is a CodeIgniter 3.x package.
+* It gives you the CRUD to get working right away without too much fuss and tinkering!
+* Designed for building webapps from scratch without all that tiresome login / logout / admin stuff thats always required.
+*
+* @link https://github.com/donjakobo/A3M GitHub repository
+*/
 defined('BASEPATH') OR exit('No direct script access allowed');
 /**
- * Sign up
- *
- * @package A3M
- * @subpackage Controllers
- */
-class Sign_up extends CI_Controller {
+* Sign up
+*
+* @package A3M
+* @subpackage Controllers
+*/
+class Sign_up extends CI_Controller
+{
 
 	/**
-	 * Constructor
-	 */
+	* Constructor
+	*/
 	function __construct()
 	{
 		parent::__construct();
@@ -30,11 +31,11 @@ class Sign_up extends CI_Controller {
 	}
 
 	/**
-	 * Account sign up
-	 *
-	 * @access public
-	 * @return void
-	 */
+	* Account sign up
+	*
+	* @access public
+	* @return void
+	*/
 	function index()
 	{
 		// Enable SSL?
@@ -50,29 +51,29 @@ class Sign_up extends CI_Controller {
 		if ($recaptcha_result === TRUE) $this->session->set_userdata('sign_up_recaptcha_pass', TRUE);
 
 		// Setup form validation
-		$this->form_validation->set_error_delimiters('<span class="alert alert-danger">', '</span>');
+		$this->form_validation->set_error_delimiters('<div class="alert alert-danger">', '</div>');
 		$this->form_validation->set_rules(array(
-			array('field' => 'sign_up_username',
-			      'label' => 'lang:sign_up_username',
-			      'rules' => 'trim|required|alpha_dash|min_length['.$this->config->item('sign_up_username_min_length').']|max_length['.$this->config->item('sign_up_username_min_length').']|callback_username_check'),
-			array('field' => 'sign_up_password',
-			      'label' => 'lang:sign_up_password',
-			      'rules' => 'trim|required|min_length['.$this->config->item('sign_up_password_min_length').']'),
-			array('field' => 'sign_up_email',
-			      'label' => 'lang:sign_up_email',
-			      'rules' => 'trim|required|valid_email|max_length[160]|callback_email_check'),
-			array('field' => 'sign_up_confirm_password',
-			      'label' => 'lang:sign_up_password_confirm',
-			      'rules' => 'trim|required|min_length[6]|matches[sign_up_password]'),
-			array('field' => 'sign_up_terms',
-			      'label' => 'lang:sign_up_terms_confirm',
-			      'rules' => 'trim|required')));
+		array('field' => 'sign_up_username',
+		'label' => 'lang:sign_up_username',
+		'rules' => 'trim|required|alpha_dash|min_length['.$this->config->item('sign_up_username_min_length').']|max_length['.$this->config->item('sign_up_username_max_length').']|callback_username_check'),
+		array('field' => 'sign_up_password',
+		'label' => 'lang:sign_up_password',
+		'rules' => 'trim|required|min_length['.$this->config->item('sign_up_password_min_length').']'),
+		array('field' => 'sign_up_email',
+		'label' => 'lang:sign_up_email',
+		'rules' => 'trim|required|valid_email|max_length[160]|callback_email_check'),
+		array('field' => 'sign_up_confirm_password',
+		'label' => 'lang:sign_up_password_confirm',
+		'rules' => 'trim|required|min_length['.$this->config->item('sign_up_password_min_length').']|matches[sign_up_password]'),
+		array('field' => 'sign_up_terms',
+		'label' => 'lang:sign_up_terms_confirm',
+		'rules' => 'trim|required')));
 
 		// Run form validation
 		if (($this->form_validation->run() === TRUE) && ($this->config->item("sign_up_enabled")))
 		{
 			// Either already pass recaptcha or just passed recaptcha
-			if ( ($this->session->userdata('sign_up_recaptcha_pass') == FALSE || $recaptcha_result === FALSE) && $this->config->item("sign_up_recaptcha_enabled") === TRUE)
+			if( ($this->session->userdata('sign_up_recaptcha_pass') == FALSE || $recaptcha_result === FALSE) && $this->config->item("sign_up_recaptcha_enabled") === TRUE)
 			{
 				$data['sign_up_recaptcha_error'] = $this->input->post('recaptcha_response_field') ? lang('sign_up_recaptcha_incorrect') : lang('sign_up_recaptcha_required');
 			}
@@ -86,7 +87,7 @@ class Sign_up extends CI_Controller {
 
 				// Add user details (auto detected country, language, timezone)
 				$this->Account_details_model->update($user_id);
-				
+
 				// Assigns user role
 				$this->load->model('account/Rel_account_role_model');
 				$this->Rel_account_role_model->update($user_id, $this->config->item("sign_up_default_user_group"));
@@ -97,32 +98,29 @@ class Sign_up extends CI_Controller {
 					//send authentication email
 					$account = $this->Account_model->get_by_id($user_id);
 					$authentication_url = site_url('account/validate?user_id=' . $user_id . '&token='. sha1($user_id . $account->createdon . $this->config->item('password_reset_secret')));
-					
+
 					// Load email library
 					$this->load->library('email');
-					
-					// Set up email preferences
-					$config['mailtype'] = 'html';
-					
+
 					// Initialise email lib
-					$this->email->initialize($config);
-					
+					$this->email->initialize(array('mailtype' => 'html'));
+
 					// Send the authentication email
 					$this->email->from($this->config->item('account_email_confirm_sender'), lang('website_title'));
 					$this->email->to($account->email);
 					$this->email->subject(sprintf(lang('sign_up_email_subject'), lang('website_title')));
 					$this->email->message($this->load->view('account/account_validation_email', array(
-						'username' => $account->username,
-						'authentication_url' => anchor($authentication_url, $authentication_url)
+					'username' => $account->username,
+					'authentication_url' => anchor($authentication_url, $authentication_url)
 					), TRUE));
 					if($this->email->send())
 					{
 						if($this->config->item("sign_up_auto_sign_in"))
 						{
 							// Run sign in routine
-							$this->authentication->sign_in($this->input->post('sign_in_username_email', TRUE), $this->input->post('sign_in_password', TRUE), $this->input->post('sign_in_remember', TRUE));
+							$this->authentication->sign_in($this->input->post('sign_up_username', TRUE), $this->input->post('sign_up_password', TRUE), $this->input->post('sign_in_remember', TRUE));
 						}
-						
+
 						// Load confirmation view
 						$data['content'] = $this->load->view('account/account_validation_send', isset($data) ? $data : NULL, TRUE);
 						$this->load->view('template', $data);
@@ -136,10 +134,10 @@ class Sign_up extends CI_Controller {
 						else
 						{
 							show_error(lang('website_email_send_error'));
-                                                        log_message('error', $this->email->print_debugger());
+							log_message('error', $this->email->print_debugger());
 						}
 					}
-					
+
 					return;
 				}
 				else
@@ -147,18 +145,18 @@ class Sign_up extends CI_Controller {
 					if ($this->config->item("sign_up_auto_sign_in"))
 					{
 						// Run sign in routine
-						$this->authentication->sign_in($this->input->post('sign_in_username_email', TRUE), $this->input->post('sign_in_password', TRUE), $this->input->post('sign_in_remember', TRUE));
+						$this->authentication->sign_in($this->input->post('sign_up_username', TRUE), $this->input->post('sign_up_password', TRUE));
 					}
 					redirect('account/sign_in');
 				}
-				
+
 			}
 		}
 		else
 		{
 			// Load recaptcha code
 			if ($this->config->item("sign_up_recaptcha_enabled") === TRUE) if ($this->session->userdata('sign_up_recaptcha_pass') != TRUE) $data['recaptcha'] = $this->recaptcha->load($recaptcha_result, $this->config->item("ssl_enabled"));
-			
+
 			// Load sign up view
 			$data['content'] = $this->load->view('sign_up', isset($data) ? $data : NULL, TRUE);
 			$this->load->view('template', $data);
@@ -166,12 +164,12 @@ class Sign_up extends CI_Controller {
 	}
 
 	/**
-	 * Check if a username exist
-	 *
-	 * @access public
-	 * @param string $username
-	 * @return bool
-	 */
+	* Check if a username exist
+	*
+	* @access public
+	* @param string $username
+	* @return bool
+	*/
 	function username_check($username)
 	{
 		//once we update to PHP 5.5, we will be able to put this into the if statement
@@ -189,12 +187,12 @@ class Sign_up extends CI_Controller {
 	}
 
 	/**
-	 * Check if an email exist
-	 *
-	 * @access public
-	 * @param string $email
-	 * @return bool
-	 */
+	* Check if an email exist
+	*
+	* @access public
+	* @param string $email
+	* @return bool
+	*/
 	function email_check($email)
 	{
 		$result = $this->Account_model->get_by_email($email);

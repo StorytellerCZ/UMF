@@ -277,11 +277,16 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>$timezone</strong> (<em>string</em>) &#8211; Timezone</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>$timezone</strong> (<em>string</em>) &#8211; Timezone</li>
+</ul>
+</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">UNIX timestamp</td>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">UNIX timestamp</p>
+</td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">int</td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">int</p>
+</td>
 </tr>
 </tbody>
 </table>
@@ -437,11 +442,16 @@ instead:</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>$time</strong> (<em>int</em>) &#8211; UNIX timestamp</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>$time</strong> (<em>int</em>) &#8211; UNIX timestamp</li>
+</ul>
+</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">UNIX timestamp</td>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">UNIX timestamp</p>
+</td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">int</td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">int</p>
+</td>
 </tr>
 </tbody>
 </table>
@@ -497,11 +507,16 @@ submitted.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>$time</strong> (<em>string</em>) &#8211; MySQL timestamp</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>$time</strong> (<em>string</em>) &#8211; MySQL timestamp</li>
+</ul>
+</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">UNIX timestamp</td>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">UNIX timestamp</p>
+</td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">int</td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">int</p>
+</td>
 </tr>
 </tbody>
 </table>
@@ -560,15 +575,20 @@ the time without seconds formatted for the U.S.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>$datestr</strong> (<em>int</em>) &#8211; Date string</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>$datestr</strong> (<em>int</em>) &#8211; Date string</li>
+</ul>
+</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">UNIX timestamp or FALSE on failure</td>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">UNIX timestamp or FALSE on failure</p>
+</td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">int</td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">int</p>
+</td>
 </tr>
 </tbody>
 </table>
-<p>The opposite of the <tt class="xref py py-func docutils literal"><span class="pre">unix_to_time()</span></tt> function. Takes a &#8220;human&#8221;
+<p>The opposite of the <tt class="xref php php-func docutils literal"><span class="pre">unix_to_time()</span></tt> function. Takes a &#8220;human&#8221;
 time as input and returns it as a UNIX timestamp. This is useful if you
 accept &#8220;human&#8221; formatted dates submitted via a form. Returns boolean FALSE
 date string passed to it is not formatted as indicated above.</p>
@@ -742,11 +762,16 @@ it is available.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>$tz</strong> (<em>string</em>) &#8211; A numeric timezone</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>$tz</strong> (<em>string</em>) &#8211; A numeric timezone</li>
+</ul>
+</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Hour difference from UTC</td>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Hour difference from UTC</p>
+</td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">int</td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">int</p>
+</td>
 </tr>
 </tbody>
 </table>
@@ -757,7 +782,7 @@ UTC.</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="k">echo</span> <span class="nx">timezones</span><span class="p">(</span><span class="s1">&#39;UM5&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
-<p>This function is useful when used with <a class="reference internal" href="#timezone_menu" title="timezone_menu"><tt class="xref py py-func docutils literal"><span class="pre">timezone_menu()</span></tt></a>.</p>
+<p>This function is useful when used with <a class="reference internal" href="#timezone_menu" title="timezone_menu"><tt class="xref php php-func docutils literal"><span class="pre">timezone_menu()</span></tt></a>.</p>
 </dd></dl>
 
 <dl class="function">
@@ -1004,7 +1029,7 @@ language file: <cite>language/&lt;your_lang&gt;/date_lang.php</cite></p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2015, British Columbia Institute of Technology.
-      Last updated on Jan 21, 2015.
+      Last updated on Feb 03, 2015.
     </p>
   </div>
 

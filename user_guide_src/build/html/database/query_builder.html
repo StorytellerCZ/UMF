@@ -1197,8 +1197,8 @@ i.e. if you&#8217;re caching a <tt class="docutils literal"><span class="pre">se
 <dt id="CI_DB_query_builder">
 <em class="property">class </em><tt class="descname">CI_DB_query_builder</tt><a class="headerlink" href="#CI_DB_query_builder" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="method">
-<dt id="CI_DB_query_builder.reset_query">
-<tt class="descname">reset_query</tt><big>(</big><big>)</big><a class="headerlink" href="#CI_DB_query_builder.reset_query" title="Permalink to this definition">¶</a></dt>
+<dt id="CI_DB_query_builder::reset_query">
+<tt class="descname">reset_query</tt><big>(</big><big>)</big><a class="headerlink" href="#CI_DB_query_builder::reset_query" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1214,8 +1214,8 @@ to build a query that can be cancelled under certain conditions.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="CI_DB_query_builder.start_cache">
-<tt class="descname">start_cache</tt><big>(</big><big>)</big><a class="headerlink" href="#CI_DB_query_builder.start_cache" title="Permalink to this definition">¶</a></dt>
+<dt id="CI_DB_query_builder::start_cache">
+<tt class="descname">start_cache</tt><big>(</big><big>)</big><a class="headerlink" href="#CI_DB_query_builder::start_cache" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1230,8 +1230,8 @@ to build a query that can be cancelled under certain conditions.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="CI_DB_query_builder.stop_cache">
-<tt class="descname">stop_cache</tt><big>(</big><big>)</big><a class="headerlink" href="#CI_DB_query_builder.stop_cache" title="Permalink to this definition">¶</a></dt>
+<dt id="CI_DB_query_builder::stop_cache">
+<tt class="descname">stop_cache</tt><big>(</big><big>)</big><a class="headerlink" href="#CI_DB_query_builder::stop_cache" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1246,8 +1246,8 @@ to build a query that can be cancelled under certain conditions.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="CI_DB_query_builder.flush_cache">
-<tt class="descname">flush_cache</tt><big>(</big><big>)</big><a class="headerlink" href="#CI_DB_query_builder.flush_cache" title="Permalink to this definition">¶</a></dt>
+<dt id="CI_DB_query_builder::flush_cache">
+<tt class="descname">flush_cache</tt><big>(</big><big>)</big><a class="headerlink" href="#CI_DB_query_builder::flush_cache" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1262,17 +1262,22 @@ to build a query that can be cancelled under certain conditions.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="CI_DB_query_builder.set_dbprefix">
-<tt class="descname">set_dbprefix</tt><big>(</big><span class="optional">[</span><em>$prefix = ''</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_DB_query_builder.set_dbprefix" title="Permalink to this definition">¶</a></dt>
+<dt id="CI_DB_query_builder::set_dbprefix">
+<tt class="descname">set_dbprefix</tt><big>(</big><span class="optional">[</span><em>$prefix = ''</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_DB_query_builder::set_dbprefix" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>$prefix</strong> (<em>string</em>) &#8211; The new prefix to use</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>$prefix</strong> (<em>string</em>) &#8211; The new prefix to use</li>
+</ul>
+</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">The DB prefix in use</td>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">The DB prefix in use</p>
+</td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">string</td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">string</p>
+</td>
 </tr>
 </tbody>
 </table>
@@ -1280,17 +1285,22 @@ to build a query that can be cancelled under certain conditions.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="CI_DB_query_builder.dbprefix">
-<tt class="descname">dbprefix</tt><big>(</big><span class="optional">[</span><em>$table = ''</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_DB_query_builder.dbprefix" title="Permalink to this definition">¶</a></dt>
+<dt id="CI_DB_query_builder::dbprefix">
+<tt class="descname">dbprefix</tt><big>(</big><span class="optional">[</span><em>$table = ''</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_DB_query_builder::dbprefix" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>$table</strong> (<em>string</em>) &#8211; The table name to prefix</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>$table</strong> (<em>string</em>) &#8211; The table name to prefix</li>
+</ul>
+</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">The prefixed table name</td>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">The prefixed table name</p>
+</td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">string</td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">string</p>
+</td>
 </tr>
 </tbody>
 </table>
@@ -1298,17 +1308,22 @@ to build a query that can be cancelled under certain conditions.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="CI_DB_query_builder.count_all_results">
-<tt class="descname">count_all_results</tt><big>(</big><span class="optional">[</span><em>$table = ''</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_DB_query_builder.count_all_results" title="Permalink to this definition">¶</a></dt>
+<dt id="CI_DB_query_builder::count_all_results">
+<tt class="descname">count_all_results</tt><big>(</big><span class="optional">[</span><em>$table = ''</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_DB_query_builder::count_all_results" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>$table</strong> (<em>string</em>) &#8211; Table name</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>$table</strong> (<em>string</em>) &#8211; Table name</li>
+</ul>
+</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Number of rows in the query result</td>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Number of rows in the query result</p>
+</td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">int</td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">int</p>
+</td>
 </tr>
 </tbody>
 </table>
@@ -1317,8 +1332,8 @@ all records returned by an Query Builder query.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="CI_DB_query_builder.get">
-<tt class="descname">get</tt><big>(</big><span class="optional">[</span><em>$table = ''</em><span class="optional">[</span>, <em>$limit = NULL</em><span class="optional">[</span>, <em>$offset = NULL</em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_DB_query_builder.get" title="Permalink to this definition">¶</a></dt>
+<dt id="CI_DB_query_builder::get">
+<tt class="descname">get</tt><big>(</big><span class="optional">[</span><em>$table = ''</em><span class="optional">[</span>, <em>$limit = NULL</em><span class="optional">[</span>, <em>$offset = NULL</em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_DB_query_builder::get" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1343,8 +1358,8 @@ called Query Builder methods.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="CI_DB_query_builder.get_where">
-<tt class="descname">get_where</tt><big>(</big><span class="optional">[</span><em>$table = ''</em><span class="optional">[</span>, <em>$where = NULL</em><span class="optional">[</span>, <em>$limit = NULL</em><span class="optional">[</span>, <em>$offset = NULL</em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_DB_query_builder.get_where" title="Permalink to this definition">¶</a></dt>
+<dt id="CI_DB_query_builder::get_where">
+<tt class="descname">get_where</tt><big>(</big><span class="optional">[</span><em>$table = ''</em><span class="optional">[</span>, <em>$where = NULL</em><span class="optional">[</span>, <em>$limit = NULL</em><span class="optional">[</span>, <em>$offset = NULL</em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_DB_query_builder::get_where" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1369,8 +1384,8 @@ called Query Builder methods.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="CI_DB_query_builder.select">
-<tt class="descname">select</tt><big>(</big><span class="optional">[</span><em>$select = '*'</em><span class="optional">[</span>, <em>$escape = NULL</em><span class="optional">]</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_DB_query_builder.select" title="Permalink to this definition">¶</a></dt>
+<dt id="CI_DB_query_builder::select">
+<tt class="descname">select</tt><big>(</big><span class="optional">[</span><em>$select = '*'</em><span class="optional">[</span>, <em>$escape = NULL</em><span class="optional">]</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_DB_query_builder::select" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1393,8 +1408,8 @@ called Query Builder methods.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="CI_DB_query_builder.select_avg">
-<tt class="descname">select_avg</tt><big>(</big><span class="optional">[</span><em>$select = ''</em><span class="optional">[</span>, <em>$alias = ''</em><span class="optional">]</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_DB_query_builder.select_avg" title="Permalink to this definition">¶</a></dt>
+<dt id="CI_DB_query_builder::select_avg">
+<tt class="descname">select_avg</tt><big>(</big><span class="optional">[</span><em>$select = ''</em><span class="optional">[</span>, <em>$alias = ''</em><span class="optional">]</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_DB_query_builder::select_avg" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1417,8 +1432,8 @@ called Query Builder methods.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="CI_DB_query_builder.select_max">
-<tt class="descname">select_max</tt><big>(</big><span class="optional">[</span><em>$select = ''</em><span class="optional">[</span>, <em>$alias = ''</em><span class="optional">]</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_DB_query_builder.select_max" title="Permalink to this definition">¶</a></dt>
+<dt id="CI_DB_query_builder::select_max">
+<tt class="descname">select_max</tt><big>(</big><span class="optional">[</span><em>$select = ''</em><span class="optional">[</span>, <em>$alias = ''</em><span class="optional">]</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_DB_query_builder::select_max" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1441,8 +1456,8 @@ called Query Builder methods.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="CI_DB_query_builder.select_min">
-<tt class="descname">select_min</tt><big>(</big><span class="optional">[</span><em>$select = ''</em><span class="optional">[</span>, <em>$alias = ''</em><span class="optional">]</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_DB_query_builder.select_min" title="Permalink to this definition">¶</a></dt>
+<dt id="CI_DB_query_builder::select_min">
+<tt class="descname">select_min</tt><big>(</big><span class="optional">[</span><em>$select = ''</em><span class="optional">[</span>, <em>$alias = ''</em><span class="optional">]</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_DB_query_builder::select_min" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1465,8 +1480,8 @@ called Query Builder methods.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="CI_DB_query_builder.select_sum">
-<tt class="descname">select_sum</tt><big>(</big><span class="optional">[</span><em>$select = ''</em><span class="optional">[</span>, <em>$alias = ''</em><span class="optional">]</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_DB_query_builder.select_sum" title="Permalink to this definition">¶</a></dt>
+<dt id="CI_DB_query_builder::select_sum">
+<tt class="descname">select_sum</tt><big>(</big><span class="optional">[</span><em>$select = ''</em><span class="optional">[</span>, <em>$alias = ''</em><span class="optional">]</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_DB_query_builder::select_sum" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1489,17 +1504,22 @@ called Query Builder methods.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="CI_DB_query_builder.distinct">
-<tt class="descname">distinct</tt><big>(</big><span class="optional">[</span><em>$val = TRUE</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_DB_query_builder.distinct" title="Permalink to this definition">¶</a></dt>
+<dt id="CI_DB_query_builder::distinct">
+<tt class="descname">distinct</tt><big>(</big><span class="optional">[</span><em>$val = TRUE</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_DB_query_builder::distinct" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>$val</strong> (<em>bool</em>) &#8211; Desired value of the &#8220;distinct&#8221; flag</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>$val</strong> (<em>bool</em>) &#8211; Desired value of the &#8220;distinct&#8221; flag</li>
+</ul>
+</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">CI_DB_query_builder instance (method chaining)</td>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">CI_DB_query_builder instance (method chaining)</p>
+</td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">CI_DB_query_builder</td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">CI_DB_query_builder</p>
+</td>
 </tr>
 </tbody>
 </table>
@@ -1508,17 +1528,22 @@ a DISTINCT clause to the SELECT portion of the query.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="CI_DB_query_builder.from">
-<tt class="descname">from</tt><big>(</big><em>$from</em><big>)</big><a class="headerlink" href="#CI_DB_query_builder.from" title="Permalink to this definition">¶</a></dt>
+<dt id="CI_DB_query_builder::from">
+<tt class="descname">from</tt><big>(</big><em>$from</em><big>)</big><a class="headerlink" href="#CI_DB_query_builder::from" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>$from</strong> (<em>mixed</em>) &#8211; Table name(s); string or array</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>$from</strong> (<em>mixed</em>) &#8211; Table name(s); string or array</li>
+</ul>
+</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">CI_DB_query_builder instance (method chaining)</td>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">CI_DB_query_builder instance (method chaining)</p>
+</td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">CI_DB_query_builder</td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">CI_DB_query_builder</p>
+</td>
 </tr>
 </tbody>
 </table>
@@ -1526,8 +1551,8 @@ a DISTINCT clause to the SELECT portion of the query.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="CI_DB_query_builder.join">
-<tt class="descname">join</tt><big>(</big><em>$table</em>, <em>$cond</em><span class="optional">[</span>, <em>$type = ''</em><span class="optional">[</span>, <em>$escape = NULL</em><span class="optional">]</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_DB_query_builder.join" title="Permalink to this definition">¶</a></dt>
+<dt id="CI_DB_query_builder::join">
+<tt class="descname">join</tt><big>(</big><em>$table</em>, <em>$cond</em><span class="optional">[</span>, <em>$type = ''</em><span class="optional">[</span>, <em>$escape = NULL</em><span class="optional">]</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_DB_query_builder::join" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1552,8 +1577,8 @@ a DISTINCT clause to the SELECT portion of the query.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="CI_DB_query_builder.where">
-<tt class="descname">where</tt><big>(</big><em>$key</em><span class="optional">[</span>, <em>$value = NULL</em><span class="optional">[</span>, <em>$escape = NULL</em><span class="optional">]</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_DB_query_builder.where" title="Permalink to this definition">¶</a></dt>
+<dt id="CI_DB_query_builder::where">
+<tt class="descname">where</tt><big>(</big><em>$key</em><span class="optional">[</span>, <em>$value = NULL</em><span class="optional">[</span>, <em>$escape = NULL</em><span class="optional">]</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_DB_query_builder::where" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1578,8 +1603,8 @@ Separates multiple calls with &#8216;AND&#8217;.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="CI_DB_query_builder.or_where">
-<tt class="descname">or_where</tt><big>(</big><em>$key</em><span class="optional">[</span>, <em>$value = NULL</em><span class="optional">[</span>, <em>$escape = NULL</em><span class="optional">]</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_DB_query_builder.or_where" title="Permalink to this definition">¶</a></dt>
+<dt id="CI_DB_query_builder::or_where">
+<tt class="descname">or_where</tt><big>(</big><em>$key</em><span class="optional">[</span>, <em>$value = NULL</em><span class="optional">[</span>, <em>$escape = NULL</em><span class="optional">]</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_DB_query_builder::or_where" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1604,8 +1629,8 @@ Separates multiple calls with &#8216;OR&#8217;.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="CI_DB_query_builder.or_where_in">
-<tt class="descname">or_where_in</tt><big>(</big><span class="optional">[</span><em>$key = NULL</em><span class="optional">[</span>, <em>$values = NULL</em><span class="optional">[</span>, <em>$escape = NULL</em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_DB_query_builder.or_where_in" title="Permalink to this definition">¶</a></dt>
+<dt id="CI_DB_query_builder::or_where_in">
+<tt class="descname">or_where_in</tt><big>(</big><span class="optional">[</span><em>$key = NULL</em><span class="optional">[</span>, <em>$values = NULL</em><span class="optional">[</span>, <em>$escape = NULL</em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_DB_query_builder::or_where_in" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1630,8 +1655,8 @@ joined with &#8216;OR&#8217; if appropriate.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="CI_DB_query_builder.or_where_not_in">
-<tt class="descname">or_where_not_in</tt><big>(</big><span class="optional">[</span><em>$key = NULL</em><span class="optional">[</span>, <em>$values = NULL</em><span class="optional">[</span>, <em>$escape = NULL</em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_DB_query_builder.or_where_not_in" title="Permalink to this definition">¶</a></dt>
+<dt id="CI_DB_query_builder::or_where_not_in">
+<tt class="descname">or_where_not_in</tt><big>(</big><span class="optional">[</span><em>$key = NULL</em><span class="optional">[</span>, <em>$values = NULL</em><span class="optional">[</span>, <em>$escape = NULL</em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_DB_query_builder::or_where_not_in" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1656,8 +1681,8 @@ joined with &#8216;OR&#8217; if appropriate.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="CI_DB_query_builder.where_in">
-<tt class="descname">where_in</tt><big>(</big><span class="optional">[</span><em>$key = NULL</em><span class="optional">[</span>, <em>$values = NULL</em><span class="optional">[</span>, <em>$escape = NULL</em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_DB_query_builder.where_in" title="Permalink to this definition">¶</a></dt>
+<dt id="CI_DB_query_builder::where_in">
+<tt class="descname">where_in</tt><big>(</big><span class="optional">[</span><em>$key = NULL</em><span class="optional">[</span>, <em>$values = NULL</em><span class="optional">[</span>, <em>$escape = NULL</em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_DB_query_builder::where_in" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1682,8 +1707,8 @@ joined with &#8216;AND&#8217; if appropriate.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="CI_DB_query_builder.where_not_in">
-<tt class="descname">where_not_in</tt><big>(</big><span class="optional">[</span><em>$key = NULL</em><span class="optional">[</span>, <em>$values = NULL</em><span class="optional">[</span>, <em>$escape = NULL</em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_DB_query_builder.where_not_in" title="Permalink to this definition">¶</a></dt>
+<dt id="CI_DB_query_builder::where_not_in">
+<tt class="descname">where_not_in</tt><big>(</big><span class="optional">[</span><em>$key = NULL</em><span class="optional">[</span>, <em>$values = NULL</em><span class="optional">[</span>, <em>$escape = NULL</em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_DB_query_builder::where_not_in" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1708,8 +1733,8 @@ joined with &#8216;AND&#8217; if appropriate.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="CI_DB_query_builder.group_start">
-<tt class="descname">group_start</tt><big>(</big><big>)</big><a class="headerlink" href="#CI_DB_query_builder.group_start" title="Permalink to this definition">¶</a></dt>
+<dt id="CI_DB_query_builder::group_start">
+<tt class="descname">group_start</tt><big>(</big><big>)</big><a class="headerlink" href="#CI_DB_query_builder::group_start" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1724,8 +1749,8 @@ joined with &#8216;AND&#8217; if appropriate.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="CI_DB_query_builder.or_group_start">
-<tt class="descname">or_group_start</tt><big>(</big><big>)</big><a class="headerlink" href="#CI_DB_query_builder.or_group_start" title="Permalink to this definition">¶</a></dt>
+<dt id="CI_DB_query_builder::or_group_start">
+<tt class="descname">or_group_start</tt><big>(</big><big>)</big><a class="headerlink" href="#CI_DB_query_builder::or_group_start" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1740,8 +1765,8 @@ joined with &#8216;AND&#8217; if appropriate.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="CI_DB_query_builder.not_group_start">
-<tt class="descname">not_group_start</tt><big>(</big><big>)</big><a class="headerlink" href="#CI_DB_query_builder.not_group_start" title="Permalink to this definition">¶</a></dt>
+<dt id="CI_DB_query_builder::not_group_start">
+<tt class="descname">not_group_start</tt><big>(</big><big>)</big><a class="headerlink" href="#CI_DB_query_builder::not_group_start" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1756,8 +1781,8 @@ joined with &#8216;AND&#8217; if appropriate.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="CI_DB_query_builder.or_not_group_start">
-<tt class="descname">or_not_group_start</tt><big>(</big><big>)</big><a class="headerlink" href="#CI_DB_query_builder.or_not_group_start" title="Permalink to this definition">¶</a></dt>
+<dt id="CI_DB_query_builder::or_not_group_start">
+<tt class="descname">or_not_group_start</tt><big>(</big><big>)</big><a class="headerlink" href="#CI_DB_query_builder::or_not_group_start" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1772,8 +1797,8 @@ joined with &#8216;AND&#8217; if appropriate.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="CI_DB_query_builder.group_end">
-<tt class="descname">group_end</tt><big>(</big><big>)</big><a class="headerlink" href="#CI_DB_query_builder.group_end" title="Permalink to this definition">¶</a></dt>
+<dt id="CI_DB_query_builder::group_end">
+<tt class="descname">group_end</tt><big>(</big><big>)</big><a class="headerlink" href="#CI_DB_query_builder::group_end" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1788,8 +1813,8 @@ joined with &#8216;AND&#8217; if appropriate.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="CI_DB_query_builder.like">
-<tt class="descname">like</tt><big>(</big><em>$field</em><span class="optional">[</span>, <em>$match = ''</em><span class="optional">[</span>, <em>$side = 'both'</em><span class="optional">[</span>, <em>$escape = NULL</em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_DB_query_builder.like" title="Permalink to this definition">¶</a></dt>
+<dt id="CI_DB_query_builder::like">
+<tt class="descname">like</tt><big>(</big><em>$field</em><span class="optional">[</span>, <em>$match = ''</em><span class="optional">[</span>, <em>$side = 'both'</em><span class="optional">[</span>, <em>$escape = NULL</em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_DB_query_builder::like" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1814,8 +1839,8 @@ joined with &#8216;AND&#8217; if appropriate.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="CI_DB_query_builder.or_like">
-<tt class="descname">or_like</tt><big>(</big><em>$field</em><span class="optional">[</span>, <em>$match = ''</em><span class="optional">[</span>, <em>$side = 'both'</em><span class="optional">[</span>, <em>$escape = NULL</em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_DB_query_builder.or_like" title="Permalink to this definition">¶</a></dt>
+<dt id="CI_DB_query_builder::or_like">
+<tt class="descname">or_like</tt><big>(</big><em>$field</em><span class="optional">[</span>, <em>$match = ''</em><span class="optional">[</span>, <em>$side = 'both'</em><span class="optional">[</span>, <em>$escape = NULL</em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_DB_query_builder::or_like" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1840,8 +1865,8 @@ joined with &#8216;AND&#8217; if appropriate.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="CI_DB_query_builder.not_like">
-<tt class="descname">not_like</tt><big>(</big><em>$field</em><span class="optional">[</span>, <em>$match = ''</em><span class="optional">[</span>, <em>$side = 'both'</em><span class="optional">[</span>, <em>$escape = NULL</em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_DB_query_builder.not_like" title="Permalink to this definition">¶</a></dt>
+<dt id="CI_DB_query_builder::not_like">
+<tt class="descname">not_like</tt><big>(</big><em>$field</em><span class="optional">[</span>, <em>$match = ''</em><span class="optional">[</span>, <em>$side = 'both'</em><span class="optional">[</span>, <em>$escape = NULL</em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_DB_query_builder::not_like" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1866,8 +1891,8 @@ joined with &#8216;AND&#8217; if appropriate.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="CI_DB_query_builder.or_not_like">
-<tt class="descname">or_not_like</tt><big>(</big><em>$field</em><span class="optional">[</span>, <em>$match = ''</em><span class="optional">[</span>, <em>$side = 'both'</em><span class="optional">[</span>, <em>$escape = NULL</em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_DB_query_builder.or_not_like" title="Permalink to this definition">¶</a></dt>
+<dt id="CI_DB_query_builder::or_not_like">
+<tt class="descname">or_not_like</tt><big>(</big><em>$field</em><span class="optional">[</span>, <em>$match = ''</em><span class="optional">[</span>, <em>$side = 'both'</em><span class="optional">[</span>, <em>$escape = NULL</em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_DB_query_builder::or_not_like" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1892,8 +1917,8 @@ joined with &#8216;AND&#8217; if appropriate.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="CI_DB_query_builder.having">
-<tt class="descname">having</tt><big>(</big><em>$key</em><span class="optional">[</span>, <em>$value = NULL</em><span class="optional">[</span>, <em>$escape = NULL</em><span class="optional">]</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_DB_query_builder.having" title="Permalink to this definition">¶</a></dt>
+<dt id="CI_DB_query_builder::having">
+<tt class="descname">having</tt><big>(</big><em>$key</em><span class="optional">[</span>, <em>$value = NULL</em><span class="optional">[</span>, <em>$escape = NULL</em><span class="optional">]</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_DB_query_builder::having" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1917,8 +1942,8 @@ joined with &#8216;AND&#8217; if appropriate.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="CI_DB_query_builder.or_having">
-<tt class="descname">or_having</tt><big>(</big><em>$key</em><span class="optional">[</span>, <em>$value = NULL</em><span class="optional">[</span>, <em>$escape = NULL</em><span class="optional">]</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_DB_query_builder.or_having" title="Permalink to this definition">¶</a></dt>
+<dt id="CI_DB_query_builder::or_having">
+<tt class="descname">or_having</tt><big>(</big><em>$key</em><span class="optional">[</span>, <em>$value = NULL</em><span class="optional">[</span>, <em>$escape = NULL</em><span class="optional">]</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_DB_query_builder::or_having" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1942,17 +1967,22 @@ joined with &#8216;AND&#8217; if appropriate.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="CI_DB_query_builder.group_by">
-<tt class="descname">group_by</tt><big>(</big><em>$by</em><span class="optional">[</span>, <em>$escape = NULL</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_DB_query_builder.group_by" title="Permalink to this definition">¶</a></dt>
+<dt id="CI_DB_query_builder::group_by">
+<tt class="descname">group_by</tt><big>(</big><em>$by</em><span class="optional">[</span>, <em>$escape = NULL</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_DB_query_builder::group_by" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>$by</strong> (<em>mixed</em>) &#8211; Field(s) to group by; string or array</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>$by</strong> (<em>mixed</em>) &#8211; Field(s) to group by; string or array</li>
+</ul>
+</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">CI_DB_query_builder instance (method chaining)</td>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">CI_DB_query_builder instance (method chaining)</p>
+</td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">CI_DB_query_builder</td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">CI_DB_query_builder</p>
+</td>
 </tr>
 </tbody>
 </table>
@@ -1960,8 +1990,8 @@ joined with &#8216;AND&#8217; if appropriate.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="CI_DB_query_builder.order_by">
-<tt class="descname">order_by</tt><big>(</big><em>$orderby</em><span class="optional">[</span>, <em>$direction = ''</em><span class="optional">[</span>, <em>$escape = NULL</em><span class="optional">]</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_DB_query_builder.order_by" title="Permalink to this definition">¶</a></dt>
+<dt id="CI_DB_query_builder::order_by">
+<tt class="descname">order_by</tt><big>(</big><em>$orderby</em><span class="optional">[</span>, <em>$direction = ''</em><span class="optional">[</span>, <em>$escape = NULL</em><span class="optional">]</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_DB_query_builder::order_by" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1985,8 +2015,8 @@ joined with &#8216;AND&#8217; if appropriate.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="CI_DB_query_builder.limit">
-<tt class="descname">limit</tt><big>(</big><em>$value</em><span class="optional">[</span>, <em>$offset = 0</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_DB_query_builder.limit" title="Permalink to this definition">¶</a></dt>
+<dt id="CI_DB_query_builder::limit">
+<tt class="descname">limit</tt><big>(</big><em>$value</em><span class="optional">[</span>, <em>$offset = 0</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_DB_query_builder::limit" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -2009,17 +2039,22 @@ joined with &#8216;AND&#8217; if appropriate.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="CI_DB_query_builder.offset">
-<tt class="descname">offset</tt><big>(</big><em>$offset</em><big>)</big><a class="headerlink" href="#CI_DB_query_builder.offset" title="Permalink to this definition">¶</a></dt>
+<dt id="CI_DB_query_builder::offset">
+<tt class="descname">offset</tt><big>(</big><em>$offset</em><big>)</big><a class="headerlink" href="#CI_DB_query_builder::offset" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>$offset</strong> (<em>int</em>) &#8211; Number of rows to skip</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>$offset</strong> (<em>int</em>) &#8211; Number of rows to skip</li>
+</ul>
+</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">CI_DB_query_builder instance (method chaining)</td>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">CI_DB_query_builder instance (method chaining)</p>
+</td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">CI_DB_query_builder</td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">CI_DB_query_builder</p>
+</td>
 </tr>
 </tbody>
 </table>
@@ -2027,8 +2062,8 @@ joined with &#8216;AND&#8217; if appropriate.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="CI_DB_query_builder.set">
-<tt class="descname">set</tt><big>(</big><em>$key</em><span class="optional">[</span>, <em>$value = ''</em><span class="optional">[</span>, <em>$escape = NULL</em><span class="optional">]</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_DB_query_builder.set" title="Permalink to this definition">¶</a></dt>
+<dt id="CI_DB_query_builder::set">
+<tt class="descname">set</tt><big>(</big><em>$key</em><span class="optional">[</span>, <em>$value = ''</em><span class="optional">[</span>, <em>$escape = NULL</em><span class="optional">]</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_DB_query_builder::set" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -2053,8 +2088,8 @@ joined with &#8216;AND&#8217; if appropriate.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="CI_DB_query_builder.insert">
-<tt class="descname">insert</tt><big>(</big><span class="optional">[</span><em>$table = ''</em><span class="optional">[</span>, <em>$set = NULL</em><span class="optional">[</span>, <em>$escape = NULL</em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_DB_query_builder.insert" title="Permalink to this definition">¶</a></dt>
+<dt id="CI_DB_query_builder::insert">
+<tt class="descname">insert</tt><big>(</big><span class="optional">[</span><em>$table = ''</em><span class="optional">[</span>, <em>$set = NULL</em><span class="optional">[</span>, <em>$escape = NULL</em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_DB_query_builder::insert" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -2078,8 +2113,8 @@ joined with &#8216;AND&#8217; if appropriate.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="CI_DB_query_builder.insert_batch">
-<tt class="descname">insert_batch</tt><big>(</big><span class="optional">[</span><em>$table = ''</em><span class="optional">[</span>, <em>$set = NULL</em><span class="optional">[</span>, <em>$escape = NULL</em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_DB_query_builder.insert_batch" title="Permalink to this definition">¶</a></dt>
+<dt id="CI_DB_query_builder::insert_batch">
+<tt class="descname">insert_batch</tt><big>(</big><span class="optional">[</span><em>$table = ''</em><span class="optional">[</span>, <em>$set = NULL</em><span class="optional">[</span>, <em>$escape = NULL</em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_DB_query_builder::insert_batch" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -2103,8 +2138,8 @@ joined with &#8216;AND&#8217; if appropriate.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="CI_DB_query_builder.set_insert_batch">
-<tt class="descname">set_insert_batch</tt><big>(</big><em>$key</em><span class="optional">[</span>, <em>$value = ''</em><span class="optional">[</span>, <em>$escape = NULL</em><span class="optional">]</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_DB_query_builder.set_insert_batch" title="Permalink to this definition">¶</a></dt>
+<dt id="CI_DB_query_builder::set_insert_batch">
+<tt class="descname">set_insert_batch</tt><big>(</big><em>$key</em><span class="optional">[</span>, <em>$value = ''</em><span class="optional">[</span>, <em>$escape = NULL</em><span class="optional">]</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_DB_query_builder::set_insert_batch" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -2128,8 +2163,8 @@ joined with &#8216;AND&#8217; if appropriate.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="CI_DB_query_builder.update">
-<tt class="descname">update</tt><big>(</big><span class="optional">[</span><em>$table = ''</em><span class="optional">[</span>, <em>$set = NULL</em><span class="optional">[</span>, <em>$where = NULL</em><span class="optional">[</span>, <em>$limit = NULL</em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_DB_query_builder.update" title="Permalink to this definition">¶</a></dt>
+<dt id="CI_DB_query_builder::update">
+<tt class="descname">update</tt><big>(</big><span class="optional">[</span><em>$table = ''</em><span class="optional">[</span>, <em>$set = NULL</em><span class="optional">[</span>, <em>$where = NULL</em><span class="optional">[</span>, <em>$limit = NULL</em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_DB_query_builder::update" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -2154,8 +2189,8 @@ joined with &#8216;AND&#8217; if appropriate.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="CI_DB_query_builder.update_batch">
-<tt class="descname">update_batch</tt><big>(</big><span class="optional">[</span><em>$table = ''</em><span class="optional">[</span>, <em>$set = NULL</em><span class="optional">[</span>, <em>$value = NULL</em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_DB_query_builder.update_batch" title="Permalink to this definition">¶</a></dt>
+<dt id="CI_DB_query_builder::update_batch">
+<tt class="descname">update_batch</tt><big>(</big><span class="optional">[</span><em>$table = ''</em><span class="optional">[</span>, <em>$set = NULL</em><span class="optional">[</span>, <em>$value = NULL</em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_DB_query_builder::update_batch" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -2179,8 +2214,8 @@ joined with &#8216;AND&#8217; if appropriate.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="CI_DB_query_builder.set_update_batch">
-<tt class="descname">set_update_batch</tt><big>(</big><em>$key</em><span class="optional">[</span>, <em>$value = ''</em><span class="optional">[</span>, <em>$escape = NULL</em><span class="optional">]</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_DB_query_builder.set_update_batch" title="Permalink to this definition">¶</a></dt>
+<dt id="CI_DB_query_builder::set_update_batch">
+<tt class="descname">set_update_batch</tt><big>(</big><em>$key</em><span class="optional">[</span>, <em>$value = ''</em><span class="optional">[</span>, <em>$escape = NULL</em><span class="optional">]</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_DB_query_builder::set_update_batch" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -2204,8 +2239,8 @@ joined with &#8216;AND&#8217; if appropriate.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="CI_DB_query_builder.replace">
-<tt class="descname">replace</tt><big>(</big><span class="optional">[</span><em>$table = ''</em><span class="optional">[</span>, <em>$set = NULL</em><span class="optional">]</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_DB_query_builder.replace" title="Permalink to this definition">¶</a></dt>
+<dt id="CI_DB_query_builder::replace">
+<tt class="descname">replace</tt><big>(</big><span class="optional">[</span><em>$table = ''</em><span class="optional">[</span>, <em>$set = NULL</em><span class="optional">]</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_DB_query_builder::replace" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -2228,8 +2263,8 @@ joined with &#8216;AND&#8217; if appropriate.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="CI_DB_query_builder.delete">
-<tt class="descname">delete</tt><big>(</big><span class="optional">[</span><em>$table = ''</em><span class="optional">[</span>, <em>$where = ''</em><span class="optional">[</span>, <em>$limit = NULL</em><span class="optional">[</span>, <em>$reset_data = TRUE</em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_DB_query_builder.delete" title="Permalink to this definition">¶</a></dt>
+<dt id="CI_DB_query_builder::delete">
+<tt class="descname">delete</tt><big>(</big><span class="optional">[</span><em>$table = ''</em><span class="optional">[</span>, <em>$where = ''</em><span class="optional">[</span>, <em>$limit = NULL</em><span class="optional">[</span>, <em>$reset_data = TRUE</em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_DB_query_builder::delete" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -2254,17 +2289,22 @@ joined with &#8216;AND&#8217; if appropriate.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="CI_DB_query_builder.truncate">
-<tt class="descname">truncate</tt><big>(</big><span class="optional">[</span><em>$table = ''</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_DB_query_builder.truncate" title="Permalink to this definition">¶</a></dt>
+<dt id="CI_DB_query_builder::truncate">
+<tt class="descname">truncate</tt><big>(</big><span class="optional">[</span><em>$table = ''</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_DB_query_builder::truncate" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>$table</strong> (<em>string</em>) &#8211; Table name</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>$table</strong> (<em>string</em>) &#8211; Table name</li>
+</ul>
+</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">TRUE on success, FALSE on failure</td>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">TRUE on success, FALSE on failure</p>
+</td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">bool</p>
+</td>
 </tr>
 </tbody>
 </table>
@@ -2277,17 +2317,22 @@ a DELETE statement will be used instead.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="CI_DB_query_builder.empty_table">
-<tt class="descname">empty_table</tt><big>(</big><span class="optional">[</span><em>$table = ''</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_DB_query_builder.empty_table" title="Permalink to this definition">¶</a></dt>
+<dt id="CI_DB_query_builder::empty_table">
+<tt class="descname">empty_table</tt><big>(</big><span class="optional">[</span><em>$table = ''</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_DB_query_builder::empty_table" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>$table</strong> (<em>string</em>) &#8211; Table name</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>$table</strong> (<em>string</em>) &#8211; Table name</li>
+</ul>
+</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">TRUE on success, FALSE on failure</td>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">TRUE on success, FALSE on failure</p>
+</td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">bool</p>
+</td>
 </tr>
 </tbody>
 </table>
@@ -2295,8 +2340,8 @@ a DELETE statement will be used instead.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="CI_DB_query_builder.get_compiled_select">
-<tt class="descname">get_compiled_select</tt><big>(</big><span class="optional">[</span><em>$table = ''</em><span class="optional">[</span>, <em>$reset = TRUE</em><span class="optional">]</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_DB_query_builder.get_compiled_select" title="Permalink to this definition">¶</a></dt>
+<dt id="CI_DB_query_builder::get_compiled_select">
+<tt class="descname">get_compiled_select</tt><big>(</big><span class="optional">[</span><em>$table = ''</em><span class="optional">[</span>, <em>$reset = TRUE</em><span class="optional">]</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_DB_query_builder::get_compiled_select" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -2319,8 +2364,8 @@ a DELETE statement will be used instead.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="CI_DB_query_builder.get_compiled_insert">
-<tt class="descname">get_compiled_insert</tt><big>(</big><span class="optional">[</span><em>$table = ''</em><span class="optional">[</span>, <em>$reset = TRUE</em><span class="optional">]</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_DB_query_builder.get_compiled_insert" title="Permalink to this definition">¶</a></dt>
+<dt id="CI_DB_query_builder::get_compiled_insert">
+<tt class="descname">get_compiled_insert</tt><big>(</big><span class="optional">[</span><em>$table = ''</em><span class="optional">[</span>, <em>$reset = TRUE</em><span class="optional">]</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_DB_query_builder::get_compiled_insert" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -2343,8 +2388,8 @@ a DELETE statement will be used instead.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="CI_DB_query_builder.get_compiled_update">
-<tt class="descname">get_compiled_update</tt><big>(</big><span class="optional">[</span><em>$table = ''</em><span class="optional">[</span>, <em>$reset = TRUE</em><span class="optional">]</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_DB_query_builder.get_compiled_update" title="Permalink to this definition">¶</a></dt>
+<dt id="CI_DB_query_builder::get_compiled_update">
+<tt class="descname">get_compiled_update</tt><big>(</big><span class="optional">[</span><em>$table = ''</em><span class="optional">[</span>, <em>$reset = TRUE</em><span class="optional">]</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_DB_query_builder::get_compiled_update" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -2367,8 +2412,8 @@ a DELETE statement will be used instead.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="CI_DB_query_builder.get_compiled_delete">
-<tt class="descname">get_compiled_delete</tt><big>(</big><span class="optional">[</span><em>$table = ''</em><span class="optional">[</span>, <em>$reset = TRUE</em><span class="optional">]</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_DB_query_builder.get_compiled_delete" title="Permalink to this definition">¶</a></dt>
+<dt id="CI_DB_query_builder::get_compiled_delete">
+<tt class="descname">get_compiled_delete</tt><big>(</big><span class="optional">[</span><em>$table = ''</em><span class="optional">[</span>, <em>$reset = TRUE</em><span class="optional">]</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_DB_query_builder::get_compiled_delete" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -2414,7 +2459,7 @@ a DELETE statement will be used instead.</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2015, British Columbia Institute of Technology.
-      Last updated on Jan 21, 2015.
+      Last updated on Feb 03, 2015.
     </p>
   </div>
 

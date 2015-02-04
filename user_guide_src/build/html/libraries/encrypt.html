@@ -330,8 +330,8 @@ method:</p>
 <dt id="CI_Encrypt">
 <em class="property">class </em><tt class="descname">CI_Encrypt</tt><a class="headerlink" href="#CI_Encrypt" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="method">
-<dt id="CI_Encrypt.encode">
-<tt class="descname">encode</tt><big>(</big><em>$string</em><span class="optional">[</span>, <em>$key = ''</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_Encrypt.encode" title="Permalink to this definition">¶</a></dt>
+<dt id="CI_Encrypt::encode">
+<tt class="descname">encode</tt><big>(</big><em>$string</em><span class="optional">[</span>, <em>$key = ''</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_Encrypt::encode" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -367,8 +367,8 @@ you don&#8217;t want to use the one in your config file:</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="CI_Encrypt.decode">
-<tt class="descname">decode</tt><big>(</big><em>$string</em><span class="optional">[</span>, <em>$key = ''</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_Encrypt.decode" title="Permalink to this definition">¶</a></dt>
+<dt id="CI_Encrypt::decode">
+<tt class="descname">decode</tt><big>(</big><em>$string</em><span class="optional">[</span>, <em>$key = ''</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_Encrypt::decode" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -404,17 +404,22 @@ you don&#8217;t want to use the one in your config file:</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="CI_Encrypt.set_cipher">
-<tt class="descname">set_cipher</tt><big>(</big><em>$cipher</em><big>)</big><a class="headerlink" href="#CI_Encrypt.set_cipher" title="Permalink to this definition">¶</a></dt>
+<dt id="CI_Encrypt::set_cipher">
+<tt class="descname">set_cipher</tt><big>(</big><em>$cipher</em><big>)</big><a class="headerlink" href="#CI_Encrypt::set_cipher" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>$cipher</strong> (<em>int</em>) &#8211; Valid PHP MCrypt cypher constant</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>$cipher</strong> (<em>int</em>) &#8211; Valid PHP MCrypt cypher constant</li>
+</ul>
+</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">CI_Encrypt instance (method chaining)</td>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">CI_Encrypt instance (method chaining)</p>
+</td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">CI_Encrypt</td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">CI_Encrypt</p>
+</td>
 </tr>
 </tbody>
 </table>
@@ -432,17 +437,22 @@ can use:</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="CI_Encrypt.set_mode">
-<tt class="descname">set_mode</tt><big>(</big><em>$mode</em><big>)</big><a class="headerlink" href="#CI_Encrypt.set_mode" title="Permalink to this definition">¶</a></dt>
+<dt id="CI_Encrypt::set_mode">
+<tt class="descname">set_mode</tt><big>(</big><em>$mode</em><big>)</big><a class="headerlink" href="#CI_Encrypt::set_mode" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>$mode</strong> (<em>int</em>) &#8211; Valid PHP MCrypt mode constant</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>$mode</strong> (<em>int</em>) &#8211; Valid PHP MCrypt mode constant</li>
+</ul>
+</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">CI_Encrypt instance (method chaining)</td>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">CI_Encrypt instance (method chaining)</p>
+</td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">CI_Encrypt</td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">CI_Encrypt</p>
+</td>
 </tr>
 </tbody>
 </table>
@@ -455,8 +465,8 @@ Example:</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="CI_Encrypt.encode_from_legacy">
-<tt class="descname">encode_from_legacy</tt><big>(</big><em>$string</em><span class="optional">[</span>, <em>$legacy_mode = MCRYPT_MODE_ECB</em><span class="optional">[</span>, <em>$key = ''</em><span class="optional">]</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_Encrypt.encode_from_legacy" title="Permalink to this definition">¶</a></dt>
+<dt id="CI_Encrypt::encode_from_legacy">
+<tt class="descname">encode_from_legacy</tt><big>(</big><em>$string</em><span class="optional">[</span>, <em>$legacy_mode = MCRYPT_MODE_ECB</em><span class="optional">[</span>, <em>$key = ''</em><span class="optional">]</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_Encrypt::encode_from_legacy" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -554,7 +564,7 @@ outlined above.</td>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2015, British Columbia Institute of Technology.
-      Last updated on Jan 21, 2015.
+      Last updated on Feb 03, 2015.
     </p>
   </div>
 

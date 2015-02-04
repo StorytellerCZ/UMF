@@ -273,7 +273,7 @@ forms.</p>
 <p>You may need to use HTML and characters such as quotes within your form
 elements. In order to do that safely, you&#8217;ll need to use
 <a class="reference internal" href="../general/common_functions.html"><em>common function</em></a>
-<a class="reference internal" href="../general/common_functions.html#html_escape" title="html_escape"><tt class="xref py py-func docutils literal"><span class="pre">html_escape()</span></tt></a>.</p>
+<tt class="xref py py-func docutils literal"><span class="pre">html_escape()</span></tt>.</p>
 <p>Consider the following example:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="nv">$string</span> <span class="o">=</span> <span class="s1">&#39;Here is a string containing &quot;quoted&quot; text.&#39;</span><span class="p">;</span>
 
@@ -281,7 +281,7 @@ elements. In order to do that safely, you&#8217;ll need to use
 </pre></div>
 </div>
 <p>Since the above string contains a set of quotes, it will cause the form
-to break. The <a class="reference internal" href="../general/common_functions.html#html_escape" title="html_escape"><tt class="xref py py-func docutils literal"><span class="pre">html_escape()</span></tt></a> function converts HTML special
+to break. The <a class="reference internal" href="../general/common_functions.html#html_escape" title="html_escape"><tt class="xref php php-func docutils literal"><span class="pre">html_escape()</span></tt></a> function converts HTML special
 characters so that it can be used safely:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="o">&lt;</span><span class="nx">input</span> <span class="nx">type</span><span class="o">=</span><span class="s2">&quot;text&quot;</span> <span class="nx">name</span><span class="o">=</span><span class="s2">&quot;myfield&quot;</span> <span class="nx">value</span><span class="o">=</span><span class="s2">&quot;&lt;?php echo html_escape(</span><span class="si">$string</span><span class="s2">); ?&gt;&quot;</span> <span class="o">/&gt;</span>
 </pre></div>
@@ -370,8 +370,8 @@ third parameter, like this:</p>
 </dd></dl>
 
 <dl class="function">
-<dt id="form_open_multipart">
-<tt class="descname">form_open_multipart</tt><big>(</big><em>[$action = ''[, $attributes = array()[, $hidden = array()]]</em><big>)</big><a class="headerlink" href="#form_open_multipart" title="Permalink to this definition">¶</a></dt>
+<dt>
+<tt class="descname">form_open_multipart([$action = ''[, $attributes = array()[, $hidden = array()]])</tt></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -391,7 +391,7 @@ third parameter, like this:</p>
 </tr>
 </tbody>
 </table>
-<p>This function is absolutely identical to <a class="reference internal" href="#form_open" title="form_open"><tt class="xref py py-func docutils literal"><span class="pre">form_open()</span></tt></a> above,
+<p>This function is absolutely identical to <a class="reference internal" href="#form_open" title="form_open"><tt class="xref php php-func docutils literal"><span class="pre">form_open()</span></tt></a> above,
 except that it adds a <em>multipart</em> attribute, which is necessary if you
 would like to use the form to upload files with.</p>
 </dd></dl>
@@ -479,8 +479,8 @@ name/value string to create one field:</p>
 </dd></dl>
 
 <dl class="function">
-<dt id="form_input">
-<tt class="descname">form_input</tt><big>(</big><em>[$data = ''[, $value = ''[, $extra = '']]</em><big>)</big><a class="headerlink" href="#form_input" title="Permalink to this definition">¶</a></dt>
+<dt>
+<tt class="descname">form_input([$data = ''[, $value = ''[, $extra = '']])</tt></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -555,7 +555,7 @@ JavaScript, you can pass it as a string in the third parameter:</p>
 </tr>
 </tbody>
 </table>
-<p>This function is identical in all respects to the <a class="reference internal" href="#form_input" title="form_input"><tt class="xref py py-func docutils literal"><span class="pre">form_input()</span></tt></a>
+<p>This function is identical in all respects to the <tt class="xref php php-func docutils literal"><span class="pre">form_input()</span></tt>
 function above except that it uses the &#8220;password&#8221; input type.</p>
 </dd></dl>
 
@@ -581,7 +581,7 @@ function above except that it uses the &#8220;password&#8221; input type.</p>
 </tr>
 </tbody>
 </table>
-<p>This function is identical in all respects to the <a class="reference internal" href="#form_input" title="form_input"><tt class="xref py py-func docutils literal"><span class="pre">form_input()</span></tt></a>
+<p>This function is identical in all respects to the <tt class="xref php php-func docutils literal"><span class="pre">form_input()</span></tt>
 function above except that it uses the &#8220;file&#8221; input type, allowing it to
 be used to upload files.</p>
 </dd></dl>
@@ -608,7 +608,7 @@ be used to upload files.</p>
 </tr>
 </tbody>
 </table>
-<p>This function is identical in all respects to the <a class="reference internal" href="#form_input" title="form_input"><tt class="xref py py-func docutils literal"><span class="pre">form_input()</span></tt></a>
+<p>This function is identical in all respects to the <tt class="xref php php-func docutils literal"><span class="pre">form_input()</span></tt>
 function above except that it generates a &#8220;textarea&#8221; type.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
@@ -721,7 +721,7 @@ label.</p>
 contain the name of the field, the second parameter will contain an
 associative array of options, and the third parameter will contain the
 value or values you wish to be selected.</p>
-<p>The parameter usage is identical to using <a class="reference internal" href="#form_dropdown" title="form_dropdown"><tt class="xref py py-func docutils literal"><span class="pre">form_dropdown()</span></tt></a> above,
+<p>The parameter usage is identical to using <a class="reference internal" href="#form_dropdown" title="form_dropdown"><tt class="xref php php-func docutils literal"><span class="pre">form_dropdown()</span></tt></a> above,
 except of course that the name of the field will need to use POST array
 syntax, e.g. foo[].</p>
 </dd></dl>
@@ -793,11 +793,16 @@ second parameter if you prefer to set additional attributes:</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>$extra</strong> (<em>string</em>) &#8211; Anything to append after the closing tag, <em>as is</em></td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>$extra</strong> (<em>string</em>) &#8211; Anything to append after the closing tag, <em>as is</em></li>
+</ul>
+</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">An HTML fieldset closing tag</td>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">An HTML fieldset closing tag</p>
+</td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">string</td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">string</p>
+</td>
 </tr>
 </tbody>
 </table>
@@ -887,7 +892,7 @@ fourth parameter:</p>
 </tr>
 </tbody>
 </table>
-<p>This function is identical in all respects to the <a class="reference internal" href="#form_checkbox" title="form_checkbox"><tt class="xref py py-func docutils literal"><span class="pre">form_checkbox()</span></tt></a>
+<p>This function is identical in all respects to the <a class="reference internal" href="#form_checkbox" title="form_checkbox"><tt class="xref php php-func docutils literal"><span class="pre">form_checkbox()</span></tt></a>
 function above except that it uses the &#8220;radio&#8221; input type.</p>
 </dd></dl>
 
@@ -987,7 +992,7 @@ parameter lets you add extra data to your form, like JavaScript.</p>
 </tbody>
 </table>
 <p>Lets you generate a standard reset button. Use is identical to
-<a class="reference internal" href="#form_submit" title="form_submit"><tt class="xref py py-func docutils literal"><span class="pre">form_submit()</span></tt></a>.</p>
+<tt class="xref py py-func docutils literal"><span class="pre">form_submit()</span></tt>.</p>
 </dd></dl>
 
 <dl class="function">
@@ -1047,11 +1052,16 @@ JavaScript, you can pass it as a string in the third parameter:</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>$extra</strong> (<em>string</em>) &#8211; Anything to append after the closing tag, <em>as is</em></td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>$extra</strong> (<em>string</em>) &#8211; Anything to append after the closing tag, <em>as is</em></li>
+</ul>
+</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">An HTML form closing tag</td>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">An HTML form closing tag</p>
+</td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">string</td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">string</p>
+</td>
 </tr>
 </tbody>
 </table>
@@ -1098,7 +1108,7 @@ form.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p class="last">Only use this function with raw HTML fields, as it
-internally calls <a class="reference internal" href="../general/common_functions.html#html_escape" title="html_escape"><tt class="xref py py-func docutils literal"><span class="pre">html_escape()</span></tt></a> and combining its
+internally calls <a class="reference internal" href="../general/common_functions.html#html_escape" title="html_escape"><tt class="xref php php-func docutils literal"><span class="pre">html_escape()</span></tt></a> and combining its
 usage with other form helper functions will result in
 double HTML encoding!</p>
 </div>
@@ -1197,7 +1207,7 @@ lets you set an item as the default (use boolean TRUE/FALSE).</p>
 </tbody>
 </table>
 <p>Permits you to display radio buttons in the state they were submitted.
-This function is identical to the <a class="reference internal" href="#set_checkbox" title="set_checkbox"><tt class="xref py py-func docutils literal"><span class="pre">set_checkbox()</span></tt></a> function above.</p>
+This function is identical to the <a class="reference internal" href="#set_checkbox" title="set_checkbox"><tt class="xref php php-func docutils literal"><span class="pre">set_checkbox()</span></tt></a> function above.</p>
 <p>Example:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="o">&lt;</span><span class="nx">input</span> <span class="nx">type</span><span class="o">=</span><span class="s2">&quot;radio&quot;</span> <span class="nx">name</span><span class="o">=</span><span class="s2">&quot;myradio&quot;</span> <span class="nx">value</span><span class="o">=</span><span class="s2">&quot;1&quot;</span> <span class="o">&lt;?</span><span class="nx">php</span> <span class="k">echo</span>  <span class="nx">set_radio</span><span class="p">(</span><span class="s1">&#39;myradio&#39;</span><span class="p">,</span> <span class="s1">&#39;1&#39;</span><span class="p">,</span> <span class="k">TRUE</span><span class="p">);</span> <span class="cp">?&gt;</span> /&gt;
 <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;radio&quot;</span> <span class="na">name=</span><span class="s">&quot;myradio&quot;</span> <span class="na">value=</span><span class="s">&quot;2&quot;</span> <span class="cp">&lt;?php</span> <span class="k">echo</span>  <span class="nx">set_radio</span><span class="p">(</span><span class="s1">&#39;myradio&#39;</span><span class="p">,</span> <span class="s1">&#39;2&#39;</span><span class="p">);</span> <span class="cp">?&gt;</span> <span class="nt">/&gt;</span>
@@ -1268,7 +1278,7 @@ message.</p>
 </tr>
 </tbody>
 </table>
-<p>Similarly to the <a class="reference internal" href="#form_error" title="form_error"><tt class="xref py py-func docutils literal"><span class="pre">form_error()</span></tt></a> function, returns all validation
+<p>Similarly to the <a class="reference internal" href="#form_error" title="form_error"><tt class="xref php php-func docutils literal"><span class="pre">form_error()</span></tt></a> function, returns all validation
 error messages produced by the <a class="reference internal" href="../libraries/form_validation.html"><em>Form Validation Library</em></a>, with optional opening and closing tags
 around each of the messages.</p>
 <p>Example:</p>
@@ -1292,11 +1302,16 @@ around each of the messages.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>$str</strong> (<em>string</em>) &#8211; Value to escape</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>$str</strong> (<em>string</em>) &#8211; Value to escape</li>
+</ul>
+</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Escaped value</td>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Escaped value</p>
+</td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">string</td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">string</p>
+</td>
 </tr>
 </tbody>
 </table>
@@ -1312,7 +1327,7 @@ function. Use it only if you are creating your own form elements.</p>
 <p class="first admonition-title">Note</p>
 <p class="last">This function is DEPRECATED and is just an alias for
 <a class="reference internal" href="../general/common_functions.html"><em>common function</em></a>
-<a class="reference internal" href="../general/common_functions.html#html_escape" title="html_escape"><tt class="xref py py-func docutils literal"><span class="pre">html_escape()</span></tt></a> - please use that instead.</p>
+<tt class="xref py py-func docutils literal"><span class="pre">html_escape()</span></tt> - please use that instead.</p>
 </div>
 </dd></dl>
 
@@ -1338,7 +1353,7 @@ function. Use it only if you are creating your own form elements.</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2015, British Columbia Institute of Technology.
-      Last updated on Jan 21, 2015.
+      Last updated on Feb 03, 2015.
     </p>
   </div>
 

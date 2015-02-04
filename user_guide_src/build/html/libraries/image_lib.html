@@ -784,17 +784,22 @@ transparent.</td>
 <dt id="CI_Image_lib">
 <em class="property">class </em><tt class="descname">CI_Image_lib</tt><a class="headerlink" href="#CI_Image_lib" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="method">
-<dt id="CI_Image_lib.initialize">
-<tt class="descname">initialize</tt><big>(</big><span class="optional">[</span><em>$props = array()</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_Image_lib.initialize" title="Permalink to this definition">¶</a></dt>
+<dt id="CI_Image_lib::initialize">
+<tt class="descname">initialize</tt><big>(</big><span class="optional">[</span><em>$props = array()</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_Image_lib::initialize" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>$props</strong> (<em>array</em>) &#8211; Image processing preferences</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>$props</strong> (<em>array</em>) &#8211; Image processing preferences</li>
+</ul>
+</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">TRUE on success, FALSE in case of invalid settings</td>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">TRUE on success, FALSE in case of invalid settings</p>
+</td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">bool</p>
+</td>
 </tr>
 </tbody>
 </table>
@@ -802,8 +807,8 @@ transparent.</td>
 </dd></dl>
 
 <dl class="method">
-<dt id="CI_Image_lib.resize">
-<tt class="descname">resize</tt><big>(</big><big>)</big><a class="headerlink" href="#CI_Image_lib.resize" title="Permalink to this definition">¶</a></dt>
+<dt id="CI_Image_lib::resize">
+<tt class="descname">resize</tt><big>(</big><big>)</big><a class="headerlink" href="#CI_Image_lib::resize" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -851,8 +856,8 @@ original image for processing.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="CI_Image_lib.crop">
-<tt class="descname">crop</tt><big>(</big><big>)</big><a class="headerlink" href="#CI_Image_lib.crop" title="Permalink to this definition">¶</a></dt>
+<dt id="CI_Image_lib::crop">
+<tt class="descname">crop</tt><big>(</big><big>)</big><a class="headerlink" href="#CI_Image_lib::crop" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -898,8 +903,8 @@ lets the cropping area be selected.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="CI_Image_lib.rotate">
-<tt class="descname">rotate</tt><big>(</big><big>)</big><a class="headerlink" href="#CI_Image_lib.rotate" title="Permalink to this definition">¶</a></dt>
+<dt id="CI_Image_lib::rotate">
+<tt class="descname">rotate</tt><big>(</big><big>)</big><a class="headerlink" href="#CI_Image_lib::rotate" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -940,8 +945,8 @@ via its preference:</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="CI_Image_lib.watermark">
-<tt class="descname">watermark</tt><big>(</big><big>)</big><a class="headerlink" href="#CI_Image_lib.watermark" title="Permalink to this definition">¶</a></dt>
+<dt id="CI_Image_lib::watermark">
+<tt class="descname">watermark</tt><big>(</big><big>)</big><a class="headerlink" href="#CI_Image_lib::watermark" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -957,8 +962,8 @@ section for more info.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="CI_Image_lib.clear">
-<tt class="descname">clear</tt><big>(</big><big>)</big><a class="headerlink" href="#CI_Image_lib.clear" title="Permalink to this definition">¶</a></dt>
+<dt id="CI_Image_lib::clear">
+<tt class="descname">clear</tt><big>(</big><big>)</big><a class="headerlink" href="#CI_Image_lib::clear" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -976,8 +981,8 @@ loop.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="CI_Image_lib.display_errors">
-<tt class="descname">display_errors</tt><big>(</big><span class="optional">[</span><em>$open = '&lt;p&gt;</em><span class="optional">[</span>, <em>$close = '&lt;/p&gt;'</em><span class="optional">]</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_Image_lib.display_errors" title="Permalink to this definition">¶</a></dt>
+<dt id="CI_Image_lib::display_errors">
+<tt class="descname">display_errors</tt><big>(</big><span class="optional">[</span><em>$open = '&lt;p&gt;</em><span class="optional">[</span>, <em>$close = '&lt;/p&gt;'</em><span class="optional">]</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_Image_lib::display_errors" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1026,7 +1031,7 @@ loop.</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2015, British Columbia Institute of Technology.
-      Last updated on Jan 21, 2015.
+      Last updated on Feb 03, 2015.
     </p>
   </div>
 

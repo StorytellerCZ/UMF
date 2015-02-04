@@ -543,8 +543,8 @@ change the name you can add a &#8220;name&#8221; key into the field defining arr
 <dt id="CI_DB_forge">
 <em class="property">class </em><tt class="descname">CI_DB_forge</tt><a class="headerlink" href="#CI_DB_forge" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="method">
-<dt id="CI_DB_forge.add_column">
-<tt class="descname">add_column</tt><big>(</big><em>$table</em><span class="optional">[</span>, <em>$field = array()</em><span class="optional">[</span>, <em>$_after = NULL</em><span class="optional">]</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_DB_forge.add_column" title="Permalink to this definition">¶</a></dt>
+<dt id="CI_DB_forge::add_column">
+<tt class="descname">add_column</tt><big>(</big><em>$table</em><span class="optional">[</span>, <em>$field = array()</em><span class="optional">[</span>, <em>$_after = NULL</em><span class="optional">]</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_DB_forge::add_column" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -568,17 +568,22 @@ change the name you can add a &#8220;name&#8221; key into the field defining arr
 </dd></dl>
 
 <dl class="method">
-<dt id="CI_DB_forge.add_field">
-<tt class="descname">add_field</tt><big>(</big><em>$field</em><big>)</big><a class="headerlink" href="#CI_DB_forge.add_field" title="Permalink to this definition">¶</a></dt>
+<dt id="CI_DB_forge::add_field">
+<tt class="descname">add_field</tt><big>(</big><em>$field</em><big>)</big><a class="headerlink" href="#CI_DB_forge::add_field" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>$field</strong> (<em>array</em>) &#8211; Field definition to add</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>$field</strong> (<em>array</em>) &#8211; Field definition to add</li>
+</ul>
+</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">CI_DB_forge instance (method chaining)</td>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">CI_DB_forge instance (method chaining)</p>
+</td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">CI_DB_forge</td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">CI_DB_forge</p>
+</td>
 </tr>
 </tbody>
 </table>
@@ -586,8 +591,8 @@ change the name you can add a &#8220;name&#8221; key into the field defining arr
 </dd></dl>
 
 <dl class="method">
-<dt id="CI_DB_forge.add_key">
-<tt class="descname">add_key</tt><big>(</big><em>$key</em><span class="optional">[</span>, <em>$primary = FALSE</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_DB_forge.add_key" title="Permalink to this definition">¶</a></dt>
+<dt id="CI_DB_forge::add_key">
+<tt class="descname">add_key</tt><big>(</big><em>$key</em><span class="optional">[</span>, <em>$primary = FALSE</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_DB_forge::add_key" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -610,17 +615,22 @@ change the name you can add a &#8220;name&#8221; key into the field defining arr
 </dd></dl>
 
 <dl class="method">
-<dt id="CI_DB_forge.create_database">
-<tt class="descname">create_database</tt><big>(</big><em>$db_name</em><big>)</big><a class="headerlink" href="#CI_DB_forge.create_database" title="Permalink to this definition">¶</a></dt>
+<dt id="CI_DB_forge::create_database">
+<tt class="descname">create_database</tt><big>(</big><em>$db_name</em><big>)</big><a class="headerlink" href="#CI_DB_forge::create_database" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>$db_name</strong> (<em>string</em>) &#8211; Name of the database to create</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>$db_name</strong> (<em>string</em>) &#8211; Name of the database to create</li>
+</ul>
+</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">TRUE on success, FALSE on failure</td>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">TRUE on success, FALSE on failure</p>
+</td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">bool</p>
+</td>
 </tr>
 </tbody>
 </table>
@@ -628,8 +638,8 @@ change the name you can add a &#8220;name&#8221; key into the field defining arr
 </dd></dl>
 
 <dl class="method">
-<dt id="CI_DB_forge.create_table">
-<tt class="descname">create_table</tt><big>(</big><em>$table</em><span class="optional">[</span>, <em>$if_not_exists = FALSE</em><span class="optional">[</span>, <em>array $attributes = array()</em><span class="optional">]</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_DB_forge.create_table" title="Permalink to this definition">¶</a></dt>
+<dt id="CI_DB_forge::create_table">
+<tt class="descname">create_table</tt><big>(</big><em>$table</em><span class="optional">[</span>, <em>$if_not_exists = FALSE</em><span class="optional">[</span>, <em>array $attributes = array()</em><span class="optional">]</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_DB_forge::create_table" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -653,8 +663,8 @@ change the name you can add a &#8220;name&#8221; key into the field defining arr
 </dd></dl>
 
 <dl class="method">
-<dt id="CI_DB_forge.drop_column">
-<tt class="descname">drop_column</tt><big>(</big><em>$table</em>, <em>$column_name</em><big>)</big><a class="headerlink" href="#CI_DB_forge.drop_column" title="Permalink to this definition">¶</a></dt>
+<dt id="CI_DB_forge::drop_column">
+<tt class="descname">drop_column</tt><big>(</big><em>$table</em>, <em>$column_name</em><big>)</big><a class="headerlink" href="#CI_DB_forge::drop_column" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -677,17 +687,22 @@ change the name you can add a &#8220;name&#8221; key into the field defining arr
 </dd></dl>
 
 <dl class="method">
-<dt id="CI_DB_forge.drop_database">
-<tt class="descname">drop_database</tt><big>(</big><em>$db_name</em><big>)</big><a class="headerlink" href="#CI_DB_forge.drop_database" title="Permalink to this definition">¶</a></dt>
+<dt id="CI_DB_forge::drop_database">
+<tt class="descname">drop_database</tt><big>(</big><em>$db_name</em><big>)</big><a class="headerlink" href="#CI_DB_forge::drop_database" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>$db_name</strong> (<em>string</em>) &#8211; Name of the database to drop</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>$db_name</strong> (<em>string</em>) &#8211; Name of the database to drop</li>
+</ul>
+</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">TRUE on success, FALSE on failure</td>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">TRUE on success, FALSE on failure</p>
+</td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">bool</p>
+</td>
 </tr>
 </tbody>
 </table>
@@ -695,8 +710,8 @@ change the name you can add a &#8220;name&#8221; key into the field defining arr
 </dd></dl>
 
 <dl class="method">
-<dt id="CI_DB_forge.drop_table">
-<tt class="descname">drop_table</tt><big>(</big><em>$table_name</em><span class="optional">[</span>, <em>$if_exists = FALSE</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_DB_forge.drop_table" title="Permalink to this definition">¶</a></dt>
+<dt id="CI_DB_forge::drop_table">
+<tt class="descname">drop_table</tt><big>(</big><em>$table_name</em><span class="optional">[</span>, <em>$if_exists = FALSE</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_DB_forge::drop_table" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -719,8 +734,8 @@ change the name you can add a &#8220;name&#8221; key into the field defining arr
 </dd></dl>
 
 <dl class="method">
-<dt id="CI_DB_forge.modify_column">
-<tt class="descname">modify_column</tt><big>(</big><em>$table</em>, <em>$field</em><big>)</big><a class="headerlink" href="#CI_DB_forge.modify_column" title="Permalink to this definition">¶</a></dt>
+<dt id="CI_DB_forge::modify_column">
+<tt class="descname">modify_column</tt><big>(</big><em>$table</em>, <em>$field</em><big>)</big><a class="headerlink" href="#CI_DB_forge::modify_column" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -743,8 +758,8 @@ change the name you can add a &#8220;name&#8221; key into the field defining arr
 </dd></dl>
 
 <dl class="method">
-<dt id="CI_DB_forge.rename_table">
-<tt class="descname">rename_table</tt><big>(</big><em>$table_name</em>, <em>$new_table_name</em><big>)</big><a class="headerlink" href="#CI_DB_forge.rename_table" title="Permalink to this definition">¶</a></dt>
+<dt id="CI_DB_forge::rename_table">
+<tt class="descname">rename_table</tt><big>(</big><em>$table_name</em>, <em>$new_table_name</em><big>)</big><a class="headerlink" href="#CI_DB_forge::rename_table" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -790,7 +805,7 @@ change the name you can add a &#8220;name&#8221; key into the field defining arr
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2015, British Columbia Institute of Technology.
-      Last updated on Jan 21, 2015.
+      Last updated on Feb 03, 2015.
     </p>
   </div>
 

@@ -311,7 +311,7 @@ file in the following way:</p>
 </pre></div>
 </div>
 <p>If you use the <a class="reference internal" href="../helpers/form_helper.html"><em>form helper</em></a>, then
-<a class="reference internal" href="../helpers/form_helper.html#form_open" title="form_open"><tt class="xref py py-func docutils literal"><span class="pre">form_open()</span></tt></a> will automatically insert a hidden csrf field in
+<tt class="xref py py-func docutils literal"><span class="pre">form_open()</span></tt> will automatically insert a hidden csrf field in
 your forms. If not, then you can use <tt class="docutils literal"><span class="pre">get_csrf_token_name()</span></tt>
 and <tt class="docutils literal"><span class="pre">get_csrf_hash()</span></tt></p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="nv">$csrf</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
@@ -353,17 +353,22 @@ by editing the &#8216;csrf_exclude_uris&#8217; config parameter:</p>
 <dt id="CI_Security">
 <em class="property">class </em><tt class="descname">CI_Security</tt><a class="headerlink" href="#CI_Security" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="method">
-<dt id="CI_Security.xss_clean">
-<tt class="descname">xss_clean</tt><big>(</big><em>$str</em><span class="optional">[</span>, <em>$is_image = FALSE</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_Security.xss_clean" title="Permalink to this definition">¶</a></dt>
+<dt id="CI_Security::xss_clean">
+<tt class="descname">xss_clean</tt><big>(</big><em>$str</em><span class="optional">[</span>, <em>$is_image = FALSE</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_Security::xss_clean" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>$str</strong> (<em>mixed</em>) &#8211; Input string or an array of strings</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>$str</strong> (<em>mixed</em>) &#8211; Input string or an array of strings</li>
+</ul>
+</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">XSS-clean data</td>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">XSS-clean data</p>
+</td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">mixed</td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">mixed</p>
+</td>
 </tr>
 </tbody>
 </table>
@@ -372,8 +377,8 @@ If the optional second parameter is set to true, it will return boolean TRUE if 
 </dd></dl>
 
 <dl class="method">
-<dt id="CI_Security.sanitize_filename">
-<tt class="descname">sanitize_filename</tt><big>(</big><em>$str</em><span class="optional">[</span>, <em>$relative_path = FALSE</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_Security.sanitize_filename" title="Permalink to this definition">¶</a></dt>
+<dt id="CI_Security::sanitize_filename">
+<tt class="descname">sanitize_filename</tt><big>(</big><em>$str</em><span class="optional">[</span>, <em>$relative_path = FALSE</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_Security::sanitize_filename" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -405,8 +410,8 @@ and other security threats, which is particularly useful for files that were sup
 </dd></dl>
 
 <dl class="method">
-<dt id="CI_Security.get_csrf_token_name">
-<tt class="descname">get_csrf_token_name</tt><big>(</big><big>)</big><a class="headerlink" href="#CI_Security.get_csrf_token_name" title="Permalink to this definition">¶</a></dt>
+<dt id="CI_Security::get_csrf_token_name">
+<tt class="descname">get_csrf_token_name</tt><big>(</big><big>)</big><a class="headerlink" href="#CI_Security::get_csrf_token_name" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -421,8 +426,8 @@ and other security threats, which is particularly useful for files that were sup
 </dd></dl>
 
 <dl class="method">
-<dt id="CI_Security.get_csrf_hash">
-<tt class="descname">get_csrf_hash</tt><big>(</big><big>)</big><a class="headerlink" href="#CI_Security.get_csrf_hash" title="Permalink to this definition">¶</a></dt>
+<dt id="CI_Security::get_csrf_hash">
+<tt class="descname">get_csrf_hash</tt><big>(</big><big>)</big><a class="headerlink" href="#CI_Security::get_csrf_hash" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -438,8 +443,8 @@ for manually building forms or sending valid AJAX POST requests.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="CI_Security.entity_decode">
-<tt class="descname">entity_decode</tt><big>(</big><em>$str</em><span class="optional">[</span>, <em>$charset = NULL</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_Security.entity_decode" title="Permalink to this definition">¶</a></dt>
+<dt id="CI_Security::entity_decode">
+<tt class="descname">entity_decode</tt><big>(</big><em>$str</em><span class="optional">[</span>, <em>$charset = NULL</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_Security::entity_decode" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -464,17 +469,22 @@ it tries to detect HTML entities that don&#8217;t end in a semicolon because som
 </dd></dl>
 
 <dl class="method">
-<dt id="CI_Security.get_random_bytes">
-<tt class="descname">get_random_bytes</tt><big>(</big><em>$length</em><big>)</big><a class="headerlink" href="#CI_Security.get_random_bytes" title="Permalink to this definition">¶</a></dt>
+<dt id="CI_Security::get_random_bytes">
+<tt class="descname">get_random_bytes</tt><big>(</big><em>$length</em><big>)</big><a class="headerlink" href="#CI_Security::get_random_bytes" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>$length</strong> (<em>int</em>) &#8211; Output length</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>$length</strong> (<em>int</em>) &#8211; Output length</li>
+</ul>
+</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">A binary stream of random bytes or FALSE on failure</td>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">A binary stream of random bytes or FALSE on failure</p>
+</td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">string</td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">string</p>
+</td>
 </tr>
 </tbody>
 </table>
@@ -513,7 +523,7 @@ just the best attempt at that.</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2015, British Columbia Institute of Technology.
-      Last updated on Jan 21, 2015.
+      Last updated on Feb 03, 2015.
     </p>
   </div>
 

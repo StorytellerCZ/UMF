@@ -581,8 +581,8 @@ preferences in a config file.</p>
 <dt id="CI_Upload">
 <em class="property">class </em><tt class="descname">CI_Upload</tt><a class="headerlink" href="#CI_Upload" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="method">
-<dt id="CI_Upload.initialize">
-<tt class="descname">initialize</tt><big>(</big><span class="optional">[</span><em>array $config = array()</em><span class="optional">[</span>, <em>$reset = TRUE</em><span class="optional">]</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_Upload.initialize" title="Permalink to this definition">¶</a></dt>
+<dt id="CI_Upload::initialize">
+<tt class="descname">initialize</tt><big>(</big><span class="optional">[</span><em>array $config = array()</em><span class="optional">[</span>, <em>$reset = TRUE</em><span class="optional">]</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_Upload::initialize" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -604,17 +604,22 @@ preferences in a config file.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="CI_Upload.do_upload">
-<tt class="descname">do_upload</tt><big>(</big><span class="optional">[</span><em>$field = 'userfile'</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_Upload.do_upload" title="Permalink to this definition">¶</a></dt>
+<dt id="CI_Upload::do_upload">
+<tt class="descname">do_upload</tt><big>(</big><span class="optional">[</span><em>$field = 'userfile'</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_Upload::do_upload" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>$field</strong> (<em>string</em>) &#8211; Name of the form field</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>$field</strong> (<em>string</em>) &#8211; Name of the form field</li>
+</ul>
+</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">TRUE on success, FALSE on failure</td>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">TRUE on success, FALSE on failure</p>
+</td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">bool</p>
+</td>
 </tr>
 </tbody>
 </table>
@@ -637,8 +642,8 @@ the <tt class="docutils literal"><span class="pre">do_upload()</span></tt> metho
 </dd></dl>
 
 <dl class="method">
-<dt id="CI_Upload.display_errors">
-<tt class="descname">display_errors</tt><big>(</big><span class="optional">[</span><em>$open = '&lt;p&gt;'</em><span class="optional">[</span>, <em>$close = '&lt;/p&gt;'</em><span class="optional">]</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_Upload.display_errors" title="Permalink to this definition">¶</a></dt>
+<dt id="CI_Upload::display_errors">
+<tt class="descname">display_errors</tt><big>(</big><span class="optional">[</span><em>$open = '&lt;p&gt;'</em><span class="optional">[</span>, <em>$close = '&lt;/p&gt;'</em><span class="optional">]</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_Upload::display_errors" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -671,17 +676,22 @@ set your own delimiters like this:</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="CI_Upload.data">
-<tt class="descname">data</tt><big>(</big><span class="optional">[</span><em>$index = NULL</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_Upload.data" title="Permalink to this definition">¶</a></dt>
+<dt id="CI_Upload::data">
+<tt class="descname">data</tt><big>(</big><span class="optional">[</span><em>$index = NULL</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_Upload::data" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>$data</strong> (<em>string</em>) &#8211; Element to return instead of the full array</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>$data</strong> (<em>string</em>) &#8211; Element to return instead of the full array</li>
+</ul>
+</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Information about the uploaded file</td>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Information about the uploaded file</p>
+</td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">mixed</td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">mixed</p>
+</td>
 </tr>
 </tbody>
 </table>
@@ -792,7 +802,7 @@ data related to the file you uploaded. Here is the array prototype:</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2015, British Columbia Institute of Technology.
-      Last updated on Jan 21, 2015.
+      Last updated on Feb 03, 2015.
     </p>
   </div>
 

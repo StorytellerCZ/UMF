@@ -418,8 +418,8 @@ migration files.</td>
 <dt id="CI_Migration">
 <em class="property">class </em><tt class="descname">CI_Migration</tt><a class="headerlink" href="#CI_Migration" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="method">
-<dt id="CI_Migration.current">
-<tt class="descname">current</tt><big>(</big><big>)</big><a class="headerlink" href="#CI_Migration.current" title="Permalink to this definition">¶</a></dt>
+<dt id="CI_Migration::current">
+<tt class="descname">current</tt><big>(</big><big>)</big><a class="headerlink" href="#CI_Migration::current" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -435,8 +435,8 @@ migration files.</td>
 </dd></dl>
 
 <dl class="method">
-<dt id="CI_Migration.error_string">
-<tt class="descname">error_string</tt><big>(</big><big>)</big><a class="headerlink" href="#CI_Migration.error_string" title="Permalink to this definition">¶</a></dt>
+<dt id="CI_Migration::error_string">
+<tt class="descname">error_string</tt><big>(</big><big>)</big><a class="headerlink" href="#CI_Migration::error_string" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -451,8 +451,8 @@ migration files.</td>
 </dd></dl>
 
 <dl class="method">
-<dt id="CI_Migration.find_migrations">
-<tt class="descname">find_migrations</tt><big>(</big><big>)</big><a class="headerlink" href="#CI_Migration.find_migrations" title="Permalink to this definition">¶</a></dt>
+<dt id="CI_Migration::find_migrations">
+<tt class="descname">find_migrations</tt><big>(</big><big>)</big><a class="headerlink" href="#CI_Migration::find_migrations" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -467,8 +467,8 @@ migration files.</td>
 </dd></dl>
 
 <dl class="method">
-<dt id="CI_Migration.latest">
-<tt class="descname">latest</tt><big>(</big><big>)</big><a class="headerlink" href="#CI_Migration.latest" title="Permalink to this definition">¶</a></dt>
+<dt id="CI_Migration::latest">
+<tt class="descname">latest</tt><big>(</big><big>)</big><a class="headerlink" href="#CI_Migration::latest" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -485,17 +485,22 @@ newest migration found in the filesystem.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="CI_Migration.version">
-<tt class="descname">version</tt><big>(</big><em>$target_version</em><big>)</big><a class="headerlink" href="#CI_Migration.version" title="Permalink to this definition">¶</a></dt>
+<dt id="CI_Migration::version">
+<tt class="descname">version</tt><big>(</big><em>$target_version</em><big>)</big><a class="headerlink" href="#CI_Migration::version" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>$target_version</strong> (<em>mixed</em>) &#8211; Migration version to process</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>$target_version</strong> (<em>mixed</em>) &#8211; Migration version to process</li>
+</ul>
+</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">TRUE if no migrations are found, current version string on success, FALSE on failure</td>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">TRUE if no migrations are found, current version string on success, FALSE on failure</p>
+</td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">mixed</td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">mixed</p>
+</td>
 </tr>
 </tbody>
 </table>
@@ -530,7 +535,7 @@ specific versions. It works just like <tt class="docutils literal"><span class="
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2015, British Columbia Institute of Technology.
-      Last updated on Jan 21, 2015.
+      Last updated on Feb 03, 2015.
     </p>
   </div>
 

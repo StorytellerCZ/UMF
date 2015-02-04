@@ -296,20 +296,24 @@ software keep track of your scripts and the health of your application.</p>
 </tr>
 </tbody>
 </table>
-</dd></dl>
-
-<p>This function will display the error message supplied to it using the
-following error template:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span class="nx">application</span><span class="o">/</span><span class="nx">views</span><span class="o">/</span><span class="nx">errors</span><span class="o">/</span><span class="nx">error_general</span><span class="o">.</span><span class="nx">php</span>
+<p>This function will display the error message supplied to it using
+the error template appropriate to your execution:</p>
+<div class="highlight-ci"><div class="highlight"><pre><span class="nx">application</span><span class="o">/</span><span class="nx">views</span><span class="o">/</span><span class="nx">errors</span><span class="o">/</span><span class="nx">html</span><span class="o">/</span><span class="nx">error_general</span><span class="o">.</span><span class="nx">php</span>
 </pre></div>
 </div>
+<p>or:</p>
+<blockquote>
+<div>application/views/errors/cli/error_general.php</div></blockquote>
 <p>The optional parameter <tt class="docutils literal"><span class="pre">$status_code</span></tt> determines what HTTP status
-code should be sent with the error. If <tt class="docutils literal"><span class="pre">$status_code</span></tt> is less than 100,
-the HTTP status code will be set to 500, and the exit status code will
-be set to <tt class="docutils literal"><span class="pre">$status_code</span> <span class="pre">+</span> <span class="pre">EXIT__AUTO_MIN</span></tt>. If that value is larger than
-<tt class="docutils literal"><span class="pre">EXIT__AUTO_MAX</span></tt>, or if <tt class="docutils literal"><span class="pre">$status_code</span></tt> is 100 or higher, the exit
-status code will be set to <tt class="docutils literal"><span class="pre">EXIT_ERROR</span></tt>. You can check in
-<em>application/config/constants.php</em> for more detail.</p>
+code should be sent with the error. If <tt class="docutils literal"><span class="pre">$status_code</span></tt> is less
+than 100, the HTTP status code will be set to 500, and the exit
+status code will be set to <tt class="docutils literal"><span class="pre">$status_code</span> <span class="pre">+</span> <span class="pre">EXIT__AUTO_MIN</span></tt>.
+If that value is larger than <tt class="docutils literal"><span class="pre">EXIT__AUTO_MAX</span></tt>, or if
+<tt class="docutils literal"><span class="pre">$status_code</span></tt> is 100 or higher, the exit status code will be set
+to <tt class="docutils literal"><span class="pre">EXIT_ERROR</span></tt>.
+You can check in <em>application/config/constants.php</em> for more detail.</p>
+</dd></dl>
+
 <dl class="function">
 <dt id="show_404">
 <tt class="descname">show_404</tt><big>(</big><em>$page = ''</em>, <em>$log_error = TRUE</em><big>)</big><a class="headerlink" href="#show_404" title="Permalink to this definition">¶</a></dt>
@@ -328,19 +332,23 @@ status code will be set to <tt class="docutils literal"><span class="pre">EXIT_E
 </tr>
 </tbody>
 </table>
-</dd></dl>
-
-<p>This function will display the 404 error message supplied to it using
-the following error template:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span class="nx">application</span><span class="o">/</span><span class="nx">views</span><span class="o">/</span><span class="nx">errors</span><span class="o">/</span><span class="nx">error_404</span><span class="o">.</span><span class="nx">php</span>
+<p>This function will display the 404 error message supplied to it
+using the error template appropriate to your execution:</p>
+<div class="highlight-ci"><div class="highlight"><pre><span class="nx">application</span><span class="o">/</span><span class="nx">views</span><span class="o">/</span><span class="nx">errors</span><span class="o">/</span><span class="nx">html</span><span class="o">/</span><span class="nx">error_404</span><span class="o">.</span><span class="nx">php</span>
 </pre></div>
 </div>
-<p>The function expects the string passed to it to be the file path to the
-page that isn&#8217;t found. The exit status code will be set to <tt class="docutils literal"><span class="pre">EXIT_UNKNOWN_FILE</span></tt>.
-Note that CodeIgniter automatically shows 404 messages if controllers are
-not found.</p>
+<p>or:</p>
+<blockquote>
+<div>application/views/errors/cli/error_404.php</div></blockquote>
+<p>The function expects the string passed to it to be the file path to
+the page that isn&#8217;t found. The exit status code will be set to
+<tt class="docutils literal"><span class="pre">EXIT_UNKNOWN_FILE</span></tt>.
+Note that CodeIgniter automatically shows 404 messages if
+controllers are not found.</p>
 <p>CodeIgniter automatically logs any <tt class="docutils literal"><span class="pre">show_404()</span></tt> calls. Setting the
 optional second parameter to FALSE will skip logging.</p>
+</dd></dl>
+
 <dl class="function">
 <dt id="log_message">
 <tt class="descname">log_message</tt><big>(</big><em>$level</em>, <em>$message</em>, <em>$php_error = FALSE</em><big>)</big><a class="headerlink" href="#log_message" title="Permalink to this definition">¶</a></dt>
@@ -360,12 +368,10 @@ optional second parameter to FALSE will skip logging.</p>
 </tr>
 </tbody>
 </table>
-</dd></dl>
-
-<p>This function lets you write messages to your log files. You must supply
-one of three &#8220;levels&#8221; in the first parameter, indicating what type of
-message it is (debug, error, info), with the message itself in the
-second parameter.</p>
+<p>This function lets you write messages to your log files. You must
+supply one of three &#8220;levels&#8221; in the first parameter, indicating what
+type of message it is (debug, error, info), with the message itself
+in the second parameter.</p>
 <p>Example:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="k">if</span> <span class="p">(</span><span class="nv">$some_var</span> <span class="o">==</span> <span class="s1">&#39;&#39;</span><span class="p">)</span>
 <span class="p">{</span>
@@ -381,8 +387,8 @@ second parameter.</p>
 </div>
 <p>There are three message types:</p>
 <ol class="arabic simple">
-<li>Error Messages. These are actual errors, such as PHP errors or user
-errors.</li>
+<li>Error Messages. These are actual errors, such as PHP errors or
+user errors.</li>
 <li>Debug Messages. These are messages that assist in debugging. For
 example, if a class has been initialized, you could log this as
 debugging info.</li>
@@ -391,12 +397,15 @@ simply giving information regarding some process.</li>
 </ol>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">In order for the log file to actually be written, the <em>logs</em>
-directory must be writable. In addition, you must set the &#8220;threshold&#8221;
-for logging in <em>application/config/config.php</em>. You might, for example,
-only want error messages to be logged, and not the other two types.
-If you set it to zero logging will be disabled.</p>
+<p class="last">In order for the log file to actually be written, the
+<em>logs/</em> directory must be writable. In addition, you must
+set the &#8220;threshold&#8221; for logging in
+<em>application/config/config.php</em>. You might, for example,
+only want error messages to be logged, and not the other
+two types. If you set it to zero logging will be disabled.</p>
 </div>
+</dd></dl>
+
 </div>
 
 
@@ -418,7 +427,7 @@ If you set it to zero logging will be disabled.</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2015, British Columbia Institute of Technology.
-      Last updated on Jan 21, 2015.
+      Last updated on Feb 03, 2015.
     </p>
   </div>
 

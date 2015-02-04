@@ -981,17 +981,22 @@ appear and become widely available.</p>
 <dt id="CI_Encryption">
 <em class="property">class </em><tt class="descname">CI_Encryption</tt><a class="headerlink" href="#CI_Encryption" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="method">
-<dt id="CI_Encryption.initialize">
-<tt class="descname">initialize</tt><big>(</big><em>$params</em><big>)</big><a class="headerlink" href="#CI_Encryption.initialize" title="Permalink to this definition">¶</a></dt>
+<dt id="CI_Encryption::initialize">
+<tt class="descname">initialize</tt><big>(</big><em>$params</em><big>)</big><a class="headerlink" href="#CI_Encryption::initialize" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>$params</strong> (<em>array</em>) &#8211; Configuration parameters</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>$params</strong> (<em>array</em>) &#8211; Configuration parameters</li>
+</ul>
+</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">CI_Encryption instance (method chaining)</td>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">CI_Encryption instance (method chaining)</p>
+</td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">CI_Encryption</td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">CI_Encryption</p>
+</td>
 </tr>
 </tbody>
 </table>
@@ -1007,8 +1012,8 @@ driver, cipher, mode or key.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="CI_Encryption.encrypt">
-<tt class="descname">encrypt</tt><big>(</big><em>$data</em><span class="optional">[</span>, <em>$params = NULL</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_Encryption.encrypt" title="Permalink to this definition">¶</a></dt>
+<dt id="CI_Encryption::encrypt">
+<tt class="descname">encrypt</tt><big>(</big><em>$data</em><span class="optional">[</span>, <em>$params = NULL</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_Encryption::encrypt" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1037,8 +1042,8 @@ on the optional parameters.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="CI_Encryption.decrypt">
-<tt class="descname">decrypt</tt><big>(</big><em>$data</em><span class="optional">[</span>, <em>$params = NULL</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_Encryption.decrypt" title="Permalink to this definition">¶</a></dt>
+<dt id="CI_Encryption::decrypt">
+<tt class="descname">decrypt</tt><big>(</big><em>$data</em><span class="optional">[</span>, <em>$params = NULL</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_Encryption::decrypt" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1067,8 +1072,8 @@ on the optional parameters.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="CI_Encryption.hkdf">
-<tt class="descname">hkdf</tt><big>(</big><em>$key</em><span class="optional">[</span>, <em>$digest = 'sha512'</em><span class="optional">[</span>, <em>$salt = NULL</em><span class="optional">[</span>, <em>$length = NULL</em><span class="optional">[</span>, <em>$info = ''</em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_Encryption.hkdf" title="Permalink to this definition">¶</a></dt>
+<dt id="CI_Encryption::hkdf">
+<tt class="descname">hkdf</tt><big>(</big><em>$key</em><span class="optional">[</span>, <em>$digest = 'sha512'</em><span class="optional">[</span>, <em>$salt = NULL</em><span class="optional">[</span>, <em>$length = NULL</em><span class="optional">[</span>, <em>$info = ''</em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_Encryption::hkdf" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1135,7 +1140,7 @@ doesn&#8217;t support SHA1.</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2015, British Columbia Institute of Technology.
-      Last updated on Jan 21, 2015.
+      Last updated on Feb 03, 2015.
     </p>
   </div>
 

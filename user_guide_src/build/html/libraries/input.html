@@ -372,8 +372,8 @@ PUT, DELETE or PATCH data.</p>
 <dt id="CI_Input">
 <em class="property">class </em><tt class="descname">CI_Input</tt><a class="headerlink" href="#CI_Input" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="method">
-<dt id="CI_Input.post">
-<tt class="descname">post</tt><big>(</big><span class="optional">[</span><em>$index = NULL</em><span class="optional">[</span>, <em>$xss_clean = NULL</em><span class="optional">]</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_Input.post" title="Permalink to this definition">¶</a></dt>
+<dt id="CI_Input::post">
+<tt class="descname">post</tt><big>(</big><span class="optional">[</span><em>$index = NULL</em><span class="optional">[</span>, <em>$xss_clean = NULL</em><span class="optional">]</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_Input::post" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -425,8 +425,8 @@ second parameter to boolean TRUE.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="CI_Input.get">
-<tt class="descname">get</tt><big>(</big><span class="optional">[</span><em>$index = NULL</em><span class="optional">[</span>, <em>$xss_clean = NULL</em><span class="optional">]</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_Input.get" title="Permalink to this definition">¶</a></dt>
+<dt id="CI_Input::get">
+<tt class="descname">get</tt><big>(</big><span class="optional">[</span><em>$index = NULL</em><span class="optional">[</span>, <em>$xss_clean = NULL</em><span class="optional">]</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_Input::get" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -469,8 +469,8 @@ second parameter to boolean TRUE.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="CI_Input.post_get">
-<tt class="descname">post_get</tt><big>(</big><em>$index</em><span class="optional">[</span>, <em>$xss_clean = NULL</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_Input.post_get" title="Permalink to this definition">¶</a></dt>
+<dt id="CI_Input::post_get">
+<tt class="descname">post_get</tt><big>(</big><em>$index</em><span class="optional">[</span>, <em>$xss_clean = NULL</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_Input::post_get" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -498,8 +498,8 @@ looking in POST first, and then in GET:</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="CI_Input.get_post">
-<tt class="descname">get_post</tt><big>(</big><em>$index</em><span class="optional">[</span>, <em>$xss_clean = NULL</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_Input.get_post" title="Permalink to this definition">¶</a></dt>
+<dt id="CI_Input::get_post">
+<tt class="descname">get_post</tt><big>(</big><em>$index</em><span class="optional">[</span>, <em>$xss_clean = NULL</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_Input::get_post" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -530,8 +530,8 @@ behavior has changed in CodeIgniter 3.0.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="CI_Input.cookie">
-<tt class="descname">cookie</tt><big>(</big><span class="optional">[</span><em>$index = NULL</em><span class="optional">[</span>, <em>$xss_clean = NULL</em><span class="optional">]</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_Input.cookie" title="Permalink to this definition">¶</a></dt>
+<dt id="CI_Input::cookie">
+<tt class="descname">cookie</tt><big>(</big><span class="optional">[</span><em>$index = NULL</em><span class="optional">[</span>, <em>$xss_clean = NULL</em><span class="optional">]</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_Input::cookie" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -564,14 +564,14 @@ as an array.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p class="last">Unlike the <a class="reference internal" href="../helpers/cookie_helper.html"><em>Cookie Helper</em></a>
-function <a class="reference internal" href="../helpers/cookie_helper.html#get_cookie" title="get_cookie"><tt class="xref py py-func docutils literal"><span class="pre">get_cookie()</span></tt></a>, this method does NOT prepend
+function <tt class="xref php php-func docutils literal"><span class="pre">get_cookie()</span></tt>, this method does NOT prepend
 your configured <tt class="docutils literal"><span class="pre">$config['cookie_prefix']</span></tt> value.</p>
 </div>
 </dd></dl>
 
 <dl class="method">
-<dt id="CI_Input.server">
-<tt class="descname">server</tt><big>(</big><em>$index</em><span class="optional">[</span>, <em>$xss_clean = NULL</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_Input.server" title="Permalink to this definition">¶</a></dt>
+<dt id="CI_Input::server">
+<tt class="descname">server</tt><big>(</big><em>$index</em><span class="optional">[</span>, <em>$xss_clean = NULL</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_Input::server" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -603,8 +603,8 @@ as an array.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="CI_Input.input_stream">
-<tt class="descname">input_stream</tt><big>(</big><span class="optional">[</span><em>$index = NULL</em><span class="optional">[</span>, <em>$xss_clean = NULL</em><span class="optional">]</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_Input.input_stream" title="Permalink to this definition">¶</a></dt>
+<dt id="CI_Input::input_stream">
+<tt class="descname">input_stream</tt><big>(</big><span class="optional">[</span><em>$index = NULL</em><span class="optional">[</span>, <em>$xss_clean = NULL</em><span class="optional">]</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_Input::input_stream" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -628,8 +628,8 @@ only it fetches the <em>php://input</em> stream data.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="CI_Input.set_cookie">
-<tt class="descname">set_cookie</tt><big>(</big><em>$name = ''</em><span class="optional">[</span>, <em>$value = ''</em><span class="optional">[</span>, <em>$expire = ''</em><span class="optional">[</span>, <em>$domain = ''</em><span class="optional">[</span>, <em>$path = '/'</em><span class="optional">[</span>, <em>$prefix = ''</em><span class="optional">[</span>, <em>$secure = FALSE</em><span class="optional">[</span>, <em>$httponly = FALSE</em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_Input.set_cookie" title="Permalink to this definition">¶</a></dt>
+<dt id="CI_Input::set_cookie">
+<tt class="descname">set_cookie</tt><big>(</big><em>$name = ''</em><span class="optional">[</span>, <em>$value = ''</em><span class="optional">[</span>, <em>$expire = ''</em><span class="optional">[</span>, <em>$domain = ''</em><span class="optional">[</span>, <em>$path = '/'</em><span class="optional">[</span>, <em>$prefix = ''</em><span class="optional">[</span>, <em>$secure = FALSE</em><span class="optional">[</span>, <em>$httponly = FALSE</em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_Input::set_cookie" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -694,8 +694,8 @@ parameters:</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="CI_Input.ip_address">
-<tt class="descname">ip_address</tt><big>(</big><big>)</big><a class="headerlink" href="#CI_Input.ip_address" title="Permalink to this definition">¶</a></dt>
+<dt id="CI_Input::ip_address">
+<tt class="descname">ip_address</tt><big>(</big><big>)</big><a class="headerlink" href="#CI_Input::ip_address" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -721,8 +721,8 @@ address for the allowed IP addresses.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="CI_Input.valid_ip">
-<tt class="descname">valid_ip</tt><big>(</big><em>$ip</em><span class="optional">[</span>, <em>$which = ''</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_Input.valid_ip" title="Permalink to this definition">¶</a></dt>
+<dt id="CI_Input::valid_ip">
+<tt class="descname">valid_ip</tt><big>(</big><em>$ip</em><span class="optional">[</span>, <em>$which = ''</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_Input::valid_ip" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -763,17 +763,22 @@ an IP format. The default checks for both formats.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="CI_Input.user_agent">
-<tt class="descname">user_agent</tt><big>(</big><span class="optional">[</span><em>$xss_clean = NULL</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_Input.user_agent" title="Permalink to this definition">¶</a></dt>
+<dt id="CI_Input::user_agent">
+<tt class="descname">user_agent</tt><big>(</big><span class="optional">[</span><em>$xss_clean = NULL</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_Input::user_agent" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">User agent string or NULL if not set</td>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">User agent string or NULL if not set</p>
+</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Parameters:</th><td class="field-body"><strong>$xss_clean</strong> (<em>bool</em>) &#8211; Whether to apply XSS filtering</td>
+<tr class="field-even field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>$xss_clean</strong> (<em>bool</em>) &#8211; Whether to apply XSS filtering</li>
+</ul>
+</td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">mixed</td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">mixed</p>
+</td>
 </tr>
 </tbody>
 </table>
@@ -787,17 +792,22 @@ information from the user agent string.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="CI_Input.request_headers">
-<tt class="descname">request_headers</tt><big>(</big><span class="optional">[</span><em>$xss_clean = FALSE</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_Input.request_headers" title="Permalink to this definition">¶</a></dt>
+<dt id="CI_Input::request_headers">
+<tt class="descname">request_headers</tt><big>(</big><span class="optional">[</span><em>$xss_clean = FALSE</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_Input::request_headers" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>$xss_clean</strong> (<em>bool</em>) &#8211; Whether to apply XSS filtering</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>$xss_clean</strong> (<em>bool</em>) &#8211; Whether to apply XSS filtering</li>
+</ul>
+</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">An array of HTTP request headers</td>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">An array of HTTP request headers</p>
+</td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">array</td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">array</p>
+</td>
 </tr>
 </tbody>
 </table>
@@ -811,8 +821,8 @@ will not be supported.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="CI_Input.get_request_header">
-<tt class="descname">get_request_header</tt><big>(</big><em>$index</em><span class="optional">[</span>, <em>$xss_clean = FALSE</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_Input.get_request_header" title="Permalink to this definition">¶</a></dt>
+<dt id="CI_Input::get_request_header">
+<tt class="descname">get_request_header</tt><big>(</big><em>$index</em><span class="optional">[</span>, <em>$xss_clean = FALSE</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_Input::get_request_header" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -839,8 +849,8 @@ if the searched header is not found.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="CI_Input.is_ajax_request">
-<tt class="descname">is_ajax_request</tt><big>(</big><big>)</big><a class="headerlink" href="#CI_Input.is_ajax_request" title="Permalink to this definition">¶</a></dt>
+<dt id="CI_Input::is_ajax_request">
+<tt class="descname">is_ajax_request</tt><big>(</big><big>)</big><a class="headerlink" href="#CI_Input::is_ajax_request" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -856,8 +866,8 @@ set, and returns boolean TRUE if it is or FALSE if not.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="CI_Input.is_cli_request">
-<tt class="descname">is_cli_request</tt><big>(</big><big>)</big><a class="headerlink" href="#CI_Input.is_cli_request" title="Permalink to this definition">¶</a></dt>
+<dt id="CI_Input::is_cli_request">
+<tt class="descname">is_cli_request</tt><big>(</big><big>)</big><a class="headerlink" href="#CI_Input::is_cli_request" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -882,22 +892,27 @@ failsafe way to see if PHP is being run via the command line.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p class="last">This method is DEPRECATED and is now just an alias for the
-<a class="reference internal" href="../general/common_functions.html#is_cli" title="is_cli"><tt class="xref py py-func docutils literal"><span class="pre">is_cli()</span></tt></a> function.</p>
+<tt class="xref py py-func docutils literal"><span class="pre">is_cli()</span></tt> function.</p>
 </div>
 </dd></dl>
 
 <dl class="method">
-<dt id="CI_Input.method">
-<tt class="descname">method</tt><big>(</big><span class="optional">[</span><em>$upper = FALSE</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_Input.method" title="Permalink to this definition">¶</a></dt>
+<dt id="CI_Input::method">
+<tt class="descname">method</tt><big>(</big><span class="optional">[</span><em>$upper = FALSE</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_Input::method" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>$upper</strong> (<em>bool</em>) &#8211; Whether to return the request method name in upper or lower case</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>$upper</strong> (<em>bool</em>) &#8211; Whether to return the request method name in upper or lower case</li>
+</ul>
+</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">HTTP request method</td>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">HTTP request method</p>
+</td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">string</td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">string</p>
+</td>
 </tr>
 </tbody>
 </table>
@@ -934,7 +949,7 @@ in uppercase or lowercase.</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2015, British Columbia Institute of Technology.
-      Last updated on Jan 29, 2015.
+      Last updated on Feb 03, 2015.
     </p>
   </div>
 

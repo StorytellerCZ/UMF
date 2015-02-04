@@ -324,8 +324,8 @@ calling <tt class="docutils literal"><span class="pre">add_package_path()</span>
 <dt id="CI_Loader">
 <em class="property">class </em><tt class="descname">CI_Loader</tt><a class="headerlink" href="#CI_Loader" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="method">
-<dt id="CI_Loader.library">
-<tt class="descname">library</tt><big>(</big><em>$library</em><span class="optional">[</span>, <em>$params = NULL</em><span class="optional">[</span>, <em>$object_name = NULL</em><span class="optional">]</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_Loader.library" title="Permalink to this definition">¶</a></dt>
+<dt id="CI_Loader::library">
+<tt class="descname">library</tt><big>(</big><em>$library</em><span class="optional">[</span>, <em>$params = NULL</em><span class="optional">[</span>, <em>$object_name = NULL</em><span class="optional">]</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_Loader::library" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -409,8 +409,8 @@ the first parameter, this parameter is discarded.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="CI_Loader.driver">
-<tt class="descname">driver</tt><big>(</big><em>$library</em><span class="optional">[</span>, <em>$params = NULL</em><span class="optional">[</span>, <em>$object_name</em><span class="optional">]</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_Loader.driver" title="Permalink to this definition">¶</a></dt>
+<dt id="CI_Loader::driver">
+<tt class="descname">driver</tt><big>(</big><em>$library</em><span class="optional">[</span>, <em>$params = NULL</em><span class="optional">[</span>, <em>$object_name</em><span class="optional">]</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_Loader::driver" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -478,8 +478,8 @@ third parameter:</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="CI_Loader.view">
-<tt class="descname">view</tt><big>(</big><em>$view</em><span class="optional">[</span>, <em>$vars = array()</em><span class="optional">[</span>, <em>return = FALSE</em><span class="optional">]</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_Loader.view" title="Permalink to this definition">¶</a></dt>
+<dt id="CI_Loader::view">
+<tt class="descname">view</tt><big>(</big><em>$view</em><span class="optional">[</span>, <em>$vars = array()</em><span class="optional">[</span>, <em>return = FALSE</em><span class="optional">]</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_Loader::view" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -527,8 +527,8 @@ assign it to a variable if you want the data returned:</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="CI_Loader.vars">
-<tt class="descname">vars</tt><big>(</big><em>$vars</em><span class="optional">[</span>, <em>$val = ''</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_Loader.vars" title="Permalink to this definition">¶</a></dt>
+<dt id="CI_Loader::vars">
+<tt class="descname">vars</tt><big>(</big><em>$vars</em><span class="optional">[</span>, <em>$val = ''</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_Loader::vars" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -559,17 +559,22 @@ into one array for conversion to variables.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="CI_Loader.get_var">
-<tt class="descname">get_var</tt><big>(</big><em>$key</em><big>)</big><a class="headerlink" href="#CI_Loader.get_var" title="Permalink to this definition">¶</a></dt>
+<dt id="CI_Loader::get_var">
+<tt class="descname">get_var</tt><big>(</big><em>$key</em><big>)</big><a class="headerlink" href="#CI_Loader::get_var" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>$key</strong> (<em>string</em>) &#8211; Variable name key</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>$key</strong> (<em>string</em>) &#8211; Variable name key</li>
+</ul>
+</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Value if key is found, NULL if not</td>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Value if key is found, NULL if not</p>
+</td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">mixed</td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">mixed</p>
+</td>
 </tr>
 </tbody>
 </table>
@@ -579,8 +584,8 @@ or another controller method using <tt class="docutils literal"><span class="pre
 </dd></dl>
 
 <dl class="method">
-<dt id="CI_Loader.get_vars">
-<tt class="descname">get_vars</tt><big>(</big><big>)</big><a class="headerlink" href="#CI_Loader.get_vars" title="Permalink to this definition">¶</a></dt>
+<dt id="CI_Loader::get_vars">
+<tt class="descname">get_vars</tt><big>(</big><big>)</big><a class="headerlink" href="#CI_Loader::get_vars" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -595,8 +600,8 @@ or another controller method using <tt class="docutils literal"><span class="pre
 </dd></dl>
 
 <dl class="method">
-<dt id="CI_Loader.clear_vars">
-<tt class="descname">clear_vars</tt><big>(</big><big>)</big><a class="headerlink" href="#CI_Loader.clear_vars" title="Permalink to this definition">¶</a></dt>
+<dt id="CI_Loader::clear_vars">
+<tt class="descname">clear_vars</tt><big>(</big><big>)</big><a class="headerlink" href="#CI_Loader::clear_vars" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -611,8 +616,8 @@ or another controller method using <tt class="docutils literal"><span class="pre
 </dd></dl>
 
 <dl class="method">
-<dt id="CI_Loader.model">
-<tt class="descname">model</tt><big>(</big><em>$model</em><span class="optional">[</span>, <em>$name = ''</em><span class="optional">[</span>, <em>$db_conn = FALSE</em><span class="optional">]</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_Loader.model" title="Permalink to this definition">¶</a></dt>
+<dt id="CI_Loader::model">
+<tt class="descname">model</tt><big>(</big><em>$model</em><span class="optional">[</span>, <em>$name = ''</em><span class="optional">[</span>, <em>$db_conn = FALSE</em><span class="optional">]</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_Loader::model" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -650,8 +655,8 @@ specify it via the second parameter of the loading method:</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="CI_Loader.database">
-<tt class="descname">database</tt><big>(</big><span class="optional">[</span><em>$params = ''</em><span class="optional">[</span>, <em>$return = FALSE</em><span class="optional">[</span>, <em>$query_builder = NULL</em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_Loader.database" title="Permalink to this definition">¶</a></dt>
+<dt id="CI_Loader::database">
+<tt class="descname">database</tt><big>(</big><span class="optional">[</span><em>$params = ''</em><span class="optional">[</span>, <em>$return = FALSE</em><span class="optional">[</span>, <em>$query_builder = NULL</em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_Loader::database" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -677,8 +682,8 @@ section for more info.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="CI_Loader.dbforge">
-<tt class="descname">dbforge</tt><big>(</big><span class="optional">[</span><em>$db = NULL</em><span class="optional">[</span>, <em>$return = FALSE</em><span class="optional">]</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_Loader.dbforge" title="Permalink to this definition">¶</a></dt>
+<dt id="CI_Loader::dbforge">
+<tt class="descname">dbforge</tt><big>(</big><span class="optional">[</span><em>$db = NULL</em><span class="optional">[</span>, <em>$return = FALSE</em><span class="optional">]</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_Loader::dbforge" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -702,8 +707,8 @@ to that manual for more info.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="CI_Loader.dbutil">
-<tt class="descname">dbutil</tt><big>(</big><span class="optional">[</span><em>$db = NULL</em><span class="optional">[</span>, <em>$return = FALSE</em><span class="optional">]</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_Loader.dbutil" title="Permalink to this definition">¶</a></dt>
+<dt id="CI_Loader::dbutil">
+<tt class="descname">dbutil</tt><big>(</big><span class="optional">[</span><em>$db = NULL</em><span class="optional">[</span>, <em>$return = FALSE</em><span class="optional">]</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_Loader::dbutil" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -727,17 +732,22 @@ refer to that manual for more info.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="CI_Loader.helper">
-<tt class="descname">helper</tt><big>(</big><em>$helpers</em><big>)</big><a class="headerlink" href="#CI_Loader.helper" title="Permalink to this definition">¶</a></dt>
+<dt id="CI_Loader::helper">
+<tt class="descname">helper</tt><big>(</big><em>$helpers</em><big>)</big><a class="headerlink" href="#CI_Loader::helper" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>$helpers</strong> (<em>mixed</em>) &#8211; Helper name as a string or an array containing multiple helpers</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>$helpers</strong> (<em>mixed</em>) &#8211; Helper name as a string or an array containing multiple helpers</li>
+</ul>
+</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">CI_Loader instance (method chaining)</td>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">CI_Loader instance (method chaining)</p>
+</td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">CI_Loader</td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">CI_Loader</p>
+</td>
 </tr>
 </tbody>
 </table>
@@ -746,8 +756,8 @@ file, without the _helper.php extension.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="CI_Loader.file">
-<tt class="descname">file</tt><big>(</big><em>$path</em><span class="optional">[</span>, <em>$return = FALSE</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_Loader.file" title="Permalink to this definition">¶</a></dt>
+<dt id="CI_Loader::file">
+<tt class="descname">file</tt><big>(</big><em>$path</em><span class="optional">[</span>, <em>$return = FALSE</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_Loader::file" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -774,8 +784,8 @@ string.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="CI_Loader.language">
-<tt class="descname">language</tt><big>(</big><em>$files</em><span class="optional">[</span>, <em>$lang = ''</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_Loader.language" title="Permalink to this definition">¶</a></dt>
+<dt id="CI_Loader::language">
+<tt class="descname">language</tt><big>(</big><em>$files</em><span class="optional">[</span>, <em>$lang = ''</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_Loader::language" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -799,8 +809,8 @@ method</em></a>: <tt class="docutils literal"><span class="pre">$this-&gt;lang-&
 </dd></dl>
 
 <dl class="method">
-<dt id="CI_Loader.config">
-<tt class="descname">config</tt><big>(</big><em>$file</em><span class="optional">[</span>, <em>$use_sections = FALSE</em><span class="optional">[</span>, <em>$fail_gracefully = FALSE</em><span class="optional">]</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_Loader.config" title="Permalink to this definition">¶</a></dt>
+<dt id="CI_Loader::config">
+<tt class="descname">config</tt><big>(</big><em>$file</em><span class="optional">[</span>, <em>$use_sections = FALSE</em><span class="optional">[</span>, <em>$fail_gracefully = FALSE</em><span class="optional">]</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_Loader::config" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -825,17 +835,22 @@ method</em></a>: <tt class="docutils literal"><span class="pre">$this-&gt;config
 </dd></dl>
 
 <dl class="method">
-<dt id="CI_Loader.is_loaded">
-<tt class="descname">is_loaded</tt><big>(</big><em>$class</em><big>)</big><a class="headerlink" href="#CI_Loader.is_loaded" title="Permalink to this definition">¶</a></dt>
+<dt id="CI_Loader::is_loaded">
+<tt class="descname">is_loaded</tt><big>(</big><em>$class</em><big>)</big><a class="headerlink" href="#CI_Loader::is_loaded" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>$class</strong> (<em>string</em>) &#8211; Class name</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>$class</strong> (<em>string</em>) &#8211; Class name</li>
+</ul>
+</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Singleton property name if found, FALSE if not</td>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Singleton property name if found, FALSE if not</p>
+</td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">mixed</td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">mixed</p>
+</td>
 </tr>
 </tbody>
 </table>
@@ -866,8 +881,8 @@ different properties), then the first one will be returned.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="CI_Loader.add_package_path">
-<tt class="descname">add_package_path</tt><big>(</big><em>$path</em><span class="optional">[</span>, <em>$view_cascade = TRUE</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_Loader.add_package_path" title="Permalink to this definition">¶</a></dt>
+<dt id="CI_Loader::add_package_path">
+<tt class="descname">add_package_path</tt><big>(</big><em>$path</em><span class="optional">[</span>, <em>$view_cascade = TRUE</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_Loader::add_package_path" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -897,17 +912,22 @@ controller, we&#8217;d do the following:</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="CI_Loader.remove_package_path">
-<tt class="descname">remove_package_path</tt><big>(</big><span class="optional">[</span><em>$path = ''</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_Loader.remove_package_path" title="Permalink to this definition">¶</a></dt>
+<dt id="CI_Loader::remove_package_path">
+<tt class="descname">remove_package_path</tt><big>(</big><span class="optional">[</span><em>$path = ''</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_Loader::remove_package_path" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>$path</strong> (<em>string</em>) &#8211; Path to remove</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>$path</strong> (<em>string</em>) &#8211; Path to remove</li>
+</ul>
+</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">CI_Loader instance (method chaining)</td>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">CI_Loader instance (method chaining)</p>
+</td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">CI_Loader</td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">CI_Loader</p>
+</td>
 </tr>
 </tbody>
 </table>
@@ -924,17 +944,22 @@ given to <tt class="docutils literal"><span class="pre">add_package_path()</span
 </dd></dl>
 
 <dl class="method">
-<dt id="CI_Loader.get_package_paths">
-<tt class="descname">get_package_paths</tt><big>(</big><span class="optional">[</span><em>$include_base = TRUE</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_Loader.get_package_paths" title="Permalink to this definition">¶</a></dt>
+<dt id="CI_Loader::get_package_paths">
+<tt class="descname">get_package_paths</tt><big>(</big><span class="optional">[</span><em>$include_base = TRUE</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_Loader::get_package_paths" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>$include_base</strong> (<em>bool</em>) &#8211; Whether to include BASEPATH</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>$include_base</strong> (<em>bool</em>) &#8211; Whether to include BASEPATH</li>
+</ul>
+</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">An array of package paths</td>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">An array of package paths</p>
+</td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">array</td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">array</p>
+</td>
 </tr>
 </tbody>
 </table>
@@ -965,7 +990,7 @@ given to <tt class="docutils literal"><span class="pre">add_package_path()</span
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2015, British Columbia Institute of Technology.
-      Last updated on Jan 21, 2015.
+      Last updated on Feb 03, 2015.
     </p>
   </div>
 

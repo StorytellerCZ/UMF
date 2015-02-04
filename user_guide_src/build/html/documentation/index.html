@@ -346,9 +346,9 @@ create these with the following tab triggers:</p>
 <p>When documenting class methods for third party developers, Sphinx provides
 directives to assist and keep things simple.
 For example, consider the following ReST:</p>
-<div class="highlight-rst"><div class="highlight"><pre><span class="p">..</span> <span class="ow">class</span><span class="p">::</span> Some_class
+<div class="highlight-rst"><div class="highlight"><pre><span class="p">..</span> <span class="ow">php:class</span><span class="p">::</span> Some_class
 
-<span class="p">        ..</span> <span class="ow">method</span><span class="p">::</span> some_method ( $foo [, $bar [, $bat]])
+<span class="p">        ..</span> <span class="ow">php:method</span><span class="p">::</span> some_method ( $foo [, $bar [, $bat]])
 
                 This function will perform some action. The <span class="s">``$bar``</span> array must contain
                 a something and something else, and along with <span class="s">``$bat``</span> is an optional
@@ -382,7 +382,7 @@ For example, consider the following ReST:</p>
                 See also <span class="na">:meth:</span><span class="nv">`Some_class::should_do_something`</span>
 
 
-        .. method:: should_do_something()
+        .. php:method:: should_do_something()
 
                 <span class="nc">:returns:</span> <span class="nf">Whether or not something should be done</span>
                 :rtype: bool
@@ -393,8 +393,8 @@ For example, consider the following ReST:</p>
 <dt id="Some_class">
 <em class="property">class </em><tt class="descname">Some_class</tt><a class="headerlink" href="#Some_class" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="method">
-<dt id="Some_class.some_method">
-<tt class="descname">some_method</tt><big>(</big><em>$foo</em><span class="optional">[</span>, <em>$bar</em><span class="optional">[</span>, <em>$bat</em><span class="optional">]</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#Some_class.some_method" title="Permalink to this definition">¶</a></dt>
+<dt id="Some_class::some_method">
+<tt class="descname">some_method</tt><big>(</big><em>$foo</em><span class="optional">[</span>, <em>$bar</em><span class="optional">[</span>, <em>$bat</em><span class="optional">]</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#Some_class::some_method" title="Permalink to this definition">¶</a></dt>
 <dd><p>This function will perform some action. The <tt class="docutils literal"><span class="pre">$bar</span></tt> array must contain
 a something and something else, and along with <tt class="docutils literal"><span class="pre">$bat</span></tt> is an optional
 parameter.</p>
@@ -441,8 +441,8 @@ For real.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="Some_class.should_do_something">
-<tt class="descname">should_do_something</tt><big>(</big><big>)</big><a class="headerlink" href="#Some_class.should_do_something" title="Permalink to this definition">¶</a></dt>
+<dt id="Some_class::should_do_something">
+<tt class="descname">should_do_something</tt><big>(</big><big>)</big><a class="headerlink" href="#Some_class::should_do_something" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -479,7 +479,7 @@ For real.</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2015, British Columbia Institute of Technology.
-      Last updated on Jan 21, 2015.
+      Last updated on Feb 03, 2015.
     </p>
   </div>
 

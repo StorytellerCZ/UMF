@@ -435,15 +435,19 @@ test process.</p>
 <dt id="CI_Unit_test">
 <em class="property">class </em><tt class="descname">CI_Unit_test</tt><a class="headerlink" href="#CI_Unit_test" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="method">
-<dt id="CI_Unit_test.set_test_items">
-<tt class="descname">set_test_items</tt><big>(</big><em>$items</em><big>)</big><a class="headerlink" href="#CI_Unit_test.set_test_items" title="Permalink to this definition">¶</a></dt>
+<dt id="CI_Unit_test::set_test_items">
+<tt class="descname">set_test_items</tt><big>(</big><em>$items</em><big>)</big><a class="headerlink" href="#CI_Unit_test::set_test_items" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>$items</strong> (<em>array</em>) &#8211; List of visible test items</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>$items</strong> (<em>array</em>) &#8211; List of visible test items</li>
+</ul>
+</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">void</td>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">void</p>
+</td>
 </tr>
 </tbody>
 </table>
@@ -463,8 +467,8 @@ Valid options are:</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="CI_Unit_test.run">
-<tt class="descname">run</tt><big>(</big><em>$test</em><span class="optional">[</span>, <em>$expected = TRUE</em><span class="optional">[</span>, <em>$test_name = 'undefined'</em><span class="optional">[</span>, <em>$notes = ''</em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_Unit_test.run" title="Permalink to this definition">¶</a></dt>
+<dt id="CI_Unit_test::run">
+<tt class="descname">run</tt><big>(</big><em>$test</em><span class="optional">[</span>, <em>$expected = TRUE</em><span class="optional">[</span>, <em>$test_name = 'undefined'</em><span class="optional">[</span>, <em>$notes = ''</em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_Unit_test::run" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -489,17 +493,22 @@ Valid options are:</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="CI_Unit_test.report">
-<tt class="descname">report</tt><big>(</big><span class="optional">[</span><em>$result = array()</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_Unit_test.report" title="Permalink to this definition">¶</a></dt>
+<dt id="CI_Unit_test::report">
+<tt class="descname">report</tt><big>(</big><span class="optional">[</span><em>$result = array()</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_Unit_test::report" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>$result</strong> (<em>array</em>) &#8211; Array containing tests results</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>$result</strong> (<em>array</em>) &#8211; Array containing tests results</li>
+</ul>
+</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Test report</td>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Test report</p>
+</td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">string</td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">string</p>
+</td>
 </tr>
 </tbody>
 </table>
@@ -507,15 +516,19 @@ Valid options are:</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="CI_Unit_test.use_strict">
-<tt class="descname">use_strict</tt><big>(</big><span class="optional">[</span><em>$state = TRUE</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_Unit_test.use_strict" title="Permalink to this definition">¶</a></dt>
+<dt id="CI_Unit_test::use_strict">
+<tt class="descname">use_strict</tt><big>(</big><span class="optional">[</span><em>$state = TRUE</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_Unit_test::use_strict" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>$state</strong> (<em>bool</em>) &#8211; Strict state flag</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>$state</strong> (<em>bool</em>) &#8211; Strict state flag</li>
+</ul>
+</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">void</td>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">void</p>
+</td>
 </tr>
 </tbody>
 </table>
@@ -523,15 +536,19 @@ Valid options are:</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="CI_Unit_test.active">
-<tt class="descname">active</tt><big>(</big><span class="optional">[</span><em>$state = TRUE</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_Unit_test.active" title="Permalink to this definition">¶</a></dt>
+<dt id="CI_Unit_test::active">
+<tt class="descname">active</tt><big>(</big><span class="optional">[</span><em>$state = TRUE</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_Unit_test::active" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>$state</strong> (<em>bool</em>) &#8211; Whether to enable testing</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>$state</strong> (<em>bool</em>) &#8211; Whether to enable testing</li>
+</ul>
+</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">void</td>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">void</p>
+</td>
 </tr>
 </tbody>
 </table>
@@ -539,17 +556,22 @@ Valid options are:</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="CI_Unit_test.result">
-<tt class="descname">result</tt><big>(</big><span class="optional">[</span><em>$results = array()</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_Unit_test.result" title="Permalink to this definition">¶</a></dt>
+<dt id="CI_Unit_test::result">
+<tt class="descname">result</tt><big>(</big><span class="optional">[</span><em>$results = array()</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_Unit_test::result" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>$results</strong> (<em>array</em>) &#8211; Tests results list</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>$results</strong> (<em>array</em>) &#8211; Tests results list</li>
+</ul>
+</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Array of raw result data</td>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Array of raw result data</p>
+</td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">array</td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">array</p>
+</td>
 </tr>
 </tbody>
 </table>
@@ -557,15 +579,19 @@ Valid options are:</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="CI_Unit_test.set_template">
-<tt class="descname">set_template</tt><big>(</big><em>$template</em><big>)</big><a class="headerlink" href="#CI_Unit_test.set_template" title="Permalink to this definition">¶</a></dt>
+<dt id="CI_Unit_test::set_template">
+<tt class="descname">set_template</tt><big>(</big><em>$template</em><big>)</big><a class="headerlink" href="#CI_Unit_test::set_template" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>$template</strong> (<em>string</em>) &#8211; Test result template</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>$template</strong> (<em>string</em>) &#8211; Test result template</li>
+</ul>
+</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">void</td>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">void</p>
+</td>
 </tr>
 </tbody>
 </table>
@@ -596,7 +622,7 @@ Valid options are:</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2015, British Columbia Institute of Technology.
-      Last updated on Jan 21, 2015.
+      Last updated on Feb 03, 2015.
     </p>
   </div>
 

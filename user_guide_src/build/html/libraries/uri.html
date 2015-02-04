@@ -271,8 +271,8 @@ is no need to do it manually.</p>
 <dt id="CI_URI">
 <em class="property">class </em><tt class="descname">CI_URI</tt><a class="headerlink" href="#CI_URI" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="method">
-<dt id="CI_URI.segment">
-<tt class="descname">segment</tt><big>(</big><em>$n</em><span class="optional">[</span>, <em>$no_result = NULL</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_URI.segment" title="Permalink to this definition">¶</a></dt>
+<dt id="CI_URI::segment">
+<tt class="descname">segment</tt><big>(</big><em>$n</em><span class="optional">[</span>, <em>$no_result = NULL</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_URI::segment" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -324,8 +324,8 @@ For example, this would tell the method to return the number zero in the event o
 </dd></dl>
 
 <dl class="method">
-<dt id="CI_URI.rsegment">
-<tt class="descname">rsegment</tt><big>(</big><em>$n</em><span class="optional">[</span>, <em>$no_result = NULL</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_URI.rsegment" title="Permalink to this definition">¶</a></dt>
+<dt id="CI_URI::rsegment">
+<tt class="descname">rsegment</tt><big>(</big><em>$n</em><span class="optional">[</span>, <em>$no_result = NULL</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_URI::rsegment" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -350,8 +350,8 @@ using CodeIgniter&#8217;s <a class="reference internal" href="../general/routing
 </dd></dl>
 
 <dl class="method">
-<dt id="CI_URI.slash_segment">
-<tt class="descname">slash_segment</tt><big>(</big><em>$n</em><span class="optional">[</span>, <em>$where = 'trailing'</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_URI.slash_segment" title="Permalink to this definition">¶</a></dt>
+<dt id="CI_URI::slash_segment">
+<tt class="descname">slash_segment</tt><big>(</big><em>$n</em><span class="optional">[</span>, <em>$where = 'trailing'</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_URI::slash_segment" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -387,8 +387,8 @@ If the parameter is not used, a trailing slash added. Examples:</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="CI_URI.slash_rsegment">
-<tt class="descname">slash_rsegment</tt><big>(</big><em>$n</em><span class="optional">[</span>, <em>$where = 'trailing'</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_URI.slash_rsegment" title="Permalink to this definition">¶</a></dt>
+<dt id="CI_URI::slash_rsegment">
+<tt class="descname">slash_rsegment</tt><big>(</big><em>$n</em><span class="optional">[</span>, <em>$where = 'trailing'</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_URI::slash_rsegment" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -414,8 +414,8 @@ feature.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="CI_URI.uri_to_assoc">
-<tt class="descname">uri_to_assoc</tt><big>(</big><span class="optional">[</span><em>$n = 3</em><span class="optional">[</span>, <em>$default = array()</em><span class="optional">]</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_URI.uri_to_assoc" title="Permalink to this definition">¶</a></dt>
+<dt id="CI_URI::uri_to_assoc">
+<tt class="descname">uri_to_assoc</tt><big>(</big><span class="optional">[</span><em>$n = 3</em><span class="optional">[</span>, <em>$default = array()</em><span class="optional">]</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_URI::uri_to_assoc" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -470,8 +470,8 @@ is an odd number of URI segments) the value will be set to NULL.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="CI_URI.ruri_to_assoc">
-<tt class="descname">ruri_to_assoc</tt><big>(</big><span class="optional">[</span><em>$n = 3</em><span class="optional">[</span>, <em>$default = array()</em><span class="optional">]</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_URI.ruri_to_assoc" title="Permalink to this definition">¶</a></dt>
+<dt id="CI_URI::ruri_to_assoc">
+<tt class="descname">ruri_to_assoc</tt><big>(</big><span class="optional">[</span><em>$n = 3</em><span class="optional">[</span>, <em>$default = array()</em><span class="optional">]</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_URI::ruri_to_assoc" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -496,17 +496,22 @@ CodeIgniter&#8217;s <a class="reference internal" href="../general/routing.html"
 </dd></dl>
 
 <dl class="method">
-<dt id="CI_URI.assoc_to_uri">
-<tt class="descname">assoc_to_uri</tt><big>(</big><em>$array</em><big>)</big><a class="headerlink" href="#CI_URI.assoc_to_uri" title="Permalink to this definition">¶</a></dt>
+<dt id="CI_URI::assoc_to_uri">
+<tt class="descname">assoc_to_uri</tt><big>(</big><em>$array</em><big>)</big><a class="headerlink" href="#CI_URI::assoc_to_uri" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>$array</strong> (<em>array</em>) &#8211; Input array of key/value pairs</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>$array</strong> (<em>array</em>) &#8211; Input array of key/value pairs</li>
+</ul>
+</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">URI string</td>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">URI string</p>
+</td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">string</td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">string</p>
+</td>
 </tr>
 </tbody>
 </table>
@@ -521,8 +526,8 @@ The array keys will be included in the string. Example:</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="CI_URI.uri_string">
-<tt class="descname">uri_string</tt><big>(</big><big>)</big><a class="headerlink" href="#CI_URI.uri_string" title="Permalink to this definition">¶</a></dt>
+<dt id="CI_URI::uri_string">
+<tt class="descname">uri_string</tt><big>(</big><big>)</big><a class="headerlink" href="#CI_URI::uri_string" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -544,8 +549,8 @@ The array keys will be included in the string. Example:</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="CI_URI.ruri_string">
-<tt class="descname">ruri_string</tt><big>(</big><big>)</big><a class="headerlink" href="#CI_URI.ruri_string" title="Permalink to this definition">¶</a></dt>
+<dt id="CI_URI::ruri_string">
+<tt class="descname">ruri_string</tt><big>(</big><big>)</big><a class="headerlink" href="#CI_URI::ruri_string" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -562,8 +567,8 @@ Routing</em></a> feature.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="CI_URI.total_segments">
-<tt class="descname">total_segments</tt><big>(</big><big>)</big><a class="headerlink" href="#CI_URI.total_segments" title="Permalink to this definition">¶</a></dt>
+<dt id="CI_URI::total_segments">
+<tt class="descname">total_segments</tt><big>(</big><big>)</big><a class="headerlink" href="#CI_URI::total_segments" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -578,8 +583,8 @@ Routing</em></a> feature.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="CI_URI.total_rsegments">
-<tt class="descname">total_rsegments</tt><big>(</big><big>)</big><a class="headerlink" href="#CI_URI.total_rsegments" title="Permalink to this definition">¶</a></dt>
+<dt id="CI_URI::total_rsegments">
+<tt class="descname">total_rsegments</tt><big>(</big><big>)</big><a class="headerlink" href="#CI_URI::total_rsegments" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -596,8 +601,8 @@ using CodeIgniter&#8217;s <a class="reference internal" href="../general/routing
 </dd></dl>
 
 <dl class="method">
-<dt id="CI_URI.segment_array">
-<tt class="descname">segment_array</tt><big>(</big><big>)</big><a class="headerlink" href="#CI_URI.segment_array" title="Permalink to this definition">¶</a></dt>
+<dt id="CI_URI::segment_array">
+<tt class="descname">segment_array</tt><big>(</big><big>)</big><a class="headerlink" href="#CI_URI::segment_array" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -621,8 +626,8 @@ using CodeIgniter&#8217;s <a class="reference internal" href="../general/routing
 </dd></dl>
 
 <dl class="method">
-<dt id="CI_URI.rsegment_array">
-<tt class="descname">rsegment_array</tt><big>(</big><big>)</big><a class="headerlink" href="#CI_URI.rsegment_array" title="Permalink to this definition">¶</a></dt>
+<dt id="CI_URI::rsegment_array">
+<tt class="descname">rsegment_array</tt><big>(</big><big>)</big><a class="headerlink" href="#CI_URI::rsegment_array" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -662,7 +667,7 @@ CodeIgniter&#8217;s <a class="reference internal" href="../general/routing.html"
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2015, British Columbia Institute of Technology.
-      Last updated on Jan 21, 2015.
+      Last updated on Feb 03, 2015.
     </p>
   </div>
 

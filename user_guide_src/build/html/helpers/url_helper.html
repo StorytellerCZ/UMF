@@ -338,16 +338,16 @@ please see the <a class="reference internal" href="../libraries/config.html"><em
 <div class="highlight-ci"><div class="highlight"><pre><span class="k">echo</span> <span class="nx">base_url</span><span class="p">();</span>
 </pre></div>
 </div>
-<p>This function returns the same thing as <a class="reference internal" href="#site_url" title="site_url"><tt class="xref py py-func docutils literal"><span class="pre">site_url()</span></tt></a>, without
+<p>This function returns the same thing as <a class="reference internal" href="#site_url" title="site_url"><tt class="xref php php-func docutils literal"><span class="pre">site_url()</span></tt></a>, without
 the <em>index_page</em> or <em>url_suffix</em> being appended.</p>
-<p>Also like <a class="reference internal" href="#site_url" title="site_url"><tt class="xref py py-func docutils literal"><span class="pre">site_url()</span></tt></a>, you can supply segments as a string or
+<p>Also like <a class="reference internal" href="#site_url" title="site_url"><tt class="xref php php-func docutils literal"><span class="pre">site_url()</span></tt></a>, you can supply segments as a string or
 an array. Here is a string example:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="k">echo</span> <span class="nx">base_url</span><span class="p">(</span><span class="s2">&quot;blog/post/123&quot;</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>The above example would return something like:
 <em>http://example.com/blog/post/123</em></p>
-<p>This is useful because unlike <a class="reference internal" href="#site_url" title="site_url"><tt class="xref py py-func docutils literal"><span class="pre">site_url()</span></tt></a>, you can supply a
+<p>This is useful because unlike <a class="reference internal" href="#site_url" title="site_url"><tt class="xref php php-func docutils literal"><span class="pre">site_url()</span></tt></a>, you can supply a
 string to a file, such as an image or stylesheet. For example:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="k">echo</span> <span class="nx">base_url</span><span class="p">(</span><span class="s2">&quot;images/icons/edit.png&quot;</span><span class="p">);</span>
 </pre></div>
@@ -451,7 +451,7 @@ Example:</p>
 </table>
 <p>Creates a standard HTML anchor link based on your local site URL.</p>
 <p>The first parameter can contain any segments you wish appended to the
-URL. As with the <a class="reference internal" href="#site_url" title="site_url"><tt class="xref py py-func docutils literal"><span class="pre">site_url()</span></tt></a> function above, segments can
+URL. As with the <a class="reference internal" href="#site_url" title="site_url"><tt class="xref php php-func docutils literal"><span class="pre">site_url()</span></tt></a> function above, segments can
 be a string or an array.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
@@ -500,7 +500,7 @@ associative array.</p>
 </tr>
 </tbody>
 </table>
-<p>Nearly identical to the <a class="reference internal" href="#anchor" title="anchor"><tt class="xref py py-func docutils literal"><span class="pre">anchor()</span></tt></a> function except that it
+<p>Nearly identical to the <a class="reference internal" href="#anchor" title="anchor"><tt class="xref php php-func docutils literal"><span class="pre">anchor()</span></tt></a> function except that it
 opens the URL in a new window. You can specify JavaScript window
 attributes in the third parameter to control how the window is opened.
 If the third parameter is not set it will simply open a new window with
@@ -568,7 +568,7 @@ HTML attribute to the anchor tag.</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="k">echo</span> <span class="nx">mailto</span><span class="p">(</span><span class="s1">&#39;me@my-site.com&#39;</span><span class="p">,</span> <span class="s1">&#39;Click Here to Contact Me&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
-<p>As with the <a class="reference internal" href="#anchor" title="anchor"><tt class="xref py py-func docutils literal"><span class="pre">anchor()</span></tt></a> tab above, you can set attributes using the
+<p>As with the <a class="reference internal" href="#anchor" title="anchor"><tt class="xref php php-func docutils literal"><span class="pre">anchor()</span></tt></a> tab above, you can set attributes using the
 third parameter:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="nv">$attributes</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span><span class="s1">&#39;title&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;Mail me&#39;</span><span class="p">);</span>
 <span class="k">echo</span> <span class="nx">mailto</span><span class="p">(</span><span class="s1">&#39;me@my-site.com&#39;</span><span class="p">,</span> <span class="s1">&#39;Contact Me&#39;</span><span class="p">,</span> <span class="nv">$attributes</span><span class="p">);</span>
@@ -598,7 +598,7 @@ third parameter:</p>
 </tr>
 </tbody>
 </table>
-<p>Identical to the <a class="reference internal" href="#mailto" title="mailto"><tt class="xref py py-func docutils literal"><span class="pre">mailto()</span></tt></a> function except it writes an obfuscated
+<p>Identical to the <a class="reference internal" href="#mailto" title="mailto"><tt class="xref php php-func docutils literal"><span class="pre">mailto()</span></tt></a> function except it writes an obfuscated
 version of the <em>mailto</em> tag using ordinal numbers written with JavaScript to
 help prevent the e-mail address from being harvested by spam bots.</p>
 </dd></dl>
@@ -632,7 +632,7 @@ links. Example:</p>
 </div>
 <p>The second parameter determines whether URLs and e-mails are converted or
 just one or the other. Default behavior is both if the parameter is not
-specified. E-mail links are encoded as <a class="reference internal" href="#safe_mailto" title="safe_mailto"><tt class="xref py py-func docutils literal"><span class="pre">safe_mailto()</span></tt></a> as shown
+specified. E-mail links are encoded as <a class="reference internal" href="#safe_mailto" title="safe_mailto"><tt class="xref php php-func docutils literal"><span class="pre">safe_mailto()</span></tt></a> as shown
 above.</p>
 <p>Converts only URLs:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="nv">$string</span> <span class="o">=</span> <span class="nx">auto_link</span><span class="p">(</span><span class="nv">$string</span><span class="p">,</span> <span class="s1">&#39;url&#39;</span><span class="p">);</span>
@@ -709,11 +709,16 @@ forced. By default they are not. Options are boolean TRUE/FALSE.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>$str</strong> (<em>string</em>) &#8211; URL string</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>$str</strong> (<em>string</em>) &#8211; URL string</li>
+</ul>
+</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Protocol-prefixed URL string</td>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Protocol-prefixed URL string</p>
+</td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">string</td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">string</p>
+</td>
 </tr>
 </tbody>
 </table>
@@ -816,7 +821,7 @@ via POST and HTTP/1.1 is used.</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2015, British Columbia Institute of Technology.
-      Last updated on Jan 21, 2015.
+      Last updated on Feb 03, 2015.
     </p>
   </div>
 

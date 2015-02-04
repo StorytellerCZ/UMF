@@ -489,17 +489,22 @@ Most notably - you won&#8217;t be able to use it with PDO.</p>
 <dt id="CI_DB_result">
 <em class="property">class </em><tt class="descname">CI_DB_result</tt><a class="headerlink" href="#CI_DB_result" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="method">
-<dt id="CI_DB_result.result">
-<tt class="descname">result</tt><big>(</big><span class="optional">[</span><em>$type = 'object'</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_DB_result.result" title="Permalink to this definition">¶</a></dt>
+<dt id="CI_DB_result::result">
+<tt class="descname">result</tt><big>(</big><span class="optional">[</span><em>$type = 'object'</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_DB_result::result" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>$type</strong> (<em>string</em>) &#8211; Type of requested results - array, object, or class name</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>$type</strong> (<em>string</em>) &#8211; Type of requested results - array, object, or class name</li>
+</ul>
+</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Array containing the fetched rows</td>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Array containing the fetched rows</p>
+</td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">array</td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">array</p>
+</td>
 </tr>
 </tbody>
 </table>
@@ -509,8 +514,8 @@ and <tt class="docutils literal"><span class="pre">custom_result_object()</span>
 </dd></dl>
 
 <dl class="method">
-<dt id="CI_DB_result.result_array">
-<tt class="descname">result_array</tt><big>(</big><big>)</big><a class="headerlink" href="#CI_DB_result.result_array" title="Permalink to this definition">¶</a></dt>
+<dt id="CI_DB_result::result_array">
+<tt class="descname">result_array</tt><big>(</big><big>)</big><a class="headerlink" href="#CI_DB_result::result_array" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -527,8 +532,8 @@ row is itself an associative array.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="CI_DB_result.result_object">
-<tt class="descname">result_object</tt><big>(</big><big>)</big><a class="headerlink" href="#CI_DB_result.result_object" title="Permalink to this definition">¶</a></dt>
+<dt id="CI_DB_result::result_object">
+<tt class="descname">result_object</tt><big>(</big><big>)</big><a class="headerlink" href="#CI_DB_result::result_object" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -545,17 +550,22 @@ row is an object of type <tt class="docutils literal"><span class="pre">stdClass
 </dd></dl>
 
 <dl class="method">
-<dt id="CI_DB_result.custom_result_object">
-<tt class="descname">custom_result_object</tt><big>(</big><em>$class_name</em><big>)</big><a class="headerlink" href="#CI_DB_result.custom_result_object" title="Permalink to this definition">¶</a></dt>
+<dt id="CI_DB_result::custom_result_object">
+<tt class="descname">custom_result_object</tt><big>(</big><em>$class_name</em><big>)</big><a class="headerlink" href="#CI_DB_result::custom_result_object" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>$class_name</strong> (<em>string</em>) &#8211; Class name for the resulting rows</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>$class_name</strong> (<em>string</em>) &#8211; Class name for the resulting rows</li>
+</ul>
+</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Array containing the fetched rows</td>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Array containing the fetched rows</p>
+</td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">array</td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">array</p>
+</td>
 </tr>
 </tbody>
 </table>
@@ -564,8 +574,8 @@ row is an instance of the specified class.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="CI_DB_result.row">
-<tt class="descname">row</tt><big>(</big><span class="optional">[</span><em>$n = 0</em><span class="optional">[</span>, <em>$type = 'object'</em><span class="optional">]</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_DB_result.row" title="Permalink to this definition">¶</a></dt>
+<dt id="CI_DB_result::row">
+<tt class="descname">row</tt><big>(</big><span class="optional">[</span><em>$n = 0</em><span class="optional">[</span>, <em>$type = 'object'</em><span class="optional">]</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_DB_result::row" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -590,17 +600,22 @@ row is an instance of the specified class.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="CI_DB_result.unbuffered_row">
-<tt class="descname">unbuffered_row</tt><big>(</big><span class="optional">[</span><em>$type = 'object'</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_DB_result.unbuffered_row" title="Permalink to this definition">¶</a></dt>
+<dt id="CI_DB_result::unbuffered_row">
+<tt class="descname">unbuffered_row</tt><big>(</big><span class="optional">[</span><em>$type = 'object'</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_DB_result::unbuffered_row" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>$type</strong> (<em>string</em>) &#8211; Type of the requested result - array, object, or class name</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>$type</strong> (<em>string</em>) &#8211; Type of the requested result - array, object, or class name</li>
+</ul>
+</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Next row from the result set or NULL if it doesn&#8217;t exist</td>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Next row from the result set or NULL if it doesn&#8217;t exist</p>
+</td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">mixed</td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">mixed</p>
+</td>
 </tr>
 </tbody>
 </table>
@@ -610,17 +625,22 @@ requested form.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="CI_DB_result.row_array">
-<tt class="descname">row_array</tt><big>(</big><span class="optional">[</span><em>$n = 0</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_DB_result.row_array" title="Permalink to this definition">¶</a></dt>
+<dt id="CI_DB_result::row_array">
+<tt class="descname">row_array</tt><big>(</big><span class="optional">[</span><em>$n = 0</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_DB_result::row_array" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>$n</strong> (<em>int</em>) &#8211; Index of the query results row to be returned</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>$n</strong> (<em>int</em>) &#8211; Index of the query results row to be returned</li>
+</ul>
+</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">The requested row or NULL if it doesn&#8217;t exist</td>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">The requested row or NULL if it doesn&#8217;t exist</p>
+</td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">array</td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">array</p>
+</td>
 </tr>
 </tbody>
 </table>
@@ -629,17 +649,22 @@ requested form.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="CI_DB_result.row_object">
-<tt class="descname">row_object</tt><big>(</big><span class="optional">[</span><em>$n = 0</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_DB_result.row_object" title="Permalink to this definition">¶</a></dt>
+<dt id="CI_DB_result::row_object">
+<tt class="descname">row_object</tt><big>(</big><span class="optional">[</span><em>$n = 0</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_DB_result::row_object" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>$n</strong> (<em>int</em>) &#8211; Index of the query results row to be returned</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>$n</strong> (<em>int</em>) &#8211; Index of the query results row to be returned</li>
+</ul>
+</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">The requested row or NULL if it doesn&#8217;t exist</td>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">The requested row or NULL if it doesn&#8217;t exist</p>
+</td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">stdClass</td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">stdClass</p>
+</td>
 </tr>
 </tbody>
 </table>
@@ -649,8 +674,8 @@ requested form.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="CI_DB_result.custom_row_object">
-<tt class="descname">custom_row_object</tt><big>(</big><em>$n</em>, <em>$type</em><big>)</big><a class="headerlink" href="#CI_DB_result.custom_row_object" title="Permalink to this definition">¶</a></dt>
+<dt id="CI_DB_result::custom_row_object">
+<tt class="descname">custom_row_object</tt><big>(</big><em>$n</em>, <em>$type</em><big>)</big><a class="headerlink" href="#CI_DB_result::custom_row_object" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -674,17 +699,22 @@ requested class.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="CI_DB_result.data_seek">
-<tt class="descname">data_seek</tt><big>(</big><span class="optional">[</span><em>$n = 0</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_DB_result.data_seek" title="Permalink to this definition">¶</a></dt>
+<dt id="CI_DB_result::data_seek">
+<tt class="descname">data_seek</tt><big>(</big><span class="optional">[</span><em>$n = 0</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_DB_result::data_seek" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>$n</strong> (<em>int</em>) &#8211; Index of the results row to be returned next</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>$n</strong> (<em>int</em>) &#8211; Index of the results row to be returned next</li>
+</ul>
+</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">TRUE on success, FALSE on failure</td>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">TRUE on success, FALSE on failure</p>
+</td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">bool</p>
+</td>
 </tr>
 </tbody>
 </table>
@@ -693,8 +723,8 @@ requested class.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="CI_DB_result.set_row">
-<tt class="descname">set_row</tt><big>(</big><em>$key</em><span class="optional">[</span>, <em>$value = NULL</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_DB_result.set_row" title="Permalink to this definition">¶</a></dt>
+<dt id="CI_DB_result::set_row">
+<tt class="descname">set_row</tt><big>(</big><em>$key</em><span class="optional">[</span>, <em>$value = NULL</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_DB_result::set_row" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -714,17 +744,22 @@ requested class.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="CI_DB_result.next_row">
-<tt class="descname">next_row</tt><big>(</big><span class="optional">[</span><em>$type = 'object'</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_DB_result.next_row" title="Permalink to this definition">¶</a></dt>
+<dt id="CI_DB_result::next_row">
+<tt class="descname">next_row</tt><big>(</big><span class="optional">[</span><em>$type = 'object'</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_DB_result::next_row" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>$type</strong> (<em>string</em>) &#8211; Type of the requested result - array, object, or class name</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>$type</strong> (<em>string</em>) &#8211; Type of the requested result - array, object, or class name</li>
+</ul>
+</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Next row of result set, or NULL if it doesn&#8217;t exist</td>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Next row of result set, or NULL if it doesn&#8217;t exist</p>
+</td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">mixed</td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">mixed</p>
+</td>
 </tr>
 </tbody>
 </table>
@@ -732,17 +767,22 @@ requested class.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="CI_DB_result.previous_row">
-<tt class="descname">previous_row</tt><big>(</big><span class="optional">[</span><em>$type = 'object'</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_DB_result.previous_row" title="Permalink to this definition">¶</a></dt>
+<dt id="CI_DB_result::previous_row">
+<tt class="descname">previous_row</tt><big>(</big><span class="optional">[</span><em>$type = 'object'</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_DB_result::previous_row" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>$type</strong> (<em>string</em>) &#8211; Type of the requested result - array, object, or class name</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>$type</strong> (<em>string</em>) &#8211; Type of the requested result - array, object, or class name</li>
+</ul>
+</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Previous row of result set, or NULL if it doesn&#8217;t exist</td>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Previous row of result set, or NULL if it doesn&#8217;t exist</p>
+</td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">mixed</td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">mixed</p>
+</td>
 </tr>
 </tbody>
 </table>
@@ -750,17 +790,22 @@ requested class.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="CI_DB_result.first_row">
-<tt class="descname">first_row</tt><big>(</big><span class="optional">[</span><em>$type = 'object'</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_DB_result.first_row" title="Permalink to this definition">¶</a></dt>
+<dt id="CI_DB_result::first_row">
+<tt class="descname">first_row</tt><big>(</big><span class="optional">[</span><em>$type = 'object'</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_DB_result::first_row" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>$type</strong> (<em>string</em>) &#8211; Type of the requested result - array, object, or class name</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>$type</strong> (<em>string</em>) &#8211; Type of the requested result - array, object, or class name</li>
+</ul>
+</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">First row of result set, or NULL if it doesn&#8217;t exist</td>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">First row of result set, or NULL if it doesn&#8217;t exist</p>
+</td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">mixed</td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">mixed</p>
+</td>
 </tr>
 </tbody>
 </table>
@@ -768,17 +813,22 @@ requested class.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="CI_DB_result.last_row">
-<tt class="descname">last_row</tt><big>(</big><span class="optional">[</span><em>$type = 'object'</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_DB_result.last_row" title="Permalink to this definition">¶</a></dt>
+<dt id="CI_DB_result::last_row">
+<tt class="descname">last_row</tt><big>(</big><span class="optional">[</span><em>$type = 'object'</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_DB_result::last_row" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>$type</strong> (<em>string</em>) &#8211; Type of the requested result - array, object, or class name</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>$type</strong> (<em>string</em>) &#8211; Type of the requested result - array, object, or class name</li>
+</ul>
+</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Last row of result set, or NULL if it doesn&#8217;t exist</td>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Last row of result set, or NULL if it doesn&#8217;t exist</p>
+</td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">mixed</td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">mixed</p>
+</td>
 </tr>
 </tbody>
 </table>
@@ -786,8 +836,8 @@ requested class.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="CI_DB_result.num_rows">
-<tt class="descname">num_rows</tt><big>(</big><big>)</big><a class="headerlink" href="#CI_DB_result.num_rows" title="Permalink to this definition">¶</a></dt>
+<dt id="CI_DB_result::num_rows">
+<tt class="descname">num_rows</tt><big>(</big><big>)</big><a class="headerlink" href="#CI_DB_result::num_rows" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -803,8 +853,8 @@ requested class.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="CI_DB_result.num_fields">
-<tt class="descname">num_fields</tt><big>(</big><big>)</big><a class="headerlink" href="#CI_DB_result.num_fields" title="Permalink to this definition">¶</a></dt>
+<dt id="CI_DB_result::num_fields">
+<tt class="descname">num_fields</tt><big>(</big><big>)</big><a class="headerlink" href="#CI_DB_result::num_fields" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -820,8 +870,8 @@ requested class.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="CI_DB_result.field_data">
-<tt class="descname">field_data</tt><big>(</big><big>)</big><a class="headerlink" href="#CI_DB_result.field_data" title="Permalink to this definition">¶</a></dt>
+<dt id="CI_DB_result::field_data">
+<tt class="descname">field_data</tt><big>(</big><big>)</big><a class="headerlink" href="#CI_DB_result::field_data" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -837,8 +887,8 @@ field meta-data.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="CI_DB_result.free_result">
-<tt class="descname">free_result</tt><big>(</big><big>)</big><a class="headerlink" href="#CI_DB_result.free_result" title="Permalink to this definition">¶</a></dt>
+<dt id="CI_DB_result::free_result">
+<tt class="descname">free_result</tt><big>(</big><big>)</big><a class="headerlink" href="#CI_DB_result::free_result" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -852,8 +902,8 @@ field meta-data.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="CI_DB_result.list_fields">
-<tt class="descname">list_fields</tt><big>(</big><big>)</big><a class="headerlink" href="#CI_DB_result.list_fields" title="Permalink to this definition">¶</a></dt>
+<dt id="CI_DB_result::list_fields">
+<tt class="descname">list_fields</tt><big>(</big><big>)</big><a class="headerlink" href="#CI_DB_result::list_fields" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -892,7 +942,7 @@ result set.</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2015, British Columbia Institute of Technology.
-      Last updated on Jan 21, 2015.
+      Last updated on Feb 03, 2015.
     </p>
   </div>
 

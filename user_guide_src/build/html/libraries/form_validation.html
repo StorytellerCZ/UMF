@@ -633,8 +633,8 @@ commonly is:</p>
 </pre></div>
 </div>
 <p>Open your myform.php view file and update the <strong>value</strong> in each field
-using the <a class="reference internal" href="../helpers/form_helper.html#set_value" title="set_value"><tt class="xref py py-func docutils literal"><span class="pre">set_value()</span></tt></a> function:</p>
-<p><strong>Don&#8217;t forget to include each field name in the :func:`set_value()`
+using the <a class="reference internal" href="../helpers/form_helper.html#set_value" title="set_value"><tt class="xref php php-func docutils literal"><span class="pre">set_value()</span></tt></a> function:</p>
+<p><strong>Don&#8217;t forget to include each field name in the :php:func:`set_value()`
 function calls!</strong></p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="o">&lt;</span><span class="nx">html</span><span class="o">&gt;</span>
 <span class="o">&lt;</span><span class="nx">head</span><span class="o">&gt;</span>
@@ -918,7 +918,7 @@ You can add your error delimiters in application/config/form_validation.php as f
 <div class="section" id="showing-errors-individually">
 <h3><a class="toc-backref" href="#id24">Showing Errors Individually</a><a class="headerlink" href="#showing-errors-individually" title="Permalink to this headline">¶</a></h3>
 <p>If you prefer to show an error message next to each form field, rather
-than as a list, you can use the <a class="reference internal" href="../helpers/form_helper.html#form_error" title="form_error"><tt class="xref py py-func docutils literal"><span class="pre">form_error()</span></tt></a> function.</p>
+than as a list, you can use the <a class="reference internal" href="../helpers/form_helper.html#form_error" title="form_error"><tt class="xref php php-func docutils literal"><span class="pre">form_error()</span></tt></a> function.</p>
 <p>Try it! Change your form so that it looks like this:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="o">&lt;</span><span class="nx">h5</span><span class="o">&gt;</span><span class="nx">Username</span><span class="o">&lt;/</span><span class="nx">h5</span><span class="o">&gt;</span>
 <span class="o">&lt;?</span><span class="nx">php</span> <span class="k">echo</span> <span class="nx">form_error</span><span class="p">(</span><span class="s1">&#39;username&#39;</span><span class="p">);</span> <span class="cp">?&gt;</span>
@@ -1423,8 +1423,8 @@ etc.</p>
 <dt id="CI_Form_validation">
 <em class="property">class </em><tt class="descname">CI_Form_validation</tt><a class="headerlink" href="#CI_Form_validation" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="method">
-<dt id="CI_Form_validation.set_rules">
-<tt class="descname">set_rules</tt><big>(</big><em>$field</em><span class="optional">[</span>, <em>$label = ''</em><span class="optional">[</span>, <em>$rules = ''</em><span class="optional">]</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_Form_validation.set_rules" title="Permalink to this definition">¶</a></dt>
+<dt id="CI_Form_validation::set_rules">
+<tt class="descname">set_rules</tt><big>(</big><em>$field</em><span class="optional">[</span>, <em>$label = ''</em><span class="optional">[</span>, <em>$rules = ''</em><span class="optional">]</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_Form_validation::set_rules" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1453,17 +1453,22 @@ sections above:</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="CI_Form_validation.run">
-<tt class="descname">run</tt><big>(</big><span class="optional">[</span><em>$group = ''</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_Form_validation.run" title="Permalink to this definition">¶</a></dt>
+<dt id="CI_Form_validation::run">
+<tt class="descname">run</tt><big>(</big><span class="optional">[</span><em>$group = ''</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_Form_validation::run" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>$group</strong> (<em>string</em>) &#8211; The name of the validation group to run</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>$group</strong> (<em>string</em>) &#8211; The name of the validation group to run</li>
+</ul>
+</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">TRUE on success, FALSE if validation failed</td>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">TRUE on success, FALSE if validation failed</p>
+</td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">bool</p>
+</td>
 </tr>
 </tbody>
 </table>
@@ -1473,8 +1478,8 @@ the method, as described in: <a class="reference internal" href="#saving-groups"
 </dd></dl>
 
 <dl class="method">
-<dt id="CI_Form_validation.set_message">
-<tt class="descname">set_message</tt><big>(</big><em>$lang</em><span class="optional">[</span>, <em>$val = ''</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_Form_validation.set_message" title="Permalink to this definition">¶</a></dt>
+<dt id="CI_Form_validation::set_message">
+<tt class="descname">set_message</tt><big>(</big><em>$lang</em><span class="optional">[</span>, <em>$val = ''</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_Form_validation::set_message" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1497,8 +1502,8 @@ the method, as described in: <a class="reference internal" href="#saving-groups"
 </dd></dl>
 
 <dl class="method">
-<dt id="CI_Form_validation.set_error_delimiters">
-<tt class="descname">set_error_delimiters</tt><big>(</big><span class="optional">[</span><em>$prefix = '&lt;p&gt;'</em><span class="optional">[</span>, <em>$suffix = '&lt;/p&gt;'</em><span class="optional">]</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_Form_validation.set_error_delimiters" title="Permalink to this definition">¶</a></dt>
+<dt id="CI_Form_validation::set_error_delimiters">
+<tt class="descname">set_error_delimiters</tt><big>(</big><span class="optional">[</span><em>$prefix = '&lt;p&gt;'</em><span class="optional">[</span>, <em>$suffix = '&lt;/p&gt;'</em><span class="optional">]</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_Form_validation::set_error_delimiters" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1521,17 +1526,22 @@ the method, as described in: <a class="reference internal" href="#saving-groups"
 </dd></dl>
 
 <dl class="method">
-<dt id="CI_Form_validation.set_data">
-<tt class="descname">set_data</tt><big>(</big><em>$data</em><big>)</big><a class="headerlink" href="#CI_Form_validation.set_data" title="Permalink to this definition">¶</a></dt>
+<dt id="CI_Form_validation::set_data">
+<tt class="descname">set_data</tt><big>(</big><em>$data</em><big>)</big><a class="headerlink" href="#CI_Form_validation::set_data" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>$data</strong> (<em>array</em>) &#8211; Array of data validate</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>$data</strong> (<em>array</em>) &#8211; Array of data validate</li>
+</ul>
+</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">CI_Form_validation instance (method chaining)</td>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">CI_Form_validation instance (method chaining)</p>
+</td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">CI_Form_validation</td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">CI_Form_validation</p>
+</td>
 </tr>
 </tbody>
 </table>
@@ -1540,8 +1550,8 @@ the method, as described in: <a class="reference internal" href="#saving-groups"
 </dd></dl>
 
 <dl class="method">
-<dt id="CI_Form_validation.reset_validation">
-<tt class="descname">reset_validation</tt><big>(</big><big>)</big><a class="headerlink" href="#CI_Form_validation.reset_validation" title="Permalink to this definition">¶</a></dt>
+<dt id="CI_Form_validation::reset_validation">
+<tt class="descname">reset_validation</tt><big>(</big><big>)</big><a class="headerlink" href="#CI_Form_validation::reset_validation" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1557,8 +1567,8 @@ This method should be called before validating each new array.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="CI_Form_validation.error_array">
-<tt class="descname">error_array</tt><big>(</big><big>)</big><a class="headerlink" href="#CI_Form_validation.error_array" title="Permalink to this definition">¶</a></dt>
+<dt id="CI_Form_validation::error_array">
+<tt class="descname">error_array</tt><big>(</big><big>)</big><a class="headerlink" href="#CI_Form_validation::error_array" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1573,8 +1583,8 @@ This method should be called before validating each new array.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="CI_Form_validation.error_string">
-<tt class="descname">error_string</tt><big>(</big><span class="optional">[</span><em>$prefix = ''</em><span class="optional">[</span>, <em>$suffix = ''</em><span class="optional">]</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_Form_validation.error_string" title="Permalink to this definition">¶</a></dt>
+<dt id="CI_Form_validation::error_string">
+<tt class="descname">error_string</tt><big>(</big><span class="optional">[</span><em>$prefix = ''</em><span class="optional">[</span>, <em>$suffix = ''</em><span class="optional">]</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_Form_validation::error_string" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1598,8 +1608,8 @@ string and separated by a newline character.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="CI_Form_validation.error">
-<tt class="descname">error</tt><big>(</big><em>$field</em><span class="optional">[</span>, <em>$prefix = ''</em><span class="optional">[</span>, <em>$suffix = ''</em><span class="optional">]</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_Form_validation.error" title="Permalink to this definition">¶</a></dt>
+<dt id="CI_Form_validation::error">
+<tt class="descname">error</tt><big>(</big><em>$field</em><span class="optional">[</span>, <em>$prefix = ''</em><span class="optional">[</span>, <em>$suffix = ''</em><span class="optional">]</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_Form_validation::error" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1624,17 +1634,22 @@ prefix and/or suffix to it (usually HTML tags).</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="CI_Form_validation.has_rule">
-<tt class="descname">has_rule</tt><big>(</big><em>$field</em><big>)</big><a class="headerlink" href="#CI_Form_validation.has_rule" title="Permalink to this definition">¶</a></dt>
+<dt id="CI_Form_validation::has_rule">
+<tt class="descname">has_rule</tt><big>(</big><em>$field</em><big>)</big><a class="headerlink" href="#CI_Form_validation::has_rule" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>$field</strong> (<em>string</em>) &#8211; Field name</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>$field</strong> (<em>string</em>) &#8211; Field name</li>
+</ul>
+</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">TRUE if the field has rules set, FALSE if not</td>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">TRUE if the field has rules set, FALSE if not</p>
+</td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">bool</p>
+</td>
 </tr>
 </tbody>
 </table>
@@ -1649,12 +1664,12 @@ prefix and/or suffix to it (usually HTML tags).</p>
 <p>Please refer to the <a class="reference internal" href="../helpers/form_helper.html"><em>Form Helper</em></a> manual for
 the following functions:</p>
 <ul class="simple">
-<li><a class="reference internal" href="../helpers/form_helper.html#form_error" title="form_error"><tt class="xref py py-func docutils literal"><span class="pre">form_error()</span></tt></a></li>
-<li><a class="reference internal" href="../helpers/form_helper.html#validation_errors" title="validation_errors"><tt class="xref py py-func docutils literal"><span class="pre">validation_errors()</span></tt></a></li>
-<li><a class="reference internal" href="../helpers/form_helper.html#set_value" title="set_value"><tt class="xref py py-func docutils literal"><span class="pre">set_value()</span></tt></a></li>
-<li><a class="reference internal" href="../helpers/form_helper.html#set_select" title="set_select"><tt class="xref py py-func docutils literal"><span class="pre">set_select()</span></tt></a></li>
-<li><a class="reference internal" href="../helpers/form_helper.html#set_checkbox" title="set_checkbox"><tt class="xref py py-func docutils literal"><span class="pre">set_checkbox()</span></tt></a></li>
-<li><a class="reference internal" href="../helpers/form_helper.html#set_radio" title="set_radio"><tt class="xref py py-func docutils literal"><span class="pre">set_radio()</span></tt></a></li>
+<li><a class="reference internal" href="../helpers/form_helper.html#form_error" title="form_error"><tt class="xref php php-func docutils literal"><span class="pre">form_error()</span></tt></a></li>
+<li><a class="reference internal" href="../helpers/form_helper.html#validation_errors" title="validation_errors"><tt class="xref php php-func docutils literal"><span class="pre">validation_errors()</span></tt></a></li>
+<li><a class="reference internal" href="../helpers/form_helper.html#set_value" title="set_value"><tt class="xref php php-func docutils literal"><span class="pre">set_value()</span></tt></a></li>
+<li><a class="reference internal" href="../helpers/form_helper.html#set_select" title="set_select"><tt class="xref php php-func docutils literal"><span class="pre">set_select()</span></tt></a></li>
+<li><a class="reference internal" href="../helpers/form_helper.html#set_checkbox" title="set_checkbox"><tt class="xref php php-func docutils literal"><span class="pre">set_checkbox()</span></tt></a></li>
+<li><a class="reference internal" href="../helpers/form_helper.html#set_radio" title="set_radio"><tt class="xref php php-func docutils literal"><span class="pre">set_radio()</span></tt></a></li>
 </ul>
 <p>Note that these are procedural functions, so they <strong>do not</strong> require you
 to prepend them with <tt class="docutils literal"><span class="pre">$this-&gt;form_validation</span></tt>.</p>
@@ -1680,7 +1695,7 @@ to prepend them with <tt class="docutils literal"><span class="pre">$this-&gt;fo
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2015, British Columbia Institute of Technology.
-      Last updated on Jan 29, 2015.
+      Last updated on Feb 03, 2015.
     </p>
   </div>
 
