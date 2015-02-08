@@ -27,7 +27,7 @@ class Thread extends CI_Controller {
     {
         parent::__construct();
         $this->load->config('umf/forums');
-        $this->load->model(array('forums/thread_model', 'forums/category_model', 'forums/posts_model'));
+        $this->load->model(array('forums/thread_model', 'forums/category_model', 'forums/posts_model', 'account/Account_model'));
         $this->load->helper('pagination');
         $this->load->language(array('general', 'forums/forums'));
         $this->load->library(array('form_validation', 'forums/cibb'));
