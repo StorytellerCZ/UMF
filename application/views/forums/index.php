@@ -5,8 +5,8 @@
             <a href="<?php echo site_url('forums'); ?>"><?php echo lang('website_forums'); ?></a>
         </li>
         <?php $cat_total = count($cat); foreach ($cat as $key => $c): ?>
-        <li>        
-            <a href="<?php echo site_url('forums/category/'.$c['slug']); ?>"><?php echo $c['name']; ?></a> 
+        <li>
+            <a href="<?php echo site_url('forums/category/'.$c['slug']); ?>"><?php echo $c['name']; ?></a>
             <?php if ($key+1 != $cat_total): ?>
             <?php endif; ?>
         </li>
@@ -76,9 +76,9 @@
         <?php endforeach; ?>
     </tbody>
     </table>
-    
-    <?php echo anchor(base_url('forums/thread/create/'.$category->id), lang('forums_thread_start'), array('class' => 'btn btn-primary pull-right')); ?>
-    
+
+    <?php echo anchor(site_url('forums/thread/create/'.$category->id), lang('forums_thread_start'), array('class' => 'btn btn-primary pull-right')); ?>
+
     <div class="pagination text-center">
         <ul><?php echo $page; ?></ul>
     </div>
