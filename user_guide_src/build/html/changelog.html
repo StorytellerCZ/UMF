@@ -349,6 +349,7 @@ Only entries in <tt class="docutils literal"><span class="pre">$autoload['librar
 <li><a class="reference internal" href="helpers/form_helper.html"><em>Form Helper</em></a> changes include:<ul>
 <li><a class="reference internal" href="helpers/form_helper.html#form_dropdown" title="form_dropdown"><tt class="xref php php-func docutils literal"><span class="pre">form_dropdown()</span></tt></a> will now also take an array for unity with other form helpers.</li>
 <li><a class="reference internal" href="helpers/form_helper.html#form_prep" title="form_prep"><tt class="xref php php-func docutils literal"><span class="pre">form_prep()</span></tt></a> is now DEPRECATED and only acts as an alias for <a class="reference internal" href="general/common_functions.html"><em>common function</em></a> <a class="reference internal" href="general/common_functions.html#html_escape" title="html_escape"><tt class="xref php php-func docutils literal"><span class="pre">html_escape()</span></tt></a>.</li>
+<li><a class="reference internal" href="helpers/form_helper.html#set_value" title="set_value"><tt class="xref php php-func docutils literal"><span class="pre">set_value()</span></tt></a> will now also accept a third argument, allowing to turn off HTML escaping of the value.</li>
 </ul>
 </li>
 <li><a class="reference internal" href="helpers/security_helper.html"><em>Security Helper</em></a> changes include:<ul>
@@ -1011,6 +1012,7 @@ Only entries in <tt class="docutils literal"><span class="pre">$autoload['librar
 <li>Fixed a bug in <a class="reference internal" href="libraries/zip.html"><em>Zip Library</em></a> internal method <tt class="docutils literal"><span class="pre">_get_mod_time()</span></tt> where it was not parsing result returned by <tt class="docutils literal"><span class="pre">filemtime()</span></tt>.</li>
 <li>Fixed a bug (#3161) - <a class="reference internal" href="libraries/caching.html"><em>Cache Library</em></a> methods <cite>increment()</cite>, <cite>decrement()</cite> didn&#8217;t auto-create non-existent items when using redis and/or file storage.</li>
 <li>Fixed a bug (#3189) - <a class="reference internal" href="libraries/parser.html"><em>Parser Library</em></a> used double replacement on <tt class="docutils literal"><span class="pre">key-&gt;value</span></tt> pairs, exposing a potential template injection vulnerability.</li>
+<li>Fixed a bug (#3573) - <a class="reference internal" href="libraries/email.html"><em>Email Library</em></a> violated <a class="reference external" href="https://tools.ietf.org/rfc/rfc5321.txt">RFC5321</a> by sending &#8216;localhost.localdomain&#8217; as a hostname.</li>
 </ul>
 </div>
 </div>
@@ -3351,7 +3353,7 @@ and fixed various typos.</li>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2015, British Columbia Institute of Technology.
-      Last updated on Feb 03, 2015.
+      Last updated on Feb 06, 2015.
     </p>
   </div>
 

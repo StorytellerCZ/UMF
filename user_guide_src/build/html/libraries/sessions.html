@@ -705,10 +705,10 @@ all of the options and their effects.</p>
 <strong>application/config/config.php</strong> file:</p>
 <table border="1" class="docutils">
 <colgroup>
-<col width="14%" />
+<col width="16%" />
 <col width="9%" />
 <col width="23%" />
-<col width="54%" />
+<col width="53%" />
 </colgroup>
 <thead valign="bottom">
 <tr class="row-odd"><th class="head">Preference</th>
@@ -739,18 +739,24 @@ If you would like a non-expiring session (until browser is closed) set the value
 <td>None</td>
 <td>Specifies the storage location, depends on the driver being used.</td>
 </tr>
-<tr class="row-even"><td><strong>sess_time_to_update</strong></td>
-<td>300</td>
-<td>Time in seconds (integer)</td>
-<td>This option controls how often the session class will regenerate itself and create a new
-session ID. Setting it to 0 will disable session ID regeneration.</td>
-</tr>
-<tr class="row-odd"><td><strong>sess_match_ip</strong></td>
+<tr class="row-even"><td><strong>sess_match_ip</strong></td>
 <td>FALSE</td>
 <td>TRUE/FALSE (boolean)</td>
 <td>Whether to validate the user&#8217;s IP address when reading the session cookie.
 Note that some ISPs dynamically changes the IP, so if you want a non-expiring session you
 will likely set this to FALSE.</td>
+</tr>
+<tr class="row-odd"><td><strong>sess_time_to_update</strong></td>
+<td>300</td>
+<td>Time in seconds (integer)</td>
+<td>This option controls how often the session class will regenerate itself and create a new
+session ID. Setting it to 0 will disable session ID regeneration.</td>
+</tr>
+<tr class="row-even"><td><strong>sess_regenerate_destroy</strong></td>
+<td>FALSE</td>
+<td>TRUE/FALSE (boolean)</td>
+<td>Whether to destroy session data associated with the old session ID when auto-regenerating
+the session ID. When set to FALSE, the data will be later deleted by the garbage collector.</td>
 </tr>
 </tbody>
 </table>
@@ -1676,7 +1682,7 @@ properties:</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2015, British Columbia Institute of Technology.
-      Last updated on Feb 04, 2015.
+      Last updated on Feb 08, 2015.
     </p>
   </div>
 

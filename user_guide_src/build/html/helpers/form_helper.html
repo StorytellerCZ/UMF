@@ -1077,7 +1077,7 @@ the tag. For example:</p>
 
 <dl class="function">
 <dt id="set_value">
-<tt class="descname">set_value</tt><big>(</big><em>$field</em><span class="optional">[</span>, <em>$default = ''</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#set_value" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">set_value</tt><big>(</big><em>$field</em><span class="optional">[</span>, <em>$default = ''</em><span class="optional">[</span>, <em>$html_escape = TRUE</em><span class="optional">]</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#set_value" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1085,6 +1085,7 @@ the tag. For example:</p>
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>$field</strong> (<em>string</em>) &#8211; Field name</li>
 <li><strong>$default</strong> (<em>string</em>) &#8211; Default value</li>
+<li><strong>$html_escape</strong> (<em>bool</em>) &#8211; Whether to turn off HTML escaping of the value</li>
 </ul>
 </td>
 </tr>
@@ -1099,19 +1100,14 @@ the tag. For example:</p>
 <p>Permits you to set the value of an input form or textarea. You must
 supply the field name via the first parameter of the function. The
 second (optional) parameter allows you to set a default value for the
-form.</p>
+form. The third (optional) parameter allows you to turn off HTML escaping
+of the value, in case you need to use this function in combination with
+i.e. <tt class="xref php php-func docutils literal"><span class="pre">form_input()</span></tt> and avoid double-escaping.</p>
 <p>Example:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="o">&lt;</span><span class="nx">input</span> <span class="nx">type</span><span class="o">=</span><span class="s2">&quot;text&quot;</span> <span class="nx">name</span><span class="o">=</span><span class="s2">&quot;quantity&quot;</span> <span class="nx">value</span><span class="o">=</span><span class="s2">&quot;&lt;?php echo set_value(&#39;quantity&#39;, &#39;0&#39;); ?&gt;&quot;</span> <span class="nx">size</span><span class="o">=</span><span class="s2">&quot;50&quot;</span> <span class="o">/&gt;</span>
 </pre></div>
 </div>
 <p>The above form will show &#8220;0&#8221; when loaded for the first time.</p>
-<div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">Only use this function with raw HTML fields, as it
-internally calls <a class="reference internal" href="../general/common_functions.html#html_escape" title="html_escape"><tt class="xref php php-func docutils literal"><span class="pre">html_escape()</span></tt></a> and combining its
-usage with other form helper functions will result in
-double HTML encoding!</p>
-</div>
 </dd></dl>
 
 <dl class="function">
@@ -1353,7 +1349,7 @@ function. Use it only if you are creating your own form elements.</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2015, British Columbia Institute of Technology.
-      Last updated on Feb 03, 2015.
+      Last updated on Feb 09, 2015.
     </p>
   </div>
 
