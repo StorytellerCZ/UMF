@@ -328,11 +328,13 @@ $config['encryption_key'] = '';
 |
 | 'sess_save_path'
 |
-|	The location to save sessions to, driver dependant
+|	The location to save sessions to, driver dependant.
 |
-|	For the 'files' driver, it's a path to a directory.
+|	For the 'files' driver, it's a path to a writable directory.
 |	For the 'database' driver, it's a table name.
 |	Please read up the manual for the format with other session drivers.
+|
+|	IMPORTANT: You are REQUIRED to set a valid save path!
 |
 | 'sess_match_ip'
 |
@@ -341,6 +343,12 @@ $config['encryption_key'] = '';
 | 'sess_time_to_update'
 |
 |	How many seconds between CI regenerating the session ID.
+|
+| 'sess_regenerate_destroy'
+|
+|	Whether to destroy session data associated with the old session ID
+|	when auto-regenerating the session ID. When set to FALSE, the data
+|	will be later deleted by the garbage collector.
 |
 | Other session cookie settings are shared with the rest of the application,
 | except for 'cookie_prefix' and 'cookie_httponly', which are ignored here.
@@ -352,6 +360,7 @@ $config['sess_expiration'] = 7200;
 $config['sess_save_path'] = 'ci_sessions';
 $config['sess_match_ip'] = FALSE;
 $config['sess_time_to_update'] = 300;
+$config['sess_regenerate_destroy'] = FALSE;
 
 /*
 |--------------------------------------------------------------------------

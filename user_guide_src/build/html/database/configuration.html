@@ -474,7 +474,7 @@ customizable by the end user.</td>
 </tr>
 <tr class="row-even"><td><strong>autoinit</strong></td>
 <td>Whether or not to automatically connect to the database when the library loads. If set to false,
-the connection will take place prior to executing the first query.</td>
+you will have to manually connect via the <tt class="docutils literal"><span class="pre">$this-&gt;db-&gt;db_connect()</span></tt> method.</td>
 </tr>
 <tr class="row-odd"><td><strong>schema</strong></td>
 <td>The database schema, defaults to &#8216;public&#8217;. Used by PostgreSQL and ODBC drivers.</td>
@@ -528,7 +528,7 @@ you are using MySQL.</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2015, British Columbia Institute of Technology.
-      Last updated on Jan 26, 2015.
+      Last updated on Feb 13, 2015.
     </p>
   </div>
 
