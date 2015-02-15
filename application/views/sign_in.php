@@ -58,7 +58,7 @@
 
 <div class="col-lg-6">
 	<?php if ($third_party_auth = $this->config->item('third_party_auth')) : ?>
-		<h3><?php echo lang('sign_ip_third_party_heading'); ?></h3>
+		<h3><?php echo lang('sign_in_third_party_heading'); ?></h3>
 		<ul>
 			<?php foreach($third_party_auth['providers'] as $provider_name => $provider_values) : ?>
 				<?php if($provider_values['enabled']) : ?>
