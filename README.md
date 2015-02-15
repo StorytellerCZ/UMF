@@ -20,8 +20,13 @@ Users - Messages - Forums -- This is an advance package of A3M that adds to its 
 
 ### Installation
 1) Upload all the files to your server
+
 2) Setup database and import into it the content of `database.sql`
+
 3) Go through `application/config/config.php` and `application/config/database.php` and make sure that all the values are set correctly.
+
 4) Adjust the settings in `application/config/umf/` to your liking.
+
 5) Go to `application/language/english/general_lang.php` and change the default page name there.
+
 6) You are all set. First user to register on the webpage is going to become the admin.

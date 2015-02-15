@@ -5,6 +5,7 @@ All notable changes to this project will be documented in this file, following t
 ### Added
 * FormValidator
 * Changelog
+* Installation instructions
 
 ### Changed
 * A3M, Bootstrap and HybridAuth updated to the most recent development version
@@ -14,7 +15,7 @@ All notable changes to this project will be documented in this file, following t
 * Contribution guidelines revised
 
 ### Fixes
-* Missing Account_model in Forums
+* Missing Account_model in Forums (Thanks @oldhobbyist)
 * Removed missing lang file `account/account_profile` from admin controllers
 
 ## [0.4] - 2014-07-13
