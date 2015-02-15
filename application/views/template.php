@@ -2,16 +2,16 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    
+
     <title><?php echo isset($title) ? $title.' - '.lang('website_title') : lang('website_title'); ?></title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Account Authentication and Authorization">
-    <meta name="author" content="A3M">
-    
+    <meta name="description" content="Users Messages Forums">
+    <meta name="author" content="UMF">
+
     <base href="<?php echo base_url(); ?>"/>
-    
+
     <link rel="shortcut icon" href="<?php echo base_url(); ?>favicon.ico"/>
-    
+
     <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script type="text/javascript">window.jQuery || document.write('<script type="text/javascript" src="<?php echo base_url(RES_DIR .'js/jquery.min.js'); ?>"><\/script>')</script>
     <link type="text/css" rel="stylesheet" href="<?php echo base_url().RES_DIR; ?>/bootstrap/css/bootstrap.min.css">
@@ -94,7 +94,7 @@
             <!--/.nav-collapse -->
         </div>
     </nav>
-    
+
     <div class="container">
         <div class="row">
             <!-- Any alert messages you want to display show up here -->
@@ -134,9 +134,9 @@
             </div>
         </div>
     </div>
-    
+
     <div class="clearfix"></div>
-    
+
     <div class="container">
         <div class="row">
             <div class="col-lg-12">

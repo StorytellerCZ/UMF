@@ -17,7 +17,7 @@ class Manage_roles extends CI_Controller {
     $this->load->helper(array('date', 'language', 'account/ssl', 'url'));
     $this->load->library(array('account/authentication', 'account/authorization', 'form_validation'));
     $this->load->model(array('account/Account_model', 'account/Account_details_model', 'account/Acl_permission_model', 'account/Acl_role_model', 'account/Rel_account_permission_model', 'account/Rel_account_role_model', 'account/Rel_role_permission_model'));
-    $this->load->language(array('general', 'admin/manage_roles', 'account/account_settings', 'account/account_profile', 'account/sign_up', 'account/account_password'));
+    $this->load->language(array('general', 'admin/manage_roles', 'account/account_settings', 'account/sign_up', 'account/account_password'));
   }
 
   /**
@@ -53,7 +53,7 @@ class Manage_roles extends CI_Controller {
             if( $rperm->permission_id == $perm->id )
             {
               $current_role['perm_list'][] = array(
-                'id' => $perm->id, 
+                'id' => $perm->id,
                 'key' => $perm->key,
                 'title' => $perm->description );
             }
@@ -78,7 +78,7 @@ class Manage_roles extends CI_Controller {
    * If NULL, then it will show form to create a new role.
    *
    * @param int $id Role ID
-   * 
+   *
    */
   function save($id = NULL)
   {
@@ -158,10 +158,10 @@ class Manage_roles extends CI_Controller {
         $id = $this->Acl_role_model->update($id, $attributes);
 
         // Check if the user should be suspended
-        if( $this->authorization->is_permitted('delete_roles') ) 
+        if( $this->authorization->is_permitted('delete_roles') )
         {
           $permission_ban = $this->input->post('manage_role_ban', TRUE);
-          if( $this->input->post('manage_role_ban', TRUE) ) 
+          if( $this->input->post('manage_role_ban', TRUE) )
           {
             $this->Acl_role_model->update_suspended_datetime($id);
           }
@@ -182,7 +182,7 @@ class Manage_roles extends CI_Controller {
         }
         $this->Rel_role_permission_model->delete_update_batch($id, $perms);
 
-        redirect('admin/manage_roles'); 
+        redirect('admin/manage_roles');
       }
     }
 

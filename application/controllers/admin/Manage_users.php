@@ -18,7 +18,7 @@ class Manage_users extends CI_Controller
     $this->load->helper(array('date', 'language', 'account/ssl', 'url'));
     $this->load->library(array('account/authentication', 'account/authorization', 'form_validation'));
     $this->load->model(array('account/Account_model', 'account/Account_details_model', 'account/Acl_permission_model', 'account/Acl_role_model', 'account/Rel_account_permission_model', 'account/Rel_account_role_model', 'account/Rel_role_permission_model'));
-    $this->load->language(array('general', 'admin/manage_users', 'account/account_settings', 'account/account_profile', 'account/sign_up', 'account/account_password'));
+    $this->load->language(array('general', 'admin/manage_users', 'account/account_settings', 'account/sign_up', 'account/account_password'));
   }
 
   /**
@@ -47,18 +47,18 @@ class Manage_users extends CI_Controller
       $current_user['is_admin'] = FALSE;
       $current_user['is_banned'] = isset( $acc->suspendedon );
 
-      foreach( $all_account_details as $det ) 
+      foreach( $all_account_details as $det )
       {
-        if( $det->account_id == $acc->id ) 
+        if( $det->account_id == $acc->id )
         {
           $current_user['firstname'] = $det->firstname;
           $current_user['lastname'] = $det->lastname;
         }
       }
 
-      foreach( $all_account_roles as $acrole ) 
+      foreach( $all_account_roles as $acrole )
       {
-        if( $acrole->account_id == $acc->id && $acrole->role_id == $admin_role->id ) 
+        if( $acrole->account_id == $acc->id && $acrole->role_id == $admin_role->id )
         {
           $current_user['is_admin'] = TRUE;
           break;
@@ -126,24 +126,24 @@ class Manage_users extends CI_Controller
           'label' => 'lang:profile_username',
           'rules' => 'trim|required|alpha_dash|min_length[2]|max_length[24]'),
         array(
-          'field' => 'users_email', 
-          'label' => 'lang:settings_email', 
+          'field' => 'users_email',
+          'label' => 'lang:settings_email',
           'rules' => 'trim|required|valid_email|max_length[160]'),
         array(
-          'field' => 'users_firstname', 
-          'label' => 'lang:settings_firstname', 
-          'rules' => 'trim|max_length[80]'), 
-        array(
-          'field' => 'users_lastname', 
-          'label' => 'lang:settings_lastname', 
+          'field' => 'users_firstname',
+          'label' => 'lang:settings_firstname',
           'rules' => 'trim|max_length[80]'),
         array(
-          'field' => 'users_new_password', 
-          'label' => 'lang:password_new_password', 
+          'field' => 'users_lastname',
+          'label' => 'lang:settings_lastname',
+          'rules' => 'trim|max_length[80]'),
+        array(
+          'field' => 'users_new_password',
+          'label' => 'lang:password_new_password',
           'rules' => 'trim|'.($is_new?'required|':NULL).'min_length[6]'),
         array(
-          'field' => 'users_retype_new_password', 
-          'label' => 'lang:password_retype_new_password', 
+          'field' => 'users_retype_new_password',
+          'label' => 'lang:password_retype_new_password',
           'rules' => 'trim|'.($is_new?'required|':NULL).'matches[users_new_password]')
       ));
 
@@ -172,20 +172,20 @@ class Manage_users extends CI_Controller
         if( empty($id) )
         {
           $id = $this->Account_model->create(
-            $this->input->post('users_username', TRUE), 
-            $this->input->post('users_email', TRUE), 
+            $this->input->post('users_username', TRUE),
+            $this->input->post('users_email', TRUE),
             $this->input->post('users_new_password', TRUE));
-          
+
           if($this->input->post('account_creation_info_send', TRUE) === 'send')
           {
             //send e-mail with user information to the user's e-mail
             $this->load->library('email');
             $this->email->from($this->config->item('account_email_confirm_sender'), lang('website_title'));
             $this->email->to($this->input->post('users_email', TRUE));
-            
+
             $this->email->subject(sprintf(lang('users_creation_email_subject'), lang('website_title')));
             $this->email->message($this->load->view('admin/manage_users_info_email', array('username' => $this->input->post('users_username', TRUE), 'password' => $this->input->post('users_new_password', TRUE)), TRUE));
-            
+
             if(ENVIRONMENT == 'development')
             {
                 echo($this->email->print_debugger());
@@ -198,14 +198,14 @@ class Manage_users extends CI_Controller
           }
         }
         // Update existing user information
-        else 
+        else
         {
           // Update account username
-          $this->Account_model->update_username($id, 
+          $this->Account_model->update_username($id,
             $this->input->post('users_username', TRUE) ? $this->input->post('users_username', TRUE) : NULL);
 
           // Update account email
-          $this->Account_model->update_email($id, 
+          $this->Account_model->update_email($id,
             $this->input->post('users_email', TRUE) ? $this->input->post('users_email', TRUE) : NULL);
 
           // Update password
@@ -216,7 +216,7 @@ class Manage_users extends CI_Controller
           }
 
           // Check if the user should be suspended
-          if( $this->authorization->is_permitted('ban_users') ) 
+          if( $this->authorization->is_permitted('ban_users') )
           {
             $ban = $this->input->post('manage_user_ban', TRUE);
             if( $this->input->post('manage_user_ban', true) )
@@ -228,7 +228,7 @@ class Manage_users extends CI_Controller
               $this->Account_model->remove_suspended_datetime($id);
             }
           }
-          
+
           //force password reset on a user
           if($this->input->post('force_reset_pass', TRUE))
           {

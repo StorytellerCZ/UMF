@@ -39,7 +39,7 @@ $config['sign_out_view_enabled'] 		= TRUE;
 | Forgot Password
 |--------------------------------------------------------------------------
 */
-$config['forgot_password_recaptcha_enabled'] 	= TRUE;
+$config['forgot_password_recaptcha_enabled'] 	= FALSE;
 
 /*
 |--------------------------------------------------------------------------
@@ -126,7 +126,7 @@ $config['password_reset_email'] 	= 'no-reply@umf.net';
 |       account_
 |	account_email_validate               Will send out confirmation email for account email validation
 |       account_email_validation_required    Requires that the e-mail is validated before user can login
-|       account_email_confirm_sender        
+|       account_email_confirm_sender
 */
 $config['account_email_validate']           = TRUE;
 $config['account_email_validation_required']= TRUE;
