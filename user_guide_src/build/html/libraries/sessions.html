@@ -956,6 +956,13 @@ issues.</p>
 </div>
 <div class="section" id="redis-driver">
 <h4><a class="toc-backref" href="#id20">Redis Driver</a><a class="headerlink" href="#redis-driver" title="Permalink to this headline">¶</a></h4>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Since Redis doesn&#8217;t have a locking mechanism exposed, locks for
+this driver are emulated by a separate value that is kept for up
+to 5 seconds. You may experience issues if your page loads take
+longer than that!</p>
+</div>
 <p>Redis is a storage engine typically used for caching and popular because
 of its high performance, which is also probably your reason to use the
 &#8216;redis&#8217; session driver.</p>
@@ -988,6 +995,13 @@ sufficient:</p>
 </div>
 <div class="section" id="memcached-driver">
 <h4><a class="toc-backref" href="#id21">Memcached Driver</a><a class="headerlink" href="#memcached-driver" title="Permalink to this headline">¶</a></h4>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Since Memcache doesn&#8217;t have a locking mechanism exposed, locks
+for this driver are emulated by a separate value that is kept for
+up to 5 seconds. You may experience issues if your page loads take
+longer than that!</p>
+</div>
 <p>The &#8216;memcached&#8217; driver is very similar to the &#8216;redis&#8217; one in all of its
 properties, except perhaps for availability, because PHP&#8217;s <a class="reference external" href="http://php.net/memcached">Memcached</a> extension is distributed via PECL and some
 Linux distrubutions make it available as an easy to install package.</p>
@@ -1682,7 +1696,7 @@ properties:</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2015, British Columbia Institute of Technology.
-      Last updated on Feb 08, 2015.
+      Last updated on Feb 15, 2015.
     </p>
   </div>
 
