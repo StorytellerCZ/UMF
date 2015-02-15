@@ -17,6 +17,7 @@ All notable changes to this project will be documented in this file, following t
 ### Fixes
 * Missing Account_model in Forums (Thanks @oldhobbyist)
 * Removed missing lang file `account/account_profile` from admin controllers
+* #10 form_validation issues due to upgrade to CI3
 
 ## [0.4] - 2014-07-13
 ### Added

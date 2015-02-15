@@ -9,7 +9,7 @@
 if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 /**
  * Forgot password page
- * 
+ *
  * @package A3M
  * @subpackage Controllers
  */
@@ -53,7 +53,7 @@ class Forgot_password extends CI_Controller
 			array(
 				'field' => 'forgot_password_username_email',
 				'label' => 'lang:forgot_password_username_email',
-				'rules' => 'trim|required|min_length[2]|max_length[254]|callback__check_username_or_email'
+				'rules' => 'trim|required|min_length[2]|max_length[254]|callback_check_username_or_email'
 			)
 		));
 
@@ -122,7 +122,7 @@ class Forgot_password extends CI_Controller
                                                         log_message('error', $this->email->print_debugger());
 						}
 					}
-					
+
 					$this->load->view('template', $data);
 					return;
 				}
@@ -138,18 +138,17 @@ class Forgot_password extends CI_Controller
 		$data['content'] = $this->load->view('account/forgot_password', isset($data) ? $data : NULL, TRUE);
 		$this->load->view('template', $data);
 	}
-	
+
 	/**
 	 * Will check for username or e-mail
 	 *
 	 * Will check if the username or e-mail is available and return boolean value.
-	 * This is for AJAX requests.
-	 * 
-	 * @access private
+	 *
+	 * @access public
 	 * @param object $str Possible username or e-mail to be checked
 	 * @return boolean
 	 */
-	private function _check_username_or_email($str)
+	public function check_username_or_email($str)
 	{
 		//are we checking an email address?
 		if (strpos($str,'@') !== false)
