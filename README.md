@@ -1,6 +1,8 @@
 UMF
 ===
 
+[![Join the chat at https://gitter.im/AdwinTrave/UMF](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/AdwinTrave/UMF?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 Users - Messages - Forums -- This is an advance package of A3M that adds to its basis functionality private messages and simple forums to kickstart the development of web apps.
 
 ### Author
