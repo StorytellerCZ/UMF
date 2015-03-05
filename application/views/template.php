@@ -158,15 +158,15 @@
         if(isset($ckeditor)):
             if($ckeditor == 'standard')
             {
-                echo '<script src="//cdn.ckeditor.com/4.4.2/standard/ckeditor.js"></script>';
+                echo '<script src="//cdn.ckeditor.com/4.4.7/standard/ckeditor.js"></script>';
             }
             elseif($ckeditor == 'full')
             {
-                echo '<script src="//cdn.ckeditor.com/4.4.2/full/ckeditor.js"></script>';
+                echo '<script src="//cdn.ckeditor.com/4.4.7/full/ckeditor.js"></script>';
             }
             else
             {
-                echo '<script src="//cdn.ckeditor.com/4.4.2/basic/ckeditor.js"></script>';
+                echo '<script src="//cdn.ckeditor.com/4.4.7/basic/ckeditor.js"></script>';
             }
             echo '<script src="'.base_url(RES_DIR.'/ckeditor/adapters/jquery.js') .'"></script>';
     ?>

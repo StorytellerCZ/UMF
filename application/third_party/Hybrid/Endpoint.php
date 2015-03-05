@@ -27,14 +27,15 @@ class Hybrid_Endpoint {
 		if ( is_null(Hybrid_Endpoint::$request) ){
 			// Fix a strange behavior when some provider call back ha endpoint
 			// with /index.php?hauth.done={provider}?{args}... 
-			// >here we need to recreate the $_REQUEST
+			// >here we need to parse $_SERVER[QUERY_STRING]
+			$request = $_REQUEST;
 			if ( strrpos( $_SERVER["QUERY_STRING"], '?' ) ) {
 				$_SERVER["QUERY_STRING"] = str_replace( "?", "&", $_SERVER["QUERY_STRING"] );
 
-				parse_str( $_SERVER["QUERY_STRING"], $_REQUEST );
+				parse_str( $_SERVER["QUERY_STRING"], $request );
 			}
 
-			Hybrid_Endpoint::$request = $_REQUEST;
+			Hybrid_Endpoint::$request = $request;
 		}
 
 		// If openid_policy requested, we return our policy document
@@ -199,7 +200,6 @@ class Hybrid_Endpoint {
 
 				// Check if Hybrid_Auth session already exist
 				if ( ! $storage->config( "CONFIG" ) ) {
-                                        Hybrid_Logger::error( "Endpoint: Config storage not found when trying to init Hyrid_Auth. " );
 
 					throw new Hybrid_Exception( "You cannot access this page directly." );
 				}
