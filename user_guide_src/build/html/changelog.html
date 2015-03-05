@@ -400,6 +400,8 @@ Only entries in <tt class="docutils literal"><span class="pre">$autoload['librar
 <li>DEPRECATED the &#8216;mysql&#8217;, &#8216;sqlite&#8217;, &#8216;mssql&#8217; and &#8216;pdo/dblib&#8217; (also known as &#8216;pdo/mssql&#8217; or &#8216;pdo/sybase&#8217;) drivers.</li>
 <li>Added <strong>dsn</strong> configuration setting for drivers that support DSN strings (PDO, PostgreSQL, Oracle, ODBC, CUBRID).</li>
 <li>Added <strong>schema</strong> configuration setting (defaults to <em>public</em>) for drivers that might need it (currently used by PostgreSQL and ODBC).</li>
+<li>Added <strong>save_queries</strong> configuration setting to <em>application/config/database.php</em> (defaults to <tt class="docutils literal"><span class="pre">TRUE</span></tt>).</li>
+<li>Removed <strong>autoinit</strong> configuration setting as it doesn&#8217;t make sense to instantiate the database class but not connect to the database.</li>
 <li>Added subdrivers support (currently only used by PDO).</li>
 <li>Added an optional database name parameter to <tt class="docutils literal"><span class="pre">db_select()</span></tt>.</li>
 <li>Removed <tt class="docutils literal"><span class="pre">protect_identifiers()</span></tt> and renamed internal method <tt class="docutils literal"><span class="pre">_protect_identifiers()</span></tt> to it instead - it was just an alias.</li>
@@ -418,7 +420,6 @@ Only entries in <tt class="docutils literal"><span class="pre">$autoload['librar
 <li>Added support for SQLite3 database driver.</li>
 <li>Added Interbase/Firebird database support via the <em>ibase</em> driver.</li>
 <li>Added ODBC support for <tt class="docutils literal"><span class="pre">create_database()</span></tt>, <tt class="docutils literal"><span class="pre">drop_database()</span></tt> and <tt class="docutils literal"><span class="pre">drop_table()</span></tt> in <a class="reference internal" href="database/forge.html"><em>Database Forge</em></a>.</li>
-<li>Added <strong>save_queries</strong> configuration setting to <em>application/config/database.php</em> (defaults to <tt class="docutils literal"><span class="pre">TRUE</span></tt>).</li>
 <li>Added support to binding arrays as <tt class="docutils literal"><span class="pre">IN()</span></tt> sets in <tt class="docutils literal"><span class="pre">query()</span></tt>.</li>
 <li><a class="reference internal" href="database/query_builder.html"><em>Query Builder</em></a> changes include:<ul>
 <li>Renamed the Active Record class to Query Builder to remove confusion with the Active Record design pattern.</li>
@@ -702,7 +703,7 @@ Only entries in <tt class="docutils literal"><span class="pre">$autoload['librar
 <li>Renamed internal method <tt class="docutils literal"><span class="pre">_detect_uri()</span></tt> to <tt class="docutils literal"><span class="pre">_parse_request_uri()</span></tt>.</li>
 <li>Changed <tt class="docutils literal"><span class="pre">_parse_request_uri()</span></tt> to accept absolute URIs for compatibility with HTTP/1.1 as per <cite>RFC2616 &lt;http://www.ietf.org/rfc/rfc2616.txt&gt;</cite>.</li>
 <li>Added protected method <tt class="docutils literal"><span class="pre">_parse_query_string()</span></tt> to URI paths in the the <strong>QUERY_STRING</strong> value, like <tt class="docutils literal"><span class="pre">_parse_request_uri()</span></tt> does.</li>
-<li>Changed URI string detection logic to try the <strong>PATH_INFO</strong> variable first when auto-detecting.</li>
+<li>Changed URI string detection logic to always default to <strong>REQUEST_URI</strong> unless configured otherwise or under CLI.</li>
 <li>Removed methods <tt class="docutils literal"><span class="pre">_remove_url_suffix()</span></tt>, <tt class="docutils literal"><span class="pre">_explode_segments()</span></tt> and moved their logic into <tt class="docutils literal"><span class="pre">_set_uri_string()</span></tt>.</li>
 <li>Removed method <tt class="docutils literal"><span class="pre">_fetch_uri_string()</span></tt> and moved its logic into the class constructor.</li>
 <li>Removed method <tt class="docutils literal"><span class="pre">_reindex_segments()</span></tt>.</li>
@@ -722,6 +723,7 @@ Only entries in <tt class="docutils literal"><span class="pre">$autoload['librar
 </ul>
 </li>
 <li><a class="reference internal" href="libraries/input.html"><em>Input Library</em></a> changes include:<ul>
+<li>Deprecated the <tt class="docutils literal"><span class="pre">$config['global_xss_filtering']</span></tt> setting.</li>
 <li>Added <tt class="docutils literal"><span class="pre">method()</span></tt> to retrieve <tt class="docutils literal"><span class="pre">$_SERVER['REQUEST_METHOD']</span></tt>.</li>
 <li>Added support for arrays and network addresses (e.g. 192.168.1.1/24) for use with the <em>proxy_ips</em> setting.</li>
 <li>Added method <tt class="docutils literal"><span class="pre">input_stream()</span></tt> to aid in using <strong>php://input</strong> stream data such as one passed via PUT, DELETE and PATCH requests.</li>
@@ -735,6 +737,7 @@ Only entries in <tt class="docutils literal"><span class="pre">$autoload['librar
 <li>Added an option for <tt class="docutils literal"><span class="pre">_clean_input_keys()</span></tt> to return FALSE instead of terminating the whole script.</li>
 <li>Deprecated the <tt class="docutils literal"><span class="pre">is_cli_request()</span></tt> method, it is now an alias for the new <a class="reference internal" href="general/common_functions.html#is_cli" title="is_cli"><tt class="xref php php-func docutils literal"><span class="pre">is_cli()</span></tt></a> common function.</li>
 <li>Added an <tt class="docutils literal"><span class="pre">$xss_clean</span></tt> parameter to method <tt class="docutils literal"><span class="pre">user_agent()</span></tt> and removed the <tt class="docutils literal"><span class="pre">$user_agent</span></tt> property.</li>
+<li>Added property <tt class="docutils literal"><span class="pre">$raw_input_stream</span></tt> to access <strong>php://input</strong> data.</li>
 </ul>
 </li>
 <li><a class="reference internal" href="general/common_functions.html"><em>Common functions</em></a> changes include:<ul>
@@ -750,7 +753,8 @@ Only entries in <tt class="docutils literal"><span class="pre">$autoload['librar
 <li>Changed internal function <tt class="docutils literal"><span class="pre">load_class()</span></tt> to accept a constructor parameter instead of (previously unused) class name prefix.</li>
 <li>Removed default parameter value of <a class="reference internal" href="general/common_functions.html#is_php" title="is_php"><tt class="xref php php-func docutils literal"><span class="pre">is_php()</span></tt></a>.</li>
 <li>Added a second argument <tt class="docutils literal"><span class="pre">$double_encode</span></tt> to <a class="reference internal" href="general/common_functions.html#html_escape" title="html_escape"><tt class="xref php php-func docutils literal"><span class="pre">html_escape()</span></tt></a>.</li>
-<li>Changed function <tt class="docutils literal"><span class="pre">config_item()</span></tt> to return NULL instead of FALSE when no value is found.</li>
+<li>Changed function <a class="reference internal" href="general/common_functions.html#config_item" title="config_item"><tt class="xref php php-func docutils literal"><span class="pre">config_item()</span></tt></a> to return NULL instead of FALSE when no value is found.</li>
+<li>Changed function <a class="reference internal" href="general/common_functions.html#set_status_header" title="set_status_header"><tt class="xref php php-func docutils literal"><span class="pre">set_status_header()</span></tt></a> to return immediately when run under CLI.</li>
 </ul>
 </li>
 <li><a class="reference internal" href="libraries/output.html"><em>Output Library</em></a> changes include:<ul>
@@ -905,7 +909,6 @@ Only entries in <tt class="docutils literal"><span class="pre">$autoload['librar
 <li>Fixed a bug (#10) - <a class="reference internal" href="libraries/uri.html"><em>URI Library</em></a> internal method <tt class="docutils literal"><span class="pre">_detect_uri()</span></tt> failed with paths containing a colon.</li>
 <li>Fixed a bug (#1387) - <a class="reference internal" href="database/query_builder.html"><em>Query Builder</em></a> method <tt class="docutils literal"><span class="pre">from()</span></tt> didn&#8217;t escape table aliases.</li>
 <li>Fixed a bug (#520) - <a class="reference internal" href="helpers/date_helper.html"><em>Date Helper</em></a> function :php:func:<tt class="docutils literal"><span class="pre">nice_date()</span></tt> failed when the optional second parameter is not passed.</li>
-<li>Fixed a bug (#167) - <tt class="docutils literal"><span class="pre">$config['permitted_uri_chars']</span></tt> didn&#8217;t affect URL-encoded characters.</li>
 <li>Fixed a bug (#318) - <a class="reference internal" href="general/profiling.html"><em>Profiling Library</em></a> setting <em>query_toggle_count</em> was not settable as described in the manual.</li>
 <li>Fixed a bug (#938) - <a class="reference internal" href="libraries/config.html"><em>Config Library</em></a> method <tt class="docutils literal"><span class="pre">site_url()</span></tt> added a question mark to the URL string when query strings are enabled even if it already existed.</li>
 <li>Fixed a bug (#999) - <a class="reference internal" href="libraries/config.html"><em>Config Library</em></a> method <tt class="docutils literal"><span class="pre">site_url()</span></tt> always appended <tt class="docutils literal"><span class="pre">$config['url_suffix']</span></tt> to the end of the URL string, regardless of whether a query string exists in it.</li>
@@ -950,7 +953,6 @@ Only entries in <tt class="docutils literal"><span class="pre">$autoload['librar
 <li>Fixed a bug (#50) - <a class="reference internal" href="libraries/sessions.html"><em>Session Library</em></a> unnecessarily stripped slashed from serialized data, making it impossible to read objects in a namespace.</li>
 <li>Fixed a bug (#658) - <a class="reference internal" href="general/routing.html"><em>Routing</em></a> wildcard <strong>:any</strong> didn&#8217;t work as advertised and matched multiple URI segments instead of all characters within a single segment.</li>
 <li>Fixed a bug (#1938) - <a class="reference internal" href="libraries/email.html"><em>Email Library</em></a> removed multiple spaces inside a pre-formatted plain text message.</li>
-<li>Fixed a bug (#388, #705) - <a class="reference internal" href="libraries/uri.html"><em>URI Library</em></a> didn&#8217;t apply URL-decoding to URI segments that it got from <strong>REQUEST_URI</strong> and/or <strong>QUERY_STRING</strong>.</li>
 <li>Fixed a bug (#122) - <a class="reference internal" href="libraries/uri.html"><em>URI Library</em></a> method <tt class="docutils literal"><span class="pre">ruri_string()</span></tt> didn&#8217;t include a directory if one is used.</li>
 <li>Fixed a bug - <a class="reference internal" href="general/routing.html"><em>Routing Library</em></a> didn&#8217;t properly handle <em>default_controller</em> in a subdirectory when a method is also specified.</li>
 <li>Fixed a bug (#953) - <a class="reference internal" href="general/hooks.html"><em>post_controller_constructor hook</em></a> wasn&#8217;t called with a <em>404_override</em>.</li>
@@ -1013,6 +1015,7 @@ Only entries in <tt class="docutils literal"><span class="pre">$autoload['librar
 <li>Fixed a bug (#3161) - <a class="reference internal" href="libraries/caching.html"><em>Cache Library</em></a> methods <cite>increment()</cite>, <cite>decrement()</cite> didn&#8217;t auto-create non-existent items when using redis and/or file storage.</li>
 <li>Fixed a bug (#3189) - <a class="reference internal" href="libraries/parser.html"><em>Parser Library</em></a> used double replacement on <tt class="docutils literal"><span class="pre">key-&gt;value</span></tt> pairs, exposing a potential template injection vulnerability.</li>
 <li>Fixed a bug (#3573) - <a class="reference internal" href="libraries/email.html"><em>Email Library</em></a> violated <a class="reference external" href="https://tools.ietf.org/rfc/rfc5321.txt">RFC5321</a> by sending &#8216;localhost.localdomain&#8217; as a hostname.</li>
+<li>Fixed a bug (#3572) - <tt class="docutils literal"><span class="pre">CI_Security::_remove_evil_attributes()</span></tt> failed for large-sized inputs due to <em>pcre.backtrack_limit</em> and didn&#8217;t properly match HTML tags.</li>
 </ul>
 </div>
 </div>
@@ -3353,7 +3356,7 @@ and fixed various typos.</li>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2015, British Columbia Institute of Technology.
-      Last updated on Feb 06, 2015.
+      Last updated on Mar 01, 2015.
     </p>
   </div>
 

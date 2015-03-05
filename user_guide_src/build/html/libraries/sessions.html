@@ -919,7 +919,7 @@ removed in the future.</p>
         <span class="sb">`id`</span> <span class="nx">varchar</span><span class="p">(</span><span class="mi">40</span><span class="p">)</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
         <span class="sb">`ip_address`</span> <span class="nx">varchar</span><span class="p">(</span><span class="mi">45</span><span class="p">)</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
         <span class="sb">`timestamp`</span> <span class="nx">int</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span> <span class="nx">unsigned</span> <span class="k">DEFAULT</span> <span class="mi">0</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
-        <span class="sb">`data`</span> <span class="nx">blob</span> <span class="k">DEFAULT</span> <span class="s1">&#39;&#39;</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
+        <span class="sb">`data`</span> <span class="nx">blob</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
         <span class="nx">PRIMARY</span> <span class="nx">KEY</span> <span class="p">(</span><span class="nx">id</span><span class="p">),</span>
         <span class="nx">KEY</span> <span class="sb">`ci_sessions_timestamp`</span> <span class="p">(</span><span class="sb">`timestamp`</span><span class="p">)</span>
 <span class="p">);</span>
@@ -960,8 +960,7 @@ issues.</p>
 <p class="first admonition-title">Note</p>
 <p class="last">Since Redis doesn&#8217;t have a locking mechanism exposed, locks for
 this driver are emulated by a separate value that is kept for up
-to 5 seconds. You may experience issues if your page loads take
-longer than that!</p>
+to 300 seconds.</p>
 </div>
 <p>Redis is a storage engine typically used for caching and popular because
 of its high performance, which is also probably your reason to use the
@@ -999,8 +998,7 @@ sufficient:</p>
 <p class="first admonition-title">Note</p>
 <p class="last">Since Memcache doesn&#8217;t have a locking mechanism exposed, locks
 for this driver are emulated by a separate value that is kept for
-up to 5 seconds. You may experience issues if your page loads take
-longer than that!</p>
+up to 300 seconds.</p>
 </div>
 <p>The &#8216;memcached&#8217; driver is very similar to the &#8216;redis&#8217; one in all of its
 properties, except perhaps for availability, because PHP&#8217;s <a class="reference external" href="http://php.net/memcached">Memcached</a> extension is distributed via PECL and some
@@ -1696,7 +1694,7 @@ properties:</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2015, British Columbia Institute of Technology.
-      Last updated on Feb 15, 2015.
+      Last updated on Mar 05, 2015.
     </p>
   </div>
 

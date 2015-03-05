@@ -363,6 +363,9 @@ in PHP&#8217;s own <a class="reference external" href="http://php.net/password">
 <p>Please use them, even if you&#8217;re not running PHP 5.5+, CodeIgniter
 provides them for you as long as you&#8217;re running at least PHP version
 5.3.7 (and if you don&#8217;t meet that requirement - please, upgrade).</p>
+<p>If you&#8217;re one of the really unlucky people who can&#8217;t even upgrade to a
+more recent PHP version, use <cite>hash_pbkdf() &lt;http://php.net/hash_pbkdf2&gt;</cite>,
+which we also provide in our compatibility layer.</p>
 </li>
 <li><p class="first">DO NOT ever display or send a password in plain-text format!</p>
 <p>Even to the password&#8217;s owner, if you need a &#8220;Forgotten password&#8221;
@@ -433,7 +436,7 @@ attacker.</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2015, British Columbia Institute of Technology.
-      Last updated on Jan 26, 2015.
+      Last updated on Feb 26, 2015.
     </p>
   </div>
 

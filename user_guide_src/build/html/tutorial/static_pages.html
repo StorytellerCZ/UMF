@@ -258,25 +258,25 @@ development environment.</p>
 <p>The first thing you&#8217;re going to do is set up a <strong>controller</strong> to handle
 static pages. A controller is simply a class that helps delegate work.
 It is the glue of your web application.</p>
-<p>For example, when a call is made to:
-<tt class="docutils literal"><span class="pre">http://example.com/news/latest/10</span></tt> We might imagine that there is a
-controller named &#8220;news&#8221;. The method being called on news would be
-&#8220;latest&#8221;. The news method&#8217;s job could be to grab 10 news items, and
-render them on the page. Very often in MVC, you&#8217;ll see URL patterns that
-match:
-<tt class="docutils literal"><span class="pre">http://example.com/[controller-class]/[controller-method]/[arguments]</span></tt>
-As URL schemes become more complex, this may change. But for now, this
+<p>For example, when a call is made to:</p>
+<blockquote>
+<div><a class="reference external" href="http://example.com/news/latest/10">http://example.com/news/latest/10</a></div></blockquote>
+<p>We might imagine that there is a controller named &#8220;news&#8221;. The method
+being called on news would be &#8220;latest&#8221;. The news method&#8217;s job could be to
+grab 10 news items, and render them on the page. Very often in MVC,
+you&#8217;ll see URL patterns that match:</p>
+<blockquote>
+<div><a class="reference external" href="http://example.com/[controller-class]/[controller-method]/[arguments">http://example.com/[controller-class]/[controller-method]/[arguments</a>]</div></blockquote>
+<p>As URL schemes become more complex, this may change. But for now, this
 is all we will need to know.</p>
 <p>Create a file at application/controllers/Pages.php with the following
 code.</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="o">&lt;?</span><span class="nx">php</span>
 <span class="k">class</span> <span class="nc">Pages</span> <span class="k">extends</span> <span class="nx">CI_Controller</span> <span class="p">{</span>
 
-    <span class="k">public</span> <span class="k">function</span> <span class="nf">view</span><span class="p">(</span><span class="nv">$page</span> <span class="o">=</span> <span class="s1">&#39;home&#39;</span><span class="p">)</span>
-    <span class="p">{</span>
-
-    <span class="p">}</span>
-
+        <span class="k">public</span> <span class="k">function</span> <span class="nf">view</span><span class="p">(</span><span class="nv">$page</span> <span class="o">=</span> <span class="s1">&#39;home&#39;</span><span class="p">)</span>
+        <span class="p">{</span>
+        <span class="p">}</span>
 <span class="p">}</span>
 </pre></div>
 </div>
@@ -296,12 +296,12 @@ our page footer and header.</p>
 <p>Create the header at application/views/templates/header.php and add the
 following code.</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="o">&lt;</span><span class="nx">html</span><span class="o">&gt;</span>
-    <span class="o">&lt;</span><span class="nx">head</span><span class="o">&gt;</span>
-        <span class="o">&lt;</span><span class="nx">title</span><span class="o">&gt;</span><span class="nx">CodeIgniter</span> <span class="nx">Tutorial</span><span class="o">&lt;/</span><span class="nx">title</span><span class="o">&gt;</span>
-    <span class="o">&lt;/</span><span class="nx">head</span><span class="o">&gt;</span>
-    <span class="o">&lt;</span><span class="nx">body</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="nx">head</span><span class="o">&gt;</span>
+                <span class="o">&lt;</span><span class="nx">title</span><span class="o">&gt;</span><span class="nx">CodeIgniter</span> <span class="nx">Tutorial</span><span class="o">&lt;/</span><span class="nx">title</span><span class="o">&gt;</span>
+        <span class="o">&lt;/</span><span class="nx">head</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="nx">body</span><span class="o">&gt;</span>
 
-        <span class="o">&lt;</span><span class="nx">h1</span><span class="o">&gt;</span><span class="nx">CodeIgniter</span> <span class="nx">Tutorial</span><span class="o">&lt;/</span><span class="nx">h1</span><span class="o">&gt;</span>
+                <span class="o">&lt;</span><span class="nx">h1</span><span class="o">&gt;</span><span class="nx">CodeIgniter</span> <span class="nx">Tutorial</span><span class="o">&lt;/</span><span class="nx">h1</span><span class="o">&gt;</span>
 </pre></div>
 </div>
 <p>The header contains the basic HTML code that you&#8217;ll want to display
@@ -309,38 +309,35 @@ before loading the main view, together with a heading. It will also
 output the $title variable, which we&#8217;ll define later in the controller.
 Now create a footer at application/views/templates/footer.php that
 includes the following code:</p>
-<div class="highlight-ci"><div class="highlight"><pre>        <span class="o">&lt;</span><span class="nx">em</span><span class="o">&gt;&amp;</span><span class="nb">copy</span><span class="p">;</span> <span class="mi">2014</span><span class="o">&lt;/</span><span class="nx">em</span><span class="o">&gt;</span>
-    <span class="o">&lt;/</span><span class="nx">body</span><span class="o">&gt;</span>
-<span class="o">&lt;</span><span class="nx">html</span><span class="o">&gt;</span>
+<div class="highlight-ci"><div class="highlight"><pre>                <span class="o">&lt;</span><span class="nx">em</span><span class="o">&gt;&amp;</span><span class="nb">copy</span><span class="p">;</span> <span class="mi">2014</span><span class="o">&lt;/</span><span class="nx">em</span><span class="o">&gt;</span>
+        <span class="o">&lt;/</span><span class="nx">body</span><span class="o">&gt;</span>
+<span class="o">&lt;/</span><span class="nx">html</span><span class="o">&gt;</span>
 </pre></div>
 </div>
 <div class="section" id="adding-logic-to-the-controller">
 <h2>Adding logic to the controller<a class="headerlink" href="#adding-logic-to-the-controller" title="Permalink to this headline">¶</a></h2>
-<p>Earlier you set up a controller with a view() method. The method accepts
-one parameter, which is the name of the page to be loaded. The static
-page templates will be located in the application/views/pages/
+<p>Earlier you set up a controller with a <tt class="docutils literal"><span class="pre">view()</span></tt> method. The method
+accepts one parameter, which is the name of the page to be loaded. The
+static page templates will be located in the application/views/pages/
 directory.</p>
 <p>In that directory, create two files named home.php and about.php. Within
 those files, type some text − anything you&#8217;d like − and save them. If
 you like to be particularly un-original, try &#8220;Hello World!&#8221;.</p>
 <p>In order to load those pages, you&#8217;ll have to check whether the requested
 page actually exists:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span class="o">&lt;?</span><span class="nx">php</span>
-<span class="k">public</span> <span class="k">function</span> <span class="nf">view</span><span class="p">(</span><span class="nv">$page</span> <span class="o">=</span> <span class="s1">&#39;home&#39;</span><span class="p">)</span>
+<div class="highlight-ci"><div class="highlight"><pre><span class="k">public</span> <span class="k">function</span> <span class="nf">view</span><span class="p">(</span><span class="nv">$page</span> <span class="o">=</span> <span class="s1">&#39;home&#39;</span><span class="p">)</span>
 <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span> <span class="o">!</span> <span class="nb">file_exists</span><span class="p">(</span><span class="nx">APPPATH</span><span class="o">.</span><span class="s1">&#39;/views/pages/&#39;</span><span class="o">.</span><span class="nv">$page</span><span class="o">.</span><span class="s1">&#39;.php&#39;</span><span class="p">))</span>
+        <span class="p">{</span>
+                <span class="c1">// Whoops, we don&#39;t have a page for that!</span>
+                <span class="nx">show_404</span><span class="p">();</span>
+        <span class="p">}</span>
 
-    <span class="k">if</span> <span class="p">(</span> <span class="o">!</span> <span class="nb">file_exists</span><span class="p">(</span><span class="nx">APPPATH</span><span class="o">.</span><span class="s1">&#39;/views/pages/&#39;</span><span class="o">.</span><span class="nv">$page</span><span class="o">.</span><span class="s1">&#39;.php&#39;</span><span class="p">))</span>
-    <span class="p">{</span>
-        <span class="c1">// Whoops, we don&#39;t have a page for that!</span>
-        <span class="nx">show_404</span><span class="p">();</span>
-    <span class="p">}</span>
+        <span class="nv">$data</span><span class="p">[</span><span class="s1">&#39;title&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nx">ucfirst</span><span class="p">(</span><span class="nv">$page</span><span class="p">);</span> <span class="c1">// Capitalize the first letter</span>
 
-    <span class="nv">$data</span><span class="p">[</span><span class="s1">&#39;title&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nx">ucfirst</span><span class="p">(</span><span class="nv">$page</span><span class="p">);</span> <span class="c1">// Capitalize the first letter</span>
-
-    <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">view</span><span class="p">(</span><span class="s1">&#39;templates/header&#39;</span><span class="p">,</span> <span class="nv">$data</span><span class="p">);</span>
-    <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">view</span><span class="p">(</span><span class="s1">&#39;pages/&#39;</span><span class="o">.</span><span class="nv">$page</span><span class="p">,</span> <span class="nv">$data</span><span class="p">);</span>
-    <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">view</span><span class="p">(</span><span class="s1">&#39;templates/footer&#39;</span><span class="p">,</span> <span class="nv">$data</span><span class="p">);</span>
-
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">view</span><span class="p">(</span><span class="s1">&#39;templates/header&#39;</span><span class="p">,</span> <span class="nv">$data</span><span class="p">);</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">view</span><span class="p">(</span><span class="s1">&#39;pages/&#39;</span><span class="o">.</span><span class="nv">$page</span><span class="p">,</span> <span class="nv">$data</span><span class="p">);</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">view</span><span class="p">(</span><span class="s1">&#39;templates/footer&#39;</span><span class="p">,</span> <span class="nv">$data</span><span class="p">);</span>
 <span class="p">}</span>
 </pre></div>
 </div>
@@ -348,18 +345,18 @@ page actually exists:</p>
 footer, and displayed to the user. If the page doesn&#8217;t exist, a &#8220;404
 Page not found&#8221; error is shown.</p>
 <p>The first line in this method checks whether the page actually exists.
-PHP&#8217;s native file_exists() function is used to check whether the file
-is where it&#8217;s expected to be. show_404() is a built-in CodeIgniter
+PHP&#8217;s native <tt class="docutils literal"><span class="pre">file_exists()</span></tt> function is used to check whether the file
+is where it&#8217;s expected to be. <tt class="docutils literal"><span class="pre">show_404()</span></tt> is a built-in CodeIgniter
 function that renders the default error page.</p>
-<p>In the header template, the $title variable was used to customize the
+<p>In the header template, the <tt class="docutils literal"><span class="pre">$title</span></tt> variable was used to customize the
 page title. The value of title is defined in this method, but instead of
 assigning the value to a variable, it is assigned to the title element
 in the $data array.</p>
 <p>The last thing that has to be done is loading the views in the order
-they should be displayed. The second parameter in the view() method is
-used to pass values to the view. Each value in the $data array is
+they should be displayed. The second parameter in the <tt class="docutils literal"><span class="pre">view()</span></tt> method is
+used to pass values to the view. Each value in the <tt class="docutils literal"><span class="pre">$data</span></tt> array is
 assigned to a variable with the name of its key. So the value of
-$data[&#8216;title&#8217;] in the controller is equivalent to $title in the view.</p>
+<tt class="docutils literal"><span class="pre">$data['title']</span></tt> in the controller is equivalent to $title in the view.</p>
 </div>
 <div class="section" id="routing">
 <h2>Routing<a class="headerlink" href="#routing" title="Permalink to this headline">¶</a></h2>
@@ -386,9 +383,9 @@ arguments.</p>
 <p>More information about routing can be found in the URI Routing
 <a class="reference external" href="../general/routing.html">documentation</a>.</p>
 <p>Here, the second rule in the $routes array matches <strong>any</strong> request using
-the wildcard string (:any). and passes the parameter to the view()
+the wildcard string (:any). and passes the parameter to the <tt class="docutils literal"><span class="pre">view()</span></tt>
 method of the pages class.</p>
-<p>Now visit index.php/about. Did it get routed correctly to the view()
+<p>Now visit index.php/about. Did it get routed correctly to the <tt class="docutils literal"><span class="pre">view()</span></tt>
 method in the pages controller? Awesome!</p>
 </div>
 </div>
@@ -412,7 +409,7 @@ method in the pages controller? Awesome!</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2015, British Columbia Institute of Technology.
-      Last updated on Jan 21, 2015.
+      Last updated on Feb 22, 2015.
     </p>
   </div>
 

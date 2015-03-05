@@ -275,7 +275,6 @@ prototype:</p>
         <span class="s1">&#39;char_set&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;utf8&#39;</span><span class="p">,</span>
         <span class="s1">&#39;dbcollat&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;utf8_general_ci&#39;</span><span class="p">,</span>
         <span class="s1">&#39;swap_pre&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;autoinit&#39;</span> <span class="o">=&gt;</span> <span class="k">TRUE</span><span class="p">,</span>
         <span class="s1">&#39;encrypt&#39;</span> <span class="o">=&gt;</span> <span class="k">FALSE</span><span class="p">,</span>
         <span class="s1">&#39;compress&#39;</span> <span class="o">=&gt;</span> <span class="k">FALSE</span><span class="p">,</span>
         <span class="s1">&#39;stricton&#39;</span> <span class="o">=&gt;</span> <span class="k">FALSE</span><span class="p">,</span>
@@ -322,7 +321,6 @@ These failovers can be specified by setting the failover for a connection like t
                         <span class="s1">&#39;char_set&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;utf8&#39;</span><span class="p">,</span>
                         <span class="s1">&#39;dbcollat&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;utf8_general_ci&#39;</span><span class="p">,</span>
                         <span class="s1">&#39;swap_pre&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
-                        <span class="s1">&#39;autoinit&#39;</span> <span class="o">=&gt;</span> <span class="k">TRUE</span><span class="p">,</span>
                         <span class="s1">&#39;encrypt&#39;</span> <span class="o">=&gt;</span> <span class="k">FALSE</span><span class="p">,</span>
                         <span class="s1">&#39;compress&#39;</span> <span class="o">=&gt;</span> <span class="k">FALSE</span><span class="p">,</span>
                         <span class="s1">&#39;stricton&#39;</span> <span class="o">=&gt;</span> <span class="k">FALSE</span>
@@ -341,7 +339,6 @@ These failovers can be specified by setting the failover for a connection like t
                         <span class="s1">&#39;char_set&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;utf8&#39;</span><span class="p">,</span>
                         <span class="s1">&#39;dbcollat&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;utf8_general_ci&#39;</span><span class="p">,</span>
                         <span class="s1">&#39;swap_pre&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
-                        <span class="s1">&#39;autoinit&#39;</span> <span class="o">=&gt;</span> <span class="k">TRUE</span><span class="p">,</span>
                         <span class="s1">&#39;encrypt&#39;</span> <span class="o">=&gt;</span> <span class="k">FALSE</span><span class="p">,</span>
                         <span class="s1">&#39;compress&#39;</span> <span class="o">=&gt;</span> <span class="k">FALSE</span><span class="p">,</span>
                         <span class="s1">&#39;stricton&#39;</span> <span class="o">=&gt;</span> <span class="k">FALSE</span>
@@ -371,7 +368,6 @@ example, to set up a &#8220;test&#8221; environment you would do this:</p>
         <span class="s1">&#39;char_set&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;utf8&#39;</span><span class="p">,</span>
         <span class="s1">&#39;dbcollat&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;utf8_general_ci&#39;</span><span class="p">,</span>
         <span class="s1">&#39;swap_pre&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;autoinit&#39;</span> <span class="o">=&gt;</span> <span class="k">TRUE</span><span class="p">,</span>
         <span class="s1">&#39;compress&#39;</span> <span class="o">=&gt;</span> <span class="k">FALSE</span><span class="p">,</span>
         <span class="s1">&#39;encrypt&#39;</span> <span class="o">=&gt;</span> <span class="k">FALSE</span><span class="p">,</span>
         <span class="s1">&#39;stricton&#39;</span> <span class="o">=&gt;</span> <span class="k">FALSE</span><span class="p">,</span>
@@ -472,24 +468,20 @@ see also <a class="reference internal" href="caching.html"><em>Database Caching 
 applications where you might run manually written queries, and need the prefix to still be
 customizable by the end user.</td>
 </tr>
-<tr class="row-even"><td><strong>autoinit</strong></td>
-<td>Whether or not to automatically connect to the database when the library loads. If set to false,
-you will have to manually connect via the <tt class="docutils literal"><span class="pre">$this-&gt;db-&gt;db_connect()</span></tt> method.</td>
-</tr>
-<tr class="row-odd"><td><strong>schema</strong></td>
+<tr class="row-even"><td><strong>schema</strong></td>
 <td>The database schema, defaults to &#8216;public&#8217;. Used by PostgreSQL and ODBC drivers.</td>
 </tr>
-<tr class="row-even"><td><strong>encrypt</strong></td>
+<tr class="row-odd"><td><strong>encrypt</strong></td>
 <td>Whether or not to use an encrypted connection.</td>
 </tr>
-<tr class="row-odd"><td><strong>compress</strong></td>
+<tr class="row-even"><td><strong>compress</strong></td>
 <td>Whether or not to use client compression (MySQL only).</td>
 </tr>
-<tr class="row-even"><td><strong>stricton</strong></td>
+<tr class="row-odd"><td><strong>stricton</strong></td>
 <td>TRUE/FALSE (boolean) - Whether to force &#8220;Strict Mode&#8221; connections, good for ensuring strict SQL
 while developing an application.</td>
 </tr>
-<tr class="row-odd"><td><strong>port</strong></td>
+<tr class="row-even"><td><strong>port</strong></td>
 <td><p class="first">The database port number. To use this value you have to add a line to the database config array.</p>
 <div class="last highlight-ci"><div class="highlight"><pre><span class="nv">$db</span><span class="p">[</span><span class="s1">&#39;default&#39;</span><span class="p">][</span><span class="s1">&#39;port&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">5432</span><span class="p">;</span>
 </pre></div>
@@ -528,7 +520,7 @@ you are using MySQL.</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2015, British Columbia Institute of Technology.
-      Last updated on Feb 13, 2015.
+      Last updated on Feb 22, 2015.
     </p>
   </div>
 

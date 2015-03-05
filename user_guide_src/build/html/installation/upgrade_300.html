@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Upgrading from 2.2.1 to 3.0.0 &mdash; CodeIgniter 3.0-dev documentation</title>
+  <title>Upgrading from 2.2.x to 3.0.0 &mdash; CodeIgniter 3.0-dev documentation</title>
   
 
   
@@ -243,7 +243,7 @@
       
           <li><a href="upgrading.html">Upgrading From a Previous Version</a> &raquo;</li>
       
-    <li>Upgrading from 2.2.1 to 3.0.0</li>
+    <li>Upgrading from 2.2.x to 3.0.0</li>
       <li class="wy-breadcrumbs-aside">
         
       </li>
@@ -252,8 +252,8 @@
 </div>
           <div role="main" class="document">
             
-  <div class="section" id="upgrading-from-2-2-1-to-3-0-0">
-<h1>Upgrading from 2.2.1 to 3.0.0<a class="headerlink" href="#upgrading-from-2-2-1-to-3-0-0" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="upgrading-from-2-2-x-to-3-0-0">
+<h1>Upgrading from 2.2.x to 3.0.0<a class="headerlink" href="#upgrading-from-2-2-x-to-3-0-0" title="Permalink to this headline">¶</a></h1>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p class="last">These upgrade notes are for a version that is yet to be released.</p>
@@ -746,6 +746,22 @@ PHP&#8217;s native <tt class="docutils literal"><span class="pre">hash()</span><
 rather than later.</p>
 </div>
 </div>
+<div class="section" id="the-config-global-xss-filtering-setting">
+<h3>The $config[&#8216;global_xss_filtering&#8217;] setting<a class="headerlink" href="#the-config-global-xss-filtering-setting" title="Permalink to this headline">¶</a></h3>
+<p>As already explained above, XSS filtering should not be done on input data,
+but on output instead. Therefore, the <tt class="docutils literal"><span class="pre">$config['global_xss_filtering']</span></tt>,
+which automatically filters <em>input</em> data, is considered a bad practice and
+is now deprecated.</p>
+<p>Instead, you should manually escape any user-provided data via the
+<a class="reference internal" href="../helpers/security_helper.html#xss_clean" title="xss_clean"><tt class="xref php php-func docutils literal"><span class="pre">xss_clean()</span></tt></a> function when you need to output it, or use a
+library like <a class="reference external" href="http://htmlpurifier.org/">HTML Purifier</a> that does that
+for you.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The setting is still available, but you&#8217;re strongly encouraged to
+remove its usage sooner rather than later.</p>
+</div>
+</div>
 <div class="section" id="file-helper-read-file">
 <h3>File helper read_file()<a class="headerlink" href="#file-helper-read-file" title="Permalink to this headline">¶</a></h3>
 <p><a class="reference internal" href="../helpers/file_helper.html"><em>File Helper</em></a> function <tt class="docutils literal"><span class="pre">read_file()</span></tt> is now just an alias for
@@ -998,8 +1014,8 @@ sooner rather than later.</p>
 </div>
 </div>
 </div>
-<div class="section" id="step-18-check-your-usage-of-text-helper-highlight-phrase">
-<h2>Step 18: Check your usage of Text helper highlight_phrase()<a class="headerlink" href="#step-18-check-your-usage-of-text-helper-highlight-phrase" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="step-20-check-your-usage-of-text-helper-highlight-phrase">
+<h2>Step 20: Check your usage of Text helper highlight_phrase()<a class="headerlink" href="#step-20-check-your-usage-of-text-helper-highlight-phrase" title="Permalink to this headline">¶</a></h2>
 <p>The default HTML tag used by <a class="reference internal" href="../helpers/text_helper.html"><em>Text Helper</em></a> function
 <tt class="xref py py-func docutils literal"><span class="pre">highlight_phrase()</span></tt> has been changed from <tt class="docutils literal"><span class="pre">&lt;strong&gt;</span></tt> to the new HTML5
 tag <tt class="docutils literal"><span class="pre">&lt;mark&gt;</span></tt>.</p>
@@ -1035,7 +1051,7 @@ in order to avoid backwards compatibility with old browsers:</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2015, British Columbia Institute of Technology.
-      Last updated on Feb 10, 2015.
+      Last updated on Mar 01, 2015.
     </p>
   </div>
 

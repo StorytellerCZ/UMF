@@ -309,6 +309,12 @@ this:</p>
 </div>
 <p>Please refer to the <a class="reference internal" href="security.html"><em>Security class</em></a> documentation for
 information on using XSS Filtering in your application.</p>
+<div class="admonition important">
+<p class="first admonition-title">Important</p>
+<p class="last">The &#8216;global_xss_filtering&#8217; setting is DEPRECATED and kept
+solely for backwards-compatibility purposes. XSS escaping should
+be performed on <em>output</em>, not <em>input</em>!</p>
+</div>
 </div>
 </div>
 <div class="section" id="accessing-form-data">
@@ -345,8 +351,14 @@ can only be read once. This isn&#8217;t as easy as just reading from e.g.
 the <tt class="docutils literal"><span class="pre">$_POST</span></tt> array, because it will always exist and you can try
 and access multiple variables without caring that you might only have
 one shot at all of the POST data.</p>
-<p>CodeIgniter will take care of that for you, and you can access data
-from the <strong>php://input</strong> stream at any time, just by calling the
+<p>CodeIgniter will take care of that for you, and you can read the data
+from the <strong>php://input</strong> stream at any time, just by using the
+<tt class="docutils literal"><span class="pre">$raw_input_stream</span></tt> property:</p>
+<div class="highlight-ci"><div class="highlight"><pre><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">input</span><span class="o">-&gt;</span><span class="na">raw_input_stream</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>Additionally if the input stream is form-encoded like $_POST you can
+access its values by calling the
 <tt class="docutils literal"><span class="pre">input_stream()</span></tt> method:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">input</span><span class="o">-&gt;</span><span class="na">input_stream</span><span class="p">(</span><span class="s1">&#39;key&#39;</span><span class="p">);</span>
 </pre></div>
@@ -371,7 +383,14 @@ PUT, DELETE or PATCH data.</p>
 <dl class="class">
 <dt id="CI_Input">
 <em class="property">class </em><tt class="descname">CI_Input</tt><a class="headerlink" href="#CI_Input" title="Permalink to this definition">¶</a></dt>
-<dd><dl class="method">
+<dd><dl class="attribute">
+<dt>
+<tt class="descname">$raw_input_stream</tt></dt>
+<dd><p>Read only property that will return php://input data as is.</p>
+<p>The property can be read multiple times.</p>
+</dd></dl>
+
+<dl class="method">
 <dt id="CI_Input::post">
 <tt class="descname">post</tt><big>(</big><span class="optional">[</span><em>$index = NULL</em><span class="optional">[</span>, <em>$xss_clean = NULL</em><span class="optional">]</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_Input::post" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
@@ -949,7 +968,7 @@ in uppercase or lowercase.</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2015, British Columbia Institute of Technology.
-      Last updated on Feb 03, 2015.
+      Last updated on Mar 01, 2015.
     </p>
   </div>
 
