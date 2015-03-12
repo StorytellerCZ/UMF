@@ -21,6 +21,8 @@ class Authorization
    * @var object
    */
   var $CI;
+  
+  private $_account_permissions_cache = array();
 
   /**
    * Constructor
@@ -57,7 +59,15 @@ class Authorization
 
     $this->CI->load->model('account/Acl_permission_model');
 
-    $account_permissions = $this->CI->Acl_permission_model->get_by_account_id($account_id);
+    if (isset($this->_account_permissions_cache[$account_id]))
+    {
+        $account_permissions = $this->_account_permissions_cache[$account_id];
+    }
+    else
+    {
+        $account_permissions = $this->CI->Acl_permission_model->get_by_account_id($account_id);
+        $this->_account_permissions_cache[$account_id] = $account_permissions;
+    }
 
     // Loop through and check if the account 
     // has any of the permission keys supplied
@@ -71,12 +81,12 @@ class Authorization
           foreach($permission_keys as $key) 
           {
             // Return if only a single one is required.
-            if( $perm->key == $key && ! $require_all ) 
+            if(strtolower($perm->key) == strtolower($key) && ! $require_all ) 
             {
               return TRUE;
             } 
             // Only takes one bad apple
-            elseif($perm->key != $key && $require_all)
+            elseif(strtolower($perm->key) == strtolower($key) && $require_all)
             {
               return FALSE;
             }
@@ -86,12 +96,12 @@ class Authorization
         else
         {
           // Return if only a single one is required.
-          if ($perm->key == $permission_keys && ! $require_all ) 
+          if (strtolower($perm->key) == strtolower($permission_keys) && ! $require_all ) 
           {
             return TRUE;
           }
           // Only takes one bad apple
-          elseif ($perm->key != $permission_keys && $require_all) 
+          elseif (strtolower($perm->key) != strtolower($permission_keys) && $require_all) 
           {
             return FALSE;
           }
