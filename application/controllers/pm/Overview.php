@@ -76,7 +76,11 @@ class Overview extends CI_Controller {
                 $recipients = $this->mahana_messaging->usernames_to_ids($recipients);
 
                 //submit
-                $data['response'] = $this->mahana_messaging->send_new_message($this->session->userdata('account_id'), $recipients, $subject, $text);
+                $new_thread = $this->mahana_messaging->send_new_message($this->session->userdata('account_id'), $recipients, $subject, $text);
+                if($new_thread != FALSE)
+                {
+                  //@todo redirect to the new thread
+                }
             }
         }
         $data['ckeditor'] = "basic";

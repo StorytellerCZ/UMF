@@ -4,7 +4,6 @@
         <?php echo anchor('#msg_new', '<span class="glyphicon glyphicon-plus"></span> ' . lang('pm_new'), array('class' => 'btn btn-success pull-right', 'data-toggle' => 'modal', 'data-target' => '#new-msg')) ?></h1>
     </div>
     <?php
-        if(isset($response)) print_r($response);
         if(empty($threads))
         {
             echo '<div class="alert alert-warning text-center">' . lang('pm_no_msg') . '</div>';
@@ -28,7 +27,7 @@
                 {
                     $from .= $participants[$thread['thread_id']][0]['username'];
                 }
-                
+
                 //put the array index to the last message
                 $messages = $thread['messages'];
                 $last_message = end($messages);
@@ -62,7 +61,7 @@
                 echo form_error('msg-recipients', '<div class="error">', '</div>');
             ?>
         </div>
-        
+
         <!-- Message title -->
         <div class="form-group">
             <?php
@@ -71,7 +70,7 @@
                 echo form_error('msg-subject', '<div class="error">', '</div>');
             ?>
         </div>
-        
+
         <!-- Message text -->
         <div class="form-group">
             <?php
