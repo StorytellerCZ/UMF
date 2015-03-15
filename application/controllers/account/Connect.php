@@ -35,8 +35,8 @@ class Connect extends CI_Controller
    */
   function Index($provider = NULL, $identifier = NULL)
   {
-        // Enable SSL?
-  	maintain_ssl($this->config->item("ssl_enabled"));
+    // Enable SSL?
+    maintain_ssl($this->config->item("ssl_enabled"));
 
     if(empty($provider))
     {

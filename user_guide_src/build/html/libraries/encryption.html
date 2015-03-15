@@ -252,6 +252,12 @@
             
   <div class="section" id="encryption-library">
 <h1>Encryption Library<a class="headerlink" href="#encryption-library" title="Permalink to this headline">¶</a></h1>
+<div class="admonition important">
+<p class="first admonition-title">Important</p>
+<p class="last">DO NOT use this or any other <em>encryption</em> library for
+user password storage! Passwords must be <em>hashed</em> instead, and you
+should do that via PHP&#8217;s own <a class="reference external" href="http://php.net/password">Password Hashing extension</a>.</p>
+</div>
 <p>The Encryption Library provides two-way data encryption. To do so in
 a cryptographically secure way, it utilizes PHP extensions that are
 unfortunately not always available on all systems.
@@ -1176,7 +1182,7 @@ doesn&#8217;t support SHA1.</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2015, British Columbia Institute of Technology.
-      Last updated on Mar 09, 2015.
+      Last updated on Mar 12, 2015.
     </p>
   </div>
 

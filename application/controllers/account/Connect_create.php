@@ -45,10 +45,10 @@ class Connect_create extends CI_Controller
 
 		// Redirect user to home if 'connect_create' session data doesn't exist
 		if ( ! $this->session->userdata('connect_create')) redirect('');
-		
+
+		$data['connect_create'] = $this->session->userdata('connect_create');
 		$provider = array_keys($data['connect_create']);
 		$provider = $provider[0];
-		$data['connect_create'] = $this->session->userdata('connect_create');
 		$data['connect_create'] = $data['connect_create'][$provider];
 
 		// Setup form validation
@@ -73,18 +73,18 @@ class Connect_create extends CI_Controller
 				// Create user
 				$user_id = $this->Account_model->create($this->input->post('connect_create_username', TRUE), $this->input->post('connect_create_email', TRUE));
 				//extract user details from $data['connect_create']
-				//@todo 'dateofbirth' => 
+				//@todo 'dateofbirth' =>
 				$user_details = array('firstname' => $data['connect_create']['firstName'], 'lastname' => $data['connect_create']['lastName'], 'gender' => $data['connect_create']['gender'], 'picture' => $data['connect_create']['photoURL']);
-				
+
 				// Add user details
 				$this->Account_details_model->update($user_id, $user_details);
 
 				// Connect third party account to user
 				$this->Account_providers_model->insert($user_id, $provider, $data['connect_create']['identifier'], $data['connect_create']['emailVerified'], $data['connect_create']['displayName'], $data['connect_create']['firstName'], $data['connect_create']['lastName'], $data['connect_create']['profileURL'], $data['connect_create']['webSiteURL'], $data['connect_create']['photoURL']);
-				
+
 				// Destroy 'connect_create' session data
 				$this->session->unset_userdata('connect_create');
-				
+
 				// Run sign in routine
 				$this->authentication->sign_in_by_id($user_id);
 			}
