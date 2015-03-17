@@ -435,6 +435,7 @@ Only entries in <tt class="docutils literal"><span class="pre">$autoload['librar
 <li>Methods <tt class="docutils literal"><span class="pre">insert_batch()</span></tt> and <tt class="docutils literal"><span class="pre">update_batch()</span></tt> now return an integer representing the number of rows affected by them.</li>
 <li>Methods <tt class="docutils literal"><span class="pre">where()</span></tt>, <tt class="docutils literal"><span class="pre">or_where()</span></tt>, <tt class="docutils literal"><span class="pre">having()</span></tt> and <tt class="docutils literal"><span class="pre">or_having()</span></tt> now convert trailing  <tt class="docutils literal"><span class="pre">=</span></tt> and <tt class="docutils literal"><span class="pre">&lt;&gt;</span></tt>,  <tt class="docutils literal"><span class="pre">!=</span></tt> SQL operators to <tt class="docutils literal"><span class="pre">IS</span> <span class="pre">NULL</span></tt> and <tt class="docutils literal"><span class="pre">IS</span> <span class="pre">NOT</span> <span class="pre">NULL</span></tt> respectively when the supplied comparison value is <tt class="docutils literal"><span class="pre">NULL</span></tt>.</li>
 <li>Added method chaining support to <tt class="docutils literal"><span class="pre">reset_query()</span></tt>, <tt class="docutils literal"><span class="pre">start_cache()</span></tt>, <tt class="docutils literal"><span class="pre">stop_cache()</span></tt> and <tt class="docutils literal"><span class="pre">flush_cache()</span></tt>.</li>
+<li>Added an optional second parameter to <tt class="docutils literal"><span class="pre">count_all_results()</span></tt> to disable resetting of QB values.</li>
 </ul>
 </li>
 <li><a class="reference internal" href="database/results.html"><em>Database Results</em></a> changes include:<ul>
@@ -3357,7 +3358,7 @@ and fixed various typos.</li>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2015, British Columbia Institute of Technology.
-      Last updated on Mar 13, 2015.
+      Last updated on Mar 17, 2015.
     </p>
   </div>
 

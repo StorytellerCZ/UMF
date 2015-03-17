@@ -30,6 +30,9 @@ $lang['sign_up_forgot_your_password'] = 'Forgot your password?';
 $lang['sign_up_notice'] = 'NOTICE:';
 $lang['sign_up_registration_disabled'] = 'New account registrations are currently disabled.';
 
+$lang['sign_up_user_not_found'] = "User was not found.";
+$lang['sign_up_user_not_found_title'] = "User was not found";
+
 $lang['sign_up_email_subject'] = '%s account validation';
 $lang['sign_up_email_confirmation'] = "Hello %s, <br /><br /> In order to activate your %s account, please please click on the link below or copy and paste the URL into your browser: <br /> %s";
 
