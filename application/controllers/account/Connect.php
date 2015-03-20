@@ -130,8 +130,7 @@ class Connect extends CI_Controller
         }
         else // Cannot authenticate user
         {
-          //@todo show a custom error page or put text into the lang file?
-          show_error('Cannot authenticate user');
+          show_error(lang('connect_cant_authenticate'));
         }
       }
 	    else
@@ -141,26 +140,26 @@ class Connect extends CI_Controller
     }
     catch(Exception $e)
     {
-      $error = 'Unexpected error';
+      $error = lang('connect_hybrid_error_unexpected');
       switch($e->getCode())
       {
         //@todo put errors in a lang file
-        case 0 : $error = 'Unspecified error.'; break;
-        case 1 : $error = 'Hybriauth configuration error.'; break;
-        case 2 : $error = 'Provider not properly configured.'; break;
-        case 3 : $error = 'Unknown or disabled provider.'; break;
-        case 4 : $error = 'Missing provider application credentials.'; break;
-        case 5 : log_message('debug', 'controllers.HAuth.login: Authentification failed. The user has canceled the authentication or the provider refused the connection.');
+        case 0 : $error = lang('connect_hybrid_error_unspecified'); break;
+        case 1 : $error = lang('connect_hybrid_error_config'); break;
+        case 2 : $error = lang('connect_hybrid_error_providers_config'); break;
+        case 3 : $error = lang('connect_hybrid_error_provider_unknown'); break;
+        case 4 : $error = lang('connect_hybrid_error_provider_credentials'); break;
+        case 5 : log_message('debug', lang('connect_hybrid_error_fail_cancelled_refused'));
         //redirect();
         if (isset($service))
         {
-           log_message('debug', 'controllers.HAuth.login: logging out from service.');
+           log_message('debug', lang('connect_hybrid_error_logout'));
            $service->logout();
         }
-        show_error('User has cancelled the authentication or the provider refused the connection.'); break;
-        case 6 : $error = 'User profile request failed. Most likely the user is not connected to the provider and he should to authenticate again.'; break;
-        case 7 : $error = 'User not connected to the provider.'; break;
-        default : $error = 'Unspecified error.'; break;
+        show_error(lang('connect_hybrid_error_cancelled')); break;
+        case 6 : $error = lang('connect_hybrid_error_provider_profile'); break;
+        case 7 : $error = lang('connect_hybrid_error_provider_user_not_connected'); break;
+        default : $error = lang('connect_hybrid_error_unspecified'); break;
       }
 
       if (isset($service))
@@ -168,8 +167,8 @@ class Connect extends CI_Controller
           $service->logout();
       }
 
-      log_message('error', 'controllers.HAuth.login: '.$error);
-      show_error('Error authenticating user.');
+      log_message('error', lang('connect_hybrid_error_debug').$error);
+      show_error(lang('connect_hybrid_error_show'));
     }
   }
 }
