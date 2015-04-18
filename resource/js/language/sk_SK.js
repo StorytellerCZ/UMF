@@ -1,7 +1,7 @@
 (function($) {
     /**
      * Slovak language package
-     * Translated by @budik21
+     * Translated by @budik21. Improved by @PatrikGallik
      */
     FormValidation.I18n = $.extend(true, FormValidation.I18n, {
         'sk_SK': {
@@ -13,34 +13,34 @@
                 notInclusive: 'Prosím zadajte hodnotu medzi %s a %s (vrátane týchto čísel)'
             },
             bic: {
-                'default': 'Prosím zadajte správné BIC číslo'
+                'default': 'Prosím zadajte správne BIC číslo'
             },
             callback: {
-                'default': 'Prosím zadajte správnú hodnotu'
+                'default': 'Prosím zadajte správnu hodnotu'
             },
             choice: {
-                'default': 'Prosím vyberte správnú hodnotu',
+                'default': 'Prosím vyberte správnu hodnotu',
                 less: 'Hodnota musí byť minimálne %s',
                 more: 'Hodnota nesmie byť viac ako %s',
                 between: 'Prosím vyberte medzi %s a %s'
             },
             color: {
-                'default': 'Prosím zadajte správnú farbu'
+                'default': 'Prosím zadajte správnu farbu'
             },
             creditCard: {
-                'default': 'Prosím zadajte správné číslo kreditnej karty'
+                'default': 'Prosím zadajte správne číslo kreditnej karty'
             },
             cusip: {
-                'default': 'Prosím zadajte správné CUSIP číslo'
+                'default': 'Prosím zadajte správne CUSIP číslo'
             },
             cvv: {
-                'default': 'Prosím zadajte správné CVV číslo'
+                'default': 'Prosím zadajte správne CVV číslo'
             },
             date: {
-                'default': 'Prosím zadajte správné dátum',
+                'default': 'Prosím zadajte správny dátum',
                 min: 'Prosím zadajte dátum pred %s',
                 max: 'Prosím zadajte dátum po %s',
-                range: 'Prosím zadajte dátum v rodzmezí %s až %s'
+                range: 'Prosím zadajte dátum v rozmedzí %s až %s'
             },
             different: {
                 'default': 'Prosím zadajte inú hodnotu'
@@ -49,55 +49,55 @@
                 'default': 'Toto pole môže obsahovať len čísla'
             },
             ean: {
-                'default': 'Prosím zadajte správné EAN číslo'
+                'default': 'Prosím zadajte správne EAN číslo'
             },
             ein: {
-                'default': 'Prosím zadajte správné EIN číslo'
+                'default': 'Prosím zadajte správne EIN číslo'
             },
             emailAddress: {
-                'default': 'Prosím zadajte správnú emailovou adresu'
+                'default': 'Prosím zadajte správnu emailovú adresu'
             },
             file: {
                 'default': 'Prosím vyberte súbor'
             },
             greaterThan: {
-                'default': 'Prosím zadajte hodnotu väčší ako alebo rovnú %s',
-                notInclusive: 'Prosím zadajte hodnotu väčší ako %s'
+                'default': 'Prosím zadajte hodnotu väčšiu alebo rovnú %s',
+                notInclusive: 'Prosím zadajte hodnotu väčšiu ako %s'
             },
             grid: {
                 'default': 'Prosím zadajte správné GRId číslo'
             },
             hex: {
-                'default': 'Prosím zadajte správné hexadecimálné číslo'
+                'default': 'Prosím zadajte správne hexadecimálne číslo'
             },
             iban: {
-                'default': 'Prosím zadajte správné IBAN číslo',
-                country: 'Prosím zadajte správné IBAN číslo pre %s',
+                'default': 'Prosím zadajte správne IBAN číslo',
+                country: 'Prosím zadajte správne IBAN číslo pre %s',
                 countries: {
                     AD: 'Andorru',
                     AE: 'Spojené arabské emiráty',
-                    AL: 'Albaniu',
+                    AL: 'Albánsko',
                     AO: 'Angolu',
                     AT: 'Rakúsko',
                     AZ: 'Ázerbajdžán',
                     BA: 'Bosnu a Herzegovinu',
-                    BE: 'Belgiu',
+                    BE: 'Belgicko',
                     BF: 'Burkina Faso',
                     BG: 'Bulharsko',
                     BH: 'Bahrajn',
                     BI: 'Burundi',
                     BJ: 'Benin',
                     BR: 'Brazíliu',
-                    CH: 'Švajčarsko',
-                    CI: 'Pobřežie Slonoviny',
+                    CH: 'Švajčiarsko',
+                    CI: 'Pobrežie Slonoviny',
                     CM: 'Kamerun',
                     CR: 'Kostariku',
                     CV: 'Cape Verde',
                     CY: 'Cyprus',
-                    CZ: 'Českú republiku',
+                    CZ: 'Českú Republiku',
                     DE: 'Nemecko',
                     DK: 'Dánsko',
-                    DO: 'Dominikánskú republiku',
+                    DO: 'Dominikánsku republiku',
                     DZ: 'Alžírsko',
                     EE: 'Estónsko',
                     ES: 'Španielsko',
@@ -106,14 +106,14 @@
                     FR: 'Francúzsko',
                     GB: 'Veľkú Britániu',
                     GE: 'Gruzínsko',
-                    GI: 'Gibraltar',
+                    GI: 'Gibraltár',
                     GL: 'Grónsko',
                     GR: 'Grécko',
                     GT: 'Guatemalu',
                     HR: 'Chorvátsko',
                     HU: 'Maďarsko',
-                    IE: 'Irsko',
-                    IL: 'Israel',
+                    IE: 'Írsko',
+                    IL: 'Izrael',
                     IR: 'Irán',
                     IS: 'Island',
                     IT: 'Taliansko',
@@ -123,23 +123,23 @@
                     LB: 'Libanon',
                     LI: 'Lichtenštajnsko',
                     LT: 'Litvu',
-                    LU: 'Lucembursko',
+                    LU: 'Luxemburgsko',
                     LV: 'Lotyšsko',
                     MC: 'Monako',
                     MD: 'Moldavsko',
-                    ME: 'Čiernú horu',
+                    ME: 'Čiernu horu',
                     MG: 'Madagaskar',
-                    MK: 'Makedoniu',
+                    MK: 'Macedónsko',
                     ML: 'Mali',
                     MR: 'Mauritániu',
                     MT: 'Maltu',
                     MU: 'Mauritius',
                     MZ: 'Mosambik',
                     NL: 'Holandsko',
-                    NO: 'Norsko',
-                    PK: 'Pakistán',
-                    PL: 'Polsko',
-                    PS: 'Palestinu',
+                    NO: 'Nórsko',
+                    PK: 'Pakistan',
+                    PL: 'Poľsko',
+                    PS: 'Palestínu',
                     PT: 'Portugalsko',
                     QA: 'Katar',
                     RO: 'Rumunsko',
@@ -156,13 +156,13 @@
                 }
             },
             id: {
-                'default': 'Prosím zadajte správné rodné číslo',
-                country: 'Prosím zadajte správné rodné číslo pre %s',
+                'default': 'Prosím zadajte správne rodné číslo',
+                country: 'Prosím zadajte správne rodné číslo pre %s',
                 countries: {
                     BA: 'Bosnu a Hercegovinu',
                     BG: 'Bulharsko',
                     BR: 'Brazíliu',
-                    CH: 'Švajčarsko',
+                    CH: 'Švajčiarsko',
                     CL: 'Chile',
                     CN: 'Čínu',
                     CZ: 'Českú Republiku',
@@ -171,13 +171,14 @@
                     ES: 'Španielsko',
                     FI: 'Fínsko',
                     HR: 'Chorvátsko',
-                    IE: 'Irsko',
+                    IE: 'Írsko',
                     IS: 'Island',
                     LT: 'Litvu',
                     LV: 'Lotyšsko',
-                    ME: 'Čiernú horu',
-                    MK: 'Makedoniu',
+                    ME: 'Čiernu horu',
+                    MK: 'Macedónsko',
                     NL: 'Holandsko',
+                    PL: 'Poľsko',
                     RO: 'Rumunsko',
                     RS: 'Srbsko',
                     SE: 'Švédsko',
@@ -192,40 +193,40 @@
                 'default': 'Prosím zadajte rovnakú hodnotu'
             },
             imei: {
-                'default': 'Prosím zadajte správné IMEI číslo'
+                'default': 'Prosím zadajte správne IMEI číslo'
             },
             imo: {
-                'default': 'Prosím zadajte správné IMO číslo'
+                'default': 'Prosím zadajte správne IMO číslo'
             },
             integer: {
                 'default': 'Prosím zadajte celé číslo'
             },
             ip: {
-                'default': 'Prosím zadajte správnú IP adresu',
-                ipv4: 'Prosím zadajte správnú IPv4 adresu',
-                ipv6: 'Prosím zadajte správnú IPv6 adresu'
+                'default': 'Prosím zadajte správnu IP adresu',
+                ipv4: 'Prosím zadajte správnu IPv4 adresu',
+                ipv6: 'Prosím zadajte správnu IPv6 adresu'
             },
             isbn: {
-                'default': 'Prosím zadajte správné ISBN číslo'
+                'default': 'Prosím zadajte správne ISBN číslo'
             },
             isin: {
-                'default': 'Prosím zadajte správné ISIN číslo'
+                'default': 'Prosím zadajte správne ISIN číslo'
             },
             ismn: {
-                'default': 'Prosím zadajte správné ISMN číslo'
+                'default': 'Prosím zadajte správne ISMN číslo'
             },
             issn: {
-                'default': 'Prosím zadajte správné ISSN číslo'
+                'default': 'Prosím zadajte správne ISSN číslo'
             },
             lessThan: {
                 'default': 'Prosím zadajte hodnotu menšiu alebo rovnú %s',
                 notInclusive: 'Prosím zadajte hodnotu menšiu ako %s'
             },
             mac: {
-                'default': 'Prosím zadajte správnú MAC adresu'
+                'default': 'Prosím zadajte správnu MAC adresu'
             },
             meid: {
-                'default': 'Prosím zadajte správné MEID číslo'
+                'default': 'Prosím zadajte správne MEID číslo'
             },
             notEmpty: {
                 'default': 'Toto pole nesmie byť prázdne'
@@ -234,10 +235,11 @@
                 'default': 'Prosím zadajte číselnú hodnotu'
             },
             phone: {
-                'default': 'Prosím zadajte správné telefónne číslo',
-                country: 'Prosím zadajte správné telefónne číslo pre %s',
+                'default': 'Prosím zadajte správne telefónne číslo',
+                country: 'Prosím zadajte správne telefónne číslo pre %s',
                 countries: {
                     AE: 'Spojené arabské emiráty',
+                    BG: 'Bulharsko',
                     BR: 'Brazíliu',
                     CN: 'Čínu',
                     CZ: 'Českú Republiku',
@@ -246,9 +248,10 @@
                     ES: 'Španielsko',
                     FR: 'Francúzsko',
                     GB: 'Veľkú Britániu',
-                    IN: 'India',
+                    IN: 'Indiu',
                     MA: 'Maroko',
-                    PK: 'Pákistán',
+                    NL: 'Holandsko',
+                    PK: 'Pakistan',
                     RO: 'Rumunsko',
                     RU: 'Rusko',
                     SK: 'Slovensko',
@@ -261,49 +264,49 @@
                 'default': 'Prosím zadajte hodnotu spĺňajúcu zadanie'
             },
             remote: {
-                'default': 'Prosím zadajte správnú hodnotu'
+                'default': 'Prosím zadajte správnu hodnotu'
             },
             rtn: {
-                'default': 'Prosím zadajte správné RTN číslo'
+                'default': 'Prosím zadajte správne RTN číslo'
             },
             sedol: {
-                'default': 'Prosím zadajte správné SEDOL číslo'
+                'default': 'Prosím zadajte správne SEDOL číslo'
             },
             siren: {
-                'default': 'Prosím zadajte správné SIREN číslo'
+                'default': 'Prosím zadajte správne SIREN číslo'
             },
             siret: {
-                'default': 'Prosím zadajte správné SIRET číslo'
+                'default': 'Prosím zadajte správne SIRET číslo'
             },
             step: {
                 'default': 'Prosím zadajte správny krok %s'
             },
             stringCase: {
-                'default': 'Len malá písmena sú povolená v tomto poli',
-                upper: 'Len velká písmena sú povolená v tomto poli'
+                'default': 'Len malé písmená sú povolené v tomto poli',
+                upper: 'Len veľké písmená sú povolené v tomto poli'
             },
             stringLength: {
                 'default': 'Toto pole nesmie byť prázdne',
-                less: 'Prosím zadajte hodnotu kratší ako %s znakov',
+                less: 'Prosím zadajte hodnotu kratšiu ako %s znakov',
                 more: 'Prosím zadajte hodnotu dlhú %s znakov a viacej',
-                between: 'Prosím zadajte hodnotu medzi %s a %s znaky'
+                between: 'Prosím zadajte hodnotu medzi %s a %s znakov'
             },
             uri: {
-                'default': 'Prosím zadajte správnú URI'
+                'default': 'Prosím zadajte správnu URI'
             },
             uuid: {
-                'default': 'Prosím zadajte správné UUID číslo',
-                version: 'Prosím zadajte správné UUID verze %s'
+                'default': 'Prosím zadajte správne UUID číslo',
+                version: 'Prosím zadajte správne UUID vo verzii %s'
             },
             vat: {
-                'default': 'Prosím zadajte správné VAT číslo',
-                country: 'Prosím zadajte správné VAT číslo pre %s',
+                'default': 'Prosím zadajte správne VAT číslo',
+                country: 'Prosím zadajte správne VAT číslo pre %s',
                 countries: {
                     AT: 'Rakúsko',
-                    BE: 'Belgiu',
+                    BE: 'Belgicko',
                     BG: 'Bulharsko',
                     BR: 'Brazíliu',
-                    CH: 'Švajčarsko',
+                    CH: 'Švajčiarsko',
                     CY: 'Cyprus',
                     CZ: 'Českú Republiku',
                     DE: 'Nemecko',
@@ -317,16 +320,16 @@
                     EL: 'Grécko',
                     HU: 'Maďarsko',
                     HR: 'Chorvátsko',
-                    IE: 'Irsko',
+                    IE: 'Írsko',
                     IS: 'Island',
-                    IT: 'Itálie',
+                    IT: 'Taliansko',
                     LT: 'Litvu',
-                    LU: 'Lucembursko',
+                    LU: 'Luxemburgsko',
                     LV: 'Lotyšsko',
                     MT: 'Maltu',
                     NL: 'Holandsko',
                     NO: 'Norsko',
-                    PL: 'Polsko',
+                    PL: 'Poľsko',
                     PT: 'Portugalsko',
                     RO: 'Rumunsko',
                     RU: 'Rusko',
@@ -339,27 +342,29 @@
                 }
             },
             vin: {
-                'default': 'Prosím zadajte správné VIN číslo'
+                'default': 'Prosím zadajte správne VIN číslo'
             },
             zipCode: {
-                'default': 'Prosím zadajte správné PSČ',
-                country: 'Prosím zadajte správné PSČ pre %s',
+                'default': 'Prosím zadajte správne PSČ',
+                country: 'Prosím zadajte správne PSČ pre %s',
                 countries: {
                     AT: 'Rakúsko',
+                    BG: 'Bulharsko',
                     BR: 'Brazíliu',
                     CA: 'Kanadu',
-                    CH: 'Švajčarsko',
+                    CH: 'Švajčiarsko',
                     CZ: 'Českú Republiku',
                     DE: 'Nemecko',
                     DK: 'Dánsko',
                     ES: 'Španielsko',
                     FR: 'Francúzsko',
                     GB: 'Veľkú Britániu',
-                    IE: 'Irsko',
-                    IN: 'India',
-                    IT: 'Itálie',
+                    IE: 'Írsko',
+                    IN: 'Indiu',
+                    IT: 'Taliansko',
                     MA: 'Maroko',
                     NL: 'Holandsko',
+                    PL: 'Poľsko',
                     PT: 'Portugalsko',
                     RO: 'Rumunsko',
                     RU: 'Rusko',
@@ -371,4 +376,4 @@
             }
         }
     });
-}(window.jQuery));
+}(jQuery));

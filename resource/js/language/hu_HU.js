@@ -13,7 +13,7 @@
                 notInclusive: 'Kérlek, hogy %s és %s között adj meg értéket'
             },
             bic: {
-                'default': 'Kérlek, hogy érvényes BIC számot ajd meg'
+                'default': 'Kérlek, hogy érvényes BIC számot adj meg'
             },
             callback: {
                 'default': 'Kérlek, hogy érvényes értéket adj meg'
@@ -25,19 +25,19 @@
                 between: 'Kérlek, hogy válassz %s - %s lehetőséget'
             },
             color: {
-                'default': 'Kérlek, hogy érvényes színt ajd meg'
+                'default': 'Kérlek, hogy érvényes színt adj meg'
             },
             creditCard: {
                 'default': 'Kérlek, hogy érvényes bankkártya számot adj meg'
             },
             cusip: {
-                'default': 'Kérlek, hogy érvényes CUSIP számot ajd meg'
+                'default': 'Kérlek, hogy érvényes CUSIP számot adj meg'
             },
             cvv: {
-                'default': 'Kérlek, hogy érvényes CVV számot ajd meg'
+                'default': 'Kérlek, hogy érvényes CVV számot adj meg'
             },
             date: {
-                'default': 'Kérlek, hogy érvényes dátumot ajd meg',
+                'default': 'Kérlek, hogy érvényes dátumot adj meg',
                 min: 'Kérlek, hogy %s -nál későbbi dátumot adj meg',
                 max: 'Kérlek, hogy %s -nál korábbi dátumot adj meg',
                 range: 'Kérlek, hogy %s - %s között adj meg dátumot'
@@ -49,13 +49,13 @@
                 'default': 'Kérlek, hogy csak számot adj meg'
             },
             ean: {
-                'default': 'Kérlek, hogy érvényes EAN számot ajd meg'
+                'default': 'Kérlek, hogy érvényes EAN számot adj meg'
             },
             ein: {
-                'default': 'Kérlek, hogy érvényes EIN számot ajd meg'
+                'default': 'Kérlek, hogy érvényes EIN számot adj meg'
             },
             emailAddress: {
-                'default': 'Kérlek, hogy érvényes email címet ajd meg'
+                'default': 'Kérlek, hogy érvényes email címet adj meg'
             },
             file: {
                 'default': 'Kérlek, hogy érvényes fájlt válassz'
@@ -65,13 +65,13 @@
                 notInclusive: 'Kérlek, hogy ennél (%s) nagyobb számot adj meg'
             },
             grid: {
-                'default': 'Kérlek, hogy érvényes GRId számot ajd meg'
+                'default': 'Kérlek, hogy érvényes GRId számot adj meg'
             },
             hex: {
-                'default': 'Kérlek, hogy érvényes hexadecimális számot ajd meg'
+                'default': 'Kérlek, hogy érvényes hexadecimális számot adj meg'
             },
             iban: {
-                'default': 'Kérlek, hogy érvényes IBAN számot ajd meg',
+                'default': 'Kérlek, hogy érvényes IBAN számot adj meg',
                 country: 'Kérlek, hogy %s érvényes  IBAN számot adj meg',
                 countries: {
                     AD: 'az Andorrai Fejedelemségben', /* Special case */
@@ -79,7 +79,7 @@
                     AL: 'Albániában',
                     AO: 'Angolában',
                     AT: 'Ausztriában',
-                    AZ: 'Azerbajdzsánban',
+                    AZ: 'Azerbadjzsánban',
                     BA: 'Bosznia-Hercegovinában', /* Special case */
                     BE: 'Belgiumban',
                     BF: 'Burkina Fasoban',
@@ -157,7 +157,7 @@
             },
             id: {
                 'default': 'Kérlek, hogy érvényes személy azonosító számot adj meg',
-                country: 'Kérlek, hogy %s érvényes személy azonosító számot ajd meg',
+                country: 'Kérlek, hogy %s érvényes személy azonosító számot adj meg',
                 countries: {
                     BA: 'Bosznia-Hercegovinában',
                     BG: 'Bulgáriában',
@@ -178,6 +178,7 @@
                     ME: 'Montenegróban',
                     MK: 'Macedóniában',
                     NL: 'Hollandiában',
+                    PL: 'Lengyelországban',
                     RO: 'Romániában',
                     RS: 'Szerbiában',
                     SE: 'Svédországban',
@@ -202,30 +203,30 @@
             },
             ip: {
                 'default': 'Kérlek, hogy IP címet adj meg',
-                ipv4: 'Kérlek, hogy érvényes IPv4 címet ajd meg',
-                ipv6: 'Kérlek, hogy érvényes IPv6 címet ajd meg'
+                ipv4: 'Kérlek, hogy érvényes IPv4 címet adj meg',
+                ipv6: 'Kérlek, hogy érvényes IPv6 címet adj meg'
             },
             isbn: {
-                'default': 'Kérlek, hogy érvényes ISBN számot ajd meg'
+                'default': 'Kérlek, hogy érvényes ISBN számot adj meg'
             },
             isin: {
-                'default': 'Kérlek, hogy érvényes ISIN számot ajd meg'
+                'default': 'Kérlek, hogy érvényes ISIN számot adj meg'
             },
             ismn: {
-                'default': 'Kérlek, hogy érvényes ISMN számot ajd meg'
+                'default': 'Kérlek, hogy érvényes ISMN számot adj meg'
             },
             issn: {
-                'default': 'Kérlek, hogy érvényes ISSN számot ajd meg'
+                'default': 'Kérlek, hogy érvényes ISSN számot adj meg'
             },
             lessThan: {
                 'default': 'Kérlek, hogy adj meg egy számot ami kisebb vagy egyenlő mint %s',
                 notInclusive: 'Kérlek, hogy adj meg egy számot ami kisebb mint %s'
             },
             mac: {
-                'default': 'Kérlek, hogy érvényes MAC címet ajd meg'
+                'default': 'Kérlek, hogy érvényes MAC címet adj meg'
             },
             meid: {
-                'default': 'Kérlek, hogy érvényes MEID számot ajd meg'
+                'default': 'Kérlek, hogy érvényes MEID számot adj meg'
             },
             notEmpty: {
                 'default': 'Kérlek, hogy adj értéket a mezőnek'
@@ -238,6 +239,7 @@
                 country: 'Kérlek, hogy %s érvényes telefonszámot adj meg',
                 countries: {
                     AE: 'az Egyesült Arab Emírségekben', /* Special case */
+                    BG: 'Bulgáriában',
                     BR: 'Brazíliában',
                     CN: 'Kínában',
                     CZ: 'Csehországban',
@@ -248,6 +250,7 @@
                     GB: 'az Egyesült Királyságban',
                     IN: 'India',
                     MA: 'Marokkóban',
+                    NL: 'Hollandiában',
                     PK: 'Pakisztánban',
                     RO: 'Romániában',
                     RU: 'Oroszországban',
@@ -279,7 +282,7 @@
                 'default': 'Kérlek, hogy érvényes lépteket adj meg (%s)'
             },
             stringCase: {
-                'default': 'Kérlek, hogy csak kisbetüket ajd meg',
+                'default': 'Kérlek, hogy csak kisbetüket adj meg',
                 upper: 'Kérlek, hogy csak nagy betüket adj meg'
             },
             stringLength: {
@@ -297,7 +300,7 @@
             },
             vat: {
                 'default': 'Kérlek, hogy helyes adó számot adj meg',
-                country: 'Kérlek, hogy %s helyes  adószámot ajd meg',
+                country: 'Kérlek, hogy %s helyes  adószámot adj meg',
                 countries: {
                     AT: 'Ausztriában',
                     BE: 'Belgiumban',
@@ -346,6 +349,7 @@
                 country: 'Kérlek, hogy %s érvényes irányítószámot adj meg',
                 countries: {
                     AT: 'Ausztriában',
+                    BG: 'Bulgáriában',
                     BR: 'Brazíliában',
                     CA: 'Kanadában',
                     CH: 'Svájcban',
@@ -360,6 +364,7 @@
                     IT: 'Olaszországban',
                     MA: 'Marokkóban',
                     NL: 'Hollandiában',
+                    PL: 'Lengyelországban',
                     PT: 'Portugáliában',
                     RO: 'Romániában',
                     RU: 'Oroszországban',

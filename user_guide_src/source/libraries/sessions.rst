@@ -569,9 +569,10 @@ However, there are some conditions that must be met:
 
   - Only your **default** database connection (or the one that you access
     as ``$this->db`` from your controllers) can be used.
-  - You can NOT use a persistent connection.
   - You must have the :doc:`Query Builder </database/query_builder>`
     enabled.
+  - You can NOT use a persistent connection.
+  - You can NOT use a connection with the *cache_on* setting enabled.
 
 In order to use the 'database' session driver, you must also create this
 table that we already mentioned and then set it as your
@@ -639,7 +640,7 @@ of its high performance, which is also probably your reason to use the
 'redis' session driver.
 
 The downside is that it is not as ubiquitous as relational databases and
-requires the `phpredis <https://github.com/nicolasff/phpredis>`_ PHP
+requires the `phpredis <https://github.com/phpredis/phpredis>`_ PHP
 extension to be installed on your system, and that one doesn't come
 bundled with PHP.
 Chances are, you're only be using the 'redis' driver only if you're already

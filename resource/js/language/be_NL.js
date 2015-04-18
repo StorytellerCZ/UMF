@@ -1,78 +1,78 @@
 (function($) {
     /**
      * Belgium (Dutch) language package
-     * Translated by @dokterpasta
+     * Translated by @dokterpasta. Improved by @jdt
      */
     FormValidation.I18n = $.extend(true, FormValidation.I18n, {
         'be_NL': {
             base64: {
-                'default': 'Geef een geldige base 64 encoded tekst in'
+                'default': 'Geef een geldige base 64 geëncodeerde tekst in'
             },
             between: {
-                'default': 'Geef een waarde tussen %s en %s (incl de waarden)',
-                notInclusive: 'Geef een waarde strikt tussen %s en %s'
+                'default': 'Geef een waarde in van %s tot en met %s',
+                notInclusive: 'Geef een waarde in van %s tot %s'
             },
             bic: {
-                'default': 'Geef een geldig BIC nummer'
+                'default': 'Geef een geldig BIC-nummer in'
             },
             callback: {
-                'default': 'Geef een geldige waarden in'
+                'default': 'Geef een geldige waarde in'
             },
             choice: {
-                'default': 'Geef een geldige waarden in',
-                less: 'Kies minimum %s opties',
-                more: 'Kies maximum %s opties',
-                between: 'Kies %s - %s opties'
+                'default': 'Geef een geldige waarde in',
+                less: 'Kies minimaal %s opties',
+                more: 'Kies maximaal %s opties',
+                between: 'Kies tussen de %s en %s opties'
             },
             color: {
-                'default': 'Geef een geldige kleur'
+                'default': 'Geef een geldige kleurcode in'
             },
             creditCard: {
-                'default': 'Geef een geldig creditkaart nummer'
+                'default': 'Geef een geldig kredietkaartnummer in'
             },
             cusip: {
-                'default': 'Geef een geldig CUSIP nummer'
+                'default': 'Geef een geldig CUSIP-nummer in'
             },
             cvv: {
-                'default': 'Geef een geldig CVV nummer'
+                'default': 'Geef een geldig CVV-nummer in'
             },
             date: {
-                'default': 'Geef een geldige datum',
-                min: 'Geef een datum na %s',
-                max: 'Geef een datum voor %s',
-                range: 'Geef een datum tussen %s en %s'
+                'default': 'Geef een geldige datum in',
+                min: 'Geef een datum in die na %s ligt',
+                max: 'Geef een datum in die voor %s ligt',
+                range: 'Geef een datum in die tussen %s en %s ligt'
             },
             different: {
-                'default': 'Geef een andere waarde '
+                'default': 'Geef een andere waarde in'
             },
             digits: {
                 'default': 'Geef alleen cijfers in'
             },
             ean: {
-                'default': 'Geef een geldig EAN nummer'
+                'default': 'Geef een geldig EAN-nummer in'
             },
             ein: {
-                'default': 'Geef een geldig EIN nummer'
+                'default': 'Geef een geldig EIN-nummer in'
             },
             emailAddress: {
-                'default': 'Geef een geldig email adres op'
+                'default': 'Geef een geldig emailadres op'
             },
             file: {
                 'default': 'Kies een geldig bestand'
             },
             greaterThan: {
-                'default': 'Geef een waar de gelijk aan of groter dan %s',
-                notInclusive: 'Geef een waarde groter dan %s'
+                'default': 'Geef een waarde in die gelijk is aan of groter is dan %s',
+                notInclusive: 'Geef een waarde in die groter is dan %s'
             },
             grid: {
-                'default': 'Geef een geldig GRId nummer'
+                'default': 'Geef een geldig GRID-nummer in'
             },
             hex: {
-                'default': 'Geef een geldig hexadecimaal nummer'
+                'default': 'Geef een geldig hexadecimaal nummer in'
             },
             iban: {
-                'default': 'Geef een geldig IBAN nummer',
-                country: 'Geef een geldig IBAN nummer van %s',
+                'default': 'Geef een geldig IBAN-nummer in',
+                country: 'Geef een geldig IBAN-nummer in uit %s',
                 countries: {
                     AD: 'Andorra',
                     AE: 'Verenigde Arabische Emiraten',
@@ -156,8 +156,8 @@
                 }
             },
             id: {
-                'default': 'Geef een geldig identificatie nummer',
-                country: 'Geef een geldig identificatie nummer van %s',
+                'default': 'Geef een geldig identificatienummer in',
+                country: 'Geef een geldig identificatienummer in uit %s',
                 countries: {
                     BA: 'Bosnië en Herzegovina',
                     BG: 'Bulgarije',
@@ -178,6 +178,7 @@
                     ME: 'Montenegro',
                     MK: 'Macedonië',
                     NL: 'Nederland',
+                    PL: 'Polen',
                     RO: 'Roemenië',
                     RS: 'Servië',
                     SE: 'Zweden',
@@ -189,55 +190,56 @@
                 }
             },
             identical: {
-                'default': 'Geef dezelfde waarde'
+                'default': 'Geef dezelfde waarde in'
             },
             imei: {
-                'default': 'Geef een geldig IMEI nummer'
+                'default': 'Geef een geldig IMEI-nummer in'
             },
             imo: {
-                'default': 'Geef een geldig IMO nummer'
+                'default': 'Geef een geldig IMO-nummer in'
             },
             integer: {
-                'default': 'Geef een geldig nummer'
+                'default': 'Geef een geldig nummer in'
             },
             ip: {
-                'default': 'Geef een geldig IP adres',
-                ipv4: 'Geef een geldig IPv4 adres',
-                ipv6: 'Geef een geldig IPv6 adres'
+                'default': 'Geef een geldig IP-adres in',
+                ipv4: 'Geef een geldig IPv4-adres in',
+                ipv6: 'Geef een geldig IPv6-adres in'
             },
             isbn: {
-                'default': 'Geef een geldig ISBN nummer'
+                'default': 'Geef een geldig ISBN-nummer in'
             },
             isin: {
-                'default': 'Geef een geldig ISIN nummer'
+                'default': 'Geef een geldig ISIN-nummer in'
             },
             ismn: {
-                'default': 'Geef een geldig ISMN nummer'
+                'default': 'Geef een geldig ISMN-nummer in'
             },
             issn: {
-                'default': 'Geef een geldig ISSN nummer'
+                'default': 'Geef een geldig ISSN-nummer in'
             },
             lessThan: {
-                'default': 'Geef een waar de gelijk aan of kleiner dan %s',
-                notInclusive: 'Geef een waarde kleiner dan %s'
+                'default': 'Geef een waarde in die gelijk is aan of kleiner is dan %s',
+                notInclusive: 'Geef een waarde in die kleiner is dan %s'
             },
             mac: {
-                'default': 'Geef een geldig MAC adres'
+                'default': 'Geef een geldig MAC-adres in'
             },
             meid: {
-                'default': 'Geef een geldig MEID nummer'
+                'default': 'Geef een geldig MEID-nummer in'
             },
             notEmpty: {
-                'default': 'Geef een waarde'
+                'default': 'Geef een waarde in'
             },
             numeric: {
-                'default': 'Geef een geldig comma getal'
+                'default': 'Geef een geldig kommagetal in'
             },
             phone: {
-                'default': 'Geef een geldig telefoon nummer',
-                country: 'Geef een geldig telefoon nummer van %s',
+                'default': 'Geef een geldig telefoonnummer in',
+                country: 'Geef een geldig telefoonnummer in uit %s',
                 countries: {
                     AE: 'Verenigde Arabische Emiraten',
+                    BG: 'Bulgarije',
                     BR: 'Brazilië',
                     CN: 'China',
                     CZ: 'Tsjechische',
@@ -248,6 +250,7 @@
                     GB: 'Verenigd Koninkrijk',
                     IN: 'Indië',
                     MA: 'Marokko',
+                    NL: 'Nederland',
                     PK: 'Pakistan',
                     RO: 'Roemenië',
                     RU: 'Rusland',
@@ -258,46 +261,46 @@
                 }
             },
             regexp: {
-                'default': 'Geef een waarde die gelijk is aan de regex'
+                'default': 'Geef een waarde in die overeenkomt met het patroon'
             },
             remote: {
-                'default': 'Geef een geldige waarde'
+                'default': 'Geef een geldige waarde in'
             },
             rtn: {
-                'default': 'Geef een geldig RTN nummer'
+                'default': 'Geef een geldig RTN-nummer in'
             },
             sedol: {
-                'default': 'Geef een geldig SEDOL nummer'
+                'default': 'Geef een geldig SEDOL-nummer in'
             },
             siren: {
-                'default': 'Geef een geldig SIREN nummer'
+                'default': 'Geef een geldig SIREN-nummer in'
             },
             siret: {
-                'default': 'Geef een geldig SIRET nummer'
+                'default': 'Geef een geldig SIRET-nummer in'
             },
             step: {
-                'default': 'Geef een geldig stap van %s'
+                'default': 'Geef een geldig meervoud in van %s'
             },
             stringCase: {
-                'default': 'Geef alleen kleine letters',
-                upper: 'Geef alleen hoofdletters'
+                'default': 'Geef enkel kleine letters in',
+                upper: 'Geef enkel hoofdletters in'
             },
             stringLength: {
-                'default': 'Geef een waarde met de juiste lengte',
-                less: 'Geef minder dan %s karakters',
-                more: 'Geef meer dan %s karakters',
-                between: 'Geef een aantal karakters tussen %s en %s'
+                'default': 'Geef een waarde in met de juiste lengte',
+                less: 'Geef minder dan %s karakters in',
+                more: 'Geef meer dan %s karakters in',
+                between: 'Geef tussen %s en %s karakters in'
             },
             uri: {
-                'default': 'Geef een geldig URI'
+                'default': 'Geef een geldige URI in'
             },
             uuid: {
-                'default': 'Geef een geldig UUID nummer',
-                version: 'Geef een geldig UUID versie %s nummer'
+                'default': 'Geef een geldig UUID-nummer in',
+                version: 'Geef een geldig UUID-nummer (versie %s) in'
             },
             vat: {
-                'default': 'Geef een geldig BTW nummer',
-                country: 'Geef een geldig BTW nummer van %s',
+                'default': 'Geef een geldig BTW-nummer in',
+                country: 'Geef een geldig BTW-nummer in uit %s',
                 countries: {
                     AT: 'Oostenrijk',
                     BE: 'België',
@@ -339,13 +342,14 @@
                 }
             },
             vin: {
-                'default': 'Geef een geldig VIN nummer'
+                'default': 'Geef een geldig VIN-nummer in'
             },
             zipCode: {
-                'default': 'Geef een geldige postcode',
-                country: 'Geef een geldige postcode van %s',
+                'default': 'Geef een geldige postcode in',
+                country: 'Geef een geldige postcode in uit %s',
                 countries: {
                     AT: 'Oostenrijk',
+                    BG: 'Bulgarije',
                     BR: 'Brazilië',
                     CA: 'Canada',
                     CH: 'Zwitserland',
@@ -360,6 +364,7 @@
                     IT: 'Italië',
                     MA: 'Marokko',
                     NL: 'Nederland',
+                    PL: 'Polen',
                     PT: 'Portugal',
                     RO: 'Roemenië',
                     RU: 'Rusland',

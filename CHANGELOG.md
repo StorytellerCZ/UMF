@@ -9,7 +9,7 @@ All notable changes to this project will be documented in this file, following t
 
 ### Changed
 * A3M, Bootstrap and HybridAuth updated to the most recent development version
-* CodeIgnter 3.0
+* Full update to CodeIgnter 3.0
 * Changed default recaptcha setting for forgot password to `FALSE`
 * Meta tags in template from A3M to UMF
 * Contribution guidelines revised
