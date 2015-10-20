@@ -5,13 +5,11 @@
 | reCAPTCHA
 |--------------------------------------------------------------------------
 |
-| reCAPTCHA PHP Library - http://recaptcha.net/plugins/php/
+| https://www.google.com/recaptcha/
 |
-| recaptcha_theme	'red' | 'white' | 'blackglass' | 'clean' | 'custom'
 */
-$config['recaptcha_public_key'] 	= "";
-$config['recaptcha_private_key'] 	= "";
-$config['recaptcha_theme'] 			= "white";
+$config['recaptcha_site_key'] 	= "";
+$config['recaptcha_secret'] 	= "";
 
 
 /* End of file recaptcha.php */

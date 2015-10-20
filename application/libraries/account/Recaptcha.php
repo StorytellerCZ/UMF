@@ -1,13 +1,14 @@
 <?php
 /**
  * Recaptcha library
- * @package A3M
- * @subpackage Libraries
+ *
  */
 if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
 /**
  * Recaptcha library
+ * @package A3M
+ * @subpackage Libraries
  */
 class Recaptcha
 {
@@ -25,9 +26,6 @@ class Recaptcha
 		// Obtain a reference to the ci super object
 		$this->CI =& get_instance();
 
-		// Load reCAPTCHA helper
-		$this->CI->load->helper('account/recaptcha');
-
 		// Load reCAPTCHA config
 		$this->CI->config->load('umf/recaptcha');
 	}
@@ -44,11 +42,9 @@ class Recaptcha
 	{
 		$response = FALSE;
 
-		if ($this->CI->input->post('recaptcha_response_field'))
+		if ($this->CI->input->post('g-recaptcha-response'))
 		{
-			$recaptcha_private_key = $this->CI->config->item('recaptcha_private_key');
-			$recaptcha_response = recaptcha_check_answer($recaptcha_private_key, $this->CI->input->ip_address(), $this->CI->input->post('recaptcha_challenge_field'), $this->CI->input->post('recaptcha_response_field'));
-			$response = $recaptcha_response->is_valid ? TRUE : $recaptcha_response->error;
+			$response = TRUE;
 		}
 
 		return $response;
@@ -60,16 +56,15 @@ class Recaptcha
 	 * Load reCAPTCHA
 	 *
 	 * @access private
-	 * @param string $error
-	 * @param bool   $ssl
-	 * @param string $theme
+	 * @param string $error @decaprated
+	 * @param bool   $ssl @decaprated
 	 * @return string
 	 */
 	function load($error, $ssl = FALSE)
 	{
-		$recaptcha_public_key = $this->CI->config->item('recaptcha_public_key');
-		$captcha = '<script type="text/javascript">var RecaptchaOptions = { theme : "'.$this->CI->config->item('recaptcha_theme').'" };</script>';
-		$captcha .= recaptcha_get_html($recaptcha_public_key, $error, $ssl);
+		$recaptcha_site_key = $this->CI->config->item('recaptcha_site_key');
+		$captcha = '<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+		<div class="g-recaptcha" data-sitekey="'.$recaptcha_site_key.'"></div>';
 
 		return $captcha;
 	}
