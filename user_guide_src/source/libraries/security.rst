@@ -16,30 +16,15 @@ application, processing input data for security.
 XSS Filtering
 *************
 
-CodeIgniter comes with a Cross Site Scripting Hack prevention filter
-which can either run automatically to filter all POST and COOKIE data
-that is encountered, or you can run it on a per item basis. By default
-it does **not** run globally since it requires a bit of processing
-overhead, and since you may not need it in all cases.
-
-The XSS filter looks for commonly used techniques to trigger Javascript
-or other types of code that attempt to hijack cookies or do other
-malicious things. If anything disallowed is encountered it is rendered
-safe by converting the data to character entities.
-
-Note: This function should only be used to deal with data upon
-submission. It's not something that should be used for general runtime
-processing since it requires a fair amount of processing overhead.
+CodeIgniter comes with a Cross Site Scripting prevention filter, which
+looks for commonly used techniques to trigger JavaScript or other types
+of code that attempt to hijack cookies or do other malicious things.
+If anything disallowed is encountered it is rendered safe by converting
+the data to character entities.
 
 To filter data through the XSS filter use the ``xss_clean()`` method::
 
 	$data = $this->security->xss_clean($data);
-
-If you want the filter to run automatically every time it encounters
-POST or COOKIE data you can enable it by opening your
-application/config/config.php file and setting this::
-
-	$config['global_xss_filtering'] = TRUE;
 
 An optional second parameter, *is_image*, allows this function to be used
 to test images for potential XSS attacks, useful for file upload
@@ -88,7 +73,7 @@ may alter this behavior by editing the following config parameter
 
 ::
 
-	$config['csrf_regeneration'] = TRUE;
+	$config['csrf_regenerate'] = TRUE;
 
 Select URIs can be whitelisted from csrf protection (for example API
 endpoints expecting externally POSTed content). You can add these URIs

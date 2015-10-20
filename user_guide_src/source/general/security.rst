@@ -5,6 +5,9 @@ Security
 This page describes some "best practices" regarding web security, and
 details CodeIgniter's internal security features.
 
+.. note:: If you came here looking for a security contact, please refer to
+	our `Contribution Guide <../contributing/index>`.
+
 URI Security
 ============
 
@@ -61,7 +64,7 @@ data from the SERVER array, you are encouraged to practice this three
 step approach:
 
 #. Validate the data to ensure it conforms to the correct type, length,
-   size, etc. (sometimes this step can replace step one)
+   size, etc.
 #. Filter the data as if it were tainted.
 #. Escape the data before submitting it into your database or outputting
    it to a browser.

@@ -18,11 +18,11 @@ application/views/news/create.php.
 
 ::
 
-    <h2><?php echo $title ?></h2>
+    <h2><?php echo $title; ?></h2>
 
     <?php echo validation_errors(); ?>
 
-    <?php echo form_open('news/create') ?>
+    <?php echo form_open('news/create'); ?>
 
         <label for="title">Title</label> 
         <input type="input" name="title" /><br />
@@ -58,7 +58,7 @@ validation <../libraries/form_validation>` library to do this.
         $data['title'] = 'Create a news item';
         
         $this->form_validation->set_rules('title', 'Title', 'required');
-        $this->form_validation->set_rules('text', 'text', 'required');
+        $this->form_validation->set_rules('text', 'Text', 'required');
         
         if ($this->form_validation->run() === FALSE)
         {
