@@ -60,7 +60,7 @@ class Recaptcha
 	 * @param bool   $ssl @decaprated
 	 * @return string
 	 */
-	function load($error, $ssl = FALSE)
+	function load()
 	{
 		$recaptcha_site_key = $this->CI->config->item('recaptcha_site_key');
 		$captcha = '<script src="https://www.google.com/recaptcha/api.js" async defer></script>

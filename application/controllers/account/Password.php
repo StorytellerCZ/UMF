@@ -49,12 +49,15 @@ class Password extends CI_Controller
                     array('field' => 'password_retype_new_password', 'label' => 'lang:password_retype_new_password', 'rules' => 'trim|required|matches[password_new_password]')
                     ));
 
+		$this->session->set_flashdata('reseting_password', TRUE);
+
 		### Run form validation
 		if ($this->form_validation->run())
 		{
 			// Change user's password
 			$this->Account_model->update_password($data['account']->id, $this->input->post('password_new_password', TRUE));
 			$this->session->set_flashdata('password_info', lang('password_password_has_been_changed'));
+			$this->session->set_flashdata('reseting_password', TRUE);
 			redirect('account/password');
 		}
 

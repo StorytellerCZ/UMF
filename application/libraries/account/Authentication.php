@@ -29,15 +29,22 @@ class Authentication
 	{
 		// Obtain a reference to the ci super object
 		$this->CI =& get_instance();
-		
-		//Load the session driver
-		$this->CI->load->driver('session');
-		
+
+		//Load the session, if CI2 load it as library, if it is CI3 load as a driver
+		if (substr(CI_VERSION, 0, 1) == '2')
+		{
+			$this->CI->load->library('session');
+		}
+		else
+		{
+			$this->CI->load->driver('session');
+		}
+
 		log_message('debug', 'Authentication Class Initalized');
 	}
 
 	// --------------------------------------------------------------------
-	
+
 	/**
 	 * Page Initialization
 	 *
@@ -54,10 +61,10 @@ class Authentication
 		//first check for SSL
 		$this->CI->load->helper('account/ssl');
 		$this->CI->load->config('umf/account');
-		maintain_ssl($this->CI->config->item("ssl_enabled"));
-		
-		// Redirect unauthenticated users to signin page
 		$this->CI->load->model('account/Account_model');
+		maintain_ssl($this->CI->config->item("ssl_enabled"));
+
+		// Redirect unauthenticated users to signin page
 		if($login_required)
 		{
 			if ( ! $this->is_signed_in())
@@ -73,24 +80,28 @@ class Authentication
 			}
 			else
 			{
+				//check if password reset is needed
+				$account_id = $this->CI->session->account_id;
+				$this->check_reset_password($account_id);
+
 				//check if role permission is set
 				if($role != NULL)
 				{
 					//check that the given role is allowed
 					$this->CI->load->library('account/Authorization');
-					
+
 					if(!$this->CI->authorization->is_role($role, $require_all))
 					{
 						redirect(base_url());
-					}					
+					}
 				}
-				
+
 				//check if permission requirement is set
 				if($permission != NULL)
 				{
 					//check if the given permission is allowed
 					$this->CI->load->library('account/Authorization');
-					
+
 					if(!$this->CI->authorization->is_permitted($permission, $require_all))
 					{
 						redirect(base_url());
@@ -98,10 +109,10 @@ class Authentication
 				}
 			}
 		}
-		
+
 		// made it here, so retireve user data and proceed
 		$data['account'] = $this->CI->Account_model->get_by_id($this->CI->session->userdata('account_id'));
-		
+
 		return $data;
 	}
 
@@ -126,13 +137,14 @@ class Authentication
 	 * @access public
 	 * @param string  $username Username or e-mail
 	 * @param string  $password
+	 * @param bool $remember
 	 * @return bool or string
 	 */
-	function sign_in($username, $password)
+	function sign_in($username, $password, $remember = FALSE)
 	{
 		// Get user by username / email
 		$this->CI->load->model('account/Account_model');
-		
+
 		if ( ! $user = $this->CI->Account_model->get_by_username_email($username))
 		{
 			return FALSE;
@@ -147,12 +159,12 @@ class Authentication
 				{
 					// Increment sign in failed attempts
 					$this->CI->session->set_userdata('sign_in_failed_attempts', (int)$this->CI->session->userdata('sign_in_failed_attempts') + 1);
-					
+
 					return FALSE;
 				}
 				else
 				{
-					$this->sign_in_by_id($user->id);
+					$this->sign_in_by_id($user->id, $remember);
 				}
 			}
 			else
@@ -161,7 +173,7 @@ class Authentication
 			}
 		}
 	}
-	
+
 	/**
 	 * Sign user in by id
 	 * Used for things like forgotten password, otherwise it should not be used
@@ -169,28 +181,30 @@ class Authentication
 	 *
 	 * @access public
 	 * @param int  $account_id
+	 * @param bool $remember
 	 * @return void
 	 */
-	function sign_in_by_id($account_id)
+	function sign_in_by_id($account_id, $remember = FALSE)
 	{
 		// Clear sign in fail counter
 		$this->CI->session->unset_userdata('sign_in_failed_attempts');
-		
+
+		//This needs more testing to make sure that is works properly as many changes were made to this due to CI3 upgrade
+		//$remember ? $this->CI->session->cookie->cookie_monster(TRUE) : $this->CI->session->cookie->cookie_monster(FALSE);
+
 		$this->CI->session->set_userdata('account_id', $account_id);
-		
+
 		$this->CI->load->model('account/Account_model');
-		
+
 		$this->CI->Account_model->update_last_signed_in_datetime($account_id);
-		
+
 		//check if they need to reset password
 		$account = $this->CI->Account_model->get_by_id($account_id);
-		
-		if($account->forceresetpass)
-		{
-			//redirect to password page
-			redirect(base_url('account/password/'));
-		}
-		
+
+		//TODO implement remember me functionality
+
+		check_reset_password($account_id);
+
 		// Redirect signed in user with session redirect
 		if ($redirect = $this->CI->session->userdata('sign_in_redirect'))
 		{
@@ -202,7 +216,7 @@ class Authentication
 		{
 			redirect($this->CI->input->get('continue'));
 		}
-		
+
 		//change this URL for default redirect after sign in
 		redirect(base_url());
 	}
@@ -218,7 +232,7 @@ class Authentication
 	function sign_out()
 	{
 		$this->CI->session->unset_userdata('account_id');
-		
+
 		redirect('');
 	}
 
@@ -240,7 +254,7 @@ class Authentication
 
 		return $hasher->CheckPassword($password, $password_hash) ? TRUE : FALSE;
 	}
-	
+
 	/**
 	 * Check if user is allowed to sign in
 	 * Checks if user has been suspended or hasn't validated their e-mail yet
@@ -262,6 +276,32 @@ class Authentication
 		else
 		{
 			return TRUE;
+		}
+	}
+
+	/**
+	 * Reset password check and action
+	 * Checks and redirects to password page if user needs to reset password
+	 *
+	 * @access private
+	 * @param int $account_id
+	 */
+	private function check_reset_password($account_id)
+	{
+		$this->CI->load->model('account/Account_model');
+		//check if they need to reset password
+		$account = $this->CI->Account_model->get_by_id($account_id);
+
+		//this flash data prevents endless redirect on the password page
+		if($account->forceresetpass)
+		{
+			if(!$this->CI->session->reseting_password)
+			{
+				//set flash data
+				$this->CI->session->set_flashdata('reseting_password', TRUE);
+				//redirect to password page
+				redirect(base_url('account/password/'));
+			}
 		}
 	}
 }

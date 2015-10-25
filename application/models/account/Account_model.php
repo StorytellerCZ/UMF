@@ -1,4 +1,12 @@
-<?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+<?php
+/**
+ * A3M (Account Authentication & Authorization) is a CodeIgniter 3.x package.
+ * It gives you the CRUD to get working right away without too much fuss and tinkering!
+ * Designed for building webapps from scratch without all that tiresome login / logout / admin stuff thats always required.
+ *
+ * @link https://github.com/donjakobo/A3M GitHub repository
+ */
+if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
 /**
  * Account_model
@@ -17,7 +25,7 @@ class Account_model extends CI_Model
 	{
 		parent::__construct();
 	}
-	
+
 	/**
 	 * Get all accounts
 	 *
@@ -38,7 +46,7 @@ class Account_model extends CI_Model
 	 */
 	function get_by_id($account_id)
 	{
-		return $this->db->get_where($this->db->dbprefix . 'a3m_account', array('id' => $account_id), 1)->row();
+		return $this->db->get_where($this->db->dbprefix . 'a3m_account', array('id' => $account_id))->row();
 	}
 
 	// --------------------------------------------------------------------
@@ -80,7 +88,9 @@ class Account_model extends CI_Model
 	 */
 	function get_by_username_email($username_email)
 	{
-		return $this->db->where('username', $username_email)->or_where('email', $username_email)->get($this->db->dbprefix . 'a3m_account')->row();
+		$this->db->where('username', $username_email);
+		$this->db->or_where('email', $username_email);
+		return $this->db->get($this->db->dbprefix . 'a3m_account')->row();
 	}
 
 	// --------------------------------------------------------------------
@@ -91,7 +101,7 @@ class Account_model extends CI_Model
 	 * @access public
 	 * @param string $username
 	 * @param string $email
--	 * @param string $password Password in plain. Will be hashed before inserted into DB
+	 * @param string $password Password in plain. Will be hashed before inserted into DB
 	 * @return int insert id
 	 */
 	function create($username, $email = NULL, $password = NULL)
@@ -156,13 +166,13 @@ class Account_model extends CI_Model
 		$hasher = new PasswordHash(PHPASS_HASH_STRENGTH, PHPASS_HASH_PORTABLE);
 		$new_hashed_password = $hasher->HashPassword($password_new);
 
-		$this->db->update($this->db->dbprefix . 'a3m_account', array('password' => $new_hashed_password), array('id' => $account_id));
+		$this->db->update($this->db->dbprefix . 'a3m_account', array('password' => $new_hashed_password, 'forceresetpass' => FALSE), array('id' => $account_id));
 	}
 
 	// --------------------------------------------------------------------
 
 	/**
-	 * Update account last signed in dateime
+	 * Update account last signed in datetime
 	 *
 	 * @access public
 	 * @param int $account_id
@@ -190,7 +200,7 @@ class Account_model extends CI_Model
 
 		$resetsenton = mdate('%Y-%m-%d %H:%i:%s', now());
 
-		$this->db->update($this->db->dbprefix . 'a3m_account', array('resetsenton' => $resetsenton), array('id' => $account_id));
+		$this->db->update($this->db->dbprefix . 'a3m_account', array('resetsenton' => $resetsenton, 'forceresetpass' => TRUE), array('id' => $account_id));
 
 		return strtotime($resetsenton);
 	}
@@ -250,7 +260,7 @@ class Account_model extends CI_Model
 
 		$this->db->update($this->db->dbprefix . 'a3m_account', array('suspendedon' => mdate('%Y-%m-%d %H:%i:%s', now())), array('id' => $account_id));
 	}
-	
+
 	// --------------------------------------------------------------------
 
 	/**
@@ -264,12 +274,12 @@ class Account_model extends CI_Model
 	{
 		$this->db->update($this->db->dbprefix . 'a3m_account', array('suspendedon' => NULL), array('id' => $account_id));
 	}
-	
+
 	// --------------------------------------------------------------------
-	
+
 	/**
 	 * Verify user
-	 * 
+	 *
 	 * @access public
 	 * @param int $account_id
 	 * @return boolean
@@ -277,19 +287,19 @@ class Account_model extends CI_Model
 	function verify($account_id)
 	{
 		$this->load->helper('date');
-		
+
 		$this->db->update('a3m_account', array('verifiedon' => mdate('%Y-%m-%d %H:%i:%s', now())), array('id' => $account_id));
-		
+
 		if($this->db->affected_rows() === 1)
 		{
 			return TRUE;
 		}
-		
+
 		return FALSE;
 	}
-	
+
 	// --------------------------------------------------------------------
-	
+
 	/**
 	 * Changes the force reset parameter in the DB
 	 * @param int $account_id
@@ -299,12 +309,12 @@ class Account_model extends CI_Model
 	public function force_reset_password($account_id, $action)
 	{
 		$this->db->update($this->db->dbprefix . 'a3m_account', array('forceresetpass' => $action), array('id' => $account_id));
-		
+
 		if($this->db->affected_rows() === 1)
 		{
 			return TRUE;
 		}
-		
+
 		return FALSE;
 	}
 }

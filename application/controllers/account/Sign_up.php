@@ -155,7 +155,7 @@ class Sign_up extends CI_Controller
 		else
 		{
 			// Load recaptcha code
-			if ($this->config->item("sign_up_recaptcha_enabled") === TRUE) if ($this->session->userdata('sign_up_recaptcha_pass') != TRUE) $data['recaptcha'] = $this->recaptcha->load($recaptcha_result, $this->config->item("ssl_enabled"));
+			if ($this->config->item("sign_up_recaptcha_enabled") === TRUE) if ($this->session->userdata('sign_up_recaptcha_pass') != TRUE) $data['recaptcha'] = $this->recaptcha->load();
 
 			// Load sign up view
 			$data['content'] = $this->load->view('sign_up', isset($data) ? $data : NULL, TRUE);
