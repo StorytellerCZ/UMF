@@ -203,7 +203,7 @@ class Authentication
 
 		//TODO implement remember me functionality
 
-		check_reset_password($account_id);
+		$this->check_reset_password($account_id);
 
 		// Redirect signed in user with session redirect
 		if ($redirect = $this->CI->session->userdata('sign_in_redirect'))

@@ -110,8 +110,11 @@ class Account_details_model extends CI_Model
 		// Update
 		if ($this->get_by_account_id($account_id))
 		{
-			$this->db->where('account_id', $account_id);
-			$this->db->update($this->db->dbprefix . 'a3m_account_details', $attributes);
+			if ( count($attributes) != 0 )
+			{
+				$this->db->where('account_id', $account_id);
+				$this->db->update($this->db->dbprefix . 'a3m_account_details', $attributes);
+			}
 		}
 		// Insert
 		else
