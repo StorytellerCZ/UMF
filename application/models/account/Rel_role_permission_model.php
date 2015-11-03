@@ -38,8 +38,6 @@ class Rel_role_permission_model extends CI_Model
     $this->db->where($this->db->dbprefix . "a3m_rel_role_permission.role_id = $role_id AND ".$this->db->dbprefix . "a3m_acl_permission.suspendedon IS NULL");
 
     return $this->db->get()->result();
-
-    return $this->db->get()->result();
   }
 
 
@@ -79,7 +77,7 @@ class Rel_role_permission_model extends CI_Model
   }
 
   // --------------------------------------------------------------------
-  
+
   /**
    * Create a new account permission
    *
